@@ -1,0 +1,193 @@
+{
+    "entries": [
+        {
+            "file": "estadistica.qmd",
+            "type": "thm",
+            "id": "meanvar",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "quant",
+            "suffix": "",
+            "title": "Cuantil"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "VE",
+            "suffix": "",
+            "title": "Valor esperado"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "pobla",
+            "suffix": "",
+            "title": "Población"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "var",
+            "suffix": "",
+            "title": "Varianza"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "thm",
+            "id": "propve",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "median",
+            "suffix": "",
+            "title": "Mediana"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "uncorr",
+            "suffix": "",
+            "title": "Variables aleatorias no correlacionadas"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "eq",
+            "id": "VE2",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "cor",
+            "id": "covind",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "muestra",
+            "suffix": "",
+            "title": "Muestra"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "SD",
+            "suffix": "",
+            "title": "Desviación estándar"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "param",
+            "suffix": "",
+            "title": "Parámetro"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "tbl",
+            "id": "cal",
+            "suffix": "",
+            "title": "Puntuaciones y calificación final."
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "mas",
+            "suffix": "",
+            "title": "Muestra aleatoria"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "moment",
+            "suffix": "",
+            "title": "Momento"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "corr",
+            "suffix": "",
+            "title": "Correlación"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "cov",
+            "suffix": "",
+            "title": "Covarianza"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "thm",
+            "id": "TCL",
+            "suffix": "",
+            "title": "Teorema del límite central"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "mean",
+            "suffix": "",
+            "title": "Media"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "fig",
+            "id": "histo",
+            "suffix": "",
+            "title": "Puntajes y calificaciones finales para una muestra aleatoria de 30 estudiantes inscritos al curso."
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "varmues",
+            "suffix": "",
+            "title": "Varianza muestral"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "eq",
+            "id": "var",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "medmues",
+            "suffix": "",
+            "title": "Media Muestral"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "def",
+            "id": "estad",
+            "suffix": "",
+            "title": "Estadística"
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "eq",
+            "id": "VE1",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "estadistica.qmd",
+            "type": "thm",
+            "id": "var",
+            "suffix": "",
+            "title": ""
+        }
+    ]
+}

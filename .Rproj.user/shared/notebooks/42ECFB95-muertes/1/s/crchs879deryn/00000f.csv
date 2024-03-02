@@ -1,0 +1,8 @@
+"0","#| label: tbl-forecastd"
+"0","#| tbl-cap: ""Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"""
+"0","#|"
+"0","dfor <- data.frame(Date=Deaths_df$Date[126:178], "
+"0","                   Real= test_deaths,                    "
+"0","                   Forecast_HW=HWd_for$mean,"
+"0","                   Forecast_MLP=frcd$mean) "
+"0","DT::datatable(dfor, style = 'bootstrap4')"

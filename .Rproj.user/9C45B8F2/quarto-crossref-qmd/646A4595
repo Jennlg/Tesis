@@ -1,0 +1,18 @@
+{
+    "entries": [
+        {
+            "file": "MLP.qmd",
+            "type": "fig",
+            "id": "polar",
+            "suffix": "",
+            "title": "A line plot on a polar axis"
+        },
+        {
+            "file": "MLP.qmd",
+            "type": "fig",
+            "id": "mlp",
+            "suffix": "",
+            "title": "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días (implementación en python)"
+        }
+    ]
+}

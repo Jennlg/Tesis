@@ -1,0 +1,221 @@
+{
+    "entries": [
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "fprob",
+            "suffix": "",
+            "title": "Función de probabilidad"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "fdd",
+            "suffix": "",
+            "title": "Función de densidad discreta de una variable aleatoria discreta"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "thm",
+            "id": "dos",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "ddf",
+            "suffix": "",
+            "title": "Función de densidad discreta"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "funcion",
+            "suffix": "",
+            "title": "Función"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "thm",
+            "id": "ptotales",
+            "suffix": "",
+            "title": "Teorema de probabilidades totales"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "FDAC",
+            "suffix": "",
+            "title": "Función de distribución acumulada conjunta"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "dcva",
+            "suffix": "",
+            "title": "Función de masa de probabilidad conjunta"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "thm",
+            "id": "boole",
+            "suffix": "",
+            "title": "Desigualdad de Boole"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "fundist",
+            "suffix": "",
+            "title": "Función de distribución acumulada"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "randvec",
+            "suffix": "",
+            "title": "Vector aleatorio n-dimensional"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "FDA",
+            "suffix": "",
+            "title": "Función de distribución acumulada"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "pfdvac",
+            "suffix": "",
+            "title": "Función de densidad de una variable aleatoria continua"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "pclas",
+            "suffix": "",
+            "title": "Probabilidad clásica"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "espev",
+            "suffix": "",
+            "title": "Espacio de eventos"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "espm",
+            "suffix": "",
+            "title": "Espacio muestral"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "vac",
+            "suffix": "",
+            "title": "Variable aleatoria continua"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "pcond",
+            "suffix": "",
+            "title": "Probabilidad condicional"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "drv",
+            "suffix": "",
+            "title": "Distribución de un vector aleatorio"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "thm",
+            "id": "bayes",
+            "suffix": "",
+            "title": "Teorema de Bayes"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "vad",
+            "suffix": "",
+            "title": "Variable aleatoria discreta"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "evpart",
+            "suffix": "",
+            "title": "Evento particular"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "thm",
+            "id": "uno",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "va",
+            "suffix": "",
+            "title": "Variable aleatoria"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "ive",
+            "suffix": "",
+            "title": "Independencia de varios eventos"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "f_ind",
+            "suffix": "",
+            "title": "Función indicadora"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "thm",
+            "id": "mult",
+            "suffix": "",
+            "title": "Regla de multiplicación"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "pfrec",
+            "suffix": "",
+            "title": "Probabilidad frecuentista"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "Ep",
+            "suffix": "",
+            "title": "Espacio de probabilidad"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "evind",
+            "suffix": "",
+            "title": "Eventos independientes"
+        },
+        {
+            "file": "probabilidad.qmd",
+            "type": "def",
+            "id": "evento",
+            "suffix": "",
+            "title": "Evento"
+        }
+    ]
+}

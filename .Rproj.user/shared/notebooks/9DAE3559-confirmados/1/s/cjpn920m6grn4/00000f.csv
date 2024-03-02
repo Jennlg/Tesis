@@ -1,0 +1,2 @@
+"0","fit.mlp = mlp(ts(Confirmed_df$Confirmed), reps = 20, hd.auto.type = 'cv', comb=""median"")"
+"0","fore.mlp = forecast(fit.mlp, h = 30)"

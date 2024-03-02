@@ -1,0 +1,4 @@
+"0","Deaths_ts <- ts(Deaths_ts,frequency=1) "
+"0","tsize <- round(0.7 * nrow(Deaths_df)) "
+"0","train_deaths <- window(Deaths_ts,end=tsize) "
+"0","test_deaths <- window(Deaths_ts,start=tsize+1)"

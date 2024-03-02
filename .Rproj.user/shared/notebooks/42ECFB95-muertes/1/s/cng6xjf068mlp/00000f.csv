@@ -1,0 +1,6 @@
+"0","##### HW #####"
+"0","HWd <- HoltWinters(ts(train_deaths,frequency = 2), seasonal = 'mult') "
+"0","HWd_for <- forecast(HWd, h=length(test_deaths))"
+"0","##### MLP ##### "
+"0","fitd <- mlp(train_deaths, hd.auto.type=""cv"", reps = 20, comb = 'median') "
+"0","frcd <- forecast(fitd,h=length(test_deaths))"

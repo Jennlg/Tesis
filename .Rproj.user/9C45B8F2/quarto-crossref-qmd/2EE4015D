@@ -1,0 +1,305 @@
+{
+    "entries": [
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "modelogen",
+            "suffix": "",
+            "title": "Modelo general de redes neuronales artificiales."
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "21",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "mlp",
+            "suffix": "",
+            "title": "Red neuronal MLP con dos capas ocultas (@sosaestructura)."
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "clp",
+            "suffix": "",
+            "title": "Combinador lineal del perceptrón"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "18",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "perceptron",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "cde",
+            "suffix": "",
+            "title": "Conjunto de datos de entrenamiento"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "compuertas",
+            "suffix": "",
+            "title": "Compuertas lógicas"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "25",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "face",
+            "suffix": "",
+            "title": "Función actualización por corrección del error"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "clm",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "retrop",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "and",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "sesgo",
+            "suffix": "",
+            "title": "Sesgo"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "mlp",
+            "suffix": "",
+            "title": "Perceptrón Multicapa (MLP)"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "nodos",
+            "suffix": "",
+            "title": "Neuronas o nodos de procesamiento"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "comlin",
+            "suffix": "",
+            "title": "Combinador lineal"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "flim",
+            "suffix": "",
+            "title": "Función limitadora"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "thm",
+            "id": "tcp",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "fperdida",
+            "suffix": "",
+            "title": "Función de pérdida"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "csr",
+            "suffix": "",
+            "title": "Conjunto de salidas de la red"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "ANN",
+            "suffix": "",
+            "title": "Red Neuronal Artificial"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "arqper",
+            "suffix": "",
+            "title": "Arquitectura de un perceptrón simple"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "xor",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "26",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "or",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "AP",
+            "suffix": "",
+            "title": "Aprendizaje profundo"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "24",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "rnp",
+            "suffix": "",
+            "title": "Red neuronal artificial profunda feedforward con ocho variables de entrada, cuatro variables de salida y dos capas ocultas con tres neuronas cada una"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "20",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "22",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "cls",
+            "suffix": "",
+            "title": "Clases linealmente separables"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "fig",
+            "id": "neubio",
+            "suffix": "",
+            "title": "Representación gráfica de una neurona biológica"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "Vgrad",
+            "suffix": "",
+            "title": "Vector gradiente"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "pHada",
+            "suffix": "",
+            "title": "Producto Hadamard"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "funac",
+            "suffix": "",
+            "title": "Función de activación"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "thm",
+            "id": "B",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "eq",
+            "id": "23",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "fper",
+            "suffix": "",
+            "title": "Función perceptrón"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "clm",
+            "suffix": "",
+            "title": "Combinador lineal matricial"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "re",
+            "suffix": "",
+            "title": "Resultados esperados"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "def",
+            "id": "Mpesos",
+            "suffix": "",
+            "title": "Matriz de pesos"
+        },
+        {
+            "file": "redes.qmd",
+            "type": "sec",
+            "id": "arqmlp",
+            "suffix": "",
+            "title": "Perceptrón Multicapa (MLP)"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "entries": [
+        {
+            "file": "muertes.qmd",
+            "type": "fig",
+            "id": "pmlpd",
+            "suffix": "",
+            "title": "Pronóstico obtenido mediante la red neuronal MLP."
+        },
+        {
+            "file": "muertes.qmd",
+            "type": "tbl",
+            "id": "errd",
+            "suffix": "",
+            "title": "Errores de los modelos para casos confirmados."
+        },
+        {
+            "file": "muertes.qmd",
+            "type": "fig",
+            "id": "pronmuer",
+            "suffix": "",
+            "title": "Predicción futura de la serie tiempo para decesos diarios mediante el modelo Holt-Winters."
+        },
+        {
+            "file": "muertes.qmd",
+            "type": "fig",
+            "id": "phwd",
+            "suffix": "",
+            "title": "Pronóstico obtenido mediante la técnica de Holt-Winters."
+        }
+    ]
+}

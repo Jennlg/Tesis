@@ -1,0 +1,9 @@
+# Resumen {.unnumbered}
+
+::: {style="text-align: justify"}
+Esta tesis presenta un análisis comparativo de métodos de pronóstico para datos de series temporales, centrándose en la aplicación del método Holt-Winters y de las redes neuronales Perceptrón Multicapa (MLP). El estudio abarca una revisión exhaustiva de la teoría del análisis de series temporales y los fundamentos de las redes neuronales, proporcionando una sólida base teórica para comprender las metodologías empleadas.
+
+La investigación examina el desempeño del método de Holt-Winters, una técnica clásica de suavizado exponencial, y MLP, un enfoque potente de modelado no lineal, en el pronóstico del número de casos confirmados y fallecidos debido al COVID-19 en Irán. Al aplicar estos métodos a datos del mundo real, la tesis evalúa su precisión, robustez y eficiencia computacional en la captura de la compleja dinámica de la progresión de la pandemia.
+
+A través del análisis empírico y las evaluaciones comparativas, este estudio tiene como objetivo proporcionar información sobre las fortalezas y limitaciones de cada enfoque de pronóstico, contribuyendo así al avance de las metodologías de pronóstico para datos de series temporales, especialmente en el contexto de crisis de salud pública.
+:::

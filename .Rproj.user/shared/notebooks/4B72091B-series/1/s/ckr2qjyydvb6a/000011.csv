@@ -1,0 +1,3 @@
+"0","# Figure 2.20(b)"
+"0","ap.pred=predict(ap.hw,n.ahead=36)"
+"0","plot(ap.hw,ap.pred,lty=1:2)"

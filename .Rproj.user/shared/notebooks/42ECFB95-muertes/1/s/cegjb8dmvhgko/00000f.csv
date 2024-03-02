@@ -1,0 +1,4 @@
+"0","#| label: fig-hwfinal"
+"0","#| fig-cap: ""Pronóstico de casos de muerte por COVID-19 en Irán en los próximos 30 días (implementación en python)"""
+"0","#| echo: false"
+"0","fig.show('png')"

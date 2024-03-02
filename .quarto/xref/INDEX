@@ -1,0 +1,53 @@
+{
+  "index.qmd": {
+    "index.html": "080179cf"
+  },
+  "intro.qmd": {
+    "intro.html": "2948d394"
+  },
+  "tconjuntos.qmd": {
+    "tconjuntos.html": "f722fdd6"
+  },
+  "probabilidad.qmd": {
+    "probabilidad.html": "cce17712"
+  },
+  "estadistica.qmd": {
+    "estadistica.html": "9573578d"
+  },
+  "procesos.qmd": {
+    "procesos.html": "7388efd2"
+  },
+  "series.qmd": {
+    "series.html": "f8917399"
+  },
+  "redes.qmd": {
+    "redes.html": "04ee1a9b"
+  },
+  "confirmados.qmd": {
+    "confirmados.html": "3d653053"
+  },
+  "references.qmd": {
+    "references.html": "575b3119"
+  },
+  "estudio.qmd": {
+    "estudio.html": "f9108109"
+  },
+  "muertes.qmd": {
+    "muertes.html": "777afa40"
+  },
+  "codigo.ipynb": {
+    "codigo.html": "9153f356"
+  },
+  "MLP_min_max.ipynb": {
+    "MLP_min_max.html": "456af4ec"
+  },
+  "MLP.qmd": {
+    "MLP.html": "8de03b12"
+  },
+  "conclusiones.qmd": {
+    "conclusiones.html": "4279bb37"
+  },
+  "objetivos.qmd": {
+    "objetivos.html": "d37be081"
+  }
+}

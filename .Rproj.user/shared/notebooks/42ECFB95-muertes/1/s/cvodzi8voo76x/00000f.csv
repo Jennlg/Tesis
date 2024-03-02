@@ -1,0 +1,5 @@
+"0","#| label: tbl-pmuertes"
+"0","#| tbl-cap: ""Pronóstico de decesos por COVID-19 en Irán en los próximos 30 días"""
+"0","#|"
+"0","d=data.frame(Fecha=COVID.IRAN_d$Date[179:208], Decesos=round(HW_for_d$mean, 4))"
+"0","DT::datatable(d, style = 'bootstrap4')"

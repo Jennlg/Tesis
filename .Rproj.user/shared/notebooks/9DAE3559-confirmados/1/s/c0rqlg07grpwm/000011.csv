@@ -1,0 +1,6 @@
+"0","#| label: tbl-forecast"
+"0","#| tbl-cap: ""Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"""
+"0","#|"
+"0","cfor <- data.frame(Date=Confirmed_df$Date[126:178], Real= test_confirmed,"
+"0","                   Forecast_HW=HWc_for$mean,Forecast_MLP=frcc$mean)"
+"0","DT::datatable(cfor, style = 'bootstrap4')"

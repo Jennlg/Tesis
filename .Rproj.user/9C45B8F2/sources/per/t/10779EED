@@ -1,0 +1,32 @@
+{
+    "id": "10779EED",
+    "path": "~/Tesis/quarto/P_examen/Ihaka2022/ihaka2022.qmd",
+    "project_path": null,
+    "type": "quarto_markdown",
+    "hash": "2364115877",
+    "contents": "",
+    "dirty": false,
+    "created": 1708900631307.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "78,0",
+        "scrollLine": "92",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualModeLocation": "2237:1690.239990234375",
+        "rmdVisualCollapsedChunks": "",
+        "docOutlineSize": "99"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1709065247,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1709065247732,
+    "read_only": false,
+    "read_only_alternatives": []
+}

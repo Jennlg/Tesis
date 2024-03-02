@@ -1,0 +1,21 @@
+---
+lang: es
+---
+
+# Objetivos {.unnumbered}
+
+## Objetivo General
+
+::: {style="text-align: justify"}
+El objetivo principal de este estudio es comparar el método de pronóstico Holt-Winters con el pronóstico realizado mediante una red MLP (Perceptrón Multicapa), utilizando métricas de error relevantes para evaluar su desempeño.
+:::
+
+## Objetivos Específicos
+
+::: {style="text-align: justify"}
+1.  Identificar y comprender las técnicas de pronóstico, incluyendo el suavizado exponencial y el aprendizaje profundo mediante una red MLP.
+
+2.  Evaluar y contrastar la eficacia de las implementaciones de Holt-Winters y la red MLP en los lenguajes de programación Python y R. Este análisis incluirá la identificación de ventajas y desventajas asociadas con cada implementación.
+
+3.  Reconocer y abordar las dificultades inherentes al pronóstico de datos epidemiológicos iniciales, particularmente en el contexto de una pandemia causada por un virus de propagación vectorial, como es el caso del COVID-19, que inicialmente es prácticamente desconocido.
+:::

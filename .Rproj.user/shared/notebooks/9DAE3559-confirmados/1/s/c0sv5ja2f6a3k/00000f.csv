@@ -1,0 +1,396 @@
+"0","#| output: false"
+"0","#| include: false "
+"0","import numpy as np"
+"0","import pandas as pd"
+"0","import yfinance as yf"
+"0","from silence_tensorflow import silence_tensorflow"
+"0","silence_tensorflow()"
+"0","import tensorflow as tf"
+"0","import matplotlib.pyplot as plt"
+"0","import plotly.express as px"
+"0","import plotly.graph_objects as go"
+"0","from tensorflow.keras.layers import Dense, LSTM"
+"0","from tensorflow.keras.models import Sequential"
+"0","from sklearn.preprocessing import MinMaxScaler"
+"0","pd.options.mode.chained_assignment = None"
+"0","tf.random.set_seed(0) "
+"0","df = pd.read_excel('Data.xlsx')"
+"0","# ------------- Entrenamiento y prueba del modelo --------------"
+"0","y = df['Confirmed'].fillna(method='ffill')"
+"2","<string>:1: FutureWarning: Series.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+"
+"0","y = y.values.reshape(-1, 1)"
+"0","# scale the data"
+"0","scaler = MinMaxScaler(feature_range=(0, 1))"
+"0","scaler = scaler.fit(y)"
+"0","y = scaler.transform(y)"
+"0",""
+"0","# generate the input and output sequences"
+"0","n_lookback = 53  # length of input sequences (lookback period)"
+"0","n_forecast = 30  # length of output sequences (forecast period)"
+"0",""
+"0","X = []"
+"0","Y = []"
+"0",""
+"0","for i in range(n_lookback, len(y) - n_forecast + 1):"
+"0","    X.append(y[i - n_lookback: i])"
+"0","    Y.append(y[i: i + n_forecast])"
+"0","    "
+"0","X = np.array(X)"
+"0","Y = np.array(Y)"
+"0",""
+"0","# fit the model"
+"0","model = Sequential()"
+"0","model.add(Dense(20, activation='sigmoid', input_dim=n_lookback))"
+"0","model.add(Dense(n_forecast))"
+"0",""
+"0","model.compile(loss='mean_squared_error', optimizer='adam')"
+"0","model.fit(X, Y, epochs=20, batch_size=4, verbose=0)"
+"1","<keras.src.callbacks.History object at 0x000001E7D35D1B10>
+"
+"0","# generate the forecasts"
+"0","X_ = y[- n_lookback:]  # last available input sequence"
+"0","X_ = X_.reshape(1, n_lookback, 1)"
+"0",""
+"0","Y_ = model.predict(X_).reshape(-1, 1)"
+"1","
+1/1 [==============================] - ETA: 0s"
+"1","
+1/1 [==============================] - 0s 94ms/step
+"
+"0","Y_ = scaler.inverse_transform(Y_)"
+"0",""
+"0","# organize the results in a data frame"
+"0","df_past = df"
+"0","df_past.rename(columns={'Date': 'Date', 'Confirmed': 'Actual'}, inplace=True)"
+"0","df_past['Date'] = pd.to_datetime(df_past['Date'])"
+"0","df_past['Forecast'] = np.nan"
+"0","df_past['Forecast'].iloc[-1] = df_past['Actual'].iloc[-1]"
+"0",""
+"0","df_future = pd.DataFrame(columns=['Date', 'Actual', 'Forecast'])"
+"0","df_future['Date'] = pd.date_range("
+"0","  start=df_past['Date'].iloc[-1] + pd.Timedelta(days=1), "
+"0","  periods=n_forecast)"
+"0","df_future['Forecast'] = Y_.flatten()"
+"0","df_future['Actual'] = np.nan"
+"0",""
+"0","results = df_past._append(df_future).set_index('Date')"
+"0","# Calculate minimum, median, and maximum for each forecasted date"
+"0","results['Min'] = results['Forecast'].rolling(window=2).min()"
+"0","results['Max'] = results['Forecast'].rolling(window=2).max()"
+"0","results['Median'] = results['Forecast'].rolling(window=2).median()"
+"0",""
+"0","# Creamos la gráfica con las predicciones"
+"0","#fig = px.line(results, x=results.index, y=['Actual','Forecast', 'Median'],"
+"0","fig = px.line(results, x=results.index, y=['Actual', 'Median'],"
+"0","              labels={'index': 'Date', 'value': 'Confirmed Cases'},"
+"0","              title='Casos Confirmados',"
+"0","              line_shape='linear')"
+"0",""
+"0","fig.update_traces(line=dict(color='cornflowerblue'), "
+"0","selector=dict(name='Actual'))"
+"1","Figure({
+    'data': [{'hovertemplate': 'variable=Actual<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Actual',
+              'line': {'color': 'cornflowerblue', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Actual',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20"
+"0","fig.update_traces(line=dict(color='orange'), "
+"1",", 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([ 3., 13., 10., ..., nan, nan, nan]),
+              'yaxis': 'y'},
+             {'hovertemplate': 'v"
+"1","ariable=Median<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Median',
+              'line': {'color': '#EF553B', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Median',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          datetime.datet"
+"1","ime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([          nan,           nan,           nan, ..., 2619.12390137,
+                          2507.64868164, 2328.95581055]),
+              'yaxis': 'y'"
+"1","}],
+    'layout': {'legend': {'title': {'text': 'variable'}, 'tracegroupgap': 0},
+               'template': '...',
+               'title': {'text': 'Casos Confirmados'},
+               'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'Date'}},
+               'yaxis': {'anchor': 'x', 'domain': [0.0, 1.0], 'title': {'text': 'Confirmed Cases'}}}
+})
+"
+"0","selector=dict(name='Forecast'))"
+"1","Figure({
+    'data': [{'hovertemplate': 'variable=Actual<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Actual',
+              'line': {'color': 'cornflowerblue', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Actual',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20"
+"0","fig.update_traces(line=dict(color='mediumvioletred'), "
+"1",", 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([ 3., 13., 10., ..., nan, nan, nan]),
+              'yaxis': 'y'},
+             {'hovertemplate': 'v"
+"1","ariable=Median<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Median',
+              'line': {'color': '#EF553B', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Median',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          datetime.datet"
+"1","ime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([          nan,           nan,           nan, ..., 2619.12390137,
+                          2507.64868164, 2328.95581055]),
+              'yaxis': 'y'"
+"1","}],
+    'layout': {'legend': {'title': {'text': 'variable'}, 'tracegroupgap': 0},
+               'template': '...',
+               'title': {'text': 'Casos Confirmados'},
+               'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'Date'}},
+               'yaxis': {'anchor': 'x', 'domain': [0.0, 1.0], 'title': {'text': 'Confirmed Cases'}}}
+})
+"
+"0","selector=dict(name='Median'))"
+"1","Figure({
+    'data': [{'hovertemplate': 'variable=Actual<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Actual',
+              'line': {'color': 'cornflowerblue', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Actual',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20"
+"1",", 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([ 3., 13., 10., ..., nan, nan, nan]),
+              'yaxis': 'y'},
+             {'hovertemplate': 'v"
+"1","ariable=Median<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Median',
+              'line': {'color': 'mediumvioletred', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Median',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          dateti"
+"0","# Agregar gráficos de área para el mínimo y el máximo"
+"1","me.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([          nan,           nan,           nan, ..., 2619.12390137,
+                          2507.64868164, 2328.95581055]),
+              'yax"
+"1","is': 'y'}],
+    'layout': {'legend': {'title': {'text': 'variable'}, 'tracegroupgap': 0},
+               'template': '...',
+               'title': {'text': 'Casos Confirmados'},
+               'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'Date'}},
+               'yaxis': {'anchor': 'x', 'domain': [0.0, 1.0], 'title': {'text': 'Confirmed Cases'}}}
+})
+"
+"0","fig.add_trace("
+"0","    go.Scatter(x=results.index, "
+"0","    y=results['Min'], "
+"0","    fill=None, mode='lines', "
+"0","    line=dict(color='hotpink'), "
+"0","    name='Min'))"
+"1","Figure({
+    'data': [{'hovertemplate': 'variable=Actual<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Actual',
+              'line': {'color': 'cornflowerblue', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Actual',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20"
+"0","fig.add_trace("
+"1",", 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([ 3., 13., 10., ..., nan, nan, nan]),
+              'yaxis': 'y'},
+             {'hovertemplate': 'v"
+"1","ariable=Median<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Median',
+              'line': {'color': 'mediumvioletred', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Median',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          dateti"
+"1","me.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([          nan,           nan,           nan, ..., 2619.12390137,
+                          2507.64868164, 2328.95581055]),
+              'yax"
+"1","is': 'y'},
+             {'line': {'color': 'hotpink'},
+              'mode': 'lines',
+              'name': 'Min',
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          dat"
+"1","etime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'y': array([          nan,           nan,           nan, ..., 2513.68920898,
+                          2290.73876953, 2290.73876953])}],
+    'layout': {'legend': {'title': {'text': 'variable'}, 'tracegroupgap': 0},
+               'template': '...',
+               'title': {'text': 'Casos Confirmados'},
+               'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'Date'}},
+               'yaxis': {'anchor': 'x', 'domai"
+"1","n': [0.0, 1.0], 'title': {'text': 'Confirmed Cases'}}}
+})
+"
+"0","    go.Scatter(x=results.index, "
+"0","    y=results['Max'], "
+"0","    fill='tonexty', "
+"0","    mode='lines', "
+"0","    line=dict(color='deeppink'), "
+"0","    name='Max'))"
+"1","Figure({
+    'data': [{'hovertemplate': 'variable=Actual<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Actual',
+              'line': {'color': 'cornflowerblue', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Actual',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20"
+"1",", 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([ 3., 13., 10., ..., nan, nan, nan]),
+              'yaxis': 'y'},
+             {'hovertemplate': 'v"
+"1","ariable=Median<br>Date=%{x}<br>Confirmed Cases=%{y}<extra></extra>',
+              'legendgroup': 'Median',
+              'line': {'color': 'mediumvioletred', 'dash': 'solid', 'shape': 'linear'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': 'Median',
+              'orientation': 'v',
+              'showlegend': True,
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          dateti"
+"1","me.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'xaxis': 'x',
+              'y': array([          nan,           nan,           nan, ..., 2619.12390137,
+                          2507.64868164, 2328.95581055]),
+              'yax"
+"1","is': 'y'},
+             {'line': {'color': 'hotpink'},
+              'mode': 'lines',
+              'name': 'Min',
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+                          datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          dat"
+"1","etime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'y': array([          nan,           nan,           nan, ..., 2513.68920898,
+                          2290.73876953, 2290.73876953])},
+             {'fill': 'tonexty',
+              'line': {'color': 'deeppink'},
+              'mode': 'lines',
+              'name': 'Max',
+              'type': 'scatter',
+              'x': array([datetime.datetime(2020, 2, 20, 0, 0),
+                          datetime.datetime(2020, 2, 21, 0, 0),
+  "
+"1","                        datetime.datetime(2020, 2, 22, 0, 0), ...,
+                          datetime.datetime(2020, 9, 12, 0, 0),
+                          datetime.datetime(2020, 9, 13, 0, 0),
+                          datetime.datetime(2020, 9, 14, 0, 0)], dtype=object),
+              'y': array([          nan,           nan,           nan, ..., 2724.55859375,
+                          2724.55859375, 2367.17285156])}],
+    'layout': {'legend': {'title': {'text': 'variable'}, 'tracegroupgap': 0},
+ "
+"1","              'template': '...',
+               'title': {'text': 'Casos Confirmados'},
+               'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'Date'}},
+               'yaxis': {'anchor': 'x', 'domain': [0.0, 1.0], 'title': {'text': 'Confirmed Cases'}}}
+})
+"

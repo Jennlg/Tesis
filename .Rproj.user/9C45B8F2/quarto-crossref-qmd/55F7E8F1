@@ -1,0 +1,88 @@
+{
+    "entries": [
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "sub",
+            "suffix": "",
+            "title": "Subconjunto"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "fig",
+            "id": "venn",
+            "suffix": "",
+            "title": "Diagramas de Venn"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "comp",
+            "suffix": "",
+            "title": "Complemento"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "emptyset",
+            "suffix": "",
+            "title": "Conjunto vacío"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "ce",
+            "suffix": "",
+            "title": "Conjuntos equivalentes"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "disjunto",
+            "suffix": "",
+            "title": "Disjuntos o mutuamente excluyentes"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "thm",
+            "id": "morgan",
+            "suffix": "",
+            "title": "Teorema de De Morgan"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "dfc",
+            "suffix": "",
+            "title": "Diferencia de conjuntos"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "UI",
+            "suffix": "",
+            "title": "Unión e intersección de conjuntos"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "union",
+            "suffix": "",
+            "title": "Unión"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "inter",
+            "suffix": "",
+            "title": "Intersección"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "thm",
+            "id": "lac",
+            "suffix": "",
+            "title": "Leyes del álgebra de conjuntos"
+        }
+    ]
+}

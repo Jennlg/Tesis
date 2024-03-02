@@ -1,0 +1,5 @@
+"0","#| label: tbl-datatable"
+"0","#| tbl-cap: ""Casos confirmados ajustados del 20-02-2020 al 15-08-2020"""
+"0","#| "
+"0","library(DT)"
+"0","datatable(Confirmed_df, style = 'bootstrap4')"

@@ -1,0 +1,21 @@
+---
+lang: es
+---
+
+# Conclusiones
+
+::: {style="text-align: justify"}
+El presente estudio ha abordado la complejidad inherente a la modelación y pronóstico del número de casos confirmados y fallecidos por COVID-19 en Irán. A través de un análisis exhaustivo de datos recopilados hasta el 16 de enero de 2023, focalizado en el período comprendido entre el 20 de febrero y el 15 de agosto de 2020, se ha explorado la eficacia de distintos métodos de predicción. Los resultados obtenidos han arrojado luces sobre la idoneidad de las técnicas utilizadas y han resaltado la importancia de considerar diversos factores al seleccionar el enfoque predictivo más adecuado.
+
+Durante el periodo analizado, se ha constatado que la técnica de redes neuronales Perceptrón Multicapa (MLP) muestra una notable eficacia en la predicción de la evolución de los casos confirmados de COVID-19. En contraste, para los fallecimientos asociados a esta enfermedad, la técnica de suavizamiento exponencial de Holt-Winters ha demostrado ser más precisa. Estos hallazgos subrayan la relevancia de adaptar el enfoque predictivo según las características específicas de los datos.
+
+Además, aunque el análisis de estacionariedad no se ha incluido en esta etapa de la investigación, es importante reconocer que tanto la base de datos de casos confirmados como la de fallecimientos por COVID-19 han sido identificadas como no estacionarias. Este aspecto añade un nivel adicional de complejidad al proceso de modelación y predicción de estos eventos epidemiológicos.
+
+En cuanto a las métricas de error utilizadas, se ha observado una variabilidad significativa entre las bases de datos de casos confirmados y de muerte. Mientras que en la primera, los errores RMSE y MAE han mostrado valores elevados, la métrica MAPE ha emergido como la más adecuada tanto en la fase de entrenamiento como en la de prueba. Por otro lado, en la base de datos de fallecimientos, las tres métricas de error han mostrado una mayor coherencia, reflejando la naturaleza menos oscilante de estos datos.
+
+En relación a la efectividad entre las implementaciones de Holt-Winters y Perceptrón Multicapa en R y Python, se ha observado un rendimiento superior de Python en términos de capacidad para visualizar detalladamente el comportamiento de las predicciones. Si bien las implementaciones en Python han sido enriquecidas con modificaciones que pueden influir en los resultados, especialmente en el caso de la técnica de redes neuronales, este enfoque ha permitido un análisis más profundo de los datos.
+
+Es crucial recalcar la importancia de limitar el horizonte de predicción para evitar estimaciones poco fiables. Aunque se haya respetado la cantidad de días predichos con el objetivo de corroborar los hallazgos del estudio, se reconoce que esta elección puede influir en la precisión de las predicciones. Por lo tanto, se recomienda ejercer prudencia al establecer el horizonte de predicción en futuros estudios epidemiológicos, considerando cuidadosamente las limitaciones de los datos y los métodos de análisis utilizados.
+
+Finalmente, una posible extensión de este trabajo para abordar la no estacionariedad de la serie temporal sería considerar la serie como la solución de un modelo epidemiológico SIR con perturbaciones aleatorias. Estos supuestos conducen al planteamiento del SIR como una ecuación diferencial estocástica con parámetros de transmisión y de recuperación desconocidos. El problema a resolver consistiría, en general, en desarrollar un algoritmo para muestrear la serie de tiempo con el fin de estimar dichos parámetros desconocidos de forma recursiva para el pronóstico de una cantidad limitada de días.
+:::

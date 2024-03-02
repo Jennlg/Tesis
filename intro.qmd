@@ -1,0 +1,13 @@
+# Introducción {.unnumbered}
+
+::: {style="text-align: justify"}
+La creciente disponibilidad de datos temporales en una amplia gama de campos ha impulsado la necesidad de desarrollar métodos eficaces para pronosticar su comportamiento futuro. En particular, el análisis y pronóstico de series temporales desempeña un papel crucial en la toma de decisiones en áreas como la economía, la meteorología, la ingeniería y la salud pública. Con la aparición de la pandemia de COVID-19, la capacidad de prever la evolución de la enfermedad se ha convertido en una prioridad urgente para los responsables de la salud y los planificadores de políticas.
+
+Este trabajo se centra en el análisis comparativo de métodos de pronóstico para series temporales, con un enfoque específico en el método de Holt-Winters y las redes neuronales Perceptrón Multicapa (MLP). Para comprender en profundidad estos enfoques, se presenta una revisión exhaustiva de la teoría del análisis de series temporales y los fundamentos de las redes neuronales, estableciendo así las bases teóricas necesarias para su aplicación.
+
+El método de Holt-Winters, basado en el suavizado exponencial, y MLP, una técnica de modelado no lineal, son seleccionados como enfoques principales debido a su amplia aplicación y capacidad para capturar patrones complejos en los datos temporales. Se busca evaluar el desempeño de estos métodos en la predicción del número de casos confirmados y fallecidos por COVID-19 en Irán, utilizando datos reales recopilados durante el curso de la pandemia.
+
+El estudio se estructura en torno al desarrollo de modelos de pronóstico basados en Holt-Winters y MLP, seguido de una comparación exhaustiva de su precisión, robustez y eficiencia computacional. Además, se explora el potencial de estas técnicas para proporcionar información valiosa en la gestión de crisis de salud pública y la planificación de recursos.
+
+En última instancia, se espera que este trabajo contribuya al avance de las metodologías de pronóstico para datos de series temporales, ofreciendo perspectivas significativas para la mejora de la capacidad predictiva en situaciones críticas como la pandemia de COVID-19.
+:::

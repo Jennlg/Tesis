@@ -1,0 +1,7 @@
+"0",""
+"0","# ------- Leaky ReLu -------"
+"0","LReLu = function(x) { ifelse(x < 0, x, 0.5*x) }"
+"0","x = seq(-10, 10, by = 0.1)"
+"0","y = sapply(x, LReLu)"
+"0","plot(x, y, type = ""l"", lwd = 2, col = ""purple"", xlab = ""X"", ylab = ""F(X)"","
+"0","     main = ""Función de Activación ReLu con Fugas"")"

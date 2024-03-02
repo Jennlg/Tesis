@@ -1,0 +1,2 @@
+"0","# MLP forecast "
+"0","plot(frcd,main=""Forcasts from MLP"", ylim = c(0, 500),ylab=""Confirmed"",xlab= ""Date: from Feb. 20, 2020, to Aug. 15, 2020"", col='blue') "

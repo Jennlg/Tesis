@@ -1,0 +1,5 @@
+"0","#| label: tbl-treinta"
+"0","#| tbl-cap: ""Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días"""
+"0","#|"
+"0","d=data.frame(Fecha=COVID.IRAN$Date[179:208], Infectados=round(fore.mlp$mean,3))"
+"0","DT::datatable(d, style = 'bootstrap4')"

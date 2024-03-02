@@ -1,0 +1,25 @@
+---
+lang: es
+---
+
+# Estudio de caso
+
+## Modelación y pronóstico del número de casos confirmados y fallecidos por COVID-19 en IRÁN
+
+::: {style="text-align: justify"}
+A finales de diciembre de 2019, se identificó la aparición de un nuevo virus en Wuhan, China, el cual manifestó un impacto agudo en el sistema respiratorio y presentó una rápida propagación. La Organización Mundial de la Salud (OMS) catalogó este virus como el SARS-CoV-2, perteneciente a la familia de los coronavirus. Aunque algunas investigaciones y evidencias sugieren que los murciélagos podrían ser el origen principal del COVID-19, esta afirmación aún no está definitivamente confirmada y requiere una mayor investigación. Esta enfermedad infecciosa aguda se caracteriza por su alta tasa de contagio, lo que llevó a declararla una pandemia global debido a su rápida expansión y diseminación a nivel mundial.
+
+Los síntomas comunes de esta enfermedad incluyen complicaciones respiratorias, tos seca, fiebre, escalofríos, dificultad para respirar, dolor torácico, neumonía, entre otros. No obstante, a medida que progresa la enfermedad, los síntomas en los pacientes evolucionan y varían.
+
+Una de las principales problemáticas asociadas a este virus es su periodo de incubación de hasta 14 días, durante el cual puede transmitirse la infección sin presentar síntomas. Además, algunas personas infectadas con el COVID-19 manifiestan síntomas leves, similares a un resfriado común o a la gripe. Esta pandemia ha ejercido una presión significativa sobre los gobiernos y los sistemas de salud pública. La escasez de equipamiento médico en hospitales, incluyendo camas, unidades de cuidados intensivos, personal médico, ventiladores, entre otros, constituye uno de los principales desafíos. Asimismo, han surgido repercusiones económicas y sociales a raíz de la propagación de la enfermedad y la implementación de cuarentenas estrictas, lo que ha afectado la salud mental de las comunidades, entre otros aspectos.
+
+![](Imagenes/COVID.jpeg){fig-align="center" width="510"}
+
+El surgimiento de las problemáticas mencionadas, sumado a la ausencia de tratamientos definitivos para esta enfermedad, la naturaleza dinámica del virus y su propagación global, subraya la necesidad de investigar exhaustivamente este virus y su comportamiento. Se han explorado diversos campos y metodologías de pronóstico y modelización. Uno de estos enfoques de pronóstico radica en la creación de modelos para anticipar el número de casos futuros, basados en registros de casos confirmados. Aunque las proyecciones sobre el número de pacientes futuros no son totalmente precisas, sirven de apoyo a los gobiernos y a los responsables de políticas de salud para adoptar decisiones cruciales y aplicar restricciones que reduzcan la prevalencia. Asimismo, resulta crucial anticipar futuros brotes, posibles mutaciones del virus y su propagación, especialmente identificar el pico para mitigar sus efectos graves. Estas proyecciones asisten a los tomadores de decisiones para prevenir e incluso controlar la propagación de la enfermedad mediante políticas efectivas y rigurosas. Cabe destacar que la falta de información suficiente con anticipación constituye uno de los desafíos principales en el pronóstico, aunque sigue siendo una herramienta de orientación efectiva para los gobiernos en la contención de la enfermedad.
+
+Por consiguiente, dado el papel potencialmente efectivo de los modelos estadísticos y matemáticos en la predicción de la tendencia futura de la enfermedad, en este estudio se emplearon dos modelos, Holt-Winter y MLP (Multilayer Perceptron), con el propósito de determinar el mejor modelo para pronosticar, de manera independiente, el número de casos confirmados y muertes en Irán para los próximos 30 días.
+
+En el presente estudio, se utilizó el conjunto de datos disponible en el sitio web <https://www.who.int/,> el cual contempla el número absoluto de casos confirmados y muertes por día, excluyendo otros factores debido a su falta de disponibilidad.
+
+El análisis a realizar tiene como propósito verificar los resultados obtenidos en el estudio de @talkhi2021modeling .
+:::
