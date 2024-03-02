@@ -1,5 +1,821 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "DOI": "10.1093/comjnl/27.2.97",
+            "ISSN": "0010-4620",
+            "URL": "https://doi.org/10.1093/comjnl/27.2.97",
+            "author": [
+                {
+                    "family": "Knuth",
+                    "given": "Donald E."
+                }
+            ],
+            "container-title": "Comput. J.",
+            "id": "knuth84",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1984,
+                        5
+                    ]
+                ]
+            },
+            "page": "97-111",
+            "publisher": "Oxford University Press, Inc.",
+            "publisher-place": "USA",
+            "title": "Literate programming",
+            "type": "article-journal",
+            "volume": "27"
+        },
+        {
+            "URL": "https://books.google.com.mx/books?id=bKHBjgEACAAJ",
+            "author": [
+                {
+                    "family": "Mood",
+                    "given": "A. M. F."
+                },
+                {
+                    "family": "Graybill",
+                    "given": "F. A."
+                },
+                {
+                    "family": "Boes",
+                    "given": "D. C."
+                }
+            ],
+            "collection-title": "McGraw-hill series in probability and statistics",
+            "id": "mood1986introduction",
+            "issued": {
+                "date-parts": [
+                    [
+                        1986
+                    ]
+                ]
+            },
+            "title": "Introduction to the theory of statistics",
+            "type": "book"
+        },
+        {
+            "URL": "https://books.google.com.mx/books?id=vndlwgEACAAJ",
+            "author": [
+                {
+                    "family": "Lipschutz",
+                    "given": "S."
+                }
+            ],
+            "id": "lipschutz1996probabilidad",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "publisher": "McGraw-Hill",
+            "title": "Probabilidad",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780120652020",
+            "URL": "https://books.google.com.mx/books?id=GkqQoRpCO2QC",
+            "author": [
+                {
+                    "family": "Ash",
+                    "given": "R. B."
+                },
+                {
+                    "family": "Doleans-Dade",
+                    "given": "C. A."
+                }
+            ],
+            "id": "ash2000probability",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "publisher": "Elsevier Science",
+            "title": "Probability and measure theory",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780471120629",
+            "URL": "https://books.google.com.mx/books?id=qiLdCQAAQBAJ",
+            "author": [
+                {
+                    "family": "Ross",
+                    "given": "S. M."
+                }
+            ],
+            "collection-title": "Wiley series in probability and mathematical statistics",
+            "id": "ross1995stochastic",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Stochastic processes",
+            "type": "book"
+        },
+        {
+            "ISBN": "9781118344965",
+            "URL": "https://books.google.com.mx/books?id=M0hYBAAAQBAJ",
+            "author": [
+                {
+                    "family": "Castañeda",
+                    "given": "L. B."
+                },
+                {
+                    "family": "Arunachalam",
+                    "given": "V."
+                },
+                {
+                    "family": "Dharmaraja",
+                    "given": "S."
+                }
+            ],
+            "id": "castañeda2014introduction",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Introduction to probability and stochastic processes with applications",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780470444665",
+            "URL": "https://books.google.com.mx/books?id=N_mEBiCYaqkC",
+            "author": [
+                {
+                    "family": "Mann",
+                    "given": "P. S."
+                }
+            ],
+            "id": "mann2010introductory",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "publisher": "John Wiley & Sons",
+            "title": "Introductory statistics",
+            "type": "book"
+        },
+        {
+            "ISBN": "9781003089070",
+            "URL": "https://books.google.com.mx/books?id=gM3gzgEACAAJ",
+            "author": [
+                {
+                    "family": "Woodward",
+                    "given": "W. A."
+                },
+                {
+                    "family": "Sadler",
+                    "given": "B. P."
+                },
+                {
+                    "family": "Robertson",
+                    "given": "S."
+                }
+            ],
+            "collection-title": "A chapman & hall book",
+            "id": "woodward2022time",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "CRC Press, Taylor & Francis Group",
+            "title": "Time series for data science: Analysis and forecasting",
+            "title-short": "Time series for data science",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Talkhi",
+                    "given": "Nasrin"
+                },
+                {
+                    "family": "Fatemi",
+                    "given": "Narges Akhavan"
+                },
+                {
+                    "family": "Ataei",
+                    "given": "Zahra"
+                },
+                {
+                    "family": "Nooghabi",
+                    "given": "Mehdi Jabbari"
+                }
+            ],
+            "container-title": "Biomedical signal processing and control",
+            "id": "talkhi2021modeling",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "102494",
+            "publisher": "Elsevier",
+            "title": "Modeling and forecasting number of confirmed and death caused COVID-19 in IRAN: A comparison of time series forecasting methods",
+            "title-short": "Modeling and forecasting number of confirmed and death caused COVID-19 in IRAN",
+            "type": "article-journal",
+            "volume": "66"
+        },
+        {
+            "author": [
+                {
+                    "family": "Winters",
+                    "given": "Peter R"
+                }
+            ],
+            "container-title": "Management science",
+            "id": "winters1960forecasting",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1960
+                    ]
+                ]
+            },
+            "page": "324-342",
+            "publisher": "INFORMS",
+            "title": "Forecasting sales by exponentially weighted moving averages",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "author": [
+                {
+                    "family": "Holt",
+                    "given": "Charles C"
+                }
+            ],
+            "container-title": "ONR Memorandum",
+            "id": "holt1957forecasting",
+            "issue": "52",
+            "issued": {
+                "date-parts": [
+                    [
+                        1957
+                    ]
+                ]
+            },
+            "page": "5-10",
+            "publisher": "Carnegie Institute of Technology",
+            "title": "Forecasting trends and seasonals by exponentially weighted moving averages",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenblatt",
+                    "given": "Frank"
+                }
+            ],
+            "container-title": "Proceedings of the IRE",
+            "id": "rosenblatt1960perceptron",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1960
+                    ]
+                ]
+            },
+            "page": "301-309",
+            "publisher": "IEEE",
+            "title": "Perceptron simulation experiments",
+            "type": "article-journal",
+            "volume": "48"
+        },
+        {
+            "author": [
+                {
+                    "family": "McCulloch",
+                    "given": "Warren S"
+                },
+                {
+                    "family": "Pitts",
+                    "given": "Walter"
+                }
+            ],
+            "container-title": "The bulletin of mathematical biophysics",
+            "id": "mcculloch1943logical",
+            "issued": {
+                "date-parts": [
+                    [
+                        1943
+                    ]
+                ]
+            },
+            "page": "115-133",
+            "publisher": "Springer",
+            "title": "A logical calculus of the ideas immanent in nervous activity",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "author": [
+                {
+                    "family": "Joseph",
+                    "given": "Roger David"
+                }
+            ],
+            "id": "joseph1961contributions",
+            "issued": {
+                "date-parts": [
+                    [
+                        1961
+                    ]
+                ]
+            },
+            "publisher": "Cornell University",
+            "title": "Contributions to perceptron theory",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brockwell",
+                    "given": "Peter J"
+                },
+                {
+                    "family": "Davis",
+                    "given": "Richard A"
+                },
+                {
+                    "family": "Brockwell",
+                    "given": "Peter J"
+                },
+                {
+                    "family": "Davis",
+                    "given": "Richard A"
+                }
+            ],
+            "container-title": "Time Series: Theory and Methods",
+            "id": "brockwell1991stationary",
+            "issued": {
+                "date-parts": [
+                    [
+                        1991
+                    ]
+                ]
+            },
+            "page": "1-41",
+            "publisher": "Springer",
+            "title": "Stationary time series",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Parzen",
+                    "given": "Emanuel"
+                }
+            ],
+            "container-title": "The annals of mathematical statistics",
+            "id": "parzen1962estimation",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1962
+                    ]
+                ]
+            },
+            "page": "1065-1076",
+            "publisher": "JSTOR",
+            "title": "On estimation of a probability density function and mode",
+            "type": "article-journal",
+            "volume": "33"
+        },
+        {
+            "author": [
+                {
+                    "family": "Waldmeier",
+                    "given": "Max"
+                }
+            ],
+            "container-title": "Zurich: Schulthess",
+            "id": "waldmeier1961sunspot",
+            "issued": {
+                "date-parts": [
+                    [
+                        1961
+                    ]
+                ]
+            },
+            "title": "The sunspot-activity in the years 1610-1960",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Yule",
+                    "given": "George Udny"
+                }
+            ],
+            "container-title": "Statistical Papers of George Udny Yule",
+            "id": "yule1971method",
+            "issued": {
+                "date-parts": [
+                    [
+                        1971
+                    ]
+                ]
+            },
+            "page": "389-420",
+            "publisher": "Hafner Press New York",
+            "title": "On a method of investigating periodicities in disturbed series with special reference to wolfer’s sunspot numbers",
+            "type": "article-journal"
+        },
+        {
+            "ISBN": "9781799884576",
+            "URL": "https://books.google.com.mx/books?id=9G9bEAAAQBAJ",
+            "author": [
+                {
+                    "family": "Segall",
+                    "given": "R. S."
+                },
+                {
+                    "family": "Niu",
+                    "given": "G."
+                }
+            ],
+            "collection-title": "Advances in computational intelligence and robotics",
+            "id": "segall2022biomedical",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "IGI Global",
+            "title": "Biomedical and business applications using artificial neural networks and machine learning",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Woodward",
+                    "given": "Wayne A"
+                },
+                {
+                    "family": "Gray",
+                    "given": "Henry L"
+                },
+                {
+                    "family": "Elliott",
+                    "given": "Alan C"
+                }
+            ],
+            "id": "woodward2017applied",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "CRC press",
+            "title": "Applied time series analysis with r",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Dickey",
+                    "given": "David Alan"
+                }
+            ],
+            "id": "dickey1976estimation",
+            "issued": {
+                "date-parts": [
+                    [
+                        1976
+                    ]
+                ]
+            },
+            "publisher": "Iowa State University",
+            "title": "Estimation and hypothesis testing in nonstationary time series.",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Dickey",
+                    "given": "David A"
+                },
+                {
+                    "family": "Fuller",
+                    "given": "Wayne A"
+                }
+            ],
+            "container-title": "Journal of the American statistical association",
+            "id": "dickey1979distribution",
+            "issue": "366a",
+            "issued": {
+                "date-parts": [
+                    [
+                        1979
+                    ]
+                ]
+            },
+            "page": "427-431",
+            "publisher": "Taylor & Francis",
+            "title": "Distribution of the estimators for autoregressive time series with a unit root",
+            "type": "article-journal",
+            "volume": "74"
+        },
+        {
+            "ISBN": "9780471552390",
+            "URL": "https://books.google.com.mx/books?id=wyRhjmAPQIYC",
+            "author": [
+                {
+                    "family": "Fuller",
+                    "given": "W. A."
+                }
+            ],
+            "collection-title": "Wiley series in probability and statistics",
+            "id": "fuller1995introduction",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Introduction to statistical time series",
+            "type": "book"
+        },
+        {
+            "ISBN": "9789708300100",
+            "URL": "https://books.google.com.mx/books?id=8bTfwAEACAAJ",
+            "author": [
+                {
+                    "family": "Wackerly",
+                    "given": "D. D."
+                },
+                {
+                    "family": "Wackerly",
+                    "given": "D. D."
+                },
+                {
+                    "family": "Mendenhall",
+                    "given": "W."
+                },
+                {
+                    "family": "Scheaffer",
+                    "given": "R. L."
+                }
+            ],
+            "id": "wackerly2009estadística",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "publisher": "CENGAGE Learning",
+            "title": "Estadı́stica matemática con aplicaciones",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780486605791",
+            "URL": "https://books.google.com.mx/books?id=l_JvAAAAIAAJ",
+            "author": [
+                {
+                    "family": "Yaglom",
+                    "given": "A. M."
+                }
+            ],
+            "collection-title": "Selected russian publications in the mathematical sciences",
+            "id": "Yaglom1962introduction",
+            "issued": {
+                "date-parts": [
+                    [
+                        1962
+                    ]
+                ]
+            },
+            "publisher": "Prentice-Hall",
+            "title": "An introduction to the theory of stationary random functions",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Harvey",
+                    "given": "AC"
+                }
+            ],
+            "id": "harvey1981econometric",
+            "issued": {
+                "date-parts": [
+                    [
+                        1981
+                    ]
+                ]
+            },
+            "publisher": "Oxford",
+            "title": "The econometric analysis of time series. Philip allan",
+            "type": ""
+        },
+        {
+            "URL": "https://books.google.com.mx/books?id=QFXHEAAAQBAJ",
+            "author": [
+                {
+                    "family": "Sabry",
+                    "given": "F."
+                }
+            ],
+            "collection-title": "Artificial intelligence",
+            "id": "sabry2023multilayer",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "One Billion Knowledgeable",
+            "title": "Multilayer perceptron: Fundamentals and applications for decoding neural networks",
+            "title-short": "Multilayer perceptron",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "given": "R Core Team"
+                }
+            ],
+            "id": "stats",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=nnfor",
+            "author": [
+                {
+                    "family": "Kourentzes",
+                    "given": "Nikolaos"
+                }
+            ],
+            "id": "nnfor",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Nnfor: Time series forecasting with neural networks",
+            "title-short": "Nnfor",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1007/978-3-030-89010-0_10",
+            "ISBN": "978-3-030-89010-0",
+            "URL": "https://doi.org/10.1007/978-3-030-89010-0_10",
+            "abstract": "In this chapter, we go through the fundamentals of artificial neural networks and deep learning methods. We describe the inspiration for artificial neural networks and how the methods of deep learning are built. We define the activation function and its role in capturing nonlinear patterns in the input data. We explain the universal approximation theorem for understanding the power and limitation of these methods and describe the main topologies of artificial neural networks that play an important role in the successful implementation of these methods. We also describe loss functions (and their penalized versions) and give details about in which circumstances each of them should be used or preferred. In addition to the Ridge, Lasso, and Elastic Net regularization methods, we provide details of the dropout and the early stopping methods. Finally, we provide the backpropagation method and illustrate it with two simple artificial neural networks.",
+            "author": [
+                {
+                    "family": "Montesinos López",
+                    "given": "Osval Antonio"
+                },
+                {
+                    "family": "Montesinos López",
+                    "given": "Abelardo"
+                },
+                {
+                    "family": "Crossa",
+                    "given": "Jose"
+                }
+            ],
+            "container-title": "Multivariate statistical machine learning methods for genomic prediction",
+            "id": "MontesinosLópez2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "379-425",
+            "publisher": "Springer International Publishing",
+            "publisher-place": "Cham",
+            "title": "Fundamentals of artificial neural networks and deep learning",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sosa Jerez",
+                    "given": "Lexly Vanessa"
+                },
+                {
+                    "family": "Zamora Alvarado",
+                    "given": "Laura Camila"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "genre": "{B.S.} thesis",
+            "id": "sosaestructura",
+            "title": "Estructura de redes neuronales (MLP) y su aplicación como aproximador universal",
+            "type": "thesis"
+        },
+        {
+            "ISBN": "9786075265537",
+            "URL": "https://books.google.com.mx/books?id=bKSvtAEACAAJ",
+            "author": [
+                {
+                    "family": "Stewart",
+                    "given": "J."
+                }
+            ],
+            "id": "stewart2017cálculo",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "Cengage Learning",
+            "title": "Cálculo de varias variables: Trascendentes tempranas",
+            "title-short": "Cálculo de varias variables",
+            "type": "book"
+        },
+        {
+            "ISSN": "00905364",
+            "URL": "http://www.jstor.org/stable/3035592",
+            "abstract": "A natural extension of the simple leave-one-out cross validation (CV) method is to allow the deletion of more than one observations. In this article, several notions of the multifold cross validation (MCV) method have been discussed. In the context of variable selection under a linear regression model, we show that the delete-d MCV criterion is asymptotically equivalent to the well known FPE criterion. Two computationally more feasible methods, the r-fold cross validation and the repeated learning-testing criterion, are also studied. The performance of these criteria are compared with the simple leave-one-out cross validation method. Simulation results are obtained to gain some understanding on the small sample properties of these methods.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        2,
+                        10
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Zhang",
+                    "given": "Ping"
+                }
+            ],
+            "container-title": "The Annals of Statistics",
+            "id": "d83becf2-a410-3aa1-b0e0-e01af0f94b99",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1993
+                    ]
+                ]
+            },
+            "page": "299-313",
+            "publisher": "Institute of Mathematical Statistics",
+            "title": "Model selection via multifold cross validation",
+            "type": "article-journal",
+            "volume": "21"
+        }
+    ],
     "project_biblios": [
         "references.bib"
     ]

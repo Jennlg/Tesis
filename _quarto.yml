@@ -17,22 +17,22 @@ book:
   reader-mode: true
   language: es
   author: "Jennifer Sherlyn López García"
-  date: "07/14/2023"
+  date: "02/14/2024"
   output-file: "Tesis_JSLG"
-  image: FCFMLOGO.png
+  image: logofcfm.png
   cover-image: FCFMLOGO.png
   sharing: [twitter, facebook]
   downloads: [pdf, epub]
-  favicon: FCFMLOGO.png
+  favicon: logofcfm.png
   sidebar:
-    logo: FCFMLOGO.png
+    logo: logounach.png
     style: floating
     collapse-level: 2
     border: true
     search: true
   open-graph: true
   twitter-card: true
-  site-url: https://jennlg.quarto.pub
+  repo-url: https://github.com/Jennlg/Tesis
   repo-actions: [edit, issue, source]
   repo-subdir: book
   page-navigation: true

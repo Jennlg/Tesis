@@ -1,0 +1,1032 @@
+---
+lang: es
+---
+
+
+
+# Pronóstico de infectados diarios
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(zoo,warn.conflicts=FALSE)
+library(lubridate,warn.conflicts=FALSE)
+library(mgcv,warn.conflicts=FALSE)
+library(rugarch,warn.conflicts=FALSE)
+# visualization
+suppressPackageStartupMessages(library(ggplot2))
+# getting financial data
+suppressPackageStartupMessages(library(quantmod))
+# calculating returns
+suppressPackageStartupMessages(library(PerformanceAnalytics))
+# GARCH modeling
+suppressPackageStartupMessages(library(rugarch))
+# ARCH test
+suppressPackageStartupMessages(library(FinTS))
+# ARMA modeling
+suppressPackageStartupMessages(library(forecast))
+# structural changes
+suppressPackageStartupMessages(library(strucchange))
+# ARMA order identification
+suppressPackageStartupMessages(library(TSA))
+library(tseries)
+library(timeSeries)
+library(tswge)
+library(xts)
+library(pastecs)
+library(tidyr)
+library(dplyr)
+library(dygraphs)
+library(splines)
+library(kableExtra)
+library(conflicted)
+library(goeveg)
+library(tidyverse)
+rm(list=ls())
+library(FinTS)
+library(rugarch)
+library(tseries)
+library(dynlm)
+library(vars)
+library(nlWaldTest)
+library(broom)
+library(readxl)
+library(plotly)
+library(nnfor)
+library(neuralnet)
+```
+
+
+
+## Obtención de datos
+
+::: {style="text-align: justify"}
+Conforme se ha referido previamente, se emplea el conjunto de datos global informado diariamente, disponible para su descarga en <https://covid19.who.int/WHO-COVID-19-global-data.csv.> Resulta relevante destacar que la base de datos consultada corresponde al 16 de Enero del 2023, restringiéndose a los datos concernientes exclusivamente a los casos confirmados en Irán entre el 20 de febrero y el 15 de agosto de 2020.
+
+El análisis posterior se ha llevado a cabo empleando el software R versión 4.3.2. Con el propósito de realizar el análisis de los datos y la generación de gráficos, se procedió a convertir los datos al formato *ts*, lo que permitió su representación como una serie temporal.
+:::
+
+
+
+```{r, echo=FALSE}
+# Importamos la base de datos total
+COVID.19.global.data <- read.csv("WHO-COVID-19-global-data.csv")
+#Dataframe de los casos confirmados en Irán
+COVID.IRAN <- data.frame(Date=COVID.19.global.data$Date_reported[108535:108742],
+                         Confirmed=COVID.19.global.data$New_cases[108535:108742])
+#Dataframe de los casos confirmados en Irán del 20-02-2020 al 15-08-2020
+Confirmed_df <- data.frame(COVID.IRAN[1:178,])
+#Ponemos las fechas en formato 'Date'
+Confirmed_df$Date <- as.Date(Confirmed_df$Date)
+```
+
+```{r}
+# Se crea un objeto 'Date' diario
+inds <- seq(as.Date("2020-02-20"), as.Date("2020-08-15"), by = "day")
+# Se crea un objeto 'serie de tiempo' de frecuencia diaria
+Confirmed_ts <- ts(Confirmed_df[2], 
+                   start = c(2020, as.numeric(format(inds[1], "%j"))),
+                   frequency = 365)
+```
+
+
+
+::: {.content-visible when-format="pdf"}
+
+
+```{r, echo=FALSE}
+#| label: fig-oripdf
+#| fig-cap: "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020"
+plot(Confirmed_ts)
+```
+
+
+:::
+
+::: {.content-visible when-format="html"}
+::: {#fig-ori}
+
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+fig <- plot_ly(Confirmed_df, type = 'scatter', mode = 'lines')%>%
+  add_trace(x = ~Date, y = ~Confirmed)%>%
+  plotly::layout(showlegend = F)
+fig <- fig %>%
+  plotly::layout(
+         xaxis = list(zerolinecolor = '#ffff',
+                      zerolinewidth = 2,
+                      gridcolor = 'ffff'),
+         yaxis = list(zerolinecolor = '#ffff',
+                      zerolinewidth = 2,
+                      gridcolor = 'ffff'),
+         plot_bgcolor='#e5ecf6')
+
+fig
+```
+
+
+
+Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+::: {style="text-align: justify"}
+La gráfica de la @fig-oripdf exhibe la serie temporal derivada de la base de datos, en la cual se evidencia la ausencia de información para los días 27 y 29 de Febrero, así como para el 02 de Marzo y el 05 de Abril de 2020. Para subsanar esta carencia de datos, se llevó a cabo una interpolación promedio a fin de sustituir los valores faltantes. La @fig-tspdf muestra la serie de tiempo resultante de estas correcciones.
+:::
+:::
+
+::: {.content-visible when-format="html" style="text-align: justify"}
+La gráfica de la @fig-ori exhibe la serie temporal derivada de la base de datos, en la cual se evidencia la ausencia de información para los días 27 y 29 de Febrero, así como para el 02 de Marzo y el 05 de Abril de 2020. Para subsanar esta carencia de datos, se llevó a cabo una interpolación promedio a fin de sustituir los valores faltantes. La @tbl-datatable muestra la base de datos con las modificaciones efectuadas, así como la serie de tiempo (@fig-ts) resultante de estas correcciones.
+:::
+
+
+
+```{r, echo=FALSE}
+#Función para eliminar los ceros (por interpolación promedio)
+for (i in 2:length(Confirmed_df$Date)-1) {
+  if (Confirmed_df$Confirmed[i]==0) {
+    Confirmed_df$Confirmed[i] <- (Confirmed_df$Confirmed[i-1]+ 
+    Confirmed_df$Confirmed[i+1])/2}}
+Confirmed_ts <- ts(Confirmed_df[2], 
+                   start = c(2020, as.numeric(format(inds[1], "%j"))),
+                   frequency = 365)
+```
+
+
+
+::: {.content-visible when-format="html"}
+
+
+```{r, echo=FALSE}
+#| label: tbl-datatable
+#| tbl-cap: "Casos confirmados ajustados del 20-02-2020 al 15-08-2020"
+library(DT)
+datatable(Confirmed_df, style = 'bootstrap4')
+```
+
+
+:::
+
+::: {.content-visible when-format="html"}
+::: {#fig-ts}
+
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+fig <- plot_ly(Confirmed_df, type = 'scatter', mode = 'lines')%>%
+  add_trace(x = ~Date, y = ~Confirmed)%>%
+  plotly::layout(showlegend = F)
+fig <- fig %>%
+  plotly::layout(
+         xaxis = list(zerolinecolor = '#ffff',
+                      zerolinewidth = 2,
+                      gridcolor = 'ffff'),
+         yaxis = list(zerolinecolor = '#ffff',
+                      zerolinewidth = 2,
+                      gridcolor = 'ffff'),
+         plot_bgcolor='#e5ecf6')
+
+fig
+```
+
+
+
+Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+
+
+```{r, echo=FALSE}
+#| label: fig-tspdf
+#| fig-cap: "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020"
+plot(Confirmed_ts)
+```
+
+
+:::
+
+## Análisis de la serie de tiempo de casos confirmados de COVID-19 en Irán
+
+### Estadística descriptiva
+
+::: {style="text-align: justify"}
+Con el propósito de llevar a cabo una auditoría de los datos y al mismo tiempo una descripción preliminar, se ejecuta un estudio de estadística descriptiva que arroja los resultados correspondientes, incluyendo un gráfico Boxplot (@fig-box) para representar la información o
+:::
+
+
+
+```{r, echo=FALSE}
+summary(Confirmed_df$Confirmed)
+```
+
+
+
+::: {#fig-box}
+
+
+```{r, echo=FALSE}
+library(plotly)
+fig <- plot_ly(Confirmed_df, y = ~Confirmed, type = 'box')
+fig
+```
+
+
+
+Boxplot de casos confirmados de COVID-19 en Irán del 20-02-2020 al 15-08-2020
+:::
+
+### Componentes de la serie de tiempo
+
+::: {style="text-align: justify"}
+Los componentes identificados en la serie de tiempo de casos confirmados de COVID-19 en Irán, revelan distintos patrones y características.
+
+En primer lugar, se observa una tendencia discernible en el gráfico de la serie temporal (@fig-ts). Por ejemplo, entre el 30 de marzo y el 03 de mayo de 2020, se evidencia una tendencia negativa o decreciente, seguida por una tendencia creciente a partir del 03 de mayo en adelante. Estos cambios en la tendencia podrían indicar fluctuaciones significativas en la evolución de los casos confirmados durante esos periodos específicos.
+
+En cuanto a la estacionalidad, aunque no se identifica claramente a simple vista en el periodo observado, la extensión del análisis a un periodo más amplio podría revelar patrones recurrentes o ciclos temporales característicos. Es posible que ciertos patrones estacionales se manifiesten en intervalos más extensos de la serie temporal, lo que implicaría variaciones sistemáticas y repetitivas en los datos en períodos específicos.
+
+Por último, se destacan pequeñas subidas y bajadas en el gráfico que sugieren la presencia de **ruido** en la serie temporal. Estas fluctuaciones irregulares podrían atribuirse a diversas causas, como posibles errores en la recolección de datos o fluctuaciones aleatorias inherentes al comportamiento de la enfermedad. Es importante considerar estas variaciones no sistemáticas al analizar la serie temporal, ya que podrían influir en la interpretación de los patrones y tendencias observadas.
+:::
+
+### Estacionariedad
+
+::: {style="text-align: justify"}
+A continuación, se emplea el test de Dickey-Fuller para examinar la presencia de estacionariedad en la serie temporal. Este test fue utilizado con la finalidad de identificar la existencia de raíces unitarias en la serie, lo cual permite inferir la presencia o ausencia de estacionariedad en los datos analizados.
+:::
+
+
+
+```{r}
+adf.test(Confirmed_ts, alternative = "stationary")
+```
+
+
+
+::: {style="text-align: justify"}
+La hipótesis nula $(H_0)$ asume la presencia de raíces unitarias, lo que indica no estacionariedad en la serie. Al obtener un $p-$valor superior al nivel de significancia establecido el cuál es del $95\%$, no se rechaza la hipótesis nula, sugiriendo la ausencia de estacionariedad en la serie de tiempo de casos confirmados.
+
+Además, se complementa la evaluación de la estacionalidad mediante la inspección de los gráficos de la función de autocorrelación (ACF) y la función de autocorrelación parcial (PACF). Estos gráficos se utilizan para identificar patrones de autocorrelación en la serie temporal, lo que permite visualizar la presencia de estacionalidad, tendencias o ciclos.
+:::
+
+::: {style="text-align: justify"}
+La serie de tiempo representada en la @fig-ts exhibe un comportamiento característico de deambulación aleatoria. Dado que el valor de la variable $X_{t+1}$ generalmente se encuentra en proximidad al valor $X_t$, se evidencia una autocorrelación positiva notablemente marcada entre las variables $X_t$ y $X_{t+1}$.
+
+::: {#fig-acf}
+
+
+```{r,warning=FALSE, message=FALSE}
+autoplot(acf(Confirmed_ts, plot = FALSE), 
+         main="Autocorrelograma de casos confirmados")
+```
+
+
+
+Autocorrelograma de los casos confirmados de COVID-19 en Irán
+:::
+
+En la @fig-acf se observa que la autocorrelación (vea @eq-autocorr) entre $X_t$ y $X_{t+k}$ decrece con el incremento del retraso $k$. Este declive conduce a la constatación de que, a un desfase de $20$, existe una correlación bastante débil entre $X_t$ y $X_{t+20}$. Al analizar el gráfico de la función de autocorrelación (ACF), se aprecia que $\rho_{20}\approx 0.19$.
+
+La gráfica de la Función de Autocorrelación Parcial (PACF) proporciona información valiosa sobre la estructura de autocorrelación de una serie temporal una vez han sido eliminadas las correlaciones debidas a los intervalos de tiempo intermedios.
+
+::: {#fig-pacf}
+
+
+```{r,warning=FALSE, message=FALSE}
+ggPacf((Confirmed_ts), main = 'Autocorrelograma parcial de casos confirmados')
+```
+
+
+
+Autocorrelograma Parcial de los casos confirmados de COVID-19 en Irán
+:::
+
+Considerando que los datos se ajustan a un modelo de series de tiempo, la @fig-pacf indica que el valor de correlación $\phi_{15}$ es ligeramente superior a $0.25$, aproximadamente $\phi_{52}\approx 0.16$, y $\phi_{76}\approx 0.15$, mientras que para los restantes valores, la correlación parcial no es nula.
+
+::: remark
+De acuerdo con la gráfica de la Función de Autocorrelación Parcial @fig-pacf, se observa un corte abrupto después del rezago 4, lo cual sugiere que las autocorrelaciones parciales más allá de ese punto no poseen significancia estadística. Por consiguiente, se infiere la posibilidad de ajustar un modelo autoregresivo AR(4) a la base de datos.
+
+
+
+```{r, warning=FALSE, message=FALSE}
+library(tswge)
+coeff <- est.ar.wge(Confirmed_ts, p=4)
+coeff$phi #coeficientes
+coeff$xbar #media
+coeff$avar #varianza finita
+```
+
+
+
+El modelo autoregresivo AR(4) se expresa mediante la siguiente ecuación:
+
+$$
+(1-0.865B-0.172B^2-0.059B^3+0.131B^4)(X_t-1922.868)+a_t
+$$ {#eq-AR4}
+
+donde $\hat{\sigma}_a^2 = 47818.04$.
+:::
+:::
+
+::: {style="text-align: justify"}
+El análisis del ACF y PACF proporcionó información sobre la relación de los puntos de datos con sus rezagos, permitiendo observar posibles patrones estacionales. La presencia de picos significativos en estos gráficos podría indicar la existencia de estacionalidad en la serie de tiempo.
+:::
+
+## Entrenamiento, modelado, pronóstico y métricas de rendimiento
+
+::: {style="text-align: justify"}
+Se procede a la evaluación del rendimiento de métodos destinados al ajuste y consecuente pronóstico. Específicamente, se contempla el método de suavizamiento exponencial de Holt-Winters y el ajuste mediante un modelo de red neuronal del tipo perceptrón multicapa. Ambos procedimientos requieren la subdivisión de los datos en conjuntos destinados a entrenamiento y prueba. El set inicial, compuesto por el $70\%$ de los datos, se emplea para el entrenamiento de los modelos, mientras que el $30\%$ restante se reservará para llevar a cabo las pruebas pertinentes.
+:::
+
+
+
+```{r}
+Confirmed_ts <- ts(Confirmed_ts,frequency=1)
+tsize <- round(0.7 * nrow(Confirmed_df))
+train_confirmed <- window(Confirmed_ts,end=tsize)
+test_confirmed <- window(Confirmed_ts,start=tsize+1)
+```
+
+
+
+### Holt-Winters {#sec-holt-winters}
+
+::: {style="text-align: justify"}
+Con el fin de determinar la descomposición más adecuada para los datos en cuestión, se empleó un criterio elaborado basado en el coeficiente de variación, el cual proporciona una recomendación entre las dos versiones disponibles.
+
+
+
+```{r}
+DescRec <- function(x){
+  n = length(x)
+  di = rep(0, n-1)
+  ci = rep(0, n-1)
+  for (i in 1:n-1) {
+    di[i] = x[i+1] - x[i]
+    ci[i] = x[i+1] / x[i]
+  }
+  d <- cv(di) 
+  c <- cv(ci) / mean(di)
+  if(d < c)
+    print("Se recomienda la descomposición aditiva")
+  else
+    print("Se recomienda la descomposición multiplicativa")
+}
+DescRec(train_confirmed)
+```
+
+
+
+De acuerdo con la recomendación observada, se sugiere la utilización de la versión multiplicativa (vea @eq-muldecom). En consecuencia, se procede a mostrar la representación gráfica de la descomposición multiplicativa de la serie temporal.
+
+::: {#fig-descomp}
+
+
+```{r}
+ts_train <- ts(train_confirmed, frequency = 2)
+components_ts <- decompose(ts_train, type = 'mult')
+plot(components_ts)
+```
+
+
+
+Descomposición multiplicativa de la serie de tiempo
+:::
+
+Se procede ahora a la aplicación del modelo multiplicativo de Holt-Winters a la serie temporal de los datos de entrenamiento utilizando una frecuencia de dos, con el fin de permitir la aplicabilidad del modelo.
+:::
+
+
+
+```{r}
+HWc <- HoltWinters(ts_train, seasonal = 'mult')
+HWc
+```
+
+
+
+::: {style="text-align: justify"}
+Finalmente, utilizando el modelo de entrenamiento desarrollado en la fase previa, se lleva a cabo la proyección con un horizonte de predicción igual en extensión a los datos de prueba, acompañado de un intervalo de confianza que oscila entre el $80\%$ y el $95\%$.
+:::
+
+
+
+```{r}
+HWc_for <- forecast(HWc, h=length(test_confirmed))
+```
+
+
+
+::: {.callout-note style="text-align: justify"}
+Las funciones aplicadas en esta sección son parte de la librería ***stats*** @stats de R.
+:::
+
+### MLP
+
+::: {style="text-align: justify"}
+Posteriormente, se procede al entrenamiento del modelo MLP (Perceptrón Multicapa). La cantidad de capas ocultas y la configuración de nodos en cada capa se determinaron de manera automatizada mediante el método de [validación cruzada de 5 pliegues](redes.qmd#sec-validación-cruzada-de-k-pliegues). Asimismo, se eligió la función de activación como sigmoide, y el proceso de entrenamiento del modelo se ejecutó a lo largo de 20 iteraciones.
+:::
+
+
+
+```{r}
+fitc <- mlp(train_confirmed, hd.auto.type="cv", reps=20, comb='median')
+fitc
+```
+
+
+
+::: {#fig-red}
+
+
+```{r}
+plot(fitc)
+```
+
+
+
+Estructura de la red neuronal resultante
+:::
+
+::: {style="text-align: justify"}
+Para llevar a cabo el pronóstico, se emplea el modelo de entrenamiento creado en la etapa anterior, manteniendo un horizonte de predicción que coincide en duración con los datos de prueba, tal como se hizo con la técnica anterior.
+:::
+
+
+
+```{r}
+frcc <- forecast(fitc,h=length(test_confirmed))
+```
+
+
+
+::: {.callout-note style="text-align: justify"}
+Las funciones aplicadas en esta sección son parte de la librería ***nnfor*** @nnfor de R.
+:::
+
+### Comparación de pronósticos con el conjunto de datos de prueba
+
+::: {style="text-align: justify"}
+Con el propósito de llevar a cabo un análisis cuantitativo exhaustivo, se presenta a continuación una tabla comparativa de los resultados derivados de las dos técnicas implementadas y la base de datos de prueba. Posteriormente, se exhiben gráficas representativas de estos resultados. En la @fig-phw se muestra el pronóstico mediante Holt-Winters acompañado de su respectivo intervalo de confianza. En contraste, en la @fig-pmlp, la gráfica punteada en color rojo representa el comportamiento real de los datos, mientras que en azul se representa el pronóstico obtenido a través de la red MLP.
+:::
+
+::: {.content-visible when-format="html"}
+
+
+```{r,echo=FALSE}
+#| label: tbl-forecast
+#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"
+cfor <- data.frame(Date=Confirmed_df$Date[126:178], Real= test_confirmed,
+                   Forecast_HW=HWc_for$mean,Forecast_MLP=frcc$mean)
+DT::datatable(cfor, style = 'bootstrap4')
+```
+
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+
+```{r, echo=FALSE}
+#| label: tbl-forecastpdf
+#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"
+cfor
+```
+
+
+:::
+
+::: {#fig-phw}
+
+
+```{r, echo=FALSE, size=1500}
+plot(HWc_for,type='l',main="Forcasts from HW",ylab="Confirmed",xlab= "Date: from Feb. 20, 2020, to Aug. 15, 2020")
+lines(test_confirmed,lty=5, col='red')
+```
+
+
+
+Pronóstico obtenido mediante la técnica de Holt-Winters.
+:::
+
+::: {#fig-pmlp}
+
+
+```{r,echo=FALSE}
+plot(frcc,main="Forcasts from MLP",ylab="Confirmed",xlab= "Date: from Feb. 20, 2020, to Aug. 15, 2020", col='blue')
+lines(test_confirmed,lty=5, col='red')
+```
+
+
+
+Pronóstico obtenido mediante la red neuronal MLP.
+:::
+
+#### Métricas de rendimiento
+
+::: {style="text-align: justify"}
+Para evaluar la calidad o bondad de ajuste de los métodos utilizados en este estudio y seleccionar el modelo más apropiado, se aplican tres métricas de rendimiento, Error Cuadrático Medio (@eq-RMSE), Error Absoluto Medio (@eq-MAE) y Error Porcentual Absoluto Medio (@eq-MAPE) tanto en las fases de entrenamiento como en las de prueba. Los resultados correspondientes a éstas métricas se presentan en la @tbl-err .
+
+
+
+```{r,echo=FALSE,attr.output='style="max-height:100px;"'}
+##### Training and Testing Errores #####
+HW_train = generics::accuracy(train_confirmed[3:125], HWc_for$fitted[3:125])[1,1:5]
+HW_test = generics::accuracy(cfor$Confirmed, cfor$Forecast_HW)[1,1:5]
+MLP_train = generics::accuracy(train_confirmed[5:125], frcc$fitted)[1,1:5]
+MLP_test = generics::accuracy(cfor$Confirmed, cfor$Forecast_MLP)[1,1:5]
+Training_Data <- data.frame(
+  RMSE = c(HW_train[2], MLP_train[2]),
+  MAE = c(HW_train[3], MLP_train[3]),
+  MAPE = c(HW_train[5], MLP_train[5]),
+  row.names = c("Holt-Winters", "MLP")
+)
+Testing_Data <- data.frame(
+  RMSE = c(HW_test[2], MLP_test[2]),
+  MAE = c(HW_test[3], MLP_test[3]),
+  MAPE = c(HW_test[5], MLP_test[5]),
+  row.names = c("Holt-Winters", "MLP")
+)
+Confirmed_Cases <- data.frame(Trainig = Training_Data, Testing =Testing_Data)
+#Confirmed_Cases
+```
+
+
+
+|                  |            |                |           |            |               |          |
+|------------------|:----------:|:--------------:|:---------:|:----------:|:-------------:|:--------:|
+|                  |            | ***Training*** |           |            | ***Testing*** |          |
+|                  |  **RMSE**  |    **MAE**     | **MAPE**  |  **RMSE**  |    **MAE**    | **MAPE** |
+| **Holt-Winters** | *262.9925* |   *190.0482*   | *20.8415* | *234.0094* |  *165.8208*   | *6.2967* |
+| **MLP**          | *239.3483* |   *180.9937*   | *14.6079* | *177.0605* |  *136.4799*   | *5.4441* |
+
+: Errores de los modelos para casos confirmados. {#tbl-err}
+:::
+
+### Conclusión
+
+::: {.content-visible when-format="html"}
+::: {style="text-align: justify"}
+Basándose en los resultados extraídos tanto de la tabla de pronósticos (@tbl-forecast) como de la tabla de errores (@tbl-err), se llega a la conclusión de que, para esta base de datos en particular, la técnica de redes neuronales MLP demuestra ser más efectiva en la predicción realizada. Esto se fundamenta en la evidencia de un menor error registrado en las tres métricas calculadas, tanto durante la fase de entrenamiento como en la fase de prueba.
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+::: {style="text-align: justify"}
+Basándose en los resultados extraídos tanto de la tabla de pronósticos (@tbl-forecastpdf) como de la tabla de errores (@tbl-err), se llega a la conclusión de que, para esta base de datos en particular, la técnica de redes neuronales MLP demuestra ser más efectiva en la predicción realizada. Esto se fundamenta en la evidencia de un menor error registrado en las tres métricas calculadas, tanto durante la fase de entrenamiento como en la fase de prueba.
+:::
+:::
+
+## Pronóstico de los próximos 30 días
+
+::: {.content-visible when-format="html" style="text-align: justify"}
+Tras la identificación del modelo óptimo, se procedió a prever el comportamiento futuro de la serie temporal de casos confirmados para los próximos 30 días utilizando dicho modelo. Se elaboraron representaciones gráficas de la predicción de casos confirmados de COVID-19 a 30 días, realizando una comparación de la efectividad entre las implementaciones de redes neuronales en la paquetería de R y la paquetería nativa de Python, las cuales se encuentran en las figuras @fig-foremlp y @fig-mlp, respectivamente.
+:::
+
+::: {.content-visible when-format="pdf" style="text-align: justify"}
+Tras la identificación del modelo óptimo, se procedió a prever el comportamiento futuro de la serie temporal de casos confirmados para los próximos 30 días utilizando dicho modelo. Se elaboraron representaciones gráficas de la predicción de casos confirmados de COVID-19 a 30 días, realizando una comparación de la efectividad entre las implementaciones de redes neuronales en la paquetería de R y la paquetería nativa de Python, las cuales se encuentran en las figuras @fig-foremlp y @fig-mlp1, respectivamente.
+:::
+
+### Implementación en R
+
+::: {style="text-align: justify"}
+En la implementación de R, siguiendo el mismo procedimiento que en las fases de entrenamiento y prueba, se empleó un número específico de capas y nodos ocultos determinados automáticamente a través del método de validación cruzada de 5 pliegues. Esta configuración se llevó a cabo con una función de activación sigmoide, ejecutando 20 iteraciones para el entrenamiento de la red neuronal.
+
+
+
+```{r}
+fit.mlp = mlp(ts(Confirmed_df$Confirmed), reps = 20, hd.auto.type = 'cv', 
+              comb="median")
+fore.mlp = forecast(fit.mlp, h = 30)
+```
+
+
+
+::: {#fig-foremlp}
+
+
+```{r,echo=FALSE}
+plot(fore.mlp)
+```
+
+
+
+Predicción futura de la serie tiempo para infectados diariamente mediante el modelo MLP
+:::
+
+::: {.content-visible when-format="html"}
+::: {style="text-align: justify"}
+Los resultados del pronóstico indican que el 14 de septiembre de 2020 se proyectan aproximadamente 2494 nuevos casos confirmados de COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-treinta .
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+::: {style="text-align: justify"}
+Los resultados del pronóstico indican que el 14 de septiembre de 2020 se proyectan aproximadamente 2494 nuevos casos confirmados de COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-treintapdf .
+:::
+:::
+
+::: {.content-visible when-format="html"}
+
+
+```{r, echo=FALSE}
+#| label: tbl-treinta
+#| tbl-cap: "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días"
+#|
+d=data.frame(Fecha=COVID.IRAN$Date[179:208], Infectados=round(fore.mlp$mean,3))
+DT::datatable(d, style = 'bootstrap4')
+```
+
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+
+```{r, echo=FALSE}
+#| label: tbl-treintapdf
+#| tbl-cap: "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días"
+#|
+d=data.frame(Fecha=COVID.IRAN$Date[179:208], Infectados=round(fore.mlp$mean,3))
+d
+```
+
+
+:::
+:::
+
+### Implementación en Python
+
+::: {style="text-align: justify"}
+En esta sección, se realizaron ajustes en el método para su implementación. Cada día proyectado se forma utilizando el dato del día anterior. En cada paso, se actualiza la secuencia de entrada eliminando el valor más antiguo e incorporando la predicción más reciente como el dato más reciente. Esta dinámica se representa esquemáticamente a continuación, donde $n$ representa la extensión de la secuencia de entrada y $T$ es la longitud de la serie temporal.
+
+$$
+\begin{split}
+y:\text{Observado}\quad &\quad \hat{y}:\text{Pronosticado}\\
+y_{T-n+1}\quad y_{T-n+2}\quad y_{T-n+3}\quad&\cdots\quad y_{T-2}\quad y_{T-1}\quad y_T\quad \to\quad \hat{y}_{T+1}\\
+y_{T-n+2}\quad y_{T-n+3}\quad y_{T-n+4}\quad&\cdots\quad y_{T-1}\quad y_{T}\quad \hat{y}_{T+1}\quad \to\quad \hat{y}_{T+2}\\
+y_{T-n+3}\quad y_{T-n+4}\quad y_{T-n+5}\quad&\cdots\quad y_{T}\quad \hat{y}_{T+1}\quad \hat{y}_{T+2}\quad \to\quad \hat{y}_{T+3}\\
+&\ddots\\
+\end{split}
+$$
+
+Se exhibe a continuación el código utilizado y el gráfico correspondiente al pronóstico generado por la red neuronal.
+:::
+
+::: {.content-visible when-format="html"}
+::: {.callout-caution collapse="true" icon="false"}
+## ▸ Código
+
+``` python
+import numpy as np
+import pandas as pd
+import yfinance as yf
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
+from tensorflow.keras.layers import Dense, LSTM
+from tensorflow.keras.models import Sequential
+from sklearn.preprocessing import MinMaxScaler
+
+pd.options.mode.chained_assignment = None
+tf.random.set_seed(0)
+df = pd.read_excel('Data.xlsx')
+
+# ------------- Entrenamiento y prueba del modelo --------------
+y = df['Confirmed'].fillna(method='ffill')
+y = y.values.reshape(-1, 1)
+# scale the data
+scaler = MinMaxScaler(feature_range=(0, 1))
+scaler = scaler.fit(y)
+y = scaler.transform(y)
+
+# generate the input and output sequences
+n_lookback = 53  # length of input sequences (lookback period)
+n_forecast = 30  # length of output sequences (forecast period)
+
+X = []
+Y = []
+
+for i in range(n_lookback, len(y) - n_forecast + 1):
+    X.append(y[i - n_lookback: i])
+    Y.append(y[i: i + n_forecast])
+
+X = np.array(X)
+Y = np.array(Y)
+
+# fit the model
+model = Sequential()
+model.add(Dense(20, activation='sigmoid', input_dim=n_lookback))
+model.add(Dense(n_forecast))
+
+model.compile(loss='mean_squared_error', optimizer='adam')
+model.fit(X, Y, epochs=20, batch_size=4, verbose=0)
+
+# generate the forecasts
+X_ = y[- n_lookback:]  # last available input sequence
+X_ = X_.reshape(1, n_lookback, 1)
+
+Y_ = model.predict(X_).reshape(-1, 1)
+Y_ = scaler.inverse_transform(Y_)
+
+# organize the results in a data frame
+df_past = df
+df_past.rename(columns={'Date':'Date','Confirmed':'Actual'},inplace=True)
+df_past['Date'] = pd.to_datetime(df_past['Date'])
+df_past['Forecast'] = np.nan
+df_past['Forecast'].iloc[-1] = df_past['Actual'].iloc[-1]
+
+df_future = pd.DataFrame(columns=['Date', 'Actual', 'Forecast'])
+df_future['Date'] = pd.date_range(
+  start=df_past['Date'].iloc[-1] + pd.Timedelta(days=1), 
+  periods=n_forecast)
+df_future['Forecast'] = Y_.flatten()
+df_future['Actual'] = np.nan
+
+results = df_past._append(df_future).set_index('Date')
+# Calculate minimum, median, and maximum for each forecasted date
+results['Min'] = results['Forecast'].rolling(window=2).min()
+results['Max'] = results['Forecast'].rolling(window=2).max()
+results['Median'] = results['Forecast'].rolling(window=2).median()
+
+# Creamos la gráfica con las predicciones
+#fig = px.line(results, x=results.index, y=['Actual','Forecast', 'Median'],
+fig = px.line(results, x=results.index, y=['Actual', 'Median'],
+              labels={'index': 'Date', 'value': 'Confirmed Cases'},
+              title='Casos Confirmados',
+              line_shape='linear')
+
+fig.update_traces(line=dict(color='cornflowerblue'), 
+selector=dict(name='Actual'))
+fig.update_traces(line=dict(color='orange'), 
+selector=dict(name='Forecast'))
+fig.update_traces(line=dict(color='mediumvioletred'), 
+selector=dict(name='Median'))
+
+# Agregar gráficos de área para el mínimo y el máximo
+fig.add_trace(
+    go.Scatter(x=results.index, 
+    y=results['Min'], 
+    fill=None, mode='lines', 
+    line=dict(color='hotpink'), 
+    name='Min'))
+fig.add_trace(
+    go.Scatter(x=results.index, 
+    y=results['Max'], 
+    fill='tonexty', 
+    mode='lines', 
+    line=dict(color='deeppink'), 
+    name='Max'))
+fig.show('')
+```
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+``` python
+import numpy as np
+import pandas as pd
+import yfinance as yf
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
+from tensorflow.keras.layers import Dense, LSTM
+from tensorflow.keras.models import Sequential
+from sklearn.preprocessing import MinMaxScaler
+
+pd.options.mode.chained_assignment = None
+tf.random.set_seed(0)
+df = pd.read_excel('Data.xlsx')
+
+# ------------- Entrenamiento y prueba del modelo --------------
+y = df['Confirmed'].fillna(method='ffill')
+y = y.values.reshape(-1, 1)
+# scale the data
+scaler = MinMaxScaler(feature_range=(0, 1))
+scaler = scaler.fit(y)
+y = scaler.transform(y)
+
+# generate the input and output sequences
+n_lookback = 53  # length of input sequences (lookback period)
+n_forecast = 30  # length of output sequences (forecast period)
+
+X = []
+Y = []
+
+for i in range(n_lookback, len(y) - n_forecast + 1):
+    X.append(y[i - n_lookback: i])
+    Y.append(y[i: i + n_forecast])
+
+X = np.array(X)
+Y = np.array(Y)
+
+# fit the model
+model = Sequential()
+model.add(Dense(20, activation='sigmoid', input_dim=n_lookback))
+model.add(Dense(n_forecast))
+
+model.compile(loss='mean_squared_error', optimizer='adam')
+model.fit(X, Y, epochs=20, batch_size=4, verbose=0)
+
+# generate the forecasts
+X_ = y[- n_lookback:]  # last available input sequence
+X_ = X_.reshape(1, n_lookback, 1)
+
+Y_ = model.predict(X_).reshape(-1, 1)
+Y_ = scaler.inverse_transform(Y_)
+
+# organize the results in a data frame
+df_past = df
+df_past.rename(columns={'Date': 'Date', 'Confirmed': 'Actual'}, inplace=True)
+df_past['Date'] = pd.to_datetime(df_past['Date'])
+df_past['Forecast'] = np.nan
+df_past['Forecast'].iloc[-1] = df_past['Actual'].iloc[-1]
+
+df_future = pd.DataFrame(columns=['Date', 'Actual', 'Forecast'])
+df_future['Date'] = pd.date_range(
+  start=df_past['Date'].iloc[-1] + pd.Timedelta(days=1), 
+  periods=n_forecast)
+df_future['Forecast'] = Y_.flatten()
+df_future['Actual'] = np.nan
+
+results = df_past._append(df_future).set_index('Date')
+# Calculate minimum, median, and maximum for each forecasted date
+results['Min'] = results['Forecast'].rolling(window=2).min()
+results['Max'] = results['Forecast'].rolling(window=2).max()
+results['Median'] = results['Forecast'].rolling(window=2).median()
+
+# Creamos la gráfica con las predicciones
+#fig = px.line(results, x=results.index, y=['Actual','Forecast', 'Median'],
+fig = px.line(results, x=results.index, y=['Actual', 'Median'],
+              labels={'index': 'Date', 'value': 'Confirmed Cases'},
+              title='Casos Confirmados',
+              line_shape='linear')
+
+fig.update_traces(line=dict(color='cornflowerblue'), 
+selector=dict(name='Actual'))
+fig.update_traces(line=dict(color='orange'), 
+selector=dict(name='Forecast'))
+fig.update_traces(line=dict(color='mediumvioletred'), 
+selector=dict(name='Median'))
+
+# Agregar gráficos de área para el mínimo y el máximo
+fig.add_trace(
+    go.Scatter(x=results.index, 
+    y=results['Min'], 
+    fill=None, mode='lines', 
+    line=dict(color='hotpink'), 
+    name='Min'))
+fig.add_trace(
+    go.Scatter(x=results.index, 
+    y=results['Max'], 
+    fill='tonexty', 
+    mode='lines', 
+    line=dict(color='deeppink'), 
+    name='Max'))
+fig.show('')
+```
+:::
+
+::: {.content-visible when-format="html"}
+
+
+```{python, eval=knitr::is_html_output()}
+#| output: false
+#| include: false
+import numpy as np
+import pandas as pd
+import yfinance as yf
+from silence_tensorflow import silence_tensorflow
+silence_tensorflow()
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import plotly.io as pio
+import plotly.express as px
+import plotly.graph_objects as go
+from tensorflow.keras.layers import Dense, LSTM
+from tensorflow.keras.models import Sequential
+from sklearn.preprocessing import MinMaxScaler
+pd.options.mode.chained_assignment = None
+tf.random.set_seed(0) 
+df = pd.read_excel('Data.xlsx')
+# ------------- Entrenamiento y prueba del modelo --------------
+y = df['Confirmed'].fillna(method='ffill')
+y = y.values.reshape(-1, 1)
+# scale the data
+scaler = MinMaxScaler(feature_range=(0, 1))
+scaler = scaler.fit(y)
+y = scaler.transform(y)
+
+# generate the input and output sequences
+n_lookback = 53  # length of input sequences (lookback period)
+n_forecast = 30  # length of output sequences (forecast period)
+
+X = []
+Y = []
+
+for i in range(n_lookback, len(y) - n_forecast + 1):
+    X.append(y[i - n_lookback: i])
+    Y.append(y[i: i + n_forecast])
+
+X = np.array(X)
+Y = np.array(Y)
+
+# fit the model
+model = Sequential()
+model.add(Dense(20, activation='sigmoid', input_dim=n_lookback))
+model.add(Dense(n_forecast))
+
+model.compile(loss='mean_squared_error', optimizer='adam')
+model.fit(X, Y, epochs=20, batch_size=4, verbose=0)
+
+# generate the forecasts
+X_ = y[- n_lookback:]  # last available input sequence
+X_ = X_.reshape(1, n_lookback, 1)
+
+Y_ = model.predict(X_).reshape(-1, 1)
+Y_ = scaler.inverse_transform(Y_)
+
+# organize the results in a data frame
+df_past = df
+df_past.rename(columns={'Date': 'Date', 'Confirmed': 'Actual'}, inplace=True)
+df_past['Date'] = pd.to_datetime(df_past['Date'])
+df_past['Forecast'] = np.nan
+df_past['Forecast'].iloc[-1] = df_past['Actual'].iloc[-1]
+
+df_future = pd.DataFrame(columns=['Date', 'Actual', 'Forecast'])
+df_future['Date'] = pd.date_range(
+  start=df_past['Date'].iloc[-1] + pd.Timedelta(days=1), 
+  periods=n_forecast)
+df_future['Forecast'] = Y_.flatten()
+df_future['Actual'] = np.nan
+
+results = df_past._append(df_future).set_index('Date')
+# Calculate minimum, median, and maximum for each forecasted date
+results['Min'] = results['Forecast'].rolling(window=2).min()
+results['Max'] = results['Forecast'].rolling(window=2).max()
+results['Median'] = results['Forecast'].rolling(window=2).median()
+
+# Creamos la gráfica con las predicciones
+#fig = px.line(results, x=results.index, y=['Actual','Forecast', 'Median'],
+fig = px.line(results, x=results.index, y=['Actual', 'Median'],
+              labels={'index': 'Date', 'value': 'Confirmed Cases'},
+              title='Casos Confirmados',
+              line_shape='linear')
+
+fig.update_traces(line=dict(color='cornflowerblue'), 
+                  selector=dict(name='Actual'))
+fig.update_traces(line=dict(color='orange'), 
+                  selector=dict(name='Forecast'))
+fig.update_traces(line=dict(color='mediumvioletred'), 
+                  selector=dict(name='Median'))
+
+# Agregar gráficos de área para el mínimo y el máximo
+fig.add_trace(
+    go.Scatter(x=results.index, 
+               y=results['Min'], 
+               fill=None, mode='lines', 
+               line=dict(color='hotpink'), 
+               name='Min'))
+fig.add_trace(
+    go.Scatter(x=results.index, 
+               y=results['Max'], 
+               fill='tonexty', 
+               mode='lines', 
+               line=dict(color='deeppink'), 
+               name='Max'))
+```
+
+
+:::
+
+::: {.content-visible when-format="html"}
+
+
+```{python, eval=knitr::is_html_output()}
+#| label: fig-mlp
+#| fig-cap: 'Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días (implementación en python)'
+#| echo: false
+fig.show('')
+```
+
+
+:::
+
+::: {.content-visible when-format="pdf"}
+![Pronostico de casos confirmados de COVID-19 en Irán (implementación en Python)](Imagenes/Confirmados.png){#fig-mlp1 fig-align="center"}
+:::
+
+::: {.content-visible when-format="pdf"}
+::: {style="text-align: justify"}
+Los resultados del pronóstico en @fig-mlp1 indican que el 14 de Septiembre de 2020 se proyectan aproximadamente 2476 nuevos casos confirmados de COVID-19.
+:::
+:::
+
+::: {.content-visible when-format="html"}
+::: {style="text-align: justify"}
+Los resultados del pronóstico en @fig-mlp indican que el 14 de Septiembre de 2020 se proyectan aproximadamente 2476 nuevos casos confirmados de COVID-19.
+:::
+:::
+
