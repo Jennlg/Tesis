@@ -32,7 +32,7 @@ book:
     search: true
   open-graph: true
   twitter-card: true
-  repo-url: https://github.com/Jennlg/Tesis/
+  repo-url: https://github.com/Jennlg/Tesis/tree/master
   repo-actions: [edit, issue, source]
   repo-subdir: book
   page-navigation: true
