@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.22">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales - 2&nbsp; Probabilidad</title>
+<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales – 2&nbsp; Probabilidad</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -162,12 +162,12 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logounach.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./LOGO50.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis comparativo del desempeño en métodos para el pronóstico de series temporales</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Jennlg/Tesis/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Jennlg/Tesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -337,7 +337,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referencias</span></a>
   </div>
 </li>
     </ul>
@@ -363,7 +363,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#vectores-aleatorios" id="toc-vectores-aleatorios" class="nav-link" data-scroll-target="#vectores-aleatorios"><span class="header-section-number">2.6</span> Vectores aleatorios</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/book/probabilidad.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/book/probabilidad.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/probabilidad.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/probabilidad.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -389,7 +389,7 @@ window.Quarto = {
 
 <div style="text-align: justify">
 <p>Una de las herramientas fundamentales de la estadística es la probabilidad, la cual tuvo sus inicios formales con los juegos de azar en el siglo XVII. Los juegos de azar, como su nombre indica, involucran acciones como girar una rueda de ruleta, lanzar dados, lanzar una moneda, sacar una carta, entre otros, en los que el resultado de un evento es incierto. No obstante, se reconoce que aunque el resultado de cada evento en particular pueda ser incierto, existe un patrón predecible a largo plazo. Por ejemplo, se sabe que en múltiples lanzamientos de una moneda ideal (equilibrada y simétrica), aproximadamente la mitad de los resultados serán caras. Es esta regularidad predecible a largo plazo la que permite a las casas de juego mantener sus negocios.</p>
-<p>Un tipo similar de incertidumbre y regularidad a largo plazo se observa con frecuencia en la ciencia experimental. Por ejemplo, en la ciencia de la genética no se puede determinar con certeza si una descendencia será masculina o femenina, pero a largo plazo se sabe aproximadamente qué porcentaje de descendencia será de cada sexo. De manera similar, una compañía de seguros de vida no puede predecir qué personas en los Estados Unidos morirán a los 50 años, pero puede hacer predicciones precisas sobre cuántas personas morirán a esa edad en promedio.</p>
+<p>Un tipo similar de incertidumbre y regularidad a largo plazo se observa con frecuencia en la ciencia experimental. Por ejemplo, en la ciencia de la genética no se puede determinar con certeza si una descendencia será masculina o femenina, pero a largo plazo se sabe aproximadamente qué porcentaje de descendencia será de cada sexo. De manera análoga, una compañía de seguros de vida no puede predecir qué personas en los Estados Unidos morirán a los 50 años, pero puede hacer predicciones precisas sobre cuántas personas morirán a esa edad en promedio.</p>
 <p>Para brindar una idea de lo que es la probabilidad, <span class="citation" data-cites="mood1986introduction">(<a href="references.html#ref-mood1986introduction" role="doc-biblioref">Mood, Graybill, y Boes 1986</a>)</span> proporciona las siguientes definiciones:</p>
 </div>
 <div id="def-pclas" class="theorem definition" style="text-align: justify">
@@ -422,7 +422,7 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Definición 2.6 (Evento particular)</strong></span> El evento <span class="math inline">\(\{\omega\}\)</span>, que está constituido por un solo punto <span class="math inline">\(\omega \in \Omega\)</span>, se denomina <em>evento muestral</em> o <em>punto muestral</em>.</p>
 </div>
 <div style="text-align: justify">
-<p>Las definiciones anteriores no definen con precisión lo que es un evento. Un evento siempre será un subconjunto del espacio muestral, pero para espacios muestrales suficientemente grandes, no todos los subconjuntos serán eventos. Por lo tanto, la clase de todos los subconjuntos del espacio muestral no necesariamente corresponderá al espacio de eventos. Sin embargo, se observará que la clase de todos los eventos siempre se puede seleccionar lo suficientemente grande como para incluir todos aquellos subconjuntos (eventos) cuya probabilidad se desee analizar. Si el espacio muestral consta solo de un número finito de puntos, entonces el espacio de eventos correspondiente será la clase de todos los subconjuntos del espacio muestral.</p>
+<p>Las definiciones anteriores no definen con precisión lo que es un evento, ya que aunque un evento siempre será un subconjunto del espacio muestral, en espacios muestrales suficientemente grandes, no todos los subconjuntos serán eventos. Por lo tanto, la clase de todos los subconjuntos del espacio muestral no necesariamente corresponderá al espacio de eventos. Sin embargo, se observará que la clase de todos los eventos siempre se puede seleccionar lo suficientemente grande como para incluir todos aquellos subconjuntos (eventos) cuya probabilidad se desee analizar. Si el espacio muestral consta solo de un número finito de puntos, entonces el espacio de eventos correspondiente será la clase de todos los subconjuntos del espacio muestral.</p>
 <p>Los conceptos presentados se ilustran con unos ejemplos muy simples;</p>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
@@ -437,7 +437,7 @@ Ejemplo (<strong><em>Lanzamiento de una moneda</em></strong>)
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Considerando el experimento de lanzar una moneda, este experimento es uno de los más sencillos, pero permite representar claramente los conceptos. El espacio muestral estaría conformado por <span class="math inline">\(\Omega = \{A, S\}\)</span>, donde <span class="math inline">\(A\)</span> representa el resultado de que caiga águila y <span class="math inline">\(S\)</span> representa el resultado de que caiga sol. El conjunto <span class="math inline">\(\mathfrak{F}\)</span> podría estar representado por <span class="math inline">\(\{\{A\}, \{S\}\}\)</span>, que también es un subconjunto de <span class="math inline">\(\Omega\)</span>.</p>
+<p>Considere el experimento de lanzar una moneda una vez, este experimento es uno de los más sencillos, pero permite representar claramente los conceptos. El espacio muestral estaría conformado por <span class="math inline">\(\Omega = \{A, S\}\)</span>, donde <span class="math inline">\(A\)</span> representa el resultado de que caiga águila y <span class="math inline">\(S\)</span> representa el resultado de que caiga sol. El conjunto <span class="math inline">\(\mathfrak{F}\)</span> está representado por <span class="math inline">\(\{\{A\}, \{S\}\}\)</span>, el cuál también es un subconjunto de <span class="math inline">\(\Omega\)</span>.</p>
 <p>Es importante destacar que el conjunto vacío <span class="math inline">\(\emptyset\)</span> y el conjunto completo <span class="math inline">\(\Omega\)</span> también son subconjuntos de <span class="math inline">\(\Omega\)</span>, pero generalmente no se consideran eventos de interés en este contexto.</p>
 </div>
 </div>
@@ -454,7 +454,7 @@ Ejemplo (<strong><em>Lanzamiento de un dado</em></strong>)
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Considerando el experimento de lanzar un dado de <span class="math inline">\(6\)</span> caras. El espacio muestral <span class="math inline">\(\Omega\)</span> se define como</p>
+<p>Considerando el experimento de lanzar un dado de <span class="math inline">\(6\)</span> caras, el espacio muestral <span class="math inline">\(\Omega\)</span> se define como</p>
 <p><span class="math display">\[ \Omega = \{1,2,3,4,5,6\}. \]</span></p>
 <p>Un punto muestral podría ser un resultado específico, por ejemplo, <span class="math inline">\(\{1\}\)</span>. Todos los subconjuntos posibles de resultados constituirían el conjunto <span class="math inline">\(\mathfrak{F}\)</span>. Se definen los eventos <span class="math inline">\(A\)</span>, que representa el evento de obtener un resultado par; <span class="math inline">\(B\)</span>, que representa el evento de obtener un resultado impar; y <span class="math inline">\(C\)</span>, que representa el evento de obtener un resultado mayor a 3. Por lo tanto, se tiene:</p>
 <p><span class="math display">\[ A= \{2,4,6\},\quad B=\{1,3,5\},\quad C=\{4,5,6\}. \]</span></p>
@@ -476,7 +476,7 @@ Ejemplo (<strong><em>Lanzamiento de un dado</em></strong>)
 <section id="definición-de-probabilidad" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="definición-de-probabilidad"><span class="header-section-number">2.2</span> Definición de probabilidad</h2>
 <div style="text-align: justify">
-<p>En esta sección se presenta la definición axiomática de probabilidad. Aunque esta definición formal de probabilidad por sí sola no permite asignar probabilidades reales a eventos que consisten en ciertos resultados de experimentos aleatorios, es otra de una serie de definiciones que conducen a ese objetivo. Dado que la probabilidad, al igual que los conceptos que se presentarán, se define como una función particular, se inicia esta subsección con una revisión del concepto de función</p>
+<p>En esta sección se presenta la definición axiomática de probabilidad. Aunque esta definición formal de probabilidad, por sí sola, no permite asignar probabilidades reales a eventos que consisten en ciertos resultados de experimentos aleatorios, es otra de una serie de definiciones que conducen a ese objetivo. Dado que la probabilidad, al igual que los conceptos que se presentarán, se define como una función particular, se inicia esta subsección con una revisión del concepto de función.</p>
 </div>
 <div id="def-funcion" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 2.7 (Función)</strong></span> Una función, llamada <span class="math inline">\(f(\cdot)\)</span>, con dominio <span class="math inline">\(A\)</span> y contradominio <span class="math inline">\(B\)</span>, es una colección de pares ordenados, llamados <span class="math inline">\((a,b)\)</span>, que cumplen las siguientes condiciones:</p>
@@ -526,11 +526,11 @@ Ejemplo
 <li><p><span class="math inline">\(I_{A_1\cup A_2\cup\cdots\cup A_n}(\omega)= \max{[I_{A_1}(\omega), I_{A_2}(\omega),\ldots, I_{A_n}(\omega)]}\)</span> para <span class="math inline">\(A_1, \ldots, A_n \in\mathfrak{F}\)</span>.</p></li>
 <li><p><span class="math inline">\(I_A^2(\omega)= I_A(\omega)\)</span> para cada <span class="math inline">\(A\in\mathfrak{F}\)</span>.</p></li>
 </ol>
-<p>La función indicadora será utilizada para “indicar” subconjuntos de la recta real; por ejemplo;</p>
-<p><span class="math display">\[I_{\{[0,1)\}}(x)= I_{[0,1)}(x)=\left\{ \begin{array}{lcc} 1 &amp; \text{si} &amp; 0\leq x&lt;1\\ \\ 0 &amp; \text{ otro caso} \end{array} \right. \]</span></p>
-<p>y si <span class="math inline">\(I^+\)</span> denota el conjunto de números enteros positivos,</p>
-<p><span class="math display">\[ I_{I^+}(X)=\left\{\begin{array}{lcc} 1 &amp; \text{si $x$ es algún entero positivo}\\ \\ 0 &amp; \text{otro caso}\end{array}\right. \]</span></p>
-<p>Otro tipo de función del cual se tendrá ocasión de discutir es la función de conjunto definida como cualquier función que tiene como dominio una colección de conjuntos y como contradominio la recta real, incluyendo posiblemente el infinito. A continuación se muestra un ejemplos de función de conjunto.</p>
+<p>La función indicadora será utilizada para “indicar” subconjuntos de la recta real. Por ejemplo:</p>
+<p><span class="math display">\[I_{\{[0,1)\}}(x)= I_{[0,1)}(x)=\begin{cases} 1 &amp; \text{si }\quad 0\leq x&lt;1,\\ \\ 0 &amp; \text{otro caso.} \end{cases} \]</span></p>
+<p>Si <span class="math inline">\(I^+\)</span> denota el conjunto de números enteros positivos,</p>
+<p><span class="math display">\[ I_{I^+}(X)=\begin{cases} 1 &amp; \text{si $x$ es algún entero positivo,}\\ \\ 0 &amp; \text{otro caso.}\end{cases}\]</span></p>
+<p>Otro tipo de función del cual se tendrá ocasión de discutir es la función de conjunto definida como cualquier función que tiene como dominio una colección de conjuntos y como contradominio la recta real, incluyendo posiblemente el infinito. A continuación se muestra un ejemplo de función de conjunto.</p>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -557,7 +557,7 @@ Ejemplo
 <ol type="i">
 <li><p><strong><em>No negatividad</em></strong>: Para todo evento <span class="math inline">\(A\)</span> en <span class="math inline">\(\mathfrak{F}\)</span>, la probabilidad <span class="math inline">\(P(A)\)</span> es un número no negativo, es decir, <span class="math inline">\(P(A) \geq 0\)</span>.</p></li>
 <li><p><strong><em>Probabilidad unitaria</em></strong>: La probabilidad del espacio muestral completo <span class="math inline">\(\Omega\)</span> es igual a 1, es decir, <span class="math inline">\(P(\Omega) = 1\)</span>.</p></li>
-<li><p><strong><em>Aditividad</em></strong>: Para cualquier colección de eventos mutuamente excluyentes <span class="math inline">\(A_1, A_2, A_3, \ldots\)</span>, la probabilidad de la unión de estos eventos es igual a la suma de las probabilidades individuales, es decir, <span class="math display">\[P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i)\]</span></p></li>
+<li><p><strong><em>Aditividad</em></strong>: Para cualquier colección de eventos mutuamente excluyentes <span class="math inline">\(A_1, A_2, A_3, \ldots\)</span>, la probabilidad de la unión de estos eventos es igual a la suma de las probabilidades individuales, es decir, <span class="math display">\[P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i).\]</span></p></li>
 </ol>
 </div>
 <div style="text-align: justify">
@@ -573,11 +573,11 @@ Ejemplo
 <li><p>Si <span class="math inline">\(A,B\in \mathfrak{F}\)</span> y <span class="math inline">\(A\subset B\)</span>, entonces <span class="math inline">\(P(A)\leq P(B)\)</span>.</p></li>
 <li><p>Para cualesquiera dos eventos <span class="math inline">\(A,B\in \mathfrak{F}\)</span>; <span class="math display">\[P(A\cup B)= P(A)+P(B)-P(A\cap B).\]</span>Más generalmente, para eventos <span class="math inline">\(A_1, A_2, \ldots, A_n\in \mathfrak{F}\)</span></p></li>
 </ol>
-<p><span class="math display">\[ \begin{split}P\left(\bigcup\limits_{i=1}^n A_i\right) &amp; = \sum_{j=1}^nP(A_j)-{\sum\sum}_{i&lt;j} P(A_i\cap A_j)\\ &amp;+\sum\sum\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k) -\cdots+(-1)^{n+1}P(A_1\cap \ldots\cap A_n)\end{split} \]</span></p>
+<p><span class="math display">\[ \begin{split}P\left(\bigcup\limits_{i=1}^n A_i\right) &amp; = \sum_{j=1}^nP(A_j)-{\sum\sum}_{i&lt;j} P(A_i\cap A_j)\\ &amp;+\sum\sum\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k) -\cdots+(-1)^{n+1}P(A_1\cap \ldots\cap A_n).\end{split} \]</span></p>
 </div>
 <div id="thm-boole" class="theorem" style="text-align: justify">
 <p><span class="theorem-title"><strong>Teorema 2.1 (Desigualdad de Boole)</strong></span> Si <span class="math inline">\(A_1, A_2, \ldots, A_n\in\mathfrak{F}\)</span>, entonces</p>
-<p><span class="math display">\[P\left(\bigcup_{i=1}^n A_i\right)\leq \sum_{i=1}^n P(A_i)\]</span></p>
+<p><span class="math display">\[P\left(\bigcup_{i=1}^n A_i\right)\leq \sum_{i=1}^n P(A_i).\]</span></p>
 </div>
 <div style="text-align: justify">
 <p>Finalmente se concluye esta subsección con la siguiente definición;</p>
@@ -593,8 +593,8 @@ Ejemplo
 </div>
 <div id="def-pcond" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 2.11 (Probabilidad condicional)</strong></span> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos eventos en <span class="math inline">\(\mathfrak{F}\)</span> del espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>. La probabilidad condicional del evento <span class="math inline">\(A\)</span> dado el evento <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(P(A|B)\)</span>, se define como sigue;</p>
-<p><span class="math display">\[P(A|B)= \frac{P(A\cap B)}{P(B)}\qquad\text{si }\quad P(B)&gt;0,\]</span></p>
-<p>y se deja sin definir si <span class="math inline">\(P(B)=0\)</span>.</p>
+<p><span class="math display">\[P(A|B)= \frac{P(A\cap B)}{P(B)}\qquad\text{si }\quad P(B)&gt;0.\]</span></p>
+<p>En caso de que <span class="math inline">\(P(B)=0\)</span> se deja sin definir.</p>
 </div>
 <div class="proof remark" style="text-align: justify">
 <p><span class="proof-title"><em>Observación</em>. </span>Una fórmula que es evidente a partir de la definición es <span class="math display">\[P(A\cap B)= P(A|B)P(B)=P(B|A)P(A)\]</span> si tanto <span class="math inline">\(P(A)\)</span> como <span class="math inline">\(P(B)\)</span> son diferentes de cero. Esta fórmula relaciona <span class="math inline">\(P(A|B)\)</span> con <span class="math inline">\(P(B|A)\)</span> en términos de las probabilidades incondicionales <span class="math inline">\(P(A)\)</span> y <span class="math inline">\(P(B)\)</span>.</p>
@@ -619,7 +619,7 @@ Ejemplo
 <p><span class="theorem-title"><strong>Teorema 2.2 (Teorema de probabilidades totales)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, si <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> es una colección de eventos mutuamente disjuntos en <span class="math inline">\(\mathfrak{F}\)</span> que satisfacen <span class="math inline">\(\Omega = \bigcup\limits_{j=1}^n B_j\)</span> y <span class="math inline">\(P(B_j)&gt;0\)</span> para <span class="math inline">\(j=1,\ldots, n\)</span>, entonces para cada <span class="math inline">\(A\in \mathfrak{F}\)</span>, <span class="math display">\[P(A)=\sum_{j=1}^n P(A|B_j)P(B_j).\]</span></p>
 <div class="proof" data-collapse="true">
 <p><span class="proof-title"><em>Prueba</em>. </span>Se observa que <span class="math inline">\(A=\bigcup\limits_{j=1}^n A\cap B_j\)</span> y los conjuntos <span class="math inline">\(A\cap B_j\)</span> son mutuamente disjuntos; por lo tanto,</p>
-<p><span class="math display">\[P(A)=P\left(\bigcup_{j=1}^n A\cap B_j\right)=\sum_{j=1}^n P(A\cap B_j)= \sum_{j=1}^n P(A|B_j)P(B_j)\]</span></p>
+<p><span class="math display">\[P(A)=P\left(\bigcup_{j=1}^n A\cap B_j\right)=\sum_{j=1}^n P(A\cap B_j)= \sum_{j=1}^n P(A|B_j)P(B_j).\]</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
@@ -646,11 +646,11 @@ Ejemplo (<strong><em>Seleccionar una pelota de varias urnas</em></strong>)
 </div>
 </div>
 <div id="thm-bayes" class="theorem" style="text-align: justify">
-<p><span class="theorem-title"><strong>Teorema 2.3 (Teorema de Bayes)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, si <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> es una colección de eventos mutuamente disjuntos en <span class="math inline">\(\mathfrak{F}\)</span> que satisfacen <span class="math inline">\(\Omega=\bigcup\limits_{j=1}^n B_j\)</span> y <span class="math inline">\(P(B_j)&gt;0\)</span> para <span class="math inline">\(j=1,\ldots, n\)</span>, entonces para cada <span class="math inline">\(A\in\mathfrak{F}\)</span> para el cual <span class="math inline">\(P(A)&gt;0\)</span></p>
+<p><span class="theorem-title"><strong>Teorema 2.3 (Teorema de Bayes)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, si <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> es una colección de eventos mutuamente disjuntos en <span class="math inline">\(\mathfrak{F}\)</span> que satisfacen <span class="math inline">\(\Omega=\bigcup\limits_{j=1}^n B_j\)</span> y <span class="math inline">\(P(B_j)&gt;0\)</span> para <span class="math inline">\(j=1,\ldots, n\)</span>, entonces para cada <span class="math inline">\(A\in\mathfrak{F}\)</span> para el cual <span class="math inline">\(P(A)&gt;0\)</span>,</p>
 <p><span class="math display">\[P(B_k|A)= \frac{P(A|B_k)P(B_k)}{\sum\limits_{j=1}^n P(A|B_j)P(B_j)}.\]</span></p>
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Se observa que</p>
-<p><span class="math display">\[P(B_k|A)= \frac{P(B_k\cap A)}{P(A)}=\frac{P(A|B_k)P(B_k)}{\sum\limits_{j=1}^n P(A|B_j)P(B_j)}\]</span></p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Utilizando tanto la definición de probabilidad condicional como el teorema de probabilidad total, se sigue que</p>
+<p><span class="math display">\[P(B_k|A)= \frac{P(B_k\cap A)}{P(A)}=\frac{P(A|B_k)P(B_k)}{\sum\limits_{j=1}^n P(A|B_j)P(B_j)}.\]</span></p>
 <p>utilizando tanto la definición de probabilidad condicional como el teorema de probabilidad total.</p>
 </div>
 </div>
@@ -701,23 +701,23 @@ Ejemplo (<strong><em>Seleccionar una pelota de varias urnas</em></strong>)
 </ol>
 </div>
 <div class="proof remark" style="text-align: justify">
-<p><span class="proof-title"><em>Observación</em>. </span>No debe confundirse los términos <strong>eventos independientes</strong> y <strong>eventos disjuntos</strong>. De hecho, los eventos disjuntos suelen ser muy dependientes por que la ocurrencia de uno implica la no ocurrencia del otro. El único evento que es independiente y ajeno es el vacío <span class="math inline">\(\emptyset\)</span>.</p>
+<p><span class="proof-title"><em>Observación</em>. </span>No deben confundirse los términos <strong>eventos independientes</strong> y <strong>eventos disjuntos</strong>. De hecho, los eventos disjuntos suelen ser muy dependientes por que la ocurrencia de uno implica la no ocurrencia del otro. El único evento que es independiente y ajeno es el vacío <span class="math inline">\(\emptyset\)</span>.</p>
 </div>
 <div style="text-align: justify">
 <p>La noción de eventos independientes puede ser extendido a más de dos eventos como se sigue;</p>
 </div>
 <div id="def-ive" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 2.13 (Independencia de varios eventos)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, sean <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span> eventos en <span class="math inline">\(\mathfrak{F}\)</span>. Los eventos <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span> se definen como independientes si y solo si <span class="math inline">\(P\left(\bigcap\limits_{i=1}^n A_i\right)=\prod\limits_{i=1}^n P(A_i)\)</span></p>
+<p><span class="theorem-title"><strong>Definición 2.13 (Independencia de varios eventos)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, sean <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span> eventos en <span class="math inline">\(\mathfrak{F}\)</span>. Los eventos <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span> se definen como independientes si y solo si <span class="math inline">\(P\left(\bigcap\limits_{i=1}^n A_i\right)=\prod\limits_{i=1}^n P(A_i)\)</span>.</p>
 </div>
 </section>
 <section id="variables-aleatorias" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="variables-aleatorias"><span class="header-section-number">2.5</span> Variables aleatorias</h2>
 <div style="text-align: justify">
-<p>Hasta el momento se conoce cómo asignar probabilidades a eventos del espacio muestral, sin embargo en la práctica esto no siempre es posible ya que sería complicado mencionar o enumerar todos los elementos del espacio muestral.</p>
-<p>Por esta razón es necesario “traducir” dichos eventos a números reales. Esto es posible mediante el uso de <em>variables aleatorias</em>.</p>
+<p>Hasta el momento se conoce cómo asignar probabilidades a eventos del espacio muestral, sin embargo, en la práctica esto no siempre es posible, ya que sería complicado mencionar o enumerar todos los elementos del espacio muestral.</p>
+<p>Por esta razón, es necesario “traducir” dichos eventos a números reales. Esto es posible mediante el uso de <em>variables aleatorias</em>.</p>
 </div>
 <div id="def-va" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 2.14 (Variable aleatoria)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, una variable aleatoria, denotada por <span class="math inline">\(X\)</span> o <span class="math inline">\(X(\cdot)\)</span>, es una función con dominio <span class="math inline">\(\Omega\)</span> y contradominio la recta real. La función <span class="math inline">\(X(\cdot)\)</span> debe ser tal si <span class="math inline">\(\omega\in\Omega\)</span> entonces <span class="math inline">\(X(\omega)\in\mathbb R\)</span>. Si <span class="math inline">\(B\subset \mathbb R\)</span> entonces <span class="math inline">\(X^{-1}(B)\in\mathfrak{F}\)</span>, donde <span class="math display">\[X^{-1}(B)=\{\omega\in\Omega| X(\omega\in B)\}.\]</span></p>
+<p><span class="theorem-title"><strong>Definición 2.14 (Variable aleatoria)</strong></span> Para un espacio de probabilidad dado <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span>, una variable aleatoria, denotada por <span class="math inline">\(X\)</span> o <span class="math inline">\(X(\cdot)\)</span>, es una función con dominio <span class="math inline">\(\Omega\)</span> y contradominio la recta real. La función <span class="math inline">\(X(\cdot)\)</span> debe ser tal si <span class="math inline">\(\omega\in\Omega\)</span> entonces <span class="math inline">\(X(\omega)\in\mathbb R\)</span>. Si <span class="math inline">\(B\subset \mathbb R\)</span> entonces <span class="math inline">\(X^{-1}(B)\in\mathfrak{F}\)</span>, donde <span class="math display">\[X^{-1}(B)=\{\omega\in\Omega\ |\  X(\omega\in B)\}.\]</span></p>
 </div>
 <div style="text-align: justify">
 <p>Existen dos tipos de variables aleatorias: discretas y continuas. Las variables aleatorias discretas toman sus valores en un conjunto finito o numerable, por ejemplo, el conjunto de los números naturales <span class="math inline">\(\mathbb N\)</span>. A este conjunto de valores se le conoce como conjunto de valores posibles o <span class="math inline">\(D_X\)</span>. Las variables aleatorias continuas, por el contrario, toman sus valores en el conjunto de los números reales <span class="math inline">\(\mathbb R\)</span>.</p>
@@ -731,7 +731,7 @@ Ejemplo (<strong><em>Seleccionar una pelota de varias urnas</em></strong>)
 <p><span class="theorem-title"><strong>Definición 2.15 (Función de distribución acumulada)</strong></span> La función de distribución acumulada de una variable aleatoria <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(F_X(\cdot)\)</span>, se define como aquella función con dominio la recta real y contradominio el intervalo <span class="math inline">\([0,1]\)</span>, que satisface <span class="math inline">\(F_X(x)=P(X\leq x)=P({\omega: X(\omega)\leq x})\)</span> para cada número real <span class="math inline">\(x\)</span>.</p>
 </div>
 <div style="text-align: justify">
-<p>Una función de distribución definida es única para cada variable y siempre existirá, es importante conocerla por que con ella se pueden calcular probabilidades de la variable aleatoria.</p>
+<p>Una función de distribución definida es única para cada variable y siempre existirá, es importante conocerla porque con ella se pueden calcular probabilidades de la variable aleatoria.</p>
 <p>A continuación, se presentan ejemplos y propiedades de la función de distribución acumulada.</p>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
@@ -778,7 +778,7 @@ Ejemplo (<strong><em>Lanzar 3 monedas</em></strong>)
 <div class="callout-body-container callout-body">
 <p>Considérese el ejemplo del lanzamiento de tres monedas. Sea <span class="math inline">\(X\)</span> el número de águilas en tres lanzamientos.</p>
 <p>La función de distribución es la siguiente:</p>
-<p><span class="math display">\[ F_X(x)=\begin{cases}0 &amp; \text{ si } x&lt;0\\ \frac{1}{8} &amp; \text{ si } 0\leq x&lt; 1\\ \frac{1}{2} &amp; \text{ si  } 1\leq x&lt; 2\\ \frac{7}{8} &amp; \text{ si  } 2\leq x&lt;3\\ 1 &amp; \text{ si } 3\leq x\end{cases} \]</span></p>
+<p><span class="math display">\[ F_X(x)=\begin{cases}0 &amp; \text{ si } x&lt;0,\\ \frac{1}{8} &amp; \text{ si } 0\leq x&lt; 1,\\ \frac{1}{2} &amp; \text{ si  } 1\leq x&lt; 2,\\ \frac{7}{8} &amp; \text{ si  } 2\leq x&lt;3,\\ 1 &amp; \text{ si } 3\leq x.\end{cases} \]</span></p>
 <p>A continuación se muestra una gráfica de la función</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -789,7 +789,7 @@ Ejemplo (<strong><em>Lanzar 3 monedas</em></strong>)
 </div>
 </div>
 </div>
-<p>Por ejemplo, la probabilidad de que se obtenga 0 a 1 aguilas es <span class="math inline">\(\frac{1}{8}\)</span>.</p>
+<p>Por ejemplo, la probabilidad de que se obtenga 0 a 1 águilas es <span class="math inline">\(\frac{1}{8}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -805,21 +805,21 @@ Ejemplo (<strong><em>Duración de una llamada telefónica</em></strong>)
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Para las variables aleatorias continuas, la froma de la función de distribución es un poco distinta, pero sigue cumpliendo las mismas propiedades.</p>
+<p>Para las variables aleatorias continuas, la forma de la función de distribución es un poco distinta, pero sigue cumpliendo las mismas propiedades.</p>
 <p>A continuación se representa una función de distribución acumulada de la variable aleatoria <span class="math inline">\(X\)</span> que podría ser usada para modelar la duración de las llamadas telefónicas.</p>
-<p><span class="math display">\[ F_X(x)=\begin{cases}0 &amp; \text{ si } x\leq0\\ 1-e^{-x} &amp; \text{ si } 0&lt; x\end{cases} \]</span></p>
+<p><span class="math display">\[ F_X(x)=\begin{cases}0 &amp; \text{ si } x\leq 0,\\ 1-e^{-x} &amp; \text{ si } 0&lt; x.\end{cases} \]</span></p>
 <p>En este caso, se puede ver que la probabilidad de que la variable aleatoria <span class="math inline">\(X\)</span> sea menor a cero es 0, ya que el soporte de la distribución son los números reales positivos.</p>
 <p>Como puede apreciarse, conociendo la función de distribución es posible obtener las probabilidades de cualquier evento, simplemente evaluando los valores en la función, por ejemplo:</p>
 <ul>
-<li><p><span class="math inline">\(P(X&lt;2)=1-e^{-2}=0.8646\)</span></p></li>
-<li><p><span class="math inline">\(P(X&gt;5)=1-(1-e^{-5})=0.0067\)</span></p></li>
-<li><p><span class="math inline">\(P(1&lt;X&lt;3)=P(X&lt;3)-P(X&lt;1)=0.3180\)</span></p></li>
+<li><p><span class="math inline">\(P(X&lt;2)=1-e^{-2}=0.8646\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;5)=1-(1-e^{-5})=0.0067\)</span>.</p></li>
+<li><p><span class="math inline">\(P(1&lt;X&lt;3)=P(X&lt;3)-P(X&lt;1)=0.3180\)</span>.</p></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="proof remark" style="text-align: justify">
-<p><span class="proof-title"><em>Observación</em>. </span>Se debe tener cuidado cuando se calcula probabilidades de variables aleatorias discretas ya que en general no es lo mismo <span class="math inline">\(P(X&lt; x)\)</span> que <span class="math inline">\(P(X\leq x)\)</span>.</p>
+<p><span class="proof-title"><em>Observación</em>. </span>Se debe tener cuidado cuando se calculan probabilidades de variables aleatorias discretas, ya que en general no es lo mismo <span class="math inline">\(P(X&lt; x)\)</span> que <span class="math inline">\(P(X\leq x)\)</span>.</p>
 </div>
 </section>
 </section>
@@ -837,7 +837,7 @@ Ejemplo (<strong><em>Duración de una llamada telefónica</em></strong>)
 </div>
 <div id="def-fdd" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 2.18 (Función de densidad discreta de una variable aleatoria discreta)</strong></span> Si <span class="math inline">\(X\)</span> es una variable aleatoria discreta con <span class="math inline">\(D_x=x_1,x_2,\ldots\)</span> entonces la función, denotada por <span class="math inline">\(f_X(\cdot)\)</span> y definida por</p>
-<p><span class="math display">\[ f_X(x)=\begin{cases}P(X=x_j) &amp; \text{ si } x\in D_x\\ 0 &amp; \text{ cualquier otro caso. }\end{cases} \]</span></p>
+<p><span class="math display">\[ f_X(x)=\begin{cases}P(X=x_j) &amp; \text{ si } x\in D_x,\\ 0 &amp; \text{ cualquier otro caso. }\end{cases} \]</span></p>
 <p>es la función de densidad discreta de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="proof remark" style="text-align: justify">
@@ -851,7 +851,7 @@ Ejemplo (<strong><em>Duración de una llamada telefónica</em></strong>)
 <ol type="i">
 <li><p><span class="math inline">\(f(x_j)&gt;0\)</span> para <span class="math inline">\(j=1,2,\ldots.\)</span></p></li>
 <li><p><span class="math inline">\(f(x)=0\)</span> para <span class="math inline">\(x\neq x_j\)</span> con <span class="math inline">\(j=1,2,\ldots.\)</span></p></li>
-<li><p><span class="math inline">\(\sum_D f(x_j)=1\)</span></p></li>
+<li><p><span class="math inline">\(\sum_D f(x_j)=1\)</span>.</p></li>
 </ol>
 </div>
 </section>
@@ -886,15 +886,15 @@ Ejemplo (<strong><em>Duración de una llamada telefónica</em></strong>)
 <div class="callout-body-container callout-body">
 <p>Usando el teorema fundamental del cálculo, se puede probar la propiedad anterior. Se ilustrará para el ejemplo de la duración de llamadas telefónicas.</p>
 <p>Supóngase que la función de distribución para modelar la duración de las llamadas telefónicas es</p>
-<p><span class="math display">\[ F_X(x)=\begin{cases}0 &amp; \text{ si } x \le 0\\ 1-e^{-x} &amp; \text{ si } 0&lt; x\end{cases} \]</span></p>
-<p>Se observa que <span class="math inline">\(F_X(x)\)</span> está definida en dos partes, por lo que la función no es <em>absolutamente continua</em> en cero, por lo que solo será diferenciable en el intervalo de los reales positivos.</p>
-<p><span class="math display">\[ f_X(x)=\frac{dF_X(x)}{dx}=\frac{d (1-e^{-x})}{dx}=-\frac{d e^{-x}}{dx}=e^{-x} \]</span></p>
+<p><span class="math display">\[ F_X(x)=\begin{cases}0 &amp; \text{ si } x \le 0,\\ 1-e^{-x} &amp; \text{ si } 0&lt; x.\end{cases} \]</span></p>
+<p>Se observa que <span class="math inline">\(F_X(x)\)</span> está definida en dos partes, por lo que la función no es <em>absolutamente continua</em> en cero, por lo que solo será diferenciable en el intervalo de los reales positivos. Además,</p>
+<p><span class="math display">\[ f_X(x)=\frac{dF_X(x)}{dx}=\frac{d (1-e^{-x})}{dx}=-\frac{d e^{-x}}{dx}=e^{-x}, \]</span></p>
 <p>es decir;</p>
 <p><span class="math display">\[ f_X(x)=e^{-x}I_{(0,\infty)}(x). \]</span></p>
 <p>Por otro lado, se observa que</p>
 <p><span class="math display">\[ F_X(x)= \int_{\infty}^x e^{-u}du=\int_0^x e^{-u}du=1-e^{-x}, \]</span></p>
 <p>es decir</p>
-<p><span class="math display">\[ F_X(x)=1-e^{-x} I_{(0,\infty)}(x) \]</span></p>
+<p><span class="math display">\[ F_X(x)=1-e^{-x} I_{(0,\infty)}(x) .\]</span></p>
 <p>De esta manera, se comprueba la propiedad.</p>
 </div>
 </div>
@@ -913,12 +913,12 @@ Ejemplo (<strong><em>Duración de una llamada telefónica</em></strong>)
 </div>
 <div id="def-drv" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 2.23 (Distribución de un vector aleatorio)</strong></span> Sea <span class="math inline">\(\mathbf X\)</span> un vector aleatorio <span class="math inline">\(n-\)</span>dimensional. La medida de probabilidad definida por</p>
-<p><span class="math display">\[ P_{\mathbf X} (B) := P(\mathbf X\in B); B\in \mathcal B_n \]</span></p>
+<p><span class="math display">\[ P_{\mathbf X} (B) := P(\mathbf X\in B);\  B\in \mathcal B_n. \]</span></p>
 <p>donde <span class="math inline">\(\mathcal B_n\)</span> representa la sigma álgebra del Borel sobre <span class="math inline">\(\mathbb R^n\)</span>, es denominada la <em>distribución</em> del vector aleatorio <span class="math inline">\(\mathbf X\)</span>.</p>
 </div>
 <div id="def-dcva" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 2.24 (Función de masa de probabilidad conjunta)</strong></span> Sea <span class="math inline">\(\mathbf X= (X_1,X_2,\cdots,X_n)\)</span> un vector aleatorio de <span class="math inline">\(n\)</span> dimensiones. Si las variables aleatorias <span class="math inline">\(X_i\)</span>, donde <span class="math inline">\(i=1,\cdots,n\)</span>, son todas discretas, se afirma que el vector aleatorio <span class="math inline">\(\mathbf X\)</span> es discreto. En esta situación, la función de densidad de <span class="math inline">\(\mathbf X\)</span>, también conocida como la <em>función de densidad conjunta</em> de las variables aleatorias <span class="math inline">\(X_1, X_2, \cdots, X_n\)</span>, queda definida por</p>
-<p><span class="math display">\[ p_\mathbf{X}(x):=\begin{cases}P(\mathbf X=x) &amp; \text{ si } x \text{  pertenece a la imagen de } \mathbf X\\ 0 &amp; \text{ en caso contrario. } \end{cases} \]</span></p>
+<p><span class="math display">\[ p_\mathbf{X}(x):=\begin{cases}P(\mathbf X=x) &amp; \text{ si } x \text{  pertenece a la imagen de } \mathbf X,\\ 0 &amp; \text{ en caso contrario. } \end{cases} \]</span></p>
 </div>
 <div id="def-FDAC" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 2.25 (Función de distribución acumulada conjunta)</strong></span> Sea <span class="math inline">\(\mathbf X=(X_1,X_2,\cdots, X_n)\)</span> un vector aleatorio de <span class="math inline">\(n\)</span> dimensiones. La función definida por</p>
@@ -1161,6 +1161,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1195,7 +1213,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1486,4 +1508,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/book/probabilidad.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/book/probabilidad.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/probabilidad.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/probabilidad.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>

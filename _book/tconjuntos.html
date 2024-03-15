@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.22">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales - 1&nbsp; Teoría de conjuntos</title>
+<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales – 1&nbsp; Teoría de conjuntos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -160,12 +160,12 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logounach.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./LOGO50.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis comparativo del desempeño en métodos para el pronóstico de series temporales</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Jennlg/Tesis/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Jennlg/Tesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -335,7 +335,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referencias</span></a>
   </div>
 </li>
     </ul>
@@ -343,7 +343,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -370,8 +370,26 @@ window.Quarto = {
 
 <div style="text-align: justify">
 <p>En esta sección, se abordan algunas de las ideas y conceptos elementales de la teoría de conjuntos que son necesarios para una introducción moderna a la teoría de la probabilidad.</p>
-<p>Considere una colección de objetos en la que cada objeto se denomina punto o elemento. Se asume que dicha colección de objetos es lo suficientemente amplia como para incluir todos los puntos considerados en una discusión específica. La totalidad de estos puntos se conoce como espacio, universo o conjunto universal.</p>
+<p>Se considera una colección de objetos en la que cada uno se denomina punto o elemento. Se asume que esta colección es lo suficientemente amplia como para incluir todos los puntos considerados en una discusión específica. La totalidad de estos puntos se conoce como espacio, universo o conjunto universal.</p>
+<p>Se llamará al espacio (anticipando que se convertirá en el espacio muestral cuando se hable de probabilidad) y se denotará por <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(\omega\)</span> un elemento o punto en <span class="math inline">\(\Omega\)</span>. Aunque un conjunto puede definirse como cualquier colección de objetos, se asumirá, a menos que se indique lo contrario, que todos los conjuntos mencionados en una discusión dada consisten en puntos en el espacio <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><span class="math inline">\(\Omega = \mathbb{R}^2\)</span>, donde <span class="math inline">\(\mathbb{R}^2\)</span> es la colección de puntos <span class="math inline">\(\omega\)</span> en el plano y <span class="math inline">\(\omega=(x,y)\)</span> es cualquier par de números reales <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>.</p>
+</div>
+</div>
+</div>
+<div style="text-align: justify">
 <p>Por lo general, se utilizarán letras latinas mayúsculas al comienzo del alfabeto, con o sin subíndices, para denotar conjuntos. Si <span class="math inline">\(\omega\)</span> es un punto o elemento que pertenece al conjunto <span class="math inline">\(A\)</span>, se escribirá <span class="math inline">\(\omega \in A\)</span>; si <span class="math inline">\(\omega\)</span> no es un elemento de <span class="math inline">\(A\)</span>, se escribirá <span class="math inline">\(\omega \notin A\)</span>.</p>
 </div>
 <div id="def-sub" class="theorem definition" style="text-align: justify">
@@ -424,7 +442,7 @@ Figura&nbsp;1.1: Diagramas de Venn
 <p>Algunas de las leyes mencionadas anteriormente se ilustran en los diagramas de Venn en la <a href="#fig-venn" class="quarto-xref">Figura&nbsp;<span>1.1</span></a>. Aunque se utilizará libremente cualquiera de las leyes mencionadas, podría resultar instructivo proporcionar una prueba de una de ellas para ilustrar la técnica. Se considera el siguiente ejemplo:</p>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -433,7 +451,7 @@ Ejemplo
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Demostrar que <span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span>.</p>
 <div class="proof">
@@ -694,6 +712,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -728,7 +764,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1019,4 +1059,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/book/tconjuntos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/book/tconjuntos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/tconjuntos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/tconjuntos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>

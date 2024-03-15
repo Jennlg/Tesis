@@ -13,29 +13,29 @@ Un proceso estocástico (o probabilístico) puede considerarse una generalizaci�
 ::: {#def-PE style="text-align: justify"}
 ## Proceso estocástico
 
-Un *proceso estocástico* real es una colección de variables aleatorias $\{X_t; t\in T\}$ definida en un espacio de probabilidad común $(\Omega, \mathfrak{F}, P)$ con valores en $\mathbb{R}$. $T$ se le llama al conjunto índice del proceso o espacio paramétrico, que generalmente es un subconjunto de $\mathbb R$. El conjunto de valores que la variable aleatoria $X_t$ puede tomar se denomina *espacio de estado del proceso* y es denotado por $S$.
+Un *proceso estocástico* real es una colección de variables aleatorias $\{X_t;\  t\in T\}$ definida en un espacio de probabilidad común $(\Omega, \mathfrak{F}, P)$ con valores en $\mathbb{R}$. $T$ se le llama al conjunto índice del proceso o espacio paramétrico, que generalmente es un subconjunto de $\mathbb R$. El conjunto de valores que la variable aleatoria $X_t$ puede tomar se denomina *espacio de estado del proceso* y es denotado por $S$.
 :::
 
 ::: {style="text-align: justify"}
-De la definición anterior se entiende que las variables *dependerán* del parámetro $t$ (usualmente el tiempo) y están ordenadas. Además el conjunto $T$ puede ser discreto o continuo. Si el conjunto de índices $T$ es discreto, se le conoce como *proceso estocástico de tiempo discreto* mientras que si $T$ es continuo, se le conoce como *proceso estocástico de tiempo continuo*. Las variables aleatorias $X_t$ pueden tomar tanto valores continuos o valores discretos. Note que si se fija un punto $t$, se tiene $X_t$ una variable aleatoria [@ross1995stochastic].
+De la definición anterior se entiende que las variables *dependerán* del parámetro $t$ (usualmente el tiempo) y están ordenadas. Además, el conjunto $T$ puede ser discreto o continuo. Si el conjunto de índices $T$ es discreto, se le conoce como *proceso estocástico de tiempo discreto* mientras que si $T$ es continuo, se le conoce como *proceso estocástico de tiempo continuo*. Las variables aleatorias $X_t$ pueden tomar tanto valores continuos como valores discretos. Note que si se fija un punto $t$, se tiene $X_t$ una variable aleatoria [@ross1995stochastic].
 :::
 
 ::: {#def-realiza style="text-align: justify"}
 ## Trayectoria
 
-La asignación definida para cada $\omega\in\Omega$ fijo, $$\begin{split}X(\omega): & T\to S\\ &t\mapsto X_t(\omega)\end{split}$$ se denomina una trayectoria de muestra del proceso a lo largo del tiempo o una realización del proceso estocástico.
+La asignación definida para cada $\omega\in\Omega$ fijo, $$\begin{split}X(\omega):\ &T\to S\\ &t\mapsto X_t(\omega)\end{split}$$ se denomina una trayectoria de muestra del proceso a lo largo del tiempo o una realización del proceso estocástico.
 :::
 
 ::: {#def-pcesp style="text-align: justify"}
 ## Proceso completamente específicado
 
-Se dice que un proceso estocástico $\{X(t):t\in T\}$ está completamente especificado si para cualquier valor del tiempo $t_1<t_2<\cdots<t_n$ con $n\in\mathbb N$, la distribución conjunta de $(X_{t_1}, X_{t_2},\cdots,X_{t_n})$ es conocida.
+Se dice que un proceso estocástico $\{X(t): t\in T\}$ está completamente especificado si para cualquier valor del tiempo $t_1<t_2<\cdots<t_n$ con $n\in\mathbb N$, la distribución conjunta de $(X_{t_1}, X_{t_2},\cdots,X_{t_n})$ es conocida.
 :::
 
 ::: {#def-incind style="text-align: justify"}
 ## Proceso estocástico con incrementos independientes
 
-Si, para todo $t_0,t_1,t_2,\ldots,t_n$ tal que $t_0<t_1<t_2<\cdots<t_n$, las variables aleatorias $X_{t_0}, X_{t_1}-X_{t_0}, X_{t_2}-X_{t_1},\ldots,X_{t_n}-X_{t_{n-1}}$ son independientes (o de manera equivalente, $X_{t+\tau}-X_\tau$ es independiente de $X_s$ para $s< \tau$), entonces se dice que el proceso $\{X_t; t\in T\}$ es un *proceso con incrementos independientes.*
+Si para todo $t_0,t_1,t_2,\ldots,t_n$ tal que $t_0<t_1<t_2<\cdots<t_n$, las variables aleatorias $X_{t_0}, X_{t_1}-X_{t_0}, X_{t_2}-X_{t_1},\ldots,X_{t_n}-X_{t_{n-1}}$ son independientes (o de manera equivalente, $X_{t+\tau}-X_\tau$ es independiente de $X_s$ para $s< \tau$), entonces se dice que el proceso $\{X_t;\ t\in T\}$ es un *proceso con incrementos independientes.*
 :::
 
 ::: {.remark style="text-align: justify"}
@@ -45,13 +45,13 @@ No resulta pertinente afirmar que $X_{t_1}$ sea inferior a $X_{t_2}$ dado que la
 ::: {#def-incest style="text-align: justify"}
 ## Proceso estocástico con incrementos estacionarios
 
-Se dice que un proceso estocástico ${X_t; t\in T}$ tiene *incrementos estacionarios* si $X_{t_2+\tau}-X_{t_1+\tau}$ tiene la misma distribución que $X_{t_2}-X_{t_1}$ para todas las elecciones de $t_1,t_2$ y $\tau>0$.
+Se dice que un proceso estocástico $\{X_t;\ t\in T\}$ tiene *incrementos estacionarios* si $X_{t_2+\tau}-X_{t_1+\tau}$ tiene la misma distribución que $X_{t_2}-X_{t_1}$ para todas las elecciones de $t_1,t_2$ y $\tau>0$.
 :::
 
 ::: {#def-procesoest style="text-align: justify"}
 ## Proceso estacionario
 
-Si para cualquier conjunto de $t_1, t_2, \ldots , t_n$ arbitrarios, tal que $t_1< t_2 < \cdots < t_n$, las distribuciones conjuntas de las variables aleatorias vectoriales $(X_{t_1}, X_{t_2},\ldots, X_{t_n})$ y $(X_{t_1+h}, X_{t_2+h},\ldots , X_{t_n+h})$ son iguales para todo $h > 0$, entonces se dice que el proceso estocástico $\{X_t, t \in T\}$ es un proceso estacionario estocástico de orden $n$ (o simplemente un *proceso estacionario*). El proceso estocástico $\{X_t, t \in T\}$ se dice que es un *proceso estocástico fuertemente estacionario* o e*strictamente estacionario* si la propiedad anterior se cumple para todo $n$.
+Si para cualquier conjunto de $t_1, t_2, \ldots , t_n$ arbitrarios, tal que $t_1< t_2 < \cdots < t_n$, las distribuciones conjuntas de las variables aleatorias vectoriales $(X_{t_1}, X_{t_2},\ldots, X_{t_n})$ y $(X_{t_1+h}, X_{t_2+h},\ldots , X_{t_n+h})$ son iguales para todo $h > 0$, entonces se dice que el proceso estocástico $\{X_t,\ t \in T\}$ es un proceso estacionario estocástico de orden $n$ (o simplemente un *proceso estacionario*). El proceso estocástico $\{X_t,\ t \in T\}$ se dice que es un *proceso estocástico fuertemente estacionario* o e*strictamente estacionario* si la propiedad anterior se cumple para todo $n$.
 :::
 
 <div>
@@ -59,13 +59,13 @@ Si para cualquier conjunto de $t_1, t_2, \ldots , t_n$ arbitrarios, tal que $t_1
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
 ### Ejemplo
 
-Suponga que $\{X_n; n \geq 1\}$ es una secuencia de variables aleatorias independientes e idénticamente distribuidas. Se define la secuencia $\{Y_n, n \geq 1\}$ como
+Suponga que $\{X_n;\ n \geq 1\}$ es una secuencia de variables aleatorias independientes e idénticamente distribuidas. Se define la secuencia $\{Y_n,\ n \geq 1\}$ como
 
 $$
 Y_n=X_n+aX_{n-1}
 $$
 
-donde $a$ es una constante real. Entonces, es fácil observar que $\{Y_n; n \geq 1\}$ es estrictamente estacionaria.
+donde $a$ es una constante real. Entonces, es fácil observar que $\{Y_n;\ n \geq 1\}$ es estrictamente estacionaria.
 :::
 
 </div>
@@ -73,7 +73,7 @@ donde $a$ es una constante real. Entonces, es fácil observar que $\{Y_n; n \geq
 ::: {#def-SOP style="text-align: justify"}
 ## Proceso de segundo orden
 
-Un proceso estocástico $\{X_t; t\in T\}$ se dice un *proceso de segundo orden* si
+Un proceso estocástico $\{X_t;\ t\in T\}$ se dice un *proceso de segundo orden* si
 
 $$
 \mathrm{E}((X_t)^2)< \infty
@@ -85,7 +85,7 @@ para todo $t\in T$.
 ::: {#def-PEC style="text-align: justify"}
 ## Proceso estacionario por covarianza
 
-Un proceso estocástico de segundo orden $\{X_t, t \in T\}$ se denomina *estacionario por covarianza* o *estacionario débil* si su función de media $m(t) = \mathrm{E}[X_t]$ es independiente de $t$ y su función de covarianza $\mathrm{Cov}(X_s, X_t)$ depende únicamente de la diferencia $|t - s|$ para todos $s, t \in T$. Es decir:
+Un proceso estocástico de segundo orden $\{X_t,\ t \in T\}$ se denomina *estacionario por covarianza* o *estacionario débil* si su función de media $m(t) = \mathrm{E}[X_t]$ es independiente de $t$ y su función de covarianza $\mathrm{Cov}(X_s, X_t)$ depende únicamente de la diferencia $|t - s|$ para todos $s, t \in T$. Es decir:
 
 $$
 \mathrm{Cov}(X_s,X_t)=f(|t-s|).
@@ -95,7 +95,7 @@ $$
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
 ## Ejemplo
 
-Sea $\{X_n; n \geq 1\}$ un conjunto de variables aleatorias no correlacionadas con media cero y varianza uno. Entonces, la covarianza $\mathrm{Cov}(X_m, X_n) = \mathrm{E}(X_mX_n)$ es igual a $0$ si $m \ne n$ y $1$ si $m = n$. Esto demuestra que $\{X_n, n \ge 1\}$ es un proceso estacionario por covarianza.
+Sea $\{X_n;\ n \geq 1\}$ un conjunto de variables aleatorias no correlacionadas con media cero y varianza uno. Entonces, la covarianza $\mathrm{Cov}(X_m, X_n) = \mathrm{E}(X_mX_n)$ es igual a $0$ si $m \ne n$ y $1$ si $m = n$. Esto demuestra que $\{X_n,\ n \ge 1\}$ es un proceso estacionario por covarianza.
 :::
 
 ::: {#def-EP style="text-align: justify"}

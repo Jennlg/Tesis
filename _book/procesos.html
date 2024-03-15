@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.22">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales - 4&nbsp; Procesos estocásticos</title>
+<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales – 4&nbsp; Procesos estocásticos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -160,12 +160,12 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logounach.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./LOGO50.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis comparativo del desempeño en métodos para el pronóstico de series temporales</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Jennlg/Tesis/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Jennlg/Tesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -335,7 +335,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referencias</span></a>
   </div>
 </li>
     </ul>
@@ -343,7 +343,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -373,28 +373,28 @@ window.Quarto = {
 <p>Un proceso estocástico (o probabilístico) puede considerarse una generalización de una muestra aleatoria, en el sentido de que las variables aleatorias <strong>no son necesariamente independientes</strong> y su distrbución podría cambiar. <span class="citation" data-cites="castañeda2014introduction">(<a href="references.html#ref-castañeda2014introduction" role="doc-biblioref">Castañeda, Arunachalam, y Dharmaraja 2014</a>)</span> proporciona la siguiente definición para proceso estocástico.</p>
 </div>
 <div id="def-PE" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.1 (Proceso estocástico)</strong></span> Un <em>proceso estocástico</em> real es una colección de variables aleatorias <span class="math inline">\(\{X_t; t\in T\}\)</span> definida en un espacio de probabilidad común <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span> con valores en <span class="math inline">\(\mathbb{R}\)</span>. <span class="math inline">\(T\)</span> se le llama al conjunto índice del proceso o espacio paramétrico, que generalmente es un subconjunto de <span class="math inline">\(\mathbb R\)</span>. El conjunto de valores que la variable aleatoria <span class="math inline">\(X_t\)</span> puede tomar se denomina <em>espacio de estado del proceso</em> y es denotado por <span class="math inline">\(S\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 4.1 (Proceso estocástico)</strong></span> Un <em>proceso estocástico</em> real es una colección de variables aleatorias <span class="math inline">\(\{X_t;\  t\in T\}\)</span> definida en un espacio de probabilidad común <span class="math inline">\((\Omega, \mathfrak{F}, P)\)</span> con valores en <span class="math inline">\(\mathbb{R}\)</span>. <span class="math inline">\(T\)</span> se le llama al conjunto índice del proceso o espacio paramétrico, que generalmente es un subconjunto de <span class="math inline">\(\mathbb R\)</span>. El conjunto de valores que la variable aleatoria <span class="math inline">\(X_t\)</span> puede tomar se denomina <em>espacio de estado del proceso</em> y es denotado por <span class="math inline">\(S\)</span>.</p>
 </div>
 <div style="text-align: justify">
-<p>De la definición anterior se entiende que las variables <em>dependerán</em> del parámetro <span class="math inline">\(t\)</span> (usualmente el tiempo) y están ordenadas. Además el conjunto <span class="math inline">\(T\)</span> puede ser discreto o continuo. Si el conjunto de índices <span class="math inline">\(T\)</span> es discreto, se le conoce como <em>proceso estocástico de tiempo discreto</em> mientras que si <span class="math inline">\(T\)</span> es continuo, se le conoce como <em>proceso estocástico de tiempo continuo</em>. Las variables aleatorias <span class="math inline">\(X_t\)</span> pueden tomar tanto valores continuos o valores discretos. Note que si se fija un punto <span class="math inline">\(t\)</span>, se tiene <span class="math inline">\(X_t\)</span> una variable aleatoria <span class="citation" data-cites="ross1995stochastic">(<a href="references.html#ref-ross1995stochastic" role="doc-biblioref">Ross 1995</a>)</span>.</p>
+<p>De la definición anterior se entiende que las variables <em>dependerán</em> del parámetro <span class="math inline">\(t\)</span> (usualmente el tiempo) y están ordenadas. Además, el conjunto <span class="math inline">\(T\)</span> puede ser discreto o continuo. Si el conjunto de índices <span class="math inline">\(T\)</span> es discreto, se le conoce como <em>proceso estocástico de tiempo discreto</em> mientras que si <span class="math inline">\(T\)</span> es continuo, se le conoce como <em>proceso estocástico de tiempo continuo</em>. Las variables aleatorias <span class="math inline">\(X_t\)</span> pueden tomar tanto valores continuos como valores discretos. Note que si se fija un punto <span class="math inline">\(t\)</span>, se tiene <span class="math inline">\(X_t\)</span> una variable aleatoria <span class="citation" data-cites="ross1995stochastic">(<a href="references.html#ref-ross1995stochastic" role="doc-biblioref">Ross 1995</a>)</span>.</p>
 </div>
 <div id="def-realiza" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.2 (Trayectoria)</strong></span> La asignación definida para cada <span class="math inline">\(\omega\in\Omega\)</span> fijo, <span class="math display">\[\begin{split}X(\omega): &amp; T\to S\\ &amp;t\mapsto X_t(\omega)\end{split}\]</span> se denomina una trayectoria de muestra del proceso a lo largo del tiempo o una realización del proceso estocástico.</p>
+<p><span class="theorem-title"><strong>Definición 4.2 (Trayectoria)</strong></span> La asignación definida para cada <span class="math inline">\(\omega\in\Omega\)</span> fijo, <span class="math display">\[\begin{split}X(\omega):\ &amp;T\to S\\ &amp;t\mapsto X_t(\omega)\end{split}\]</span> se denomina una trayectoria de muestra del proceso a lo largo del tiempo o una realización del proceso estocástico.</p>
 </div>
 <div id="def-pcesp" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.3 (Proceso completamente específicado)</strong></span> Se dice que un proceso estocástico <span class="math inline">\(\{X(t):t\in T\}\)</span> está completamente especificado si para cualquier valor del tiempo <span class="math inline">\(t_1&lt;t_2&lt;\cdots&lt;t_n\)</span> con <span class="math inline">\(n\in\mathbb N\)</span>, la distribución conjunta de <span class="math inline">\((X_{t_1}, X_{t_2},\cdots,X_{t_n})\)</span> es conocida.</p>
+<p><span class="theorem-title"><strong>Definición 4.3 (Proceso completamente específicado)</strong></span> Se dice que un proceso estocástico <span class="math inline">\(\{X(t): t\in T\}\)</span> está completamente especificado si para cualquier valor del tiempo <span class="math inline">\(t_1&lt;t_2&lt;\cdots&lt;t_n\)</span> con <span class="math inline">\(n\in\mathbb N\)</span>, la distribución conjunta de <span class="math inline">\((X_{t_1}, X_{t_2},\cdots,X_{t_n})\)</span> es conocida.</p>
 </div>
 <div id="def-incind" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.4 (Proceso estocástico con incrementos independientes)</strong></span> Si, para todo <span class="math inline">\(t_0,t_1,t_2,\ldots,t_n\)</span> tal que <span class="math inline">\(t_0&lt;t_1&lt;t_2&lt;\cdots&lt;t_n\)</span>, las variables aleatorias <span class="math inline">\(X_{t_0}, X_{t_1}-X_{t_0}, X_{t_2}-X_{t_1},\ldots,X_{t_n}-X_{t_{n-1}}\)</span> son independientes (o de manera equivalente, <span class="math inline">\(X_{t+\tau}-X_\tau\)</span> es independiente de <span class="math inline">\(X_s\)</span> para <span class="math inline">\(s&lt; \tau\)</span>), entonces se dice que el proceso <span class="math inline">\(\{X_t; t\in T\}\)</span> es un <em>proceso con incrementos independientes.</em></p>
+<p><span class="theorem-title"><strong>Definición 4.4 (Proceso estocástico con incrementos independientes)</strong></span> Si para todo <span class="math inline">\(t_0,t_1,t_2,\ldots,t_n\)</span> tal que <span class="math inline">\(t_0&lt;t_1&lt;t_2&lt;\cdots&lt;t_n\)</span>, las variables aleatorias <span class="math inline">\(X_{t_0}, X_{t_1}-X_{t_0}, X_{t_2}-X_{t_1},\ldots,X_{t_n}-X_{t_{n-1}}\)</span> son independientes (o de manera equivalente, <span class="math inline">\(X_{t+\tau}-X_\tau\)</span> es independiente de <span class="math inline">\(X_s\)</span> para <span class="math inline">\(s&lt; \tau\)</span>), entonces se dice que el proceso <span class="math inline">\(\{X_t;\ t\in T\}\)</span> es un <em>proceso con incrementos independientes.</em></p>
 </div>
 <div class="proof remark" style="text-align: justify">
 <p><span class="proof-title"><em>Observación</em>. </span>No resulta pertinente afirmar que <span class="math inline">\(X_{t_1}\)</span> sea inferior a <span class="math inline">\(X_{t_2}\)</span> dado que las variables aleatorias no se encuentran ordenadas.</p>
 </div>
 <div id="def-incest" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.5 (Proceso estocástico con incrementos estacionarios)</strong></span> Se dice que un proceso estocástico <span class="math inline">\({X_t; t\in T}\)</span> tiene <em>incrementos estacionarios</em> si <span class="math inline">\(X_{t_2+\tau}-X_{t_1+\tau}\)</span> tiene la misma distribución que <span class="math inline">\(X_{t_2}-X_{t_1}\)</span> para todas las elecciones de <span class="math inline">\(t_1,t_2\)</span> y <span class="math inline">\(\tau&gt;0\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 4.5 (Proceso estocástico con incrementos estacionarios)</strong></span> Se dice que un proceso estocástico <span class="math inline">\(\{X_t;\ t\in T\}\)</span> tiene <em>incrementos estacionarios</em> si <span class="math inline">\(X_{t_2+\tau}-X_{t_1+\tau}\)</span> tiene la misma distribución que <span class="math inline">\(X_{t_2}-X_{t_1}\)</span> para todas las elecciones de <span class="math inline">\(t_1,t_2\)</span> y <span class="math inline">\(\tau&gt;0\)</span>.</p>
 </div>
 <div id="def-procesoest" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.6 (Proceso estacionario)</strong></span> Si para cualquier conjunto de <span class="math inline">\(t_1, t_2, \ldots , t_n\)</span> arbitrarios, tal que <span class="math inline">\(t_1&lt; t_2 &lt; \cdots &lt; t_n\)</span>, las distribuciones conjuntas de las variables aleatorias vectoriales <span class="math inline">\((X_{t_1}, X_{t_2},\ldots, X_{t_n})\)</span> y <span class="math inline">\((X_{t_1+h}, X_{t_2+h},\ldots , X_{t_n+h})\)</span> son iguales para todo <span class="math inline">\(h &gt; 0\)</span>, entonces se dice que el proceso estocástico <span class="math inline">\(\{X_t, t \in T\}\)</span> es un proceso estacionario estocástico de orden <span class="math inline">\(n\)</span> (o simplemente un <em>proceso estacionario</em>). El proceso estocástico <span class="math inline">\(\{X_t, t \in T\}\)</span> se dice que es un <em>proceso estocástico fuertemente estacionario</em> o e<em>strictamente estacionario</em> si la propiedad anterior se cumple para todo <span class="math inline">\(n\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 4.6 (Proceso estacionario)</strong></span> Si para cualquier conjunto de <span class="math inline">\(t_1, t_2, \ldots , t_n\)</span> arbitrarios, tal que <span class="math inline">\(t_1&lt; t_2 &lt; \cdots &lt; t_n\)</span>, las distribuciones conjuntas de las variables aleatorias vectoriales <span class="math inline">\((X_{t_1}, X_{t_2},\ldots, X_{t_n})\)</span> y <span class="math inline">\((X_{t_1+h}, X_{t_2+h},\ldots , X_{t_n+h})\)</span> son iguales para todo <span class="math inline">\(h &gt; 0\)</span>, entonces se dice que el proceso estocástico <span class="math inline">\(\{X_t,\ t \in T\}\)</span> es un proceso estacionario estocástico de orden <span class="math inline">\(n\)</span> (o simplemente un <em>proceso estacionario</em>). El proceso estocástico <span class="math inline">\(\{X_t,\ t \in T\}\)</span> se dice que es un <em>proceso estocástico fuertemente estacionario</em> o e<em>strictamente estacionario</em> si la propiedad anterior se cumple para todo <span class="math inline">\(n\)</span>.</p>
 </div>
 <div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
@@ -409,24 +409,24 @@ Ejemplo
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Suponga que <span class="math inline">\(\{X_n; n \geq 1\}\)</span> es una secuencia de variables aleatorias independientes e idénticamente distribuidas. Se define la secuencia <span class="math inline">\(\{Y_n, n \geq 1\}\)</span> como</p>
+<p>Suponga que <span class="math inline">\(\{X_n;\ n \geq 1\}\)</span> es una secuencia de variables aleatorias independientes e idénticamente distribuidas. Se define la secuencia <span class="math inline">\(\{Y_n,\ n \geq 1\}\)</span> como</p>
 <p><span class="math display">\[
 Y_n=X_n+aX_{n-1}
 \]</span></p>
-<p>donde <span class="math inline">\(a\)</span> es una constante real. Entonces, es fácil observar que <span class="math inline">\(\{Y_n; n \geq 1\}\)</span> es estrictamente estacionaria.</p>
+<p>donde <span class="math inline">\(a\)</span> es una constante real. Entonces, es fácil observar que <span class="math inline">\(\{Y_n;\ n \geq 1\}\)</span> es estrictamente estacionaria.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="def-SOP" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.7 (Proceso de segundo orden)</strong></span> Un proceso estocástico <span class="math inline">\(\{X_t; t\in T\}\)</span> se dice un <em>proceso de segundo orden</em> si</p>
+<p><span class="theorem-title"><strong>Definición 4.7 (Proceso de segundo orden)</strong></span> Un proceso estocástico <span class="math inline">\(\{X_t;\ t\in T\}\)</span> se dice un <em>proceso de segundo orden</em> si</p>
 <p><span class="math display">\[
 \mathrm{E}((X_t)^2)&lt; \infty
 \]</span></p>
 <p>para todo <span class="math inline">\(t\in T\)</span>.</p>
 </div>
 <div id="def-PEC" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 4.8 (Proceso estacionario por covarianza)</strong></span> Un proceso estocástico de segundo orden <span class="math inline">\(\{X_t, t \in T\}\)</span> se denomina <em>estacionario por covarianza</em> o <em>estacionario débil</em> si su función de media <span class="math inline">\(m(t) = \mathrm{E}[X_t]\)</span> es independiente de <span class="math inline">\(t\)</span> y su función de covarianza <span class="math inline">\(\mathrm{Cov}(X_s, X_t)\)</span> depende únicamente de la diferencia <span class="math inline">\(|t - s|\)</span> para todos <span class="math inline">\(s, t \in T\)</span>. Es decir:</p>
+<p><span class="theorem-title"><strong>Definición 4.8 (Proceso estacionario por covarianza)</strong></span> Un proceso estocástico de segundo orden <span class="math inline">\(\{X_t,\ t \in T\}\)</span> se denomina <em>estacionario por covarianza</em> o <em>estacionario débil</em> si su función de media <span class="math inline">\(m(t) = \mathrm{E}[X_t]\)</span> es independiente de <span class="math inline">\(t\)</span> y su función de covarianza <span class="math inline">\(\mathrm{Cov}(X_s, X_t)\)</span> depende únicamente de la diferencia <span class="math inline">\(|t - s|\)</span> para todos <span class="math inline">\(s, t \in T\)</span>. Es decir:</p>
 <p><span class="math display">\[
 \mathrm{Cov}(X_s,X_t)=f(|t-s|).
 \]</span></p>
@@ -443,7 +443,7 @@ Ejemplo
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sea <span class="math inline">\(\{X_n; n \geq 1\}\)</span> un conjunto de variables aleatorias no correlacionadas con media cero y varianza uno. Entonces, la covarianza <span class="math inline">\(\mathrm{Cov}(X_m, X_n) = \mathrm{E}(X_mX_n)\)</span> es igual a <span class="math inline">\(0\)</span> si <span class="math inline">\(m \ne n\)</span> y <span class="math inline">\(1\)</span> si <span class="math inline">\(m = n\)</span>. Esto demuestra que <span class="math inline">\(\{X_n, n \ge 1\}\)</span> es un proceso estacionario por covarianza.</p>
+<p>Sea <span class="math inline">\(\{X_n;\ n \geq 1\}\)</span> un conjunto de variables aleatorias no correlacionadas con media cero y varianza uno. Entonces, la covarianza <span class="math inline">\(\mathrm{Cov}(X_m, X_n) = \mathrm{E}(X_mX_n)\)</span> es igual a <span class="math inline">\(0\)</span> si <span class="math inline">\(m \ne n\)</span> y <span class="math inline">\(1\)</span> si <span class="math inline">\(m = n\)</span>. Esto demuestra que <span class="math inline">\(\{X_n,\ n \ge 1\}\)</span> es un proceso estacionario por covarianza.</p>
 </div>
 </div>
 </div>
@@ -685,6 +685,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -719,7 +737,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1010,4 +1032,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/book/procesos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/book/procesos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/procesos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/procesos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>

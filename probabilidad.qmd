@@ -7,7 +7,7 @@ lang: es
 ::: {style="text-align: justify"}
 Una de las herramientas fundamentales de la estadística es la probabilidad, la cual tuvo sus inicios formales con los juegos de azar en el siglo XVII. Los juegos de azar, como su nombre indica, involucran acciones como girar una rueda de ruleta, lanzar dados, lanzar una moneda, sacar una carta, entre otros, en los que el resultado de un evento es incierto. No obstante, se reconoce que aunque el resultado de cada evento en particular pueda ser incierto, existe un patrón predecible a largo plazo. Por ejemplo, se sabe que en múltiples lanzamientos de una moneda ideal (equilibrada y simétrica), aproximadamente la mitad de los resultados serán caras. Es esta regularidad predecible a largo plazo la que permite a las casas de juego mantener sus negocios.
 
-Un tipo similar de incertidumbre y regularidad a largo plazo se observa con frecuencia en la ciencia experimental. Por ejemplo, en la ciencia de la genética no se puede determinar con certeza si una descendencia será masculina o femenina, pero a largo plazo se sabe aproximadamente qué porcentaje de descendencia será de cada sexo. De manera similar, una compañía de seguros de vida no puede predecir qué personas en los Estados Unidos morirán a los 50 años, pero puede hacer predicciones precisas sobre cuántas personas morirán a esa edad en promedio.
+Un tipo similar de incertidumbre y regularidad a largo plazo se observa con frecuencia en la ciencia experimental. Por ejemplo, en la ciencia de la genética no se puede determinar con certeza si una descendencia será masculina o femenina, pero a largo plazo se sabe aproximadamente qué porcentaje de descendencia será de cada sexo. De manera análoga, una compañía de seguros de vida no puede predecir qué personas en los Estados Unidos morirán a los 50 años, pero puede hacer predicciones precisas sobre cuántas personas morirán a esa edad en promedio.
 
 Para brindar una idea de lo que es la probabilidad, [@mood1986introduction] proporciona las siguientes definiciones:
 :::
@@ -63,7 +63,7 @@ El evento $\{\omega\}$, que está constituido por un solo punto $\omega \in \Ome
 :::
 
 ::: {style="text-align: justify"}
-Las definiciones anteriores no definen con precisión lo que es un evento. Un evento siempre será un subconjunto del espacio muestral, pero para espacios muestrales suficientemente grandes, no todos los subconjuntos serán eventos. Por lo tanto, la clase de todos los subconjuntos del espacio muestral no necesariamente corresponderá al espacio de eventos. Sin embargo, se observará que la clase de todos los eventos siempre se puede seleccionar lo suficientemente grande como para incluir todos aquellos subconjuntos (eventos) cuya probabilidad se desee analizar. Si el espacio muestral consta solo de un número finito de puntos, entonces el espacio de eventos correspondiente será la clase de todos los subconjuntos del espacio muestral.
+Las definiciones anteriores no definen con precisión lo que es un evento, ya que aunque un evento siempre será un subconjunto del espacio muestral, en espacios muestrales suficientemente grandes, no todos los subconjuntos serán eventos. Por lo tanto, la clase de todos los subconjuntos del espacio muestral no necesariamente corresponderá al espacio de eventos. Sin embargo, se observará que la clase de todos los eventos siempre se puede seleccionar lo suficientemente grande como para incluir todos aquellos subconjuntos (eventos) cuya probabilidad se desee analizar. Si el espacio muestral consta solo de un número finito de puntos, entonces el espacio de eventos correspondiente será la clase de todos los subconjuntos del espacio muestral.
 
 Los conceptos presentados se ilustran con unos ejemplos muy simples;
 :::
@@ -71,7 +71,7 @@ Los conceptos presentados se ilustran con unos ejemplos muy simples;
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
 ### Ejemplo (***Lanzamiento de una moneda***)
 
-Considerando el experimento de lanzar una moneda, este experimento es uno de los más sencillos, pero permite representar claramente los conceptos. El espacio muestral estaría conformado por $\Omega = \{A, S\}$, donde $A$ representa el resultado de que caiga águila y $S$ representa el resultado de que caiga sol. El conjunto $\mathfrak{F}$ podría estar representado por $\{\{A\}, \{S\}\}$, que también es un subconjunto de $\Omega$.
+Considere el experimento de lanzar una moneda una vez, este experimento es uno de los más sencillos, pero permite representar claramente los conceptos. El espacio muestral estaría conformado por $\Omega = \{A, S\}$, donde $A$ representa el resultado de que caiga águila y $S$ representa el resultado de que caiga sol. El conjunto $\mathfrak{F}$ está representado por $\{\{A\}, \{S\}\}$, el cuál también es un subconjunto de $\Omega$.
 
 Es importante destacar que el conjunto vacío $\emptyset$ y el conjunto completo $\Omega$ también son subconjuntos de $\Omega$, pero generalmente no se consideran eventos de interés en este contexto.
 :::
@@ -79,7 +79,7 @@ Es importante destacar que el conjunto vacío $\emptyset$ y el conjunto completo
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
 ### Ejemplo (***Lanzamiento de un dado***)
 
-Considerando el experimento de lanzar un dado de $6$ caras. El espacio muestral $\Omega$ se define como
+Considerando el experimento de lanzar un dado de $6$ caras, el espacio muestral $\Omega$ se define como
 
 $$ \Omega = \{1,2,3,4,5,6\}. $$
 
@@ -107,7 +107,7 @@ Cualquier colección de eventos con propiedades (i.) y (iii.) se denomina álgeb
 ## Definición de probabilidad
 
 ::: {style="text-align: justify"}
-En esta sección se presenta la definición axiomática de probabilidad. Aunque esta definición formal de probabilidad por sí sola no permite asignar probabilidades reales a eventos que consisten en ciertos resultados de experimentos aleatorios, es otra de una serie de definiciones que conducen a ese objetivo. Dado que la probabilidad, al igual que los conceptos que se presentarán, se define como una función particular, se inicia esta subsección con una revisión del concepto de función
+En esta sección se presenta la definición axiomática de probabilidad. Aunque esta definición formal de probabilidad, por sí sola, no permite asignar probabilidades reales a eventos que consisten en ciertos resultados de experimentos aleatorios, es otra de una serie de definiciones que conducen a ese objetivo. Dado que la probabilidad, al igual que los conceptos que se presentarán, se define como una función particular, se inicia esta subsección con una revisión del concepto de función.
 :::
 
 ::: {#def-funcion style="text-align: justify"}
@@ -167,15 +167,15 @@ iii. $I_{A_1\cup A_2\cup\cdots\cup A_n}(\omega)= \max{[I_{A_1}(\omega), I_{A_2}(
 
 iv. $I_A^2(\omega)= I_A(\omega)$ para cada $A\in\mathfrak{F}$.
 
-La función indicadora será utilizada para "indicar" subconjuntos de la recta real; por ejemplo;
+La función indicadora será utilizada para "indicar" subconjuntos de la recta real. Por ejemplo:
 
-$$I_{\{[0,1)\}}(x)= I_{[0,1)}(x)=\left\{ \begin{array}{lcc} 1 & \text{si} & 0\leq x<1\\ \\ 0 & \text{ otro caso} \end{array} \right. $$
+$$I_{\{[0,1)\}}(x)= I_{[0,1)}(x)=\begin{cases} 1 & \text{si }\quad 0\leq x<1,\\ \\ 0 & \text{otro caso.} \end{cases} $$
 
-y si $I^+$ denota el conjunto de números enteros positivos,
+Si $I^+$ denota el conjunto de números enteros positivos,
 
-$$ I_{I^+}(X)=\left\{\begin{array}{lcc} 1 & \text{si $x$ es algún entero positivo}\\ \\ 0 & \text{otro caso}\end{array}\right. $$
+$$ I_{I^+}(X)=\begin{cases} 1 & \text{si $x$ es algún entero positivo,}\\ \\ 0 & \text{otro caso.}\end{cases}$$
 
-Otro tipo de función del cual se tendrá ocasión de discutir es la función de conjunto definida como cualquier función que tiene como dominio una colección de conjuntos y como contradominio la recta real, incluyendo posiblemente el infinito. A continuación se muestra un ejemplos de función de conjunto.
+Otro tipo de función del cual se tendrá ocasión de discutir es la función de conjunto definida como cualquier función que tiene como dominio una colección de conjuntos y como contradominio la recta real, incluyendo posiblemente el infinito. A continuación se muestra un ejemplo de función de conjunto.
 :::
 
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
@@ -199,7 +199,7 @@ i.  ***No negatividad***: Para todo evento $A$ en $\mathfrak{F}$, la probabilida
 
 ii. ***Probabilidad unitaria***: La probabilidad del espacio muestral completo $\Omega$ es igual a 1, es decir, $P(\Omega) = 1$.
 
-iii. ***Aditividad***: Para cualquier colección de eventos mutuamente excluyentes $A_1, A_2, A_3, \ldots$, la probabilidad de la unión de estos eventos es igual a la suma de las probabilidades individuales, es decir, $$P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i)$$
+iii. ***Aditividad***: Para cualquier colección de eventos mutuamente excluyentes $A_1, A_2, A_3, \ldots$, la probabilidad de la unión de estos eventos es igual a la suma de las probabilidades individuales, es decir, $$P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i).$$
 :::
 
 ::: {style="text-align: justify"}
@@ -223,7 +223,7 @@ v.  Si $A,B\in \mathfrak{F}$ y $A\subset B$, entonces $P(A)\leq P(B)$.
 
 vi. Para cualesquiera dos eventos $A,B\in \mathfrak{F}$; $$P(A\cup B)= P(A)+P(B)-P(A\cap B).$$Más generalmente, para eventos $A_1, A_2, \ldots, A_n\in \mathfrak{F}$
 
-$$ \begin{split}P\left(\bigcup\limits_{i=1}^n A_i\right) & = \sum_{j=1}^nP(A_j)-{\sum\sum}_{i<j} P(A_i\cap A_j)\\ &+\sum\sum\sum_{i<j<k}P(A_i\cap A_j\cap A_k) -\cdots+(-1)^{n+1}P(A_1\cap \ldots\cap A_n)\end{split} $$
+$$ \begin{split}P\left(\bigcup\limits_{i=1}^n A_i\right) & = \sum_{j=1}^nP(A_j)-{\sum\sum}_{i<j} P(A_i\cap A_j)\\ &+\sum\sum\sum_{i<j<k}P(A_i\cap A_j\cap A_k) -\cdots+(-1)^{n+1}P(A_1\cap \ldots\cap A_n).\end{split} $$
 :::
 
 ::: {#thm-boole style="text-align: justify"}
@@ -231,7 +231,7 @@ $$ \begin{split}P\left(\bigcup\limits_{i=1}^n A_i\right) & = \sum_{j=1}^nP(A_j)-
 
 Si $A_1, A_2, \ldots, A_n\in\mathfrak{F}$, entonces
 
-$$P\left(\bigcup_{i=1}^n A_i\right)\leq \sum_{i=1}^n P(A_i)$$
+$$P\left(\bigcup_{i=1}^n A_i\right)\leq \sum_{i=1}^n P(A_i).$$
 :::
 
 ::: {style="text-align: justify"}
@@ -255,9 +255,9 @@ En ocasiones, es de interés conocer la probabilidad de un evento, dado que haya
 
 Sean $A$ y $B$ dos eventos en $\mathfrak{F}$ del espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$. La probabilidad condicional del evento $A$ dado el evento $B$, denotada por $P(A|B)$, se define como sigue;
 
-$$P(A|B)= \frac{P(A\cap B)}{P(B)}\qquad\text{si }\quad P(B)>0,$$
+$$P(A|B)= \frac{P(A\cap B)}{P(B)}\qquad\text{si }\quad P(B)>0.$$
 
-y se deja sin definir si $P(B)=0$.
+En caso de que $P(B)=0$ se deja sin definir.
 :::
 
 ::: {.remark style="text-align: justify"}
@@ -298,7 +298,7 @@ Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, si $B_1, B_2, 
 ::: {.proof collapse="true"}
 Se observa que $A=\bigcup\limits_{j=1}^n A\cap B_j$ y los conjuntos $A\cap B_j$ son mutuamente disjuntos; por lo tanto,
 
-$$P(A)=P\left(\bigcup_{j=1}^n A\cap B_j\right)=\sum_{j=1}^n P(A\cap B_j)= \sum_{j=1}^n P(A|B_j)P(B_j)$$
+$$P(A)=P\left(\bigcup_{j=1}^n A\cap B_j\right)=\sum_{j=1}^n P(A\cap B_j)= \sum_{j=1}^n P(A|B_j)P(B_j).$$
 :::
 :::
 
@@ -323,14 +323,14 @@ Bajo la premisa de probabilidades equivalentes, se tiene que $P(B_1)=P(B_2)=\fra
 ::: {#thm-bayes style="text-align: justify"}
 ### Teorema de Bayes
 
-Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, si $B_1, B_2, \ldots, B_n$ es una colección de eventos mutuamente disjuntos en $\mathfrak{F}$ que satisfacen $\Omega=\bigcup\limits_{j=1}^n B_j$ y $P(B_j)>0$ para $j=1,\ldots, n$, entonces para cada $A\in\mathfrak{F}$ para el cual $P(A)>0$
+Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, si $B_1, B_2, \ldots, B_n$ es una colección de eventos mutuamente disjuntos en $\mathfrak{F}$ que satisfacen $\Omega=\bigcup\limits_{j=1}^n B_j$ y $P(B_j)>0$ para $j=1,\ldots, n$, entonces para cada $A\in\mathfrak{F}$ para el cual $P(A)>0$,
 
 $$P(B_k|A)= \frac{P(A|B_k)P(B_k)}{\sum\limits_{j=1}^n P(A|B_j)P(B_j)}.$$
 
 ::: proof
-Se observa que
+Utilizando tanto la definición de probabilidad condicional como el teorema de probabilidad total, se sigue que
 
-$$P(B_k|A)= \frac{P(B_k\cap A)}{P(A)}=\frac{P(A|B_k)P(B_k)}{\sum\limits_{j=1}^n P(A|B_j)P(B_j)}$$
+$$P(B_k|A)= \frac{P(B_k\cap A)}{P(A)}=\frac{P(A|B_k)P(B_k)}{\sum\limits_{j=1}^n P(A|B_j)P(B_j)}.$$
 
 utilizando tanto la definición de probabilidad condicional como el teorema de probabilidad total.
 :::
@@ -385,7 +385,7 @@ iii. $A^c$ y $B^c$.
 :::
 
 ::: {.remark style="text-align: justify"}
-No debe confundirse los términos **eventos independientes** y **eventos disjuntos**. De hecho, los eventos disjuntos suelen ser muy dependientes por que la ocurrencia de uno implica la no ocurrencia del otro. El único evento que es independiente y ajeno es el vacío $\emptyset$.
+No deben confundirse los términos **eventos independientes** y **eventos disjuntos**. De hecho, los eventos disjuntos suelen ser muy dependientes por que la ocurrencia de uno implica la no ocurrencia del otro. El único evento que es independiente y ajeno es el vacío $\emptyset$.
 :::
 
 ::: {style="text-align: justify"}
@@ -395,21 +395,21 @@ La noción de eventos independientes puede ser extendido a más de dos eventos c
 ::: {#def-ive style="text-align: justify"}
 ### Independencia de varios eventos
 
-Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, sean $A_1, A_2, \ldots, A_n$ eventos en $\mathfrak{F}$. Los eventos $A_1, A_2, \ldots, A_n$ se definen como independientes si y solo si $P\left(\bigcap\limits_{i=1}^n A_i\right)=\prod\limits_{i=1}^n P(A_i)$
+Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, sean $A_1, A_2, \ldots, A_n$ eventos en $\mathfrak{F}$. Los eventos $A_1, A_2, \ldots, A_n$ se definen como independientes si y solo si $P\left(\bigcap\limits_{i=1}^n A_i\right)=\prod\limits_{i=1}^n P(A_i)$.
 :::
 
 ## Variables aleatorias
 
 ::: {style="text-align: justify"}
-Hasta el momento se conoce cómo asignar probabilidades a eventos del espacio muestral, sin embargo en la práctica esto no siempre es posible ya que sería complicado mencionar o enumerar todos los elementos del espacio muestral.
+Hasta el momento se conoce cómo asignar probabilidades a eventos del espacio muestral, sin embargo, en la práctica esto no siempre es posible, ya que sería complicado mencionar o enumerar todos los elementos del espacio muestral.
 
-Por esta razón es necesario "traducir" dichos eventos a números reales. Esto es posible mediante el uso de *variables aleatorias*.
+Por esta razón, es necesario "traducir" dichos eventos a números reales. Esto es posible mediante el uso de *variables aleatorias*.
 :::
 
 ::: {#def-va style="text-align: justify"}
 ### Variable aleatoria
 
-Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, una variable aleatoria, denotada por $X$ o $X(\cdot)$, es una función con dominio $\Omega$ y contradominio la recta real. La función $X(\cdot)$ debe ser tal si $\omega\in\Omega$ entonces $X(\omega)\in\mathbb R$. Si $B\subset \mathbb R$ entonces $X^{-1}(B)\in\mathfrak{F}$, donde $$X^{-1}(B)=\{\omega\in\Omega| X(\omega\in B)\}.$$
+Para un espacio de probabilidad dado $(\Omega, \mathfrak{F}, P)$, una variable aleatoria, denotada por $X$ o $X(\cdot)$, es una función con dominio $\Omega$ y contradominio la recta real. La función $X(\cdot)$ debe ser tal si $\omega\in\Omega$ entonces $X(\omega)\in\mathbb R$. Si $B\subset \mathbb R$ entonces $X^{-1}(B)\in\mathfrak{F}$, donde $$X^{-1}(B)=\{\omega\in\Omega\ |\  X(\omega\in B)\}.$$
 :::
 
 ::: {style="text-align: justify"}
@@ -429,7 +429,7 @@ La función de distribución acumulada de una variable aleatoria $X$, denotada p
 :::
 
 ::: {style="text-align: justify"}
-Una función de distribución definida es única para cada variable y siempre existirá, es importante conocerla por que con ella se pueden calcular probabilidades de la variable aleatoria.
+Una función de distribución definida es única para cada variable y siempre existirá, es importante conocerla porque con ella se pueden calcular probabilidades de la variable aleatoria.
 
 A continuación, se presentan ejemplos y propiedades de la función de distribución acumulada.
 :::
@@ -467,7 +467,7 @@ Considérese el ejemplo del lanzamiento de tres monedas. Sea $X$ el número de �
 
 La función de distribución es la siguiente:
 
-$$ F_X(x)=\begin{cases}0 & \text{ si } x<0\\ \frac{1}{8} & \text{ si } 0\leq x< 1\\ \frac{1}{2} & \text{ si  } 1\leq x< 2\\ \frac{7}{8} & \text{ si  } 2\leq x<3\\ 1 & \text{ si } 3\leq x\end{cases} $$
+$$ F_X(x)=\begin{cases}0 & \text{ si } x<0,\\ \frac{1}{8} & \text{ si } 0\leq x< 1,\\ \frac{1}{2} & \text{ si  } 1\leq x< 2,\\ \frac{7}{8} & \text{ si  } 2\leq x<3,\\ 1 & \text{ si } 3\leq x.\end{cases} $$
 
 A continuación se muestra una gráfica de la función
 
@@ -482,31 +482,31 @@ plot(Fx,xlim=c(-1,4), ylim = c(0, 1), col = "red")
 abline(v = 0, h = 0)
 ```
 
-Por ejemplo, la probabilidad de que se obtenga 0 a 1 aguilas es $\frac{1}{8}$.
+Por ejemplo, la probabilidad de que se obtenga 0 a 1 águilas es $\frac{1}{8}$.
 :::
 
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
 ##### Ejemplo (***Duración de una llamada telefónica***)
 
-Para las variables aleatorias continuas, la froma de la función de distribución es un poco distinta, pero sigue cumpliendo las mismas propiedades.
+Para las variables aleatorias continuas, la forma de la función de distribución es un poco distinta, pero sigue cumpliendo las mismas propiedades.
 
 A continuación se representa una función de distribución acumulada de la variable aleatoria $X$ que podría ser usada para modelar la duración de las llamadas telefónicas.
 
-$$ F_X(x)=\begin{cases}0 & \text{ si } x\leq0\\ 1-e^{-x} & \text{ si } 0< x\end{cases} $$
+$$ F_X(x)=\begin{cases}0 & \text{ si } x\leq 0,\\ 1-e^{-x} & \text{ si } 0< x.\end{cases} $$
 
 En este caso, se puede ver que la probabilidad de que la variable aleatoria $X$ sea menor a cero es 0, ya que el soporte de la distribución son los números reales positivos.
 
 Como puede apreciarse, conociendo la función de distribución es posible obtener las probabilidades de cualquier evento, simplemente evaluando los valores en la función, por ejemplo:
 
--   $P(X<2)=1-e^{-2}=0.8646$
+-   $P(X<2)=1-e^{-2}=0.8646$.
 
--   $P(X>5)=1-(1-e^{-5})=0.0067$
+-   $P(X>5)=1-(1-e^{-5})=0.0067$.
 
--   $P(1<X<3)=P(X<3)-P(X<1)=0.3180$
+-   $P(1<X<3)=P(X<3)-P(X<1)=0.3180$.
 :::
 
 ::: {.remark style="text-align: justify"}
-Se debe tener cuidado cuando se calcula probabilidades de variables aleatorias discretas ya que en general no es lo mismo $P(X< x)$ que $P(X\leq x)$.
+Se debe tener cuidado cuando se calculan probabilidades de variables aleatorias discretas, ya que en general no es lo mismo $P(X< x)$ que $P(X\leq x)$.
 :::
 
 ### Función de densidad
@@ -530,7 +530,7 @@ Se definirá una variable aleatoria $X$ como discreta si el rango de $X$ es nume
 
 Si $X$ es una variable aleatoria discreta con $D_x=x_1,x_2,\ldots$ entonces la función, denotada por $f_X(\cdot)$ y definida por
 
-$$ f_X(x)=\begin{cases}P(X=x_j) & \text{ si } x\in D_x\\ 0 & \text{ cualquier otro caso. }\end{cases} $$
+$$ f_X(x)=\begin{cases}P(X=x_j) & \text{ si } x\in D_x,\\ 0 & \text{ cualquier otro caso. }\end{cases} $$
 
 es la función de densidad discreta de $X$.
 :::
@@ -552,7 +552,7 @@ i.  $f(x_j)>0$ para $j=1,2,\ldots.$
 
 ii. $f(x)=0$ para $x\neq x_j$ con $j=1,2,\ldots.$
 
-iii. $\sum_D f(x_j)=1$
+iii. $\sum_D f(x_j)=1$.
 :::
 
 ### Variables aleatorias continuas
@@ -588,11 +588,11 @@ Usando el teorema fundamental del cálculo, se puede probar la propiedad anterio
 
 Supóngase que la función de distribución para modelar la duración de las llamadas telefónicas es
 
-$$ F_X(x)=\begin{cases}0 & \text{ si } x \le 0\\ 1-e^{-x} & \text{ si } 0< x\end{cases} $$
+$$ F_X(x)=\begin{cases}0 & \text{ si } x \le 0,\\ 1-e^{-x} & \text{ si } 0< x.\end{cases} $$
 
-Se observa que $F_X(x)$ está definida en dos partes, por lo que la función no es *absolutamente continua* en cero, por lo que solo será diferenciable en el intervalo de los reales positivos.
+Se observa que $F_X(x)$ está definida en dos partes, por lo que la función no es *absolutamente continua* en cero, por lo que solo será diferenciable en el intervalo de los reales positivos. Además,
 
-$$ f_X(x)=\frac{dF_X(x)}{dx}=\frac{d (1-e^{-x})}{dx}=-\frac{d e^{-x}}{dx}=e^{-x} $$
+$$ f_X(x)=\frac{dF_X(x)}{dx}=\frac{d (1-e^{-x})}{dx}=-\frac{d e^{-x}}{dx}=e^{-x}, $$
 
 es decir;
 
@@ -604,7 +604,7 @@ $$ F_X(x)= \int_{\infty}^x e^{-u}du=\int_0^x e^{-u}du=1-e^{-x}, $$
 
 es decir
 
-$$ F_X(x)=1-e^{-x} I_{(0,\infty)}(x) $$
+$$ F_X(x)=1-e^{-x} I_{(0,\infty)}(x) .$$
 
 De esta manera, se comprueba la propiedad.
 :::
@@ -630,7 +630,7 @@ se denomina vector aleatorio $n-$dimensional.
 
 Sea $\mathbf X$ un vector aleatorio $n-$dimensional. La medida de probabilidad definida por
 
-$$ P_{\mathbf X} (B) := P(\mathbf X\in B); B\in \mathcal B_n $$
+$$ P_{\mathbf X} (B) := P(\mathbf X\in B);\  B\in \mathcal B_n. $$
 
 donde $\mathcal B_n$ representa la sigma álgebra del Borel sobre $\mathbb R^n$, es denominada la *distribución* del vector aleatorio $\mathbf X$.
 :::
@@ -640,7 +640,7 @@ donde $\mathcal B_n$ representa la sigma álgebra del Borel sobre $\mathbb R^n$,
 
 Sea $\mathbf X= (X_1,X_2,\cdots,X_n)$ un vector aleatorio de $n$ dimensiones. Si las variables aleatorias $X_i$, donde $i=1,\cdots,n$, son todas discretas, se afirma que el vector aleatorio $\mathbf X$ es discreto. En esta situación, la función de densidad de $\mathbf X$, también conocida como la *función de densidad conjunta* de las variables aleatorias $X_1, X_2, \cdots, X_n$, queda definida por
 
-$$ p_\mathbf{X}(x):=\begin{cases}P(\mathbf X=x) & \text{ si } x \text{  pertenece a la imagen de } \mathbf X\\ 0 & \text{ en caso contrario. } \end{cases} $$
+$$ p_\mathbf{X}(x):=\begin{cases}P(\mathbf X=x) & \text{ si } x \text{  pertenece a la imagen de } \mathbf X,\\ 0 & \text{ en caso contrario. } \end{cases} $$
 :::
 
 ::: {#def-FDAC style="text-align: justify"}

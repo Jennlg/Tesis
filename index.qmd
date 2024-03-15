@@ -1,3 +1,15 @@
+---
+author:
+  - name: Jennifer Sherlyn López García
+    email: jennifer.lopez67@unach.mx
+    corresponding: true
+  - name: Yofre Hernán García Gómez
+    degrees: PhD
+    email: yofre.garcia@unach.mx
+    roles: supervisor
+    corresponding: true
+---
+
 # Resumen {.unnumbered}
 
 ::: {style="text-align: justify"}

@@ -7,10 +7,18 @@ lang: es
 ::: {style="text-align: justify"}
 En esta sección, se abordan algunas de las ideas y conceptos elementales de la teoría de conjuntos que son necesarios para una introducción moderna a la teoría de la probabilidad.
 
-Considere una colección de objetos en la que cada objeto se denomina punto o elemento. Se asume que dicha colección de objetos es lo suficientemente amplia como para incluir todos los puntos considerados en una discusión específica. La totalidad de estos puntos se conoce como espacio, universo o conjunto universal.
+Se considera una colección de objetos en la que cada uno se denomina punto o elemento. Se asume que esta colección es lo suficientemente amplia como para incluir todos los puntos considerados en una discusión específica. La totalidad de estos puntos se conoce como espacio, universo o conjunto universal.
+
+Se llamará al espacio (anticipando que se convertirá en el espacio muestral cuando se hable de probabilidad) y se denotará por $\Omega$. Sea $\omega$ un elemento o punto en $\Omega$. Aunque un conjunto puede definirse como cualquier colección de objetos, se asumirá, a menos que se indique lo contrario, que todos los conjuntos mencionados en una discusión dada consisten en puntos en el espacio $\Omega$.
+:::
+
+::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
+## Ejemplo
 
 $\Omega = \mathbb{R}^2$, donde $\mathbb{R}^2$ es la colección de puntos $\omega$ en el plano y $\omega=(x,y)$ es cualquier par de números reales $x$ e $y$.
+:::
 
+::: {style="text-align: justify"}
 Por lo general, se utilizarán letras latinas mayúsculas al comienzo del alfabeto, con o sin subíndices, para denotar conjuntos. Si $\omega$ es un punto o elemento que pertenece al conjunto $A$, se escribirá $\omega \in A$; si $\omega$ no es un elemento de $A$, se escribirá $\omega \notin A$.
 :::
 
@@ -53,7 +61,7 @@ Sean $A$ y $B$ dos subconjuntos cualesquiera de $\Omega$; entonces el conjunto f
 ::: {#def-dfc style="text-align: justify"}
 ## Diferencia de conjuntos
 
-Sean $A$ y $B$ dos subconjuntos cualesquiera de $\Omega$. El conjunto de todos los puntos en $A$ que no están en $B$ se denotará por $A-B$ y se define como la diferencia de conjuntos.
+Sean $A$ y $B$ dos subconjuntos cualesquiera de $\Omega$. Se define la diferencia de $A$ y $B$, denotada por $A-B$, como el conjunto de todos los puntos en $A$ que no están en $B$.
 :::
 
 ::: {style="text-align: justify"}
@@ -75,7 +83,7 @@ vii. *Leyes de De Morgan* $$\begin{split}            (A\cup B)^c &=A^c \cap B^c\
 ![Diagramas de Venn](Vennd.png){#fig-venn fig-align="center" width="509"}
 
 ::: {style="text-align: justify"}
-Algunas de las leyes mencionadas anteriormente se ilustran en los diagramas de Venn en la @fig-venn. Aunque se utilizará libremente cualquiera de las leyes mencionadas, podría resultar instructivo proporcionar una prueba de una de ellas para ilustrar la técnica. Se considera el siguiente ejemplo:
+Algunas de las leyes del álgebra de conjuntos se ilustran en los diagramas de Venn en la @fig-venn. Aunque se utilizará libremente cualquiera de las leyes mencionadas, podría resultar instructivo proporcionar una prueba de una de ellas para ilustrar la técnica. Se considera el siguiente ejemplo:
 :::
 
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
@@ -101,7 +109,7 @@ Sea $\Lambda$ un conjunto de índices y $\{A_\lambda: \lambda \in \Lambda\}= \{A
 :::
 
 ::: {style="text-align: justify"}
-Uno de los teoremas más fundamentales que relaciona las uniones, intersecciones y complementos para una colección arbitraria de conjuntos se debe a De Morgan.
+Uno de los teoremas fundamentales que relaciona las uniones, intersecciones y complementos para una colección arbitraria de conjuntos se debe a De Morgan.
 :::
 
 ::: {#thm-morgan style="text-align: justify"}

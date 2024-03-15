@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.22">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales - 3&nbsp; Estadística</title>
+<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales – 3&nbsp; Estadística</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -160,12 +160,12 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logounach.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./LOGO50.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis comparativo del desempeño en métodos para el pronóstico de series temporales</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Jennlg/Tesis/tree/main/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Jennlg/Tesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -335,7 +335,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referencias</span></a>
   </div>
 </li>
     </ul>
@@ -355,7 +355,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#datos-multivariados" id="toc-datos-multivariados" class="nav-link" data-scroll-target="#datos-multivariados"><span class="header-section-number">3.2</span> Datos multivariados</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/book/estadistica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/book/estadistica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/estadistica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/estadistica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -404,12 +404,12 @@ window.Quarto = {
 <p>Un concepto sumamente útil en problemas que implican variables aleatorias o distribuciones es el de la esperanza (valor esperado). En esta subsección, se presentan definiciones y resultados relacionados con la esperanza.</p>
 </div>
 <div id="def-mean" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 3.4 (Media)</strong></span> Sea <span class="math inline">\(X\)</span> una variable aleatoria. La <em>media</em> de <span class="math inline">\(X\)</span>, denotada como <span class="math inline">\(\mu_X\)</span> o <span class="math inline">\(\mathrm E[X]\)</span>, se define de la siguiente manera:</p>
-<p><span class="math display">\[ \mathrm E[X]= \sum x_jf_X(x_j) \]</span></p>
+<p><span class="theorem-title"><strong>Definición 3.4 (Media)</strong></span> Sea <span class="math inline">\(X\)</span> una variable aleatoria. La <em>media</em> de <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(\mu_X\)</span> o <span class="math inline">\(\mathrm E[X]\)</span>, se define como</p>
+<p><span class="math display">\[ \mathrm E[X]= \sum x_jf_X(x_j) .\]</span></p>
 <p>Si <span class="math inline">\(X\)</span> es discreta con puntos de densidad <span class="math inline">\(x_1, x_2, \ldots, x_j, \ldots\)</span></p>
-<p><span class="math display">\[ \mathrm E[X]=\int_{-\infty}^\infty x f_X(x)dx \]</span></p>
+<p><span class="math display">\[ \mathrm E[X]=\int_{-\infty}^\infty x f_X(x)dx.\]</span></p>
 <p>Si <span class="math inline">\(X\)</span> es continua con una función de densidad de probabilidad <span class="math inline">\(f_X(x)\)</span></p>
-<p><span class="math display">\[ \mathrm E[X]=\int_0^\infty [1-F_X(x)]dx-\int_{-\infty}^0 F_X(x) dx \]</span></p>
+<p><span class="math display">\[ \mathrm E[X]=\int_0^\infty [1-F_X(x)]dx-\int_{-\infty}^0 F_X(x) dx.\]</span></p>
 <p>para cualquier variable aleatoria <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="proof remark" style="text-align: justify">
@@ -419,10 +419,10 @@ window.Quarto = {
 <p>La media de una variable aleatoria <span class="math inline">\(X\)</span> es una medida de ubicación central de la densidad de <span class="math inline">\(X\)</span>. La varianza de una variable aleatoria <span class="math inline">\(X\)</span> es una medida de la dispersión o propagación de la densidad de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div id="def-var" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 3.5 (Varianza)</strong></span> Sea <span class="math inline">\(X\)</span> una variable aleatoria, y se define <span class="math inline">\(\mu_X\)</span> como <span class="math inline">\(\mathrm E[X]\)</span>, la <em>varianza</em> de <span class="math inline">\(X\)</span>, denotada como <span class="math inline">\(\sigma_X^2\)</span> o <span class="math inline">\(\mathrm{Var}[X]\)</span>, se define de la siguiente manera</p>
-<p><span class="math display">\[ \mathrm{Var}[X]= \sum_j (x_j-\mu_X)^2 f_X(x_j) \]</span></p>
-<p>si <span class="math inline">\(X\)</span> es discreta con puntos <span class="math inline">\(x_1, x_2, \ldots, x_j, \ldots\)</span>.</p>
-<p><span class="math display">\[ \mathrm{Var}[X]=\int_{-\infty}^\infty (x-\mu_X)^2f_X(x)dx \]</span></p>
+<p><span class="theorem-title"><strong>Definición 3.5 (Varianza)</strong></span> Sea <span class="math inline">\(X\)</span> una variable aleatoria. Se define <span class="math inline">\(\mu_X\)</span> como <span class="math inline">\(\mathrm E[X]\)</span>. La <em>varianza</em> de <span class="math inline">\(X\)</span>, denotada como <span class="math inline">\(\sigma_X^2\)</span> o <span class="math inline">\(\mathrm{Var}[X]\)</span>, se define de la siguiente manera</p>
+<p><span class="math display">\[ \mathrm{Var}[X]= \sum_j (x_j-\mu_X)^2 f_X(x_j).\]</span></p>
+<p>Ahora bien, si <span class="math inline">\(X\)</span> es discreta con puntos <span class="math inline">\(x_1, x_2, \ldots, x_j, \ldots\)</span>.</p>
+<p><span class="math display">\[ \mathrm{Var}[X]=\int_{-\infty}^\infty (x-\mu_X)^2f_X(x)dx.\]</span></p>
 <p>Si <span class="math inline">\(X\)</span> es continua con una función de densidad de probabilidad <span class="math inline">\(f_X(x)\)</span></p>
 <p><span class="math display">\[ \mathrm{Var}[X]=\int_0^\infty 2x[1-F_X(x)+F_X(-x)]dx - \mu_X^2 \]</span></p>
 <p>para una variable aleatoria <span class="math inline">\(X\)</span> arbitraria.</p>
@@ -439,13 +439,13 @@ window.Quarto = {
 <section id="valor-esperado-de-una-función-de-una-variable-aleatoria" class="level4" data-number="3.1.1.1">
 <h4 data-number="3.1.1.1" class="anchored" data-anchor-id="valor-esperado-de-una-función-de-una-variable-aleatoria"><span class="header-section-number">3.1.1.1</span> Valor esperado de una función de una variable aleatoria</h4>
 <div style="text-align: justify">
-<p>Se definió la esperanza de una variable aleatoria arbitraria <span class="math inline">\(X\)</span>, llamada la media de <span class="math inline">\(X\)</span>. En esta subsección, se definirá la esperanza de una función de una variable aleatoria para variables aleatorias discretas o continuas</p>
+<p>Se definió la esperanza de una variable aleatoria arbitraria <span class="math inline">\(X\)</span>, llamada la media de <span class="math inline">\(X\)</span>. En esta subsección, se definirá la esperanza de una función de una variable aleatoria para variables aleatorias discretas o continuas.</p>
 </div>
 <div id="def-VE" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 3.7 (Valor esperado)</strong></span> Sea <span class="math inline">\(X\)</span> una variable aleatoria y <span class="math inline">\(g(\cdot)\)</span> una función con dominio y codominio en la recta real. La esperanza o valor esperado de la función <span class="math inline">\(g(\cdot)\)</span> de la variable aleatoria <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(\mathrm E[g(X)]\)</span>, se define de la siguiente manera:</p>
-<p><span id="eq-VE1"><span class="math display">\[ \mathrm E[g(X)]=\sum_j g(x_j)f_X(x_j)  \tag{3.1}\]</span></span></p>
-<p>Si <span class="math inline">\(X\)</span> es discreta con puntos <span class="math inline">\(x_1, x_2, \ldots, x_j, \ldots\)</span> (siempre que esta serie sea absolutamente convergente).</p>
-<p><span id="eq-VE2"><span class="math display">\[ \mathrm E[g(X)]=\int_{-\infty}^\infty g(x)f_X(x)dx  \tag{3.2}\]</span></span></p>
+<p><span id="eq-VE1"><span class="math display">\[ \mathrm E[g(X)]=\sum_j g(x_j)f_X(x_j).  \tag{3.1}\]</span></span></p>
+<p>Si <span class="math inline">\(X\)</span> es discreta con puntos <span class="math inline">\(x_1, x_2, \ldots, x_j, \ldots\)</span> (siempre que esta serie sea absolutamente convergente),</p>
+<p><span id="eq-VE2"><span class="math display">\[ \mathrm E[g(X)]=\int_{-\infty}^\infty g(x)f_X(x)dx. \tag{3.2}\]</span></span></p>
 <p>Si <span class="math inline">\(X\)</span> es continua con función de densidad de probabilidad <span class="math inline">\(f_X(x)\)</span> (siempre que <span class="math inline">\(\int_{-\infty}^\infty |g(x)|f_X(x)dx &lt; \infty\)</span>).</p>
 </div>
 <div class="proof remark" style="text-align: justify">
@@ -478,7 +478,7 @@ window.Quarto = {
 <p><span class="math display">\[ \mu_r'=\mathrm E[X^r] \]</span> si el valor esperado existe.</p>
 </div>
 <div style="text-align: justify">
-<p>Note que <span class="math inline">\(\mu_1' = \mathrm E[X] = \mu_X\)</span>, que es la media de <span class="math inline">\(X\)</span>.</p>
+<p>Note que <span class="math inline">\(\mu_1' = \mathrm E[X] = \mu_X\)</span>, es la media de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div id="def-quant" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 3.9 (Cuantil)</strong></span> El <span class="math inline">\(q-\)</span>ésimo cuantil de una variable aleatoria <span class="math inline">\(X\)</span> o de su distribución correspondiente se denota como <span class="math inline">\(\xi_q\)</span> y se define como el número más pequeño <span class="math inline">\(\xi\)</span> que cumple con la condición <span class="math inline">\(F_X(\xi) \geq q\)</span>.</p>
@@ -514,7 +514,7 @@ window.Quarto = {
 <p>se define como la <em>varianza muestral</em>.</p>
 </div>
 <div id="thm-meanvar" class="theorem" style="text-align: justify">
-<p><span class="theorem-title"><strong>Teorema 3.3</strong></span> Sea <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> una muestra aleatoria con densidad <span class="math inline">\(f(\cdot)\)</span>, la cual tiene una media <span class="math inline">\(\mu\)</span> y una varianza finita <span class="math inline">\(\sigma^2\)</span>, y sea <span class="math inline">\(\bar{X} = \frac{1}{n}\sum\limits_{i=1}^n X_i\)</span>. Luego,</p>
+<p><span class="theorem-title"><strong>Teorema 3.3</strong></span> Sea <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> una muestra aleatoria con densidad <span class="math inline">\(f(\cdot)\)</span>, la cual tiene media <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>. Si <span class="math inline">\(\bar{X} = \frac{1}{n}\sum\limits_{i=1}^n X_i\)</span>, entonces</p>
 <p><span class="math display">\[ \mathrm{E}[\bar X]=\mu_{\bar X}=\mu\qquad \text{ y }\qquad \mathrm{Var}[\bar X]=\sigma_{\bar X}^2 =\frac{1}{n}\sigma^2.\]</span></p>
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Vea <span class="citation" data-cites="mood1986introduction">Mood, Graybill, y Boes (<a href="references.html#ref-mood1986introduction" role="doc-biblioref">1986</a>)</span>.</p>
@@ -522,7 +522,7 @@ window.Quarto = {
 </div>
 <div id="thm-TCL" class="theorem" style="text-align: justify">
 <p><span class="theorem-title"><strong>Teorema 3.4 (Teorema del límite central)</strong></span> Supongamos que <span class="math inline">\(f(\cdot)\)</span> es una densidad con media <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>. Si <span class="math inline">\(\bar{X}_n\)</span> es el promedio de una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> extraída de <span class="math inline">\(f(\cdot)\)</span> y definimos la variable aleatoria <span class="math inline">\(Z_n\)</span> como</p>
-<p><span class="math display">\[ Z_n = \frac{\bar{X_n}-\mathrm E[\bar X_n]}{\sqrt{\mathrm{Var}[\bar X_n]}}=\frac{\bar X_n-\mu}{\sigma/\sqrt n} \]</span> Entonces, la distribución de <span class="math inline">\(Z_n\)</span> se acerca a la distribución normal estándar a medida que <span class="math inline">\(n\)</span> tiende a infinito.</p>
+<p><span class="math display">\[ Z_n = \frac{\bar{X_n}-\mathrm E[\bar X_n]}{\sqrt{\mathrm{Var}[\bar X_n]}}=\frac{\bar X_n-\mu}{\sigma/\sqrt n},\]</span> entonces, la distribución de <span class="math inline">\(Z_n\)</span> se acerca a la distribución normal estándar a medida que <span class="math inline">\(n\)</span> tiende a infinito.</p>
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Vea <span class="citation" data-cites="wackerly2009estadística">Wackerly et&nbsp;al. (<a href="references.html#ref-wackerly2009estadística" role="doc-biblioref">2009</a>)</span>.</p>
 </div>
@@ -768,12 +768,12 @@ Figura&nbsp;3.1: Puntajes y calificaciones finales para una muestra aleatoria de
 <p><span class="theorem-title"><strong>Corolario 3.1</strong></span> Si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes, entonces <span class="math inline">\(\gamma_{XY}=0\)</span>.</p>
 <div class="proof" style="text-align: justify">
 <p><span class="proof-title"><em>Prueba</em>. </span>Observe que</p>
-<p><span class="math display">\[ \begin{split}\mathrm{Cov}[X,Y]=\mathrm E[(X-\mu_X)(Y-\mu_Y)]=\mathrm E[X-\mu_X]\mathrm E[Y-\mu_Y]=0\end{split} \]</span></p>
-<p>Ya que <span class="math inline">\(\mathrm E[(X-\mu_X)]=0\)</span>.</p>
+<p><span class="math display">\[ \begin{split}\mathrm{Cov}[X,Y]=\mathrm E[(X-\mu_X)(Y-\mu_Y)]=\mathrm E[X-\mu_X]\mathrm E[Y-\mu_Y]=0,\end{split} \]</span></p>
+<p>ya que <span class="math inline">\(\mathrm E[(X-\mu_X)]=0\)</span>.</p>
 </div>
 </div>
 <div id="thm-propiedades" class="theorem" style="text-align: justify">
-<p><span class="theorem-title"><strong>Teorema 3.5</strong></span> Sean <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> variables aleatorias definidas sobre el mismo espacio de probabilidad tal que <span class="math inline">\(E(X^2) &lt; \infty\)</span> y <span class="math inline">\(E(Y^2) &lt; \infty\)</span>. Entonces:</p>
+<p><span class="theorem-title"><strong>Teorema 3.5</strong></span> Sean <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> variables aleatorias definidas sobre el mismo espacio de probabilidad tales que <span class="math inline">\(E(X^2) &lt; \infty\)</span> y <span class="math inline">\(E(Y^2) &lt; \infty\)</span>. Entonces:</p>
 <ol type="i">
 <li><p><span class="math inline">\(\mathrm{Cov}[X, Y]= \mathrm{E}[XY]-\mathrm{E}[X]\mathrm{E}[Y]\)</span>.</p></li>
 <li><p><span class="math inline">\(\mathrm{Cov}[X, Y]= \mathrm{Cov}[Y,X]\)</span>.</p></li>
@@ -1032,6 +1032,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1066,7 +1084,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1357,4 +1379,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/book/estadistica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/book/estadistica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Jennlg/Tesis/edit/main/estadistica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Jennlg/Tesis/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/Jennlg/Tesis/blob/main/estadistica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div></div></footer></body></html>

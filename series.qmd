@@ -5,9 +5,9 @@ lang: es
 # Series de Tiempo
 
 ::: {style="text-align: justify"}
-Las series temporales tienen su origen en la necesidad de comprender y predecir patrones presentes en datos secuenciales a lo largo del tiempo. A lo largo de la historia, diversas civilizaciones han registrado observaciones cronológicas con el propósito de anticipar fenómenos naturales, eventos económicos y otros procesos cambiantes.
+Las series temporales tienen su origen en la necesidad de comprender y predecir patrones presentes en datos secuenciales en el transcurso del tiempo. A lo largo de la historia, diversas civilizaciones han registrado observaciones cronológicas con el propósito de anticipar fenómenos naturales, eventos económicos y otros procesos cambiantes.
 
-No obstante, el enfoque más sistemático en el análisis de series temporales se inició en el ámbito de la estadística y la econometría durante el siglo XX. Figuras pioneras como Norbert Wiener y Andrey Kolmogorov establecieron los cimientos teóricos en torno a los procesos estocásticos.
+No obstante, el enfoque más sistemático en el análisis de series temporales se inició en el ámbito de la estadística y la econometría durante el siglo XX. Figuras pioneras como Norbert Wiener y Andrey Kolmogorov establecieron los cimientos teóricos en torno a los procesos estocásticos (@wiener1949extrapolation).
 
 La relevancia de las series temporales en la predicción de datos radica en su habilidad para capturar patrones temporales y tendencias presentes en conjuntos de datos. A medida que se acumulan datos a lo largo del tiempo, es posible identificar relaciones y ciclos que facilitan la realización de pronósticos futuros. Esto resulta especialmente valioso en campos como la economía, la meteorología, la epidemiología y las finanzas, donde comprender los patrones temporales es crucial para tomar decisiones informadas.
 
@@ -39,7 +39,7 @@ Una *realización* de la serie de tiempo $\{X(t);t\in T\}$ es el conjunto de res
 :::
 
 ::: {style="text-align: justify"}
-La colección de todas las posibles realizaciones se denomina *conjunto*, y, para un valor dado de $t$, la expectativa de la variable aleatoria $X(t)$ se denomina *media del conjunto* y se denotará como $\mathrm E[X(t)]=\mu(t)$ . La *varianza* de $X(t)$ se expresa como
+La colección de todas las posibles realizaciones se denomina *conjunto* y, para un valor dado de $t$, la expectativa de la variable aleatoria $X(t)$ se denomina *media del conjunto* y se denotará como $\mathrm E[X(t)]=\mu(t)$ . La *varianza* de $X(t)$ se expresa como
 
 $$
 \mathrm{Var}[X(t)]:=\mathrm{E}[(X(t)-\mu(t))^2]
@@ -49,7 +49,7 @@ y a menudo se denota como $\sigma^2(t)$ ya que también puede depender de $t$.
 :::
 
 ::: {#.remark style="text-align: justify"}
-De especial interés en el análisis de una serie temporal es la covarianza entre $X(t_1)$ y $X(t_2)$, donde $t_1, t_2\in T$. Dado que esta es la covarianza (@def-cov) dentro de la misma serie temporal, se refiere a ella como *autocovarianza*. De igual manera, se refiere a correlación (@def-corr) como *autocorrelación* y se denotan por
+De especial interés, en el análisis de una serie temporal, es la covarianza entre $X(t_1)$ y $X(t_2)$, donde $t_1, t_2\in T$. Dado que esta es la [covarianza](estadistica.qmd#def-cov) dentro de la misma serie temporal, se refiere a ella como *autocovarianza*. De igual manera, se refiere a la [correlación](estadistica.qmd#def-corr) dentro de una misma serie como *autocorrelación* y se denotan por
 
 $$
 \gamma(t_1,t_2):=\mathrm{E}[(X(t_1)-\mu(t_1))(X(t_2)-\mu(t_2))]
@@ -67,7 +67,7 @@ respectivamente.
 ### Series de tiempo estacionarias
 
 ::: {style="text-align: justify"}
-En el estudio de una serie de tiempo, es común que solo se tenga disponible una única realización de la serie. El análisis de una serie temporal basado únicamente en una realización es análogo a analizar las propiedades de una variable aleatoria en función de una sola observación. Los conceptos de estacionariedad y ergodicidad jugarán un papel importante en mejorar la capacidad de análisis de una serie temporal basada en una única realización de manera efectiva. Un proceso se considera estacionario si está en un estado de "equilibrio estadístico". El comportamiento básico de dicha serie de tiempo no cambia con el tiempo. Como ejemplo, para dicho proceso, $\mu(t)$ no dependería del tiempo y, por lo tanto, podría ser denotado como $\mu$ para todo $t$. Parecería que, dado que $x(t)$ para cada $t\in T$ proporciona información sobre la media del conjunto, $\mu$, podría ser posible estimar $\mu$ en función de una única realización. Un proceso **ergódico** es aquel para el cual promedios de conjunto como $\mu$ pueden estimarse consistentemente a partir de una sola realización. En esta sección, se presentarán definiciones más formales de estacionariedad. La noción más restrictiva de estacionariedad es la de estacionariedad estricta, que se define de la siguiente manera.
+En el estudio de una serie de tiempo, es común que solo se tenga disponible una única realización de la serie. El análisis de una serie temporal basado únicamente en una realización es análogo a analizar las propiedades de una variable aleatoria en función de una sola observación. Los conceptos de estacionariedad y ergodicidad jugarán un papel importante en mejorar la capacidad de análisis de una serie temporal basada en una única realización de manera efectiva. Un proceso se considera estacionario si está en un estado de "equilibrio estadístico". El comportamiento básico de dicha serie de tiempo no cambia con el tiempo. Como ejemplo, para dicho proceso, $\mu(t)$ no dependería del tiempo y, por lo tanto, podría ser denotado como $\mu$ para todo $t$. Parecería que, dado que $x(t)$ para cada $t\in T$, proporciona información sobre la media del conjunto, $\mu$, podría ser posible estimar $\mu$ en función de una única realización. Un proceso **ergódico** es aquel para el cual promedios de conjunto como $\mu$ pueden estimarse consistentemente a partir de una sola realización. En esta sección, se presentarán definiciones más formales de estacionariedad. La noción más restrictiva de estacionariedad es la de estacionariedad estricta, que se define de la siguiente manera.
 :::
 
 ::: {#def-PPE style="text-align: justify"}
@@ -85,15 +85,15 @@ La estacionariedad estricta requiere, entre otras cosas, que para cualquier $t_1
 
 La serie de tiempo $\{X(t); t \in T\}$ se considera estacionaria por covarianza si
 
-i.  $\mu_{_{X_t}}=\mathrm E[X(t)] = \mu$ (media constante para todo $t$)
+i.  $\mu_{_{X_t}}=\mathrm E[X(t)] = \mu$ (media constante para todo $t$).
 
-ii. $\sigma^2_{_{X_t}}=\mathrm{Var}[X(t)] = \sigma^2 < \infty$ (es decir, una constante finita para todo $t$)
+ii. $\sigma^2_{_{X_t}}=\mathrm{Var}[X(t)] = \sigma^2 < \infty$ (es decir, una constante finita para todo $t$).
 
 iii. $\gamma_{_{X_{t_1},X_{t_2}}}$ y $\rho_{_{X_{t_1},X_{t_2}}}$ depende solo de $t_2 − t_1$.
 :::
 
 ::: {style="text-align: justify"}
-Si se cumple la condición iii., no habrá confusión al reemplazar la notación, $\gamma_{_{X_{t_1},X_{t_2}}}$, con $\gamma_{_{t_1-t_2}}$, y de manera similar, al denotar $\rho_{_{X_{t_1},X_{t_2}}}$ como $\rho_{_{t_1-t_2}}$. Cuando se establece $t_2-t_1=k$, se hace referencia a $\gamma_{_k}$ y $\rho_{_k}$ como la autocovarianza y la autocorrelación con un rezago de $k$, respectivamente.
+Si se cumple la condición iii., no habrá confusión al reemplazar la notación $\gamma_{_{X_{t_1},X_{t_2}}}$ con $\gamma_{_{t_1-t_2}}$ y, de manera similar, al denotar $\rho_{_{X_{t_1},X_{t_2}}}$ como $\rho_{_{t_1-t_2}}$. Cuando se establece $t_2-t_1=k$, se hace referencia a $\gamma_{_k}$ y $\rho_{_k}$ como la autocovarianza y la autocorrelación con un rezago de $k$, respectivamente.
 
 La función de autocovarianza de una serie de tiempo estacionaria satisface las siguientes propiedades:
 
@@ -157,15 +157,15 @@ En un proceso de ruido blanco, cada observación está no correlacionada con tod
 ##### Estimación de $\mu$.
 
 ::: {style="text-align: justify"}
-Dada la realización $\{x_t, t = 1, 2,\ldots , n\}$ de una serie temporal estacionaria, la estimación natural de la media común $\mu$ es la media muestral.
+Dada la realización $\{x_t, t = 1, 2,\ldots , n\}$ de una serie temporal estacionaria, la estimación natural de la media común $\mu$ es la media muestral
 
 $$
-\bar{x}=\frac{1}{n}\sum_{t=1}^n x_t
+\bar{x}=\frac{1}{n}\sum_{t=1}^n x_t.
 $$ {#eq-media}
 
 Es evidente que el estimador $\bar{X}$ es imparcial para $\mu$.
 
-Para una serie temporal estacionaria, se puede emplear los datos a lo largo del tiempo para estimar la media, dado que se asume que la media es constante para cada instante de tiempo, $t$.
+Para una serie temporal estacionaria, se pueden emplear los datos a lo largo del tiempo para estimar la media, dado que se asume que la media es constante para cada instante de tiempo $t$.
 :::
 
 ###### Ergodicidad de $X$.
@@ -187,7 +187,7 @@ Vea @Yaglom1962introduction.
 :::
 
 ::: {#cor-ergo style="text-align: justify"}
-Sea $X_t$ es una serie de tiempo estacionaria con parámetros discretos, como se establece en el @thm-ergo . Entonces, $\bar X$ es ergódico para $\mu$ si
+Sea $X_t$ una serie de tiempo estacionaria con parámetros discretos, como se establece en el @thm-ergo . Entonces, $\bar X$ es ergódico para $\mu$ si
 
 $$
 \lim\limits_{k\to\infty} \gamma_{_k}=0,
@@ -201,7 +201,7 @@ $$ {#eq-ergo2}
 :::
 
 ::: {style="text-align: justify"}
-La condición suficiente para la ergodicidad de $\bar X$, dada en el @cor-ergo , resulta muy útil y es una condición que se cumple para la amplia clase de series temporales autorregresivas de media móvil, ARMA$(p,q)$ , estacionarias, que se discutirán más adelante. A pesar de que $X_t$'s "cercanos" en el tiempo pueden tener una correlación sustancial, la condición en el @cor-ergo asegura que para una "gran" separación, están casi no correlacionados.
+La condición suficiente para la ergodicidad de $\bar X$, dada en el @cor-ergo, resulta muy útil y es una condición que se cumple para la amplia clase de series temporales autorregresivas de media móvil, ARMA$(p,q)$, estacionarias, que se discutirán más adelante. A pesar de que $X_t$'s "cercanos" en el tiempo pueden tener una correlación sustancial, la condición en el @cor-ergo asegura que, para una "gran" separación, están casi no correlacionados.
 :::
 
 ###### Varianza de $\bar X$.
@@ -213,7 +213,7 @@ Antes de abandonar el tema de estimar $\mu$ a partir de una realización de un p
 Si $X_t$ es una serie de tiempo estacionaria, entonces la varianza de $\bar X$ basada en una realización de longitud $n$ está dada por
 
 $$
-\mathrm{Var}(\bar X)=\frac{\sigma_X^2}{n}\left(1+2\sum_{k=1}^{n-1}\left(1-\frac{|k|}{n}\right)\rho_{_k}\right)
+\mathrm{Var}(\bar X)=\frac{\sigma_X^2}{n}\left(1+2\sum_{k=1}^{n-1}\left(1-\frac{|k|}{n}\right)\rho_{_k}\right).
 $$ {#eq-varmedia}
 :::
 :::
@@ -231,12 +231,12 @@ $$ {#eq-iconf}
 ##### Estimación de $\gamma_{_k}$.
 
 ::: {style="text-align: justify"}
-Debido a la estacionariedad, $\mathrm E[(X_t − \mu)(X_{t+k} − \mu)] = \gamma_{_k}$ no depende de $t.$ Como consecuencia, parece razonable estimar $\gamma_{_k}$ a partir de una sola realización, por
+Debido a la estacionariedad, $\mathrm E[(X_t − \mu)(X_{t+k} − \mu)] = \gamma_{_k}$ no depende de $t.$ Como consecuencia, parece razonable estimar $\gamma_{_k}$ a partir de una sola realización, esto es
 
 $$
 \begin{split}\hat{\gamma}_{_k}&= \frac{1}{n}\sum_{t=1}^{n-k}(X_t-\bar X)(X_{t+k}-\bar X), \quad 0\leq k\leq n\\
 &=0,\qquad k\ge n\\
-&=\hat{\gamma}_{_{-k}},\quad k<0\end{split}
+&=\hat{\gamma}_{_{-k}},\quad k<0.\end{split}
 $$ {#eq-estgamma}
 :::
 
@@ -244,7 +244,7 @@ $$ {#eq-estgamma}
 Usando @eq-estgamma se deduce que
 
 $$
-\hat{\gamma}_{_0}= \frac{1}{n}\sum_{t=1}^{n}(X_t-\bar X)^2
+\hat{\gamma}_{_0}= \frac{1}{n}\sum_{t=1}^{n}(X_t-\bar X)^2.
 $$ {#eq-hatgamma0}
 :::
 
@@ -256,14 +256,14 @@ $$ {#eq-hatgamma0}
 El estimador de la autocorrelación, $\rho_{_{k}}$ se obtiene mediante
 
 $$
-\hat\rho_{_{k}}=\hat\gamma_{_{k}}/\hat\gamma_{_{0}}
+\hat\rho_{_{k}}=\hat\gamma_{_{k}}/\hat\gamma_{_{0}}.
 $$ {#eq-sampleautocor}
 
 A este estimador se le conoce como la autocorrelación muestral.
 :::
 
 ::: {style="text-align: justify"}
-A partir del examen de la @eq-estgamma , es evidente que los valores de $\hat\gamma_{_{k}}$ (y $\hat\rho_{_{k}}$) tenderán a ser "pequeños" cuando $k$ sea grande en relación con $n$.
+A partir del análisis de la @eq-estgamma , es evidente que los valores de $\hat\gamma_{_{k}}$ (y $\hat\rho_{_{k}}$) tenderán a ser "pequeños" cuando $k$ sea grande en relación con $n$.
 :::
 
 ### Conjuntos de datos de series temporales.
@@ -275,7 +275,7 @@ Los comportamientos exhibidos por los datos de series temporales son diversos y 
 #### Datos Cíclicos
 
 ::: {style="text-align: justify"}
-Muchos conjuntos de datos de series temporales muestran un patrón cíclico, lo que significa que los datos presentan aumentos y disminuciones de manera algo repetitiva. Estos datos a veces se denominan *"pseudo-periódicos"*, un término que usaremos de manera sinónima con *"cíclico"*. Los datos de manchas solares en la @fig-sunspot es un ejemplo de datos cíclicos.
+Muchos conjuntos de datos de series temporales muestran un patrón cíclico, lo que significa que los datos presentan aumentos y disminuciones de manera algo repetitiva. Estos datos a veces se denominan *"pseudo-periódicos"*, un término que usaremos de manera sinónima con *"cíclico"*. Los datos de manchas solares en la @fig-sunspot son un ejemplo de datos cíclicos.
 
 ::: remark
 Los datos verdaderamente periódicos exhiben un comportamiento que se replica de manera precisa a lo largo de un período de tiempo establecido. Un caso ilustrativo de datos puramente periódicos se encuentra en la forma de la curva sinusoidal. De este modo, los datos pseudoperiódicos (o cíclicos) se refieren a aquellos conjuntos de datos que tienden a mostrar repeticiones en sus comportamientos.
@@ -303,7 +303,7 @@ Las manchas solares han generado un considerable interés en la comunidad cient�
 
 -   La actividad de las manchas solares tiene un comportamiento cíclico que tiene una duración de ciclo de aproximadamente 11 años. Al examinar la @fig-sunspot se observa que hay 29 ciclos en los 321 años, con una duración media del ciclo de aproximadamente 11 años. De hecho, las duraciones de los ciclos tienden a variar aleatoriamente entre 9 y 13 años.
 
-Si bien el comportamiento cíclico en la @fig-sunspot es claro, a menudo es útil examinar fragmentos cortos de los datos para visualizar mejor el comportamiento específico. La @fig-sunsfrag muestra el número de manchas solares desde 1867 hasta 1950. Las líneas verticales identifican los años en los que hubo un pico en los números de manchas solares y las flechas horizontales representan el tiempo entre los picos. Para los años representados en la @fig-sunsfrag, las duraciones de los ciclos fueron de 13, 10, 12, 12, 11, 9 y 10 años, respectivamente. Las duraciones de los ciclos parecen variar aleatoriamente y no parece haber un "ajuste a una duración de ciclo fija". De hecho, según la comprensión de estos autores, los científicos no tienen una explicación física para el ciclo de aproximadamente 11 años. Los datos de las manchas solares son un ejemplo clásico de datos cíclicos con duraciones de ciclo variables. De hecho, @yule1971method desarrolló el proceso autorregresivo como un medio para describir el comportamiento periódico "perturbado" de los datos de las manchas solares.
+Si bien, el comportamiento cíclico en la @fig-sunspot es claro, a menudo es útil examinar fragmentos cortos de los datos para visualizar mejor el comportamiento específico. La @fig-sunsfrag muestra el número de manchas solares desde 1867 hasta 1950. Las líneas verticales identifican los años en los que hubo un pico en los números de manchas solares y las flechas horizontales representan el tiempo entre los picos. Para los años representados en la @fig-sunsfrag, las duraciones de los ciclos fueron de 13, 10, 12, 12, 11, 9 y 10 años, respectivamente. Las duraciones de los ciclos parecen variar aleatoriamente y no parece haber un "ajuste a una duración de ciclo fija". De hecho, según la comprensión de estos autores, los científicos no tienen una explicación física para el ciclo de aproximadamente 11 años. Los datos de las manchas solares son un ejemplo clásico de datos cíclicos con duraciones de ciclo variables. De hecho, @yule1971method desarrolló el proceso autorregresivo como un medio para describir el comportamiento periódico "perturbado" de los datos de las manchas solares.
 
 ::: {#fig-sunsfrag}
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -366,7 +366,7 @@ Fragmento de la @fig-sunspot que muestra los años 1867-1950
 ::: {.callout-caution collapse="true" icon="false"}
 ##### Datos de pasajeros aéreos
 
-La @fig-airpass es un conjunto de datos que contiene el número total (en miles) de pasajeros de líneas aéreas internacionales por mes durante los 12 años, desde 1949 hasta 1960. Estos datos han sido analizados exhaustivamente y son un conjunto de datos clásico en la literatura de series temporales. Los datos siguen un patrón cíclico de 12 meses que es similar de un año a otro y está basado en el año calendario. Por lo tanto, los datos de Pasajeros Aéreos son otro ejemplo de datos estacionales. Además, los datos tienden a mostrar una tendencia al alza con el tiempo. Es decir, el número de pasajeros de líneas aéreas está aumentando con el tiempo. El comportamiento de tendencia en series temporales se discutirá en la @sec-trend. También hay una variabilidad creciente dentro del año. Este tipo de comportamiento, conocido como *estacionalidad multiplicativa*.
+La @fig-airpass es un conjunto de datos que contiene el número total (en miles) de pasajeros de líneas aéreas internacionales por mes durante los 12 años, desde 1949 hasta 1960. Estos datos han sido analizados exhaustivamente y son un conjunto de datos clásico en la literatura de series temporales. Los datos siguen un patrón cíclico de 12 meses que es similar de un año a otro y está basado en el año calendario. Por lo tanto, los datos de pasajeros aéreos son otro ejemplo de datos estacionales. Además, los datos tienden a mostrar una tendencia al alza con el tiempo. Es decir, el número de pasajeros de líneas aéreas está aumentando con el tiempo. El comportamiento de tendencia en series temporales se discutirá en la @sec-trend. También hay una variabilidad creciente dentro del año. Este tipo de comportamiento es conocido como *estacionalidad multiplicativa*.
 
 ::: {#fig-airpass}
 ```{r, message=FALSE}

@@ -1,7 +1,7 @@
 # Introducción {.unnumbered}
 
 ::: {style="text-align: justify"}
-La creciente disponibilidad de datos temporales en una amplia gama de campos ha impulsado la necesidad de desarrollar métodos eficaces para pronosticar su comportamiento futuro. En particular, el análisis y pronóstico de series temporales desempeña un papel crucial en la toma de decisiones en áreas como la economía, la meteorología, la ingeniería y la salud pública. Con la aparición de la pandemia de COVID-19, la capacidad de prever la evolución de la enfermedad se ha convertido en una prioridad urgente para los responsables de la salud y los planificadores de políticas.
+La creciente disponibilidad de datos temporales en una amplia gama de campos ha impulsado la necesidad de desarrollar métodos eficaces para pronosticar su comportamiento futuro. En particular, el análisis y pronóstico de series temporales desempeña un papel crucial en la toma de decisiones en áreas como la economía, la meteorología, la ingeniería y la salud pública. Con la aparición de la pandemia de COVID-19, la capacidad de prever la evolución de la enfermedad se ha convertido en una prioridad urgente para los responsables de la salud y los planificadores de políticas relacionadas con la salud pública.
 
 Este trabajo se centra en el análisis comparativo de métodos de pronóstico para series temporales, con un enfoque específico en el método de Holt-Winters y las redes neuronales Perceptrón Multicapa (MLP). Para comprender en profundidad estos enfoques, se presenta una revisión exhaustiva de la teoría del análisis de series temporales y los fundamentos de las redes neuronales, estableciendo así las bases teóricas necesarias para su aplicación.
 

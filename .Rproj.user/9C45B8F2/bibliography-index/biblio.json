@@ -814,6 +814,26 @@
             "title": "Model selection via multifold cross validation",
             "type": "article-journal",
             "volume": "21"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wiener",
+                    "given": "Norbert"
+                }
+            ],
+            "id": "wiener1949extrapolation",
+            "issued": {
+                "date-parts": [
+                    [
+                        1949
+                    ]
+                ]
+            },
+            "publisher": "The MIT press",
+            "title": "Extrapolation, interpolation, and smoothing of stationary time series: With engineering applications",
+            "title-short": "Extrapolation, interpolation, and smoothing of stationary time series",
+            "type": "book"
         }
     ],
     "project_biblios": [

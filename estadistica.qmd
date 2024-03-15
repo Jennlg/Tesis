@@ -45,17 +45,17 @@ Un concepto sumamente útil en problemas que implican variables aleatorias o dis
 ::: {#def-mean style="text-align: justify"}
 #### Media
 
-Sea $X$ una variable aleatoria. La *media* de $X$, denotada como $\mu_X$ o $\mathrm E[X]$, se define de la siguiente manera:
+Sea $X$ una variable aleatoria. La *media* de $X$, denotada por $\mu_X$ o $\mathrm E[X]$, se define como
 
-$$ \mathrm E[X]= \sum x_jf_X(x_j) $$
+$$ \mathrm E[X]= \sum x_jf_X(x_j) .$$
 
 Si $X$ es discreta con puntos de densidad $x_1, x_2, \ldots, x_j, \ldots$
 
-$$ \mathrm E[X]=\int_{-\infty}^\infty x f_X(x)dx $$
+$$ \mathrm E[X]=\int_{-\infty}^\infty x f_X(x)dx.$$
 
 Si $X$ es continua con una función de densidad de probabilidad $f_X(x)$
 
-$$ \mathrm E[X]=\int_0^\infty [1-F_X(x)]dx-\int_{-\infty}^0 F_X(x) dx $$
+$$ \mathrm E[X]=\int_0^\infty [1-F_X(x)]dx-\int_{-\infty}^0 F_X(x) dx.$$
 
 para cualquier variable aleatoria $X$.
 :::
@@ -71,13 +71,13 @@ La media de una variable aleatoria $X$ es una medida de ubicación central de la
 ::: {#def-var style="text-align: justify"}
 #### Varianza
 
-Sea $X$ una variable aleatoria, y se define $\mu_X$ como $\mathrm E[X]$, la *varianza* de $X$, denotada como $\sigma_X^2$ o $\mathrm{Var}[X]$, se define de la siguiente manera
+Sea $X$ una variable aleatoria. Se define $\mu_X$ como $\mathrm E[X]$. La *varianza* de $X$, denotada como $\sigma_X^2$ o $\mathrm{Var}[X]$, se define de la siguiente manera
 
-$$ \mathrm{Var}[X]= \sum_j (x_j-\mu_X)^2 f_X(x_j) $$
+$$ \mathrm{Var}[X]= \sum_j (x_j-\mu_X)^2 f_X(x_j).$$
 
-si $X$ es discreta con puntos $x_1, x_2, \ldots, x_j, \ldots$.
+Ahora bien, si $X$ es discreta con puntos $x_1, x_2, \ldots, x_j, \ldots$.
 
-$$ \mathrm{Var}[X]=\int_{-\infty}^\infty (x-\mu_X)^2f_X(x)dx $$
+$$ \mathrm{Var}[X]=\int_{-\infty}^\infty (x-\mu_X)^2f_X(x)dx.$$
 
 Si $X$ es continua con una función de densidad de probabilidad $f_X(x)$
 
@@ -103,7 +103,7 @@ La desviación estándar de una variable aleatoria, al igual que la varianza, es
 #### Valor esperado de una función de una variable aleatoria
 
 ::: {style="text-align: justify"}
-Se definió la esperanza de una variable aleatoria arbitraria $X$, llamada la media de $X$. En esta subsección, se definirá la esperanza de una función de una variable aleatoria para variables aleatorias discretas o continuas
+Se definió la esperanza de una variable aleatoria arbitraria $X$, llamada la media de $X$. En esta subsección, se definirá la esperanza de una función de una variable aleatoria para variables aleatorias discretas o continuas.
 :::
 
 ::: {#def-VE style="text-align: justify"}
@@ -111,11 +111,11 @@ Se definió la esperanza de una variable aleatoria arbitraria $X$, llamada la me
 
 Sea $X$ una variable aleatoria y $g(\cdot)$ una función con dominio y codominio en la recta real. La esperanza o valor esperado de la función $g(\cdot)$ de la variable aleatoria $X$, denotada por $\mathrm E[g(X)]$, se define de la siguiente manera:
 
-$$ \mathrm E[g(X)]=\sum_j g(x_j)f_X(x_j) $$ {#eq-VE1}
+$$ \mathrm E[g(X)]=\sum_j g(x_j)f_X(x_j). $$ {#eq-VE1}
 
-Si $X$ es discreta con puntos $x_1, x_2, \ldots, x_j, \ldots$ (siempre que esta serie sea absolutamente convergente).
+Si $X$ es discreta con puntos $x_1, x_2, \ldots, x_j, \ldots$ (siempre que esta serie sea absolutamente convergente),
 
-$$ \mathrm E[g(X)]=\int_{-\infty}^\infty g(x)f_X(x)dx $$ {#eq-VE2}
+$$ \mathrm E[g(X)]=\int_{-\infty}^\infty g(x)f_X(x)dx.$$ {#eq-VE2}
 
 Si $X$ es continua con función de densidad de probabilidad $f_X(x)$ (siempre que $\int_{-\infty}^\infty |g(x)|f_X(x)dx < \infty$).
 :::
@@ -161,7 +161,7 @@ $$ \mu_r'=\mathrm E[X^r] $$ si el valor esperado existe.
 :::
 
 ::: {style="text-align: justify"}
-Note que $\mu_1' = \mathrm E[X] = \mu_X$, que es la media de $X$.
+Note que $\mu_1' = \mathrm E[X] = \mu_X$, es la media de $X$.
 :::
 
 ::: {#def-quant style="text-align: justify"}
@@ -221,7 +221,7 @@ se define como la *varianza muestral*.
 :::
 
 ::: {#thm-meanvar style="text-align: justify"}
-Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria con densidad $f(\cdot)$, la cual tiene una media $\mu$ y una varianza finita $\sigma^2$, y sea $\bar{X} = \frac{1}{n}\sum\limits_{i=1}^n X_i$. Luego,
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria con densidad $f(\cdot)$, la cual tiene media $\mu$ y varianza finita $\sigma^2$. Si $\bar{X} = \frac{1}{n}\sum\limits_{i=1}^n X_i$, entonces
 
 $$ \mathrm{E}[\bar X]=\mu_{\bar X}=\mu\qquad \text{ y }\qquad \mathrm{Var}[\bar X]=\sigma_{\bar X}^2 =\frac{1}{n}\sigma^2.$$
 
@@ -235,7 +235,7 @@ Vea @mood1986introduction.
 
 Supongamos que $f(\cdot)$ es una densidad con media $\mu$ y varianza finita $\sigma^2$. Si $\bar{X}_n$ es el promedio de una muestra aleatoria de tamaño $n$ extraída de $f(\cdot)$ y definimos la variable aleatoria $Z_n$ como
 
-$$ Z_n = \frac{\bar{X_n}-\mathrm E[\bar X_n]}{\sqrt{\mathrm{Var}[\bar X_n]}}=\frac{\bar X_n-\mu}{\sigma/\sqrt n} $$ Entonces, la distribución de $Z_n$ se acerca a la distribución normal estándar a medida que $n$ tiende a infinito.
+$$ Z_n = \frac{\bar{X_n}-\mathrm E[\bar X_n]}{\sqrt{\mathrm{Var}[\bar X_n]}}=\frac{\bar X_n-\mu}{\sigma/\sqrt n},$$ entonces, la distribución de $Z_n$ se acerca a la distribución normal estándar a medida que $n$ tiende a infinito.
 
 ::: proof
 Vea @wackerly2009estadística.
@@ -335,14 +335,14 @@ Si $X$ e $Y$ son independientes, entonces $\gamma_{XY}=0$.
 ::: {.proof style="text-align: justify"}
 Observe que
 
-$$ \begin{split}\mathrm{Cov}[X,Y]=\mathrm E[(X-\mu_X)(Y-\mu_Y)]=\mathrm E[X-\mu_X]\mathrm E[Y-\mu_Y]=0\end{split} $$
+$$ \begin{split}\mathrm{Cov}[X,Y]=\mathrm E[(X-\mu_X)(Y-\mu_Y)]=\mathrm E[X-\mu_X]\mathrm E[Y-\mu_Y]=0,\end{split} $$
 
-Ya que $\mathrm E[(X-\mu_X)]=0$.
+ya que $\mathrm E[(X-\mu_X)]=0$.
 :::
 :::
 
 ::: {#thm-propiedades style="text-align: justify"}
-Sean $X$ e $Y$ variables aleatorias definidas sobre el mismo espacio de probabilidad tal que $E(X^2) < \infty$ y $E(Y^2) < \infty$. Entonces:
+Sean $X$ e $Y$ variables aleatorias definidas sobre el mismo espacio de probabilidad tales que $E(X^2) < \infty$ y $E(Y^2) < \infty$. Entonces:
 
 i.  $\mathrm{Cov}[X, Y]= \mathrm{E}[XY]-\mathrm{E}[X]\mathrm{E}[Y]$.
 

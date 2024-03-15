@@ -16,7 +16,6 @@ book:
   title: "Análisis comparativo del desempeño en métodos para el pronóstico de series temporales"
   reader-mode: true
   language: es
-  author: "Jennifer Sherlyn López García"
   date: "02/14/2024"
   output-file: "Tesis_JSLG"
   image: logofcfm.png
@@ -25,16 +24,15 @@ book:
   downloads: [pdf, epub]
   favicon: logofcfm.png
   sidebar:
-    logo: logounach.png
+    logo: LOGO50.png
     style: floating
     collapse-level: 2
     border: true
     search: true
   open-graph: true
   twitter-card: true
-  repo-url: https://github.com/Jennlg/Tesis/tree/master
+  repo-url: https://github.com/Jennlg/Tesis
   repo-actions: [edit, issue, source]
-  repo-subdir: book
   page-navigation: true
   chapters:
     - index.qmd
