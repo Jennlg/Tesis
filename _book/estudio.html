@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.22">
+<meta name="generator" content="quarto-1.5.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -131,7 +131,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logounach.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./LOGO50.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis comparativo del desempeño en métodos para el pronóstico de series temporales</a> 
@@ -353,7 +353,7 @@ div.csl-indent {
 <p>Una de las principales problemáticas asociadas a este virus es su periodo de incubación de hasta 14 días, durante el cual puede transmitirse la infección sin presentar síntomas. Además, algunas personas infectadas con el COVID-19 manifiestan síntomas leves, similares a un resfriado común o a la gripe. Esta pandemia ha ejercido una presión significativa sobre los gobiernos y los sistemas de salud pública. La escasez de equipamiento médico en hospitales, incluyendo camas, unidades de cuidados intensivos, personal médico, ventiladores, entre otros, constituye uno de los principales desafíos. Asimismo, han surgido repercusiones económicas y sociales a raíz de la propagación de la enfermedad y la implementación de cuarentenas estrictas, lo que ha afectado la salud mental de las comunidades, entre otros aspectos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Imagenes/COVID.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="510"></p>
+<p><a href="https://elpais.com/elpais/2020/09/21/album/1600712054_187465.html#?prm=copy_link"><img src="Imagenes/COVID.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="510"></a></p>
 </figure>
 </div>
 <p>El surgimiento de las problemáticas mencionadas, sumado a la ausencia de tratamientos definitivos para esta enfermedad, la naturaleza dinámica del virus y su propagación global, subraya la necesidad de investigar exhaustivamente este virus y su comportamiento. Se han explorado diversos campos y metodologías de pronóstico y modelización. Uno de estos enfoques de pronóstico radica en la creación de modelos para anticipar el número de casos futuros, basados en registros de casos confirmados. Aunque las proyecciones sobre el número de pacientes futuros no son totalmente precisas, sirven de apoyo a los gobiernos y a los responsables de políticas de salud para adoptar decisiones cruciales y aplicar restricciones que reduzcan la prevalencia. Asimismo, resulta crucial anticipar futuros brotes, posibles mutaciones del virus y su propagación, especialmente identificar el pico para mitigar sus efectos graves. Estas proyecciones asisten a los tomadores de decisiones para prevenir e incluso controlar la propagación de la enfermedad mediante políticas efectivas y rigurosas. Cabe destacar que la falta de información suficiente con anticipación constituye uno de los desafíos principales en el pronóstico, aunque sigue siendo una herramienta de orientación efectiva para los gobiernos en la contención de la enfermedad.</p>
@@ -550,18 +550,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -593,7 +582,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -601,7 +612,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

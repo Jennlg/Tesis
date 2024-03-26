@@ -834,6 +834,26 @@
             "title": "Extrapolation, interpolation, and smoothing of stationary time series: With engineering applications",
             "title-short": "Extrapolation, interpolation, and smoothing of stationary time series",
             "type": "book"
+        },
+        {
+            "URL": "https://books.google.com.mx/books?id=Eo_rMgEACAAJ",
+            "author": [
+                {
+                    "family": "Brown",
+                    "given": "R. G."
+                }
+            ],
+            "id": "brown1956exponential",
+            "issued": {
+                "date-parts": [
+                    [
+                        1956
+                    ]
+                ]
+            },
+            "publisher": "Little",
+            "title": "Exponential smoothing for predicting demand",
+            "type": "book"
         }
     ],
     "project_biblios": [

@@ -84,7 +84,7 @@ Confirmed_ts <- ts(Confirmed_df[2],
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: fig-oripdf
-#| fig-cap: "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020"
+#| fig-cap: "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020."
 plot(Confirmed_ts)
 ```
 :::
@@ -108,7 +108,7 @@ fig <- fig %>%
 fig
 ```
 
-Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020
+Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020.
 :::
 :::
 
@@ -136,7 +136,7 @@ Confirmed_ts <- ts(Confirmed_df[2],
 ::: {.content-visible when-format="html"}
 ```{r, echo=FALSE}
 #| label: tbl-datatable
-#| tbl-cap: "Casos confirmados ajustados del 20-02-2020 al 15-08-2020"
+#| tbl-cap: "Casos confirmados ajustados del 20-02-2020 al 15-08-2020."
 library(DT)
 datatable(Confirmed_df, style = 'bootstrap4')
 ```
@@ -168,7 +168,7 @@ Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: fig-tspdf
-#| fig-cap: "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020"
+#| fig-cap: "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020."
 plot(Confirmed_ts)
 ```
 :::
@@ -192,7 +192,7 @@ fig <- plot_ly(Confirmed_df, y = ~Confirmed, type = 'box')
 fig
 ```
 
-Boxplot de casos confirmados de COVID-19 en Irán del 20-02-2020 al 15-08-2020
+Boxplot de casos confirmados de COVID-19 en Irán del 20-02-2020 al 15-08-2020.
 :::
 
 ### Componentes de la serie de tiempo
@@ -229,19 +229,19 @@ La serie de tiempo representada en la @fig-ts exhibe un comportamiento caracter�
 ::: {#fig-acf}
 ```{r,warning=FALSE, message=FALSE}
 autoplot(acf(Confirmed_ts, plot = FALSE), 
-         main="Autocorrelograma de casos confirmados")
+         main="Autocorrelograma de casos confirmados.")
 ```
 
 Autocorrelograma de los casos confirmados de COVID-19 en Irán
 :::
 
-En la @fig-acf se observa que la autocorrelación (vea @eq-autocorr) entre $X_t$ y $X_{t+k}$ decrece con el incremento del retraso $k$. Este declive conduce a la constatación de que, a un desfase de $20$, existe una correlación bastante débil entre $X_t$ y $X_{t+20}$. Al analizar el gráfico de la función de autocorrelación (ACF), se aprecia que $\rho_{20}\approx 0.19$.
+En la @fig-acf se observa que la autocorrelación (vea la ecuación ([-@eq-autocorr])) entre $X_t$ y $X_{t+k}$ decrece con el incremento del retraso $k$. Este declive conduce a la constatación de que, a un desfase de $20$, existe una correlación bastante débil entre $X_t$ y $X_{t+20}$. Al analizar el gráfico de la función de autocorrelación (ACF), se aprecia que $\rho_{20}\approx 0.19$.
 
 La gráfica de la Función de Autocorrelación Parcial (PACF) proporciona información valiosa sobre la estructura de autocorrelación de una serie temporal una vez han sido eliminadas las correlaciones debidas a los intervalos de tiempo intermedios.
 
 ::: {#fig-pacf}
 ```{r,warning=FALSE, message=FALSE}
-ggPacf((Confirmed_ts), main = 'Autocorrelograma parcial de casos confirmados')
+ggPacf((Confirmed_ts), main = 'Autocorrelograma parcial de casos confirmados.')
 ```
 
 Autocorrelograma Parcial de los casos confirmados de COVID-19 en Irán
@@ -263,7 +263,7 @@ coeff$avar #varianza finita
 El modelo autoregresivo AR(4) se expresa mediante la siguiente ecuación:
 
 $$
-(1-0.865B-0.172B^2-0.059B^3+0.131B^4)(X_t-1922.868)+a_t
+(1-0.865B-0.172B^2-0.059B^3+0.131B^4)(X_t-1922.868)+a_t,
 $$ {#eq-AR4}
 
 donde $\hat{\sigma}_a^2 = 47818.04$.
@@ -311,7 +311,7 @@ DescRec <- function(x){
 DescRec(train_confirmed)
 ```
 
-De acuerdo con la recomendación observada, se sugiere la utilización de la versión multiplicativa (vea @eq-muldecom). En consecuencia, se procede a mostrar la representación gráfica de la descomposición multiplicativa de la serie temporal.
+De acuerdo con la recomendación observada, se sugiere la utilización de la versión multiplicativa (vea la ecuación ([-@eq-muldecom])). En consecuencia, se procede a mostrar la representación gráfica de la descomposición multiplicativa de la serie temporal.
 
 ::: {#fig-descomp}
 ```{r}
@@ -320,7 +320,7 @@ components_ts <- decompose(ts_train, type = 'mult')
 plot(components_ts)
 ```
 
-Descomposición multiplicativa de la serie de tiempo
+Descomposición multiplicativa de la serie de tiempo.
 :::
 
 Se procede ahora a la aplicación del modelo multiplicativo de Holt-Winters a la serie temporal de los datos de entrenamiento utilizando una frecuencia de dos, con el fin de permitir la aplicabilidad del modelo.
@@ -359,7 +359,7 @@ fitc
 plot(fitc)
 ```
 
-Estructura de la red neuronal resultante
+Estructura de la red neuronal resultante.
 :::
 
 ::: {style="text-align: justify"}
@@ -383,7 +383,7 @@ Con el propósito de llevar a cabo un análisis cuantitativo exhaustivo, se pres
 ::: {.content-visible when-format="html"}
 ```{r,echo=FALSE}
 #| label: tbl-forecast
-#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"
+#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión."
 cfor <- data.frame(Date=Confirmed_df$Date[126:178], Real= test_confirmed,
                    Forecast_HW=HWc_for$mean,Forecast_MLP=frcc$mean)
 DT::datatable(cfor, style = 'bootstrap4')
@@ -419,7 +419,7 @@ Pronóstico obtenido mediante la red neuronal MLP.
 #### Métricas de rendimiento
 
 ::: {style="text-align: justify"}
-Para evaluar la calidad o bondad de ajuste de los métodos utilizados en este estudio y seleccionar el modelo más apropiado, se aplican tres métricas de rendimiento, Error Cuadrático Medio (@eq-RMSE), Error Absoluto Medio (@eq-MAE) y Error Porcentual Absoluto Medio (@eq-MAPE) tanto en las fases de entrenamiento como en las de prueba. Los resultados correspondientes a éstas métricas se presentan en la @tbl-err .
+Para evaluar la calidad o bondad de ajuste de los métodos utilizados en este estudio y seleccionar el modelo más apropiado, se aplican tres métricas de rendimiento, Error Cuadrático Medio ([-@eq-RMSE]), Error Absoluto Medio ([-@eq-MAE]) y Error Porcentual Absoluto Medio ([-@eq-MAPE]) tanto en las fases de entrenamiento como en las de prueba. Los resultados correspondientes a éstas métricas se presentan en la @tbl-err .
 
 ```{r,echo=FALSE,attr.output='style="max-height:100px;"'}
 ##### Training and Testing Errores #####
@@ -444,7 +444,7 @@ Confirmed_Cases <- data.frame(Trainig = Training_Data, Testing =Testing_Data)
 ```
 
 |                  |            |                |           |            |               |          |
-|------------------|:----------:|:--------------:|:---------:|:----------:|:-------------:|:--------:|
+|-----------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 |                  |            | ***Training*** |           |            | ***Testing*** |          |
 |                  |  **RMSE**  |    **MAE**     | **MAPE**  |  **RMSE**  |    **MAE**    | **MAPE** |
 | **Holt-Winters** | *262.9925* |   *190.0482*   | *20.8415* | *234.0094* |  *165.8208*   | *6.2967* |
@@ -493,12 +493,12 @@ fore.mlp = forecast(fit.mlp, h = 30)
 plot(fore.mlp)
 ```
 
-Predicción futura de la serie tiempo para infectados diariamente mediante el modelo MLP
+Predicción futura de la serie tiempo para infectados diariamente mediante el modelo MLP.
 :::
 
 ::: {.content-visible when-format="html"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico indican que el 14 de septiembre de 2020 se proyectan aproximadamente 2494 nuevos casos confirmados de COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-treinta .
+Los resultados del pronóstico indican que, el 14 de septiembre de 2020, se proyectan aproximadamente 2494 nuevos casos confirmados de COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-treinta .
 :::
 :::
 
@@ -511,7 +511,7 @@ Los resultados del pronóstico indican que el 14 de septiembre de 2020 se proyec
 ::: {.content-visible when-format="html"}
 ```{r, echo=FALSE}
 #| label: tbl-treinta
-#| tbl-cap: "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días"
+#| tbl-cap: "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días."
 #|
 d=data.frame(Fecha=COVID.IRAN$Date[179:208], Infectados=round(fore.mlp$mean,3))
 DT::datatable(d, style = 'bootstrap4')
@@ -521,7 +521,7 @@ DT::datatable(d, style = 'bootstrap4')
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: tbl-treintapdf
-#| tbl-cap: "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días"
+#| tbl-cap: "Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días."
 #|
 d=data.frame(Fecha=COVID.IRAN$Date[179:208], Infectados=round(fore.mlp$mean,3))
 d
@@ -874,24 +874,24 @@ fig.add_trace(
 ::: {.content-visible when-format="html"}
 ```{python, eval=knitr::is_html_output()}
 #| label: fig-mlp
-#| fig-cap: 'Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días (implementación en python)'
+#| fig-cap: 'Pronóstico de casos confirmados de COVID-19 en Irán en los próximos 30 días (implementación en python.)'
 #| echo: false
 fig.show('')
 ```
 :::
 
 ::: {.content-visible when-format="pdf"}
-![Pronostico de casos confirmados de COVID-19 en Irán (implementación en Python)](Imagenes/Confirmados.png){#fig-mlp1 fig-align="center"}
+![Pronostico de casos confirmados de COVID-19 en Irán (implementación en Python).](Imagenes/Confirmados.png){#fig-mlp1 fig-align="center"}
 :::
 
 ::: {.content-visible when-format="pdf"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico en @fig-mlp1 indican que el 14 de Septiembre de 2020 se proyectan aproximadamente 2476 nuevos casos confirmados de COVID-19.
+Los resultados del pronóstico en @fig-mlp1 indican que, el 14 de Septiembre de 2020, se proyectan aproximadamente 2476 nuevos casos confirmados de COVID-19.
 :::
 :::
 
 ::: {.content-visible when-format="html"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico en @fig-mlp indican que el 14 de Septiembre de 2020 se proyectan aproximadamente 2476 nuevos casos confirmados de COVID-19.
+Los resultados del pronóstico en @fig-mlp indican que, el 14 de Septiembre de 2020, se proyectan aproximadamente 2476 nuevos casos confirmados de COVID-19.
 :::
 :::

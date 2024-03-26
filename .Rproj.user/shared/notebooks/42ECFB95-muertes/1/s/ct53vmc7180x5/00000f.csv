@@ -1,2 +1,0 @@
-"0","HW_deaths <- HoltWinters(ts(Deaths_df$Deaths,frequency = 2)) "
-"0","HW_for_d <- forecast(HW_deaths, h=30, level=c(80,95)) "

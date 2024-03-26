@@ -107,14 +107,14 @@ fig <- fig %>%
 fig
 ```
 
-Serie de tiempo de los casos de muerte por COVID-19 en Irán del 20-02-2020 al 15-08-2020
+Serie de tiempo de los casos de muerte por COVID-19 en Irán del 20-02-2020 al 15-08-2020.
 :::
 :::
 
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: fig-muertespdf
-#| fig-cap: "Serie de tiempo de los casos de muerte por COVID-19 en Irán del 20-02-2020 al 15-08-2020"
+#| fig-cap: "Serie de tiempo de los casos de muerte por COVID-19 en Irán del 20-02-2020 al 15-08-2020."
 plot(Deaths_ts)
 ```
 :::
@@ -148,7 +148,7 @@ frcd <- forecast(fitd,h=length(test_deaths))
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: tbl-forecastdpdf
-#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"
+#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión."
 dfor <- data.frame(Date=Deaths_df$Date[126:178], 
                    Real= test_deaths,                    
                    Forecast_HW=HWd_for$mean,
@@ -215,7 +215,7 @@ Death_Cases <- data.frame(Trainig = Training_Data, Testing =Testing_Data)
 ```
 
 |                  |           |                |           |           |               |           |
-|------------------|:---------:|:--------------:|:---------:|:---------:|:-------------:|:---------:|
+|-----------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 |                  |           | ***Training*** |           |           | ***Testing*** |           |
 |                  | **RMSE**  |    **MAE**     | **MAPE**  | **RMSE**  |    **MAE**    | **MAPE**  |
 | **Holt-Winters** | *12.6365* |    *9.6103*    | *19.4096* | *34.0665* |   *25.5356*   | *12.9770* |
@@ -254,20 +254,20 @@ Predicción futura de la serie tiempo para decesos diarios mediante el modelo Ho
 
 ::: {.content-visible when-format="html"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico indican que el 14 de septiembre de 2020 se proyectan 184 nuevos casos de muerte por COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-pmuertes .
+Los resultados del pronóstico indican que, el 14 de septiembre de 2020, se proyectan 184 nuevos casos de muerte por COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-pmuertes .
 :::
 :::
 
 ::: {.content-visible when-format="pdf"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico indican que el 14 de septiembre de 2020 se proyectan 184 nuevos casos de muerte por COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-pmuertespdf .
+Los resultados del pronóstico indican que, el 14 de septiembre de 2020, se proyectan 184 nuevos casos de muerte por COVID-19. Estos valores correspondientes al período de 30 días se detallan a continuación en la @tbl-pmuertespdf .
 :::
 :::
 
 ::: {.content-visible when-format="html"}
 ```{r, echo=FALSE}
 #| label: tbl-pmuertes
-#| tbl-cap: "Pronóstico de decesos por COVID-19 en Irán en los próximos 30 días"
+#| tbl-cap: "Pronóstico de decesos por COVID-19 en Irán en los próximos 30 días."
 #|
 d=data.frame(Fecha=COVID.IRAN_d$Date[179:208], Decesos=round(HW_for_d$mean, 4))
 DT::datatable(d, style = 'bootstrap4')
@@ -277,7 +277,7 @@ DT::datatable(d, style = 'bootstrap4')
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: tbl-pmuertespdf
-#| tbl-cap: "Pronóstico de decesos por COVID-19 en Irán en los próximos 30 días"
+#| tbl-cap: "Pronóstico de decesos por COVID-19 en Irán en los próximos 30 días."
 #|
 d=data.frame(Fecha=COVID.IRAN_d$Date[179:208], Decesos=round(HW_for_d$mean, 4))
 d
@@ -363,24 +363,24 @@ fig.add_scatter(x=forecast_dates, y=forecast, mode='lines', name='Forecast', lin
 
 ```{python, eval=knitr::is_html_output()}
 #| label: fig-hwfinal
-#| fig-cap: "Pronóstico de casos de muerte por COVID-19 en Irán en los próximos 30 días (implementación en Python)"
+#| fig-cap: "Pronóstico de casos de muerte por COVID-19 en Irán en los próximos 30 días (implementación en Python)."
 #| echo: false
 fig.show('')
 ```
 :::
 
 ::: {.content-visible when-format="pdf"}
-![Pronóstico de casos de muerte por COVID-19 en Irán en los próximos 30 días (implementación en Python)](Imagenes/Muertes.png){#fig-hwf1 fig-align="center"}
+![Pronóstico de casos de muerte por COVID-19 en Irán en los próximos 30 días (implementación en Python).](Imagenes/Muertes.png){#fig-hwf1 fig-align="center"}
 :::
 
 ::: {.content-visible when-format="html"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico en la @fig-hwfinal indican que el 14 de septiembre de 2020 se proyectan aproximadamente 132 nuevos casos de muerte por COVID-19.
+Los resultados del pronóstico en la @fig-hwfinal indican que, el 14 de septiembre de 2020, se proyectan aproximadamente 132 nuevos casos de muerte por COVID-19.
 :::
 :::
 
 ::: {.content-visible when-format="pdf"}
 ::: {style="text-align: justify"}
-Los resultados del pronóstico en la @fig-hwf1 indican que el 14 de septiembre de 2020 se proyectan aproximadamente 132 nuevos casos de muerte por COVID-19.
+Los resultados del pronóstico en la @fig-hwf1 indican que, el 14 de septiembre de 2020, se proyectan aproximadamente 132 nuevos casos de muerte por COVID-19.
 :::
 :::

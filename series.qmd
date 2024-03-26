@@ -67,7 +67,7 @@ respectivamente.
 ### Series de tiempo estacionarias
 
 ::: {style="text-align: justify"}
-En el estudio de una serie de tiempo, es común que solo se tenga disponible una única realización de la serie. El análisis de una serie temporal basado únicamente en una realización es análogo a analizar las propiedades de una variable aleatoria en función de una sola observación. Los conceptos de estacionariedad y ergodicidad jugarán un papel importante en mejorar la capacidad de análisis de una serie temporal basada en una única realización de manera efectiva. Un proceso se considera estacionario si está en un estado de "equilibrio estadístico". El comportamiento básico de dicha serie de tiempo no cambia con el tiempo. Como ejemplo, para dicho proceso, $\mu(t)$ no dependería del tiempo y, por lo tanto, podría ser denotado como $\mu$ para todo $t$. Parecería que, dado que $x(t)$ para cada $t\in T$, proporciona información sobre la media del conjunto, $\mu$, podría ser posible estimar $\mu$ en función de una única realización. Un proceso **ergódico** es aquel para el cual promedios de conjunto como $\mu$ pueden estimarse consistentemente a partir de una sola realización. En esta sección, se presentarán definiciones más formales de estacionariedad. La noción más restrictiva de estacionariedad es la de estacionariedad estricta, que se define de la siguiente manera.
+En el estudio de una serie de tiempo, es común que solo se tenga disponible una única realización de la serie. El análisis de una serie temporal basado únicamente en una realización es análogo a analizar las propiedades de una variable aleatoria en función de una sola observación. Los conceptos de estacionariedad y ergodicidad jugarán un papel importante en mejorar la capacidad de análisis de una serie temporal basada en una única realización de manera efectiva. Un proceso se considera estacionario si está en un estado de "equilibrio estadístico". El comportamiento básico de dicha serie de tiempo no cambia con el tiempo. Como ejemplo, para dicho proceso, $\mu(t)$ no dependería del tiempo y, por lo tanto, podría ser denotado como $\mu$ para todo $t$. Parecería que, dado que $x(t)$ para cada $t\in T$, proporciona información sobre la media del conjunto $\mu$, podría ser posible estimar $\mu$ en función de una única realización. Un proceso **ergódico** es aquel para el cual promedios de conjunto como $\mu$ pueden estimarse consistentemente a partir de una sola realización. En esta sección, se presentarán definiciones más formales de estacionariedad. La noción más restrictiva de estacionariedad es la de estacionariedad estricta, que se define de la siguiente manera.
 :::
 
 ::: {#def-PPE style="text-align: justify"}
@@ -210,7 +210,7 @@ La condición suficiente para la ergodicidad de $\bar X$, dada en el @cor-ergo, 
 Antes de abandonar el tema de estimar $\mu$ a partir de una realización de un proceso estacionario, en el @thm-varmedia se proporciona una fórmula útil para la Varianza de $\bar X$.
 
 ::: {#thm-varmedia}
-Si $X_t$ es una serie de tiempo estacionaria, entonces la varianza de $\bar X$ basada en una realización de longitud $n$ está dada por
+Sea $X_t$ una serie de tiempo estacionaria, la varianza de $\bar X$ basada en una realización de longitud $n$ está dada por
 
 $$
 \mathrm{Var}(\bar X)=\frac{\sigma_X^2}{n}\left(1+2\sum_{k=1}^{n-1}\left(1-\frac{|k|}{n}\right)\rho_{_k}\right).
@@ -219,7 +219,7 @@ $$ {#eq-varmedia}
 :::
 
 ::: {style="text-align: justify"}
-El resultado en la @eq-varmedia muestra el efecto de la autocorrelación en la varianza de $\bar X$, y si $X_t$ es ruido blanco, es decir, $\gamma_{_{k}} = 0$ si $k \ne 0$, entonces la @eq-varmedia se convierte en el conocido resultado $Var(\bar X) = \sigma^2/n$.
+El resultado en la ecuación ([-@eq-varmedia]) muestra el efecto de la autocorrelación en la varianza de $\bar X$, y si $X_t$ es ruido blanco, es decir, $\gamma_{_{k}} = 0$ si $k \ne 0$, entonces la ecuación ([-@eq-varmedia]) se convierte en el conocido resultado $Var(\bar X) = \sigma^2/n$.
 
 Utilizando la notación $\hat \rho_{_k}$ para denotar las autocorrelaciones estimadas (muestra) y $\hat\sigma^2=\hat{\gamma_0}$ para denotar la varianza muestral, es práctica común obtener intervalos de confianza aproximados del $95\%$ para $\mu$ usando
 
@@ -241,7 +241,7 @@ $$ {#eq-estgamma}
 :::
 
 ::: {.remark style="text-align: justify"}
-Usando @eq-estgamma se deduce que
+Usando la ecuación ([-@eq-estgamma]) se deduce que
 
 $$
 \hat{\gamma}_{_0}= \frac{1}{n}\sum_{t=1}^{n}(X_t-\bar X)^2.
@@ -263,7 +263,7 @@ A este estimador se le conoce como la autocorrelación muestral.
 :::
 
 ::: {style="text-align: justify"}
-A partir del análisis de la @eq-estgamma , es evidente que los valores de $\hat\gamma_{_{k}}$ (y $\hat\rho_{_{k}}$) tenderán a ser "pequeños" cuando $k$ sea grande en relación con $n$.
+A partir del análisis de la ecuación ([-@eq-estgamma]) , es evidente que los valores de $\hat\gamma_{_{k}}$ (y $\hat\rho_{_{k}}$) tenderán a ser "pequeños" cuando $k$ sea grande en relación con $n$.
 :::
 
 ### Conjuntos de datos de series temporales.
@@ -377,7 +377,7 @@ plot(AirPassengers, xlab='Año', ylab='Número de pasajeros')
 Número de Pasajeros Internacionales en Aerolíneas de 1949 a 1960
 :::
 
-La @fig-airfrag muestra un fragmento de los datos de pasajeros aéreos desde 1957 hasta 1960. Se observa que el viaje aéreo es ligero desde Enero hasta Abril, aumenta durante los meses de verano y comienza a disminuir en septiembre hasta noviembre con un ligero aumento en diciembre. Este patrón, aunque no es sinusoidal, se repite de un año a otro. El comportamiento cíclico de los datos de pasajeros aéreos se repite anualmente y es un ejemplo de datos estacionales que no son seudosenoidales.
+La @fig-airfrag muestra un fragmento de los datos de pasajeros aéreos desde 1957 hasta 1960. Se observa que el viaje aéreo es ligero desde Enero hasta Abril, aumenta durante los meses de verano y comienza a disminuir en septiembre hasta noviembre con un ligero aumento en diciembre. Este patrón, aunque no es sinusoidal, se repite de un año a otro. El comportamiento cíclico de los datos de pasajeros aéreos se repite anualmente y son un ejemplo de datos estacionales que no son seudosenoidales.
 
 ::: {#fig-airfrag}
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -409,7 +409,7 @@ Fragmento de la @fig-airpass que muestra los años 1957-1960
 #### Tendencias {#sec-trend}
 
 ::: {style="text-align: justify"}
-Una tendencia en un contexto de análisis de datos se refiere a la inclinación de una serie de datos a experimentar un incremento o disminución constante a lo largo del tiempo. En el caso específico de los datos de Pasajeros Aéreos mostrados en la @fig-airpass, se identifica un patrón de crecimiento además del patrón estacional previamente observado. Una tendencia lineal se caracteriza por el aumento o la disminución de los datos de manera constante y progresiva, tal como se ilustra en la @fig-lineal. Las tendencias pueden seguir una curva, como lo ejemplifica la tendencia exponencial en la @fig-expo. Por otro lado, la @fig-desc exhibe una serie temporal con una tendencia descendente, pero su naturaleza es más irregular en comparación con las tendencias representadas en las Figuras (a) y (b). Un patrón común en conjuntos de datos es un comportamiento de tendencia aleatoria, como se muestra en la @fig-deam, la cual sugiere una trayectoria sin un rumbo definido. Esto implica que pueden existir tendencias de corta o larga duración, en ocasiones en direcciones opuestas.
+Una tendencia, en un contexto de análisis de datos, se refiere a la inclinación de una serie de datos al experimentar un incremento o disminución constante a lo largo del tiempo. En el caso específico de los datos de Pasajeros Aéreos mostrados en la @fig-airpass, se identifica un patrón de crecimiento además del patrón estacional previamente observado. Una tendencia lineal se caracteriza por el aumento o la disminución de los datos de manera constante y progresiva, tal como se ilustra en la @fig-lineal. Las tendencias pueden seguir una curva, como lo ejemplifica la tendencia exponencial en la @fig-expo. Por otro lado, la @fig-desc exhibe una serie temporal con una tendencia descendente, pero su naturaleza es más irregular en comparación con las tendencias representadas en las Figuras (a) y (b). Un patrón común en conjuntos de datos es un comportamiento de tendencia aleatoria, como se muestra en la @fig-deam, la cual sugiere una trayectoria sin un rumbo definido. Esto implica que pueden existir tendencias de corta o larga duración, en ocasiones en direcciones opuestas.
 :::
 
 ::: {#fig-trends layout="[[1,1], [1,1]]"}
@@ -433,7 +433,7 @@ La función $g(t)$ es *periódica* con periodo (o longitud del ciclo) $p > 0$ si
 
 La frecuencia, denotada por $f$, puede ser descrita de las siguientes dos maneras;
 
-1.  $f=1/\text{periodo}$ (tamaño del ciclo)
+1.  $f=1/\text{periodo}$ (tamaño del ciclo).
 
 2.  El número de ciclos en la función a través de una unidad de tiempo.
 :::
@@ -461,19 +461,17 @@ ii. La *densidad espectral* de $X_{_t}$ se define como
 :::
 
 ::: {style="text-aling: justify"}
-Usando la fórmula de Euler, se obtienen las fórmulas "más agradables".
+Usando la fórmula de Euler en las ecuaciones ([-@eq-spectrum]) y ([-@eq-spectden]), se obtienen las siguientes fórmulas.
 
 $$
-P_{_X}(f)=\sigma_{_X}^2+2\sum_{k=1}^\infty\gamma_{_k}\cos(2\pi fk)
+P_{_X}(f)=\sigma_{_X}^2+2\sum_{k=1}^\infty\gamma_{_k}\cos(2\pi fk),
 $$
 
-Y
-
 $$
-S_{_X}(f)=1+2\sum_{k=1}^\infty \rho_{_k}\cos(2\pi fk)
+S_{_X}(f)=1+2\sum_{k=1}^\infty \rho_{_k}\cos(2\pi fk).
 $$
 
-Estas fórmulas enfatizan que el espectro y la densidad espectral son funciones de valor real, lo que no es evidente en @eq-spectrum y @eq-spectden.
+Estas fórmulas enfatizan que el espectro y la densidad espectral son funciones de valor real, lo que no es evidente en las ecuaciones ([-@eq-spectrum]) y ([-@eq-spectden]).
 
 ***Propiedades importantes de densidades espectrales***
 
@@ -483,7 +481,7 @@ ii. $S_{_X}(f)=S_{_X}(-f)$.
 
 iii. $S_{_X}(f)=1+2\sum\limits_{k=1}^\infty \rho_{_k}\cos(2\pi fk)$, donde $|f|\le 0.5$ .
 
-iv. $\sum\limits_{-0.5}^{0.5}S_{_X}(f)e^{2\pi ifk}df=\rho_{_k}$
+iv. $\sum\limits_{-0.5}^{0.5}S_{_X}(f)e^{2\pi ifk}df=\rho_{_k}$.
 
     Las propiedades i y ii muestran que $S_{_X}(f)$ es una función par no negativa.
 :::
@@ -491,7 +489,7 @@ iv. $\sum\limits_{-0.5}^{0.5}S_{_X}(f)e^{2\pi ifk}df=\rho_{_k}$
 ### Suavizado de datos de series temporales.
 
 ::: {style="text-align: justify"}
-Existen varios métodos para "suavizar" el comportamiento ruidoso (posiblemente poco importante) de una serie temporal para que se pueda entender mejor una señal importante subyacente. Se comienza discutiendo el método de suavizado de promedio móvil centrado, que es el más básico.
+Existen varios métodos para "suavizar" el comportamiento ruidoso (posiblemente poco importante) de una serie temporal, para que se pueda entender mejor una señal importante subyacente. Se comienza discutiendo el método de suavizado de promedio móvil centrado, que es el más básico.
 :::
 
 #### Suavizado de datos utilizando un suavizador de promedio móvil centrado {#sec-mas}
@@ -505,20 +503,20 @@ El suavizador de promedio móvil centrado es un método para reemplazar los valo
 
 Sea $x_{_t}, t=1,\ldots,n$ un conjunto de datos de series temporales. El suavizador de promedio móvil centrado se define de la siguiente manera:
 
-***Caso 1:*** $m$ ***es un número impar***
+***Caso 1:*** $m$ ***es un número impar.***
 
 Sea $k= (m−1)/2$. Para $k <t< n - k$, el valor de los datos suavizados, $s_{_t}$, en el tiempo $t$ se da por
 
 $$
-s_{_t}=\frac{1}{m}\sum_{i=t-k}^{t+k}x_{_i}
+s_{_t}=\frac{1}{m}\sum_{i=t-k}^{t+k}x_{_i}.
 $$ {#eq-mimpar}
 
-***Caso 2:*** $m$ ***es un número par***
+***Caso 2:*** $m$ ***es un número par.***
 
-Sea $k= m/2$ Para $k <t< n - k$, el valor de los datos suavizados, $s_{_t}$, en el tiempo $t$ se da por
+Sea $k= m/2$. Para $k <t< n - k$, el valor de los datos suavizados, $s_{_t}$, en el tiempo $t$ está dado por
 
 $$
-s_{_t}= \frac{x_{_{t-k}}}{2m}+\frac{1}{m}\sum_{i=t-k+1}^{t+k-1}x_{_i}+\frac{x_{_{t+k}}}{2m}
+s_{_t}= \frac{x_{_{t-k}}}{2m}+\frac{1}{m}\sum_{i=t-k+1}^{t+k-1}x_{_i}+\frac{x_{_{t+k}}}{2m}.
 $$ {#eq-mpar}
 :::
 
@@ -551,7 +549,7 @@ El @exm-ejem muestra el uso del suavizado de promedio móvil centrado con el pro
 ::: {.callout-caution collapse="true" icon="false"}
 ##### Suavizando los datos de temperatura de Tesla y DFW.
 
-Los precios de las acciones de Tesla desde el 1 de enero de 2020 hasta el 30 de abril de 2021 se muestran en la @fig-charts-1 . Se observa el hecho de que hubo un aumento constante hasta principios de 2021, momento en el cual el precio se estabilizó y disminuyó. Sin embargo, hay una considerable fluctuación de un día para otro, especialmente en 2021. La @fig-charts-4 muestra las temperaturas medias anuales de DFW (Dallas Ft. Worth) desde 1900 hasta 2020. Allí se observa una considerable fluctuación de un año a otro, pero algo de aumento a partir de aproximadamente 2000. La @fig-charts-2, (c), (e) y (f) muestran versiones suavizadas de las Figuras @fig-charts-1 y (d). Al utilizar el suavizador de promedio móvil centrado, las fluctuaciones de un día para otro se suavizan; se nota que el orden 8 produce más suavizado que el orden 3. El comportamiento fundamental, incluida la estabilización y disminución a principios de 2021, se ve con más claridad al minimizar los cambios ruidosos de un día para otro. El efecto del suavizado es más evidente en los datos de temperatura de DFW. La fluctuación de un año a otro es bastante dramática en el conjunto de datos original en la @fig-charts-4 . Un suavizado de orden 3 proporciona cierta claridad, pero el suavizado de orden 8 mostrado en la @fig-charts-5 muestra claramente un comportamiento casi estable desde 1900 hasta aproximadamente 1985. Desde entonces, ha habido un aumento que puede haberse estabilizado o no en los últimos años. Es particularmente notable en la @fig-charts-5 que el suavizado ha eliminado los extremos. Específicamente, las temperaturas extremadamente altas en 2012, 2016 y 2017 se ven moderadas por las temperaturas más bajas en los años circundantes. (Tomado de @woodward2022time)
+Los precios de las acciones de Tesla desde el 1 de enero de 2020 hasta el 30 de abril de 2021 se muestran en la @fig-charts-1. Se observa el hecho de que hubo un aumento constante hasta principios de 2021, momento en el cual el precio se estabilizó y disminuyó. Sin embargo, hay una considerable fluctuación de un día para otro, especialmente en 2021. La @fig-charts-4 muestra las temperaturas medias anuales de DFW (Dallas Ft. Worth) desde 1900 hasta 2020. Allí se observa una considerable fluctuación de un año a otro, pero algo de aumento a partir de aproximadamente 2000. En la @fig-charts, incisos [-@fig-charts-2], [-@fig-charts-3], [-@fig-charts-5] y [-@fig-charts-6], se muestran versiones suavizadas de la misma figura pero de los incisos [-@fig-charts-1] y [-@fig-charts-4]. Al utilizar el suavizador de promedio móvil centrado, las fluctuaciones de un día para otro se suavizan; se nota que el orden 8 produce más suavizado que el orden 3. El comportamiento fundamental, incluida la estabilización y disminución a principios de 2021, se ve con más claridad al minimizar los cambios ruidosos de un día para otro. El efecto del suavizado es más evidente en los datos de temperatura de DFW. La fluctuación de un año a otro es bastante dramática en el conjunto de datos original en la @fig-charts-4. Un suavizado de orden 3 proporciona cierta claridad, pero el suavizado de orden 8 mostrado en la @fig-charts-5 muestra claramente un comportamiento casi estable desde 1900 hasta aproximadamente 1985. Desde entonces, ha habido un aumento que puede haberse estabilizado o no en los últimos años. Es particularmente notable en la @fig-charts-5 que el suavizado ha eliminado los extremos. Específicamente, las temperaturas extremadamente altas en 2012, 2016 y 2017 se ven moderadas por las temperaturas más bajas en los años circundantes. (Tomado de @woodward2022time)
 
 ```{r, warning=FALSE, message=FALSE,echo=FALSE,results='hide'}
 #| label: fig-charts
@@ -592,7 +590,7 @@ En el @exm-airpass se aborda la naturaleza de los datos estacionales, entendidos
 
 a.  Un componente estacional intrínseco anual, identificado como $s_{_t}$,
 
-b.  Un componente de tendencia a largo plazo, referido como $tr_{_t}$, y
+b.  Un componente de tendencia a largo plazo, referido como $tr_{_t}$ y,
 
 c.  Un componente de variabilidad aleatoria, conocido como $z_{_t}$.
 
@@ -600,7 +598,7 @@ Se ha observado esta estructura en el conjuntos de datos ya mencionado. Los expe
 
 *Datos estacionales aditivos*
 
-Los datos $x_{_t}$, en el tiempo $t$ pueden ser consideramos como una suma dada en la @eq-addseas
+Los datos $x_{_t}$, en el tiempo $t$ pueden ser considerados como una suma dada en la ecuación ([-@eq-addseas])
 
 $$
 x_{_t}=s_{_t}+tr_{_t}+z_{_t}.
@@ -608,7 +606,7 @@ $$ {#eq-addseas}
 
 *Datos estacionales multiplicativos*
 
-Los datos, $x_{_t}$, en el tiempo $t$ pueden ser expresados como el producto dado en la @eq-mulseas
+Los datos, $x_{_t}$, en el tiempo $t$ pueden ser expresados como el producto dado en la ecuación ([-@eq-mulseas])
 
 $$
 x_{_t}=s_{_t}\times tr_{_t}\times z_{_t}.
@@ -638,7 +636,7 @@ plot(logAirPassengers)
 
 Los conjuntos de datos con este tipo de comportamiento suelen modelarse utilizando modelos multiplicativos. Para eliminar el aumento en la variabilidad, los analistas suelen tomar el logaritmo de los datos y utilizan los "datos logarítmicos" para el análisis.
 
-Los datos logarítmicos de logAirPassengers en la @fig-air-2 no muestran un aumento en la variabilidad dentro del año y son un ejemplo clásico de datos que se modelan utilizando el modelo aditivo en la @eq-addseas.
+Los datos logarítmicos de logAirPassengers en la @fig-air-2 no muestran un aumento en la variabilidad dentro del año y son un ejemplo clásico de datos que se modelan utilizando el modelo aditivo en la ecuación ([-@eq-addseas]).
 :::
 :::
 
@@ -660,10 +658,10 @@ Se comenzará discutiendo el modelo aditivo, que es el más intuitivo de los dos
 #### Descomposición aditiva
 
 ::: {style="text-align: justify"}
-Cuando se analizan datos utilizando el modelo aditivo en la @eq-addseas, se parte del supuesto de que los datos son la suma de componentes estacionales, de tendencia y de ruido aleatorio. Se discuten los pasos de análisis involucrados en la descomposición de los datos logarítmicos de logAirPassengers. En la práctica, los componentes en @eq-addseas se estiman y un modelo estimado puede describirse como
+Cuando se analizan datos utilizando el modelo aditivo en la ecuación ([-@eq-addseas]), se parte del supuesto de que los datos son la suma de componentes estacionales, de tendencia y de ruido aleatorio. Se discuten los pasos de análisis involucrados en la descomposición de los datos logarítmicos de logAirPassengers. En la práctica, los componentes en la ecuación ([-@eq-addseas]) se estiman y un modelo estimado puede describirse como
 
 $$
-x_{_t}=\hat{s_{_t}}+\hat{tr_{_t}}+\hat{z_{_t}}
+x_{_t}=\hat{s_{_t}}+\hat{tr_{_t}}+\hat{z_{_t}}.
 $$ {#eq-addecompose}
 
 ::: {#exm-logair}
@@ -685,7 +683,7 @@ a.  ***Estimar el Componente de Tendencia***: La @fig-sm12 es una representació
     logair.sm12=ts(logair.12$smooth,start=c(1949,1),frequency=12)
     ```
 
-    En relación con el modelo estimado en @eq-addecompose, $\hat{tr_{_t}} =$ **logair.sm12** representa la curva casi lineal en la @fig-sm12.
+    En relación con el modelo estimado en la ecuación ([-@eq-addecompose]), $\hat{tr_{_t}} =$ **logair.sm12** representa la curva casi lineal en la @fig-sm12.
 
 b.  ***Eliminar el Componente de Tendencia de los Datos:*** El paso subsiguiente implica la sustracción del componente de tendencia estimado de los datos (logAirPassengers).
 
@@ -706,7 +704,7 @@ b.  ***Eliminar el Componente de Tendencia de los Datos:*** El paso subsiguiente
 
 ```{r, echo=FALSE}
 #| label: fig-seasair
-#| fig-cap: "Datos de LogAirPassengers sin el componente de tendencia y componente estacional estimado"
+#| fig-cap: "Datos de LogAirPassengers sin el componente de tendencia y componente estacional estimado."
 #| fig-subcap:
 #|   - "LogAirPassengers sin tendencia"
 #|   - "Componente estacional estimado"
@@ -718,7 +716,7 @@ plot(seas.means)
 
 Se aprecia con mayor claridad el comportamiento estacional año tras año en la @fig-seasair-1 sin la "interferencia" de la tendencia. Específicamente, se observa un patrón similar en cada año (mayor cantidad de viajes en verano, disminución en noviembre, aún bajos pero con una ligera alza en diciembre, continuamente bajos en enero y febrero, alza en marzo, y así sucesivamente). No obstante, se presentan variaciones de un año a otro: los viajes aéreos en noviembre fueron notablemente bajos en 1950 y luego inusualmente altos en julio y agosto de 1958.
 
-c.  ***Calcular un "Promedio" del Componente Estacional Dentro del Año:*** Es importante notar que el componente estacional en el modelo (2.4) es un patrón general que se mantiene igual de un año a otro. Es decir,$\{s_{_t}, t=1,\ldots,12\} = \{s_{_{t+12}},t=1,\ldots,12\} =\{s_{_{t+2(12)}}, t=1,\ldots,12\}=\cdots.$ El componente de ruido, $z_{_t}$, ajusta las variaciones de un año a otro del patrón estacional general. El patrón estacional, $s_{_t}, t=1,\ldots,12$, se estima calculando el promedio a lo largo de los años, y el componente estacional estimado, $\hat{s}_{_t}$ (el cual es el mismo para cada año), se muestra en la @fig-seasair-2.
+c.  ***Calcular un "Promedio" del Componente Estacional Dentro del Año:*** Es importante notar que, el componente estacional en el modelo (ecuación ([-@eq-addseas])), es un patrón general que se mantiene igual de un año a otro. Es decir,$\{s_{_t}, t=1,\ldots,12\} = \{s_{_{t+12}},t=1,\ldots,12\} =\{s_{_{t+2(12)}}, t=1,\ldots,12\}=\cdots.$ El componente de ruido, $z_{_t}$, ajusta las variaciones de un año a otro del patrón estacional general. El patrón estacional, $s_{_t}, t=1,\ldots,12$, se estima calculando el promedio a lo largo de los años y, el componente estacional estimado, $\hat{s}_{_t}$ (el cual es el mismo para cada año), se muestra en la @fig-seasair-2.
 
     ```{r}
     seas.logair.numeric=as.numeric(seas.logair)
@@ -730,11 +728,11 @@ c.  ***Calcular un "Promedio" del Componente Estacional Dentro del Año:*** Es i
     seas.means=ts(seas.means,start=c(1949,1),frequency=12)
     ```
 
-d.  ***Encontrar el componente de ruido restante:*** El ruido estimado en @eq-addecompose, $\hat{z_{_t}}$, es calculado de la siguiente manera
+d.  ***Encontrar el componente de ruido restante:*** El ruido estimado en la ecuación ([-@eq-addecompose]), $\hat{z_{_t}}$, es calculado de la siguiente manera
 
     ```{r}
     #| label: fig-descadd
-    #| fig-cap: 'Descomposición aditiva de LogAirPassengers'
+    #| fig-cap: 'Descomposición aditiva de LogAirPassengers.'
     logair.noise = logAirPassengers - logair.sm12 - seas.means
     plot(decompose(logAirPassengers))
     ```
@@ -770,7 +768,7 @@ a.  ***Estimar el Componente de Tendencia***: Al igual que con el modelo aditivo
     AirPass.sm12=ts(AirPass.sm12$smooth,start=c(1949,1),frequency=12)
     ```
 
-    Es importante recordar que, en relación con el modelo estimado en @eq-muldecom, $\hat{tr_{_t}} =$ **AirPass.sm12**. Esta curva casi lineal se muestra como parte de la descomposición completa en la @fig-descmul.
+    Es importante recordar que, en relación con el modelo estimado en la ecuación ([-@eq-muldecom]), $\hat{tr_{_t}} =$ **AirPass.sm12**. Esta curva casi lineal se muestra como parte de la descomposición completa en la @fig-descmul.
 
 b.  ***Eliminar el Componente de Tendencia de los Datos:*** El siguiente paso consiste en eliminar el componente de tendencia estimado del conjunto de datos de AirPassengers. Esto se puede lograr mediante la división (en lugar de la resta).
 
@@ -778,7 +776,7 @@ b.  ***Eliminar el Componente de Tendencia de los Datos:*** El siguiente paso co
     seas.AirPass=AirPassengers/AirPass.sm12
     ```
 
-    La conducta estacional de un año a otro resulta mucho más clara en la @fig-seasmul-1 después de eliminar la "interferencia" de la tendencia y el aumento de la variabilidad dentro del año. También se observa que la variabilidad dentro del año no está aumentando tanto como en la @fig-airpass. El incremento en la variabilidad en el modelo final @eq-muldecom se debe a la tendencia creciente que se multiplica por los datos estacionales en la @fig-seasmul-1. Los patrones estacionales en la @fig-seasmul-1 son similares a los de los datos aditivos mostrados en la @fig-seasair-1.
+    La conducta estacional de un año a otro resulta mucho más clara en la @fig-seasmul-1 después de eliminar la "interferencia" de la tendencia y el aumento de la variabilidad dentro del año. También se observa que la variabilidad dentro del año no está aumentando tanto como en la @fig-airpass. El incremento en la variabilidad en el modelo final (ecuación ([-@eq-muldecom])) se debe a la tendencia creciente que se multiplica por los datos estacionales en la @fig-seasmul-1. Los patrones estacionales en la @fig-seasmul-1 son similares a los de los datos aditivos mostrados en la @fig-seasair-1.
 
     ```{r, echo=FALSE, results='hide', include=FALSE}
     seas.AirPass.numeric=as.numeric(seas.AirPass) 
@@ -791,7 +789,7 @@ b.  ***Eliminar el Componente de Tendencia de los Datos:*** El siguiente paso co
 
 ```{r, echo=FALSE}
 #| label: fig-seasmul
-#| fig-cap: "Datos de AirPassengers sin el componente de tendencia y componente estacional estimado"
+#| fig-cap: "Datos de AirPassengers sin el componente de tendencia y componente estacional estimado."
 #| fig-subcap:
 #|   - "AirPassengers Datos/tendencia"
 #|   - "Componente estacional estimado"
@@ -801,7 +799,7 @@ plot(seas.AirPass)
 plot(seas.mean)
 ```
 
-c.  ***Calcular un "Promedio" del Componente Estacional Dentro del Año:*** Al igual que en el modelo aditivo, en el modelo @eq-mulseas , el componente estacional es un patrón general que se supone igual de un año a otro, y el componente de ruido, $z_{_t}$, se ajusta a las variaciones de un año a otro con respecto al patrón estacional general. El componente estacional estimado, $\hat{s_{_t}}$ (que es idéntico para cada año), se representa en la @fig-seasmul-2. Se observa la similitud entre la @fig-seasmul-2 y la @fig-seasair-2, que fue el componente estacional para la descomposición aditiva de los datos logAirPassengers.
+c.  ***Calcular un "Promedio" del Componente Estacional Dentro del Año:*** Al igual que en el modelo aditivo, en el modelo [-@eq-mulseas], el componente estacional es un patrón general que se supone igual de un año a otro, y el componente de ruido, $z_{_t}$, se ajusta a las variaciones de un año a otro con respecto al patrón estacional general. El componente estacional estimado, $\hat{s_{_t}}$ (que es idéntico para cada año), se representa en la @fig-seasmul-2. Se observa la similitud entre la @fig-seasmul-2 y la @fig-seasair-2, que fue el componente estacional para la descomposición aditiva de los datos logAirPassengers.
 
     ```{r}
     seas.AirPass.numeric=as.numeric(seas.AirPass) 
@@ -812,11 +810,11 @@ c.  ***Calcular un "Promedio" del Componente Estacional Dentro del Año:*** Al i
     seas.means=ts(seas.means,start=c(1949,1),frequency=12)
     ```
 
-d.  ***Encontrar el componente de ruido restante:*** El ruido estimado en @eq-muldecom, $\hat{z_{_t}}$, es calculado de la siguiente manera
+d.  ***Encontrar el componente de ruido restante:*** El ruido estimado en la ecuación ([-@eq-muldecom]), $\hat{z_{_t}}$, es calculado de la siguiente manera
 
     ```{r}
     #| label: fig-descmul
-    #| fig-cap: 'Descomposición multiplicativa de AirPassengers'
+    #| fig-cap: 'Descomposición multiplicativa de AirPassengers.'
     Air.Pass.noise = AirPassengers / (AirPass.sm12 * seas.mean)
     plot(decompose(AirPassengers))
     ```
@@ -845,7 +843,7 @@ que resta el componente estacional (mostrado en la @fig-seasair-2) de los datos.
 #### Ajuste estacional multiplicativo
 
 ::: {style="text-align: justify"}
-Dado que la descomposición multiplicativa fue apropiada para los datos de Pasajeros Aéreos, se empleará un ajuste estacional multiplicativo para este conjunto de datos. Similar al método utilizado para el ajuste estacional aditivo, los datos ajustados estacionalmente utilizan la fórmula
+Dado que la descomposición multiplicativa fue apropiada para los datos de pasajeros aéreos, se empleará un ajuste estacional multiplicativo para este conjunto de datos. Similar al método utilizado para el ajuste estacional aditivo, los datos ajustados estacionalmente utilizan la fórmula
 
 $$
 \hat{sa_{_t}}=x_{_t}/\hat{s_{_t}},
@@ -857,13 +855,13 @@ para dividir los datos por el componente estacional (mostrado en la @fig-seasmul
 ::: {.callout-caution collapse="true" icon="false"}
 ##### AirPassengers
 
-La Figura @fig-AEmul-1 muestra los datos de Pasajeros Aéreos superpuestos con la estimación de tendencia obtenida utilizando un suavizador de media móvil centrada de orden 12. La @fig-AEmul-2 es una representación gráfica de los datos ajustados estacionalmente calculados utilizando @eq-AEMul. Es decir, es una representación de **AirPassengers.adj**. Una vez más, los datos ajustados estacionalmente son similares a la tendencia estimada pero con más detalle respecto a los cambios mensuales.
+La @fig-AEmul-1 muestra los datos de Pasajeros Aéreos superpuestos con la estimación de tendencia obtenida utilizando un suavizador de media móvil centrada de orden 12. La @fig-AEmul-2 es una representación gráfica de los datos ajustados estacionalmente calculados utilizando la ecuación ([-@eq-AEMul]). Es decir, es una representación de **AirPassengers.adj**. Una vez más, los datos ajustados estacionalmente son similares a la tendencia estimada pero con más detalle respecto a los cambios mensuales.
 
-El análisis de la @fig-AEmul-3 muestra que el ajuste estacional utilizando **seas** es más suave y se ve menos afectado por el aumento de la variabilidad dentro del año en años posteriores. En general, los resultados son similares a los vistos en la @fig-AEmul-2 con los efectos estacionales eliminados.
+El análisis de la @fig-AEmul-3 muestra que, el ajuste estacional utilizando **seas,** es más suave y se ve menos afectado por el aumento de la variabilidad dentro del año en años posteriores. En general, los resultados son similares a los vistos en la @fig-AEmul-2 con los efectos estacionales eliminados.
 
 ```{r}
 #| label: fig-AEmul
-#| fig-cap: "Datos de AirPassengers y ajuste estacional multiplicativo"
+#| fig-cap: "Datos de AirPassengers y ajuste estacional multiplicativo."
 #| fig-subcap:
 #|   - "AirPassengers con suavizamiento"
 #|   - "Ajuste estacional usando la fórmula"
@@ -900,10 +898,10 @@ Se utilizarán los términos predicción y pronóstico de manera sinónima.
 ### Suavizador de media móvil predictivo
 
 ::: {style="text-align: justify"}
-En la @sec-mas se explicó cómo se utiliza el suavizador de media móvil centrada para visualizar una versión suavizada de los datos con el propósito de recuperar señales subyacentes o eliminar ruido o efectos estacionales. También se pueden emplear medias móviles para la predicción. En lugar de la media móvil centrada discutida en la sección mencionada, se utilizará el promedio móvil predictivo para prever valores futuros. Si los datos no exhiben estacionalidad o tendencia, entonces para predecir el valor de la serie temporal en el instante $t+1$, tiene sentido 'predecir' $x_{_{t+1}}$ como el promedio de los $k$ valores de datos anteriores para algún $k$. Es decir, dejando que $\tilde{x}_{_{t+1}}$ denote la predicción de un paso hacia adelante de $x_{_{t+1}}$ dada la información hasta el tiempo $t$, entonces un predictor razonable y muy simple sería
+En la @sec-mas se explicó cómo se utiliza el suavizador de media móvil centrada para visualizar una versión suavizada de los datos con el propósito de recuperar señales subyacentes o eliminar ruido o efectos estacionales. También se pueden emplear medias móviles para la predicción. En lugar de la media móvil centrada, discutida en la sección mencionada, se utilizará el promedio móvil predictivo para prever valores futuros. Si los datos no exhiben estacionalidad o tendencia, entonces para predecir el valor de la serie temporal en el instante $t+1$, tiene sentido 'predecir' $x_{_{t+1}}$ como el promedio de los $k$ valores de datos anteriores para algún $k$. Es decir, dejando que $\tilde{x}_{_{t+1}}$ denote la predicción de un paso hacia adelante de $x_{_{t+1}}$ dada la información hasta el tiempo $t$, entonces un predictor razonable y muy simple sería
 
 $$
-\tilde{x}_{_{t+1}}=\left(\sum\limits_{i=0}^{k+1}x_{_{t-i}}\right)/k
+\tilde{x}_{_{t+1}}=\left(\sum\limits_{i=0}^{k+1}x_{_{t-i}}\right)/k.
 $$
 
 Esto es, el predictor de $x_{_{t+1}}$ es el promedio de los últimos $k$ valores de datos.
@@ -912,18 +910,18 @@ Esto es, el predictor de $x_{_{t+1}}$ es el promedio de los últimos $k$ valores
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
 ## Ejemplos
 
--   Si se quiere usar un predictor de promedio móvil de 3 puntos para un conjunto de datos de longitud $t=20$. Se observa que la predicción un paso hacia adelante de $x_4$ usando este predictor sería
+-   Si se usa un predictor de promedio móvil de 3 puntos para un conjunto de datos de longitud $t=20$, se observa que la predicción un paso hacia adelante de $x_4$ usando este predictor sería
 
     $$
-    \tilde{x}_{_4}=(x_{_3}+x_{_2}+x_{_1})/3
+    \tilde{x}_{_4}=(x_{_3}+x_{_2}+x_{_1})/3.
     $$
 
-    Dado que el conjunto de datos tiene 20 valores, hay un valor conocido para $x_{_4}$, por lo que podemos comparar el predictor $\tilde{x}_{_4}$ con el valor real, $x_{_4}$, para evaluar la precisión del predictor.
+    Dado que, el conjunto de datos tiene 20 valores, hay un valor conocido para $x_{_4}$, por lo que podemos comparar el predictor $\tilde{x}_{_4}$ con el valor real, $x_{_4}$, para evaluar la precisión del predictor.
 
 -   Para predecir los valores $x_{_4}$ hasta $x_{_n}$, la predicción es
 
     $$
-    \tilde{x}_{_n}=(x_{_{n-1}}+x_{_{n-2}}+x_{_{n-3}})/3
+    \tilde{x}_{_n}=(x_{_{n-1}}+x_{_{n-2}}+x_{_{n-3}})/3.
     $$
 
     Nuevamente, todos estos predictores de un paso hacia adelante pueden compararse con los valores reales para determinar la calidad de cada predicción.
@@ -931,7 +929,7 @@ Esto es, el predictor de $x_{_{t+1}}$ es el promedio de los últimos $k$ valores
 -   La predicción de $x_{_{n+1}}$ está dado por
 
     $$
-    \tilde{x}_{_{n+1}}= (x_{_n}+x_{_{n-1}}+x_{_{n-2}})/3
+    \tilde{x}_{_{n+1}}= (x_{_n}+x_{_{n-1}}+x_{_{n-2}})/3.
     $$
 
     En este caso, $\tilde{x}_{_{n+1}}$ es un predictor de un valor futuro que presumiblemente no se conoce. Se puede hacer una evaluación sobre la calidad de esta predicción basándose en las predicciones de $x_{_4},x_{_5},\ldots,$ todas las cuales pueden ser verificadas. El procedimiento se ilustra en el @exm-ppm.
@@ -940,13 +938,13 @@ Esto es, el predictor de $x_{_{t+1}}$ es el promedio de los últimos $k$ valores
 ### Suavizado exponencial
 
 ::: {style="text-align: justify"}
-Si bien la predicción mediante el promedio móvil es fácil de conceptualizar y calcular, resulta poco realista asumir que todos los valores de datos precedentes tendrán una influencia igual en los valores futuros. Resulta más intuitivo pensar que, en muchos casos, los datos más recientes deberían tener mayor influencia en los valores futuros que los datos en un pasado más distante, ya que son más representativos del estado actual de la realidad. Un método de suavizado que tiene en cuenta esto se conoce como *suavizado exponencial*. El suavizado exponencial fue introducido por primera vez por R.G. Brown. Nuevamente se considera que cada valor de datos $x_{_t}$ en una serie temporal está compuesto por un valor medio en cada punto de tiempo $t$ y un término de error independiente con media cero y varianza constante. Es decir, $x_{t}=\mu_{_t}+e_{_t}$. Para $0 \leq \alpha \leq 1$, la recursión de suavizado exponencial para $t =1, 2, \ldots, n$ es
+Si bien la predicción mediante el promedio móvil es fácil de conceptualizar y calcular, resulta poco realista asumir que todos los valores de datos precedentes tendrán una influencia igual en los valores futuros. Resulta más intuitivo pensar que, en muchos casos, los datos más recientes deberían tener mayor influencia en los valores futuros que los datos en un pasado más distante, ya que son más representativos del estado actual de la realidad. Un método de suavizado que tiene en cuenta esto se conoce como *suavizado exponencial*. El suavizado exponencial fue introducido por primera vez por R.G. @brown1956exponential. Nuevamente se considera que cada valor de datos $x_{_t}$ en una serie temporal está compuesto por un valor medio en cada punto de tiempo $t$ y un término de error independiente con media cero y varianza constante. Es decir, $x_{t}=\mu_{_t}+e_{_t}$. Para $0 \leq \alpha \leq 1$, la recursión de suavizado exponencial para $t =1, 2, \ldots, n$ es
 
 $$
-u_{_{t+1}}=\alpha x_{_t}+ (1-\alpha)u_{_t}
+u_{_{t+1}}=\alpha x_{_t}+ (1-\alpha)u_{_t}.
 $$ {#eq-sexpo}
 
-La @eq-sexpo es una combinación lineal del valor actual $x_{_t}$ junto con $u_{_t}$, que es la estimación de $\mu_{_t}$ basada en datos hasta, pero no incluyendo, el tiempo $t$. En el momento $t$, el promedio ponderado dado en la expresión anterior es el predictor de $\mu_{_{t+1}}$. Nótese que la estimación $\mu_{_t}$ depende en gran medida del parámetro de suavizado $\alpha$, que varía de $0$ a $1$. Cuanto más cercano esté $\alpha$ a $1$, más peso se le otorga a los datos más recientes, mientras que cuanto más cercano esté $\alpha$ a $0$, menos peso se le otorga a los datos más recientes. Naturalmente, el valor óptimo de $\alpha$ dependerá de la aplicación particular del conjunto de datos y se puede ajustar en consecuencia. Debido a que la fórmula anterior es recursiva, cada nueva estimación $\mu_{_t}$ depende de la estimación anterior $\mu_{_{t-1}}$, que a su vez depende de la estimación $\mu_{_{t-2}}$, y así sucesivamente. Esta fórmula no parece ser "exponencial" de inmediato, ¿entonces cómo recibe el método su nombre? Dejando $t = 1, 2, 3, 4,$ vemos que la fórmula recursiva produce lo siguiente:
+La ecuación ([-@eq-sexpo]) es una combinación lineal del valor actual $x_{_t}$ junto con $u_{_t}$, que es la estimación de $\mu_{_t}$ basada en datos hasta, pero no incluyendo, el tiempo $t$. En el momento $t$, el promedio ponderado dado en la expresión anterior es el predictor de $\mu_{_{t+1}}$. Nótese que la estimación $\mu_{_t}$ depende en gran medida del parámetro de suavizado $\alpha$, que varía de $0$ a $1$. Cuanto más cercano esté $\alpha$ a $1$, más peso se le otorga a los datos más recientes, mientras que cuanto más cercano esté $\alpha$ a $0$, menos peso se le otorga a los datos más recientes. Naturalmente, el valor óptimo de $\alpha$ dependerá de la aplicación particular del conjunto de datos y se puede ajustar en consecuencia. Debido a que la fórmula anterior es recursiva, cada nueva estimación $\mu_{_t}$ depende de la estimación anterior $\mu_{_{t-1}}$, que a su vez depende de la estimación $\mu_{_{t-2}}$, y así sucesivamente. Esta fórmula no parece ser "exponencial" de inmediato, ¿entonces cómo recibe el método su nombre? Dejando $t = 1, 2, 3, 4,$ vemos que la fórmula recursiva produce lo siguiente:
 
 $$
 \begin{split}
@@ -958,13 +956,13 @@ u_{_5} &= \alpha x_{_4}+(1-\alpha)u_{_4}\\ &=\alpha x_{_4}+(1-\alpha)[\alpha x_{
 \end{split}
 $$
 
-Y en general,
+En general,
 
 $$
 u_{_k}=\sum_{j=1}^{k-2}\alpha(1-\alpha)^{j-1}x_{_{k-j}}+(1-\alpha)^{k-2}x_{_1}.
 $$ {#eq-fexp}
 
-Es claro a partir de la @eq-fexp que dado que $\alpha$ está entre cero y uno, la fórmula recursiva otorga menos peso a las observaciones anteriores y más peso a las observaciones más recientes, y que la magnitud del ponderado es exponencial.
+Es claro a partir de la ecuación ([-@eq-fexp]) que como $\alpha$ está entre cero y uno, la fórmula recursiva otorga menos peso a las observaciones anteriores y más peso a las observaciones más recientes, y que la magnitud del ponderado es exponencial.
 :::
 
 ::: {style="text-align: justify"}
@@ -974,15 +972,15 @@ Es claro a partir de la @eq-fexp que dado que $\alpha$ está entre cero y uno, l
 
 La @fig-PAP-1 muestra la gráfica de los datos de AirPassengers. La función ***ma.pred.wge*** implementada en el software R, que hace parte de la librería **tswge**, calcula predicciones a un paso utilizando un suavizador de media móvil de quinto orden. Utilizando los datos, la función extiende las predicciones hasta $x_{_{n+20}}$. La @fig-PAP-2 representa tanto los datos como las predicciones.
 
-La @fig-PAP-3 muestra los valores $u_{_t}$, exhibe pronósticos a un paso utilizando suavizado exponencial con $\alpha = 0.4$. Los predictores resultantes son similares a los de la @fig-PAP-2.
+La @fig-PAP-3 muestra los valores $u_{_t}$ y exhibe pronósticos a un paso utilizando suavizado exponencial con $\alpha = 0.4$. Los predictores resultantes son similares a los de la @fig-PAP-2.
 
 ```{r, results='hide'}
 #| label: fig-PAP  
-#| fig-cap: "Datos de AirPassengers, predicción por promedio móvil y suavizado exponencial"  
+#| fig-cap: "Datos de AirPassengers, predicción por promedio móvil y suavizado exponencial."  
 #| fig-subcap:    
-#|   - "Datos de AirPassengers" 
-#|   - "Predicción de AirPassengers por promedio móvil" 
-#|   - "Predicción de AirPassengers por suavizamiento exponencial" 
+#|   - "Datos de AirPassengers." 
+#|   - "Predicción de AirPassengers por promedio móvil." 
+#|   - "Predicción de AirPassengers por suavizamiento exponencial." 
 #| layout-ncol: 3 
 library(tswge) 
 plot(AirPassengers) 
@@ -998,7 +996,7 @@ expsmooth.wge(AirPassengers,alpha=0.4,n.ahead=20)
 ### Pronóstico Holt-Winters
 
 ::: {style="text-align: justify"}
-El enfoque Holt-Winters es una técnica desarrollada por los economistas Holt [@holt1957forecasting] y Winters [@winters1960forecasting].
+El enfoque Holt-Winters es una técnica desarrollada por los economistas @holt1957forecasting y @winters1960forecasting.
 
 Este método de predicción es una extensión del suavizado exponencial y se aplica a series temporales univariadas. El método no necesita un gran almacenamiento de datos y es simple. Es adecuado para la predicción a corto plazo y utiliza la función de máxima verosimilitud para estimar los parámetros. Existen dos modelos de Holt-Winter que utilizan modelos aditivos o multiplicativos basados en el componente estacional. Los modelos aditivos se aplican para un modelo con una tendencia lineal y con una tendencia exponencial.
 :::
@@ -1006,7 +1004,7 @@ Este método de predicción es una extensión del suavizado exponencial y se apl
 #### Ecuaciones aditivas de Holt-Winters
 
 ::: {style="text-align: justify"}
-El modelo aditivo de Holt-Winters para datos con tendencia y estacionalidad que no aumentan con el tiempo es adecuado (consulte la @eq-addseas). Las fórmulas para la predicción de Holt-Winters son generalizaciones de las ecuaciones de suavizado exponencial, y las ecuaciones de Holt-Winters son las siguientes:
+El modelo aditivo de Holt-Winters para datos con tendencia y estacionalidad que no aumentan con el tiempo es adecuado (consulte la ecuación ([-@eq-addseas])). Las fórmulas para la predicción de Holt-Winters son generalizaciones de las ecuaciones de suavizado exponencial; y las ecuaciones de Holt-Winters son las siguientes:
 
 $$
 \begin{split}
@@ -1016,14 +1014,14 @@ s_{_t}&= \gamma(x_{_t}-u_{_{t-1}})+(1-\gamma)s_{_{t-m}}
 \end{split}
 $$ {#eq-extexp}
 
-Donde $0 \le \alpha, \beta, \gamma \le 1$, y donde $m$ es la longitud del período. Para datos mensuales, $m = 12$, y para datos trimestrales, $m = 4$. Los $u_{_t}$ están relacionados con el suavizado exponencial simple y proporcionan una línea de base. Los $v_{_t}$ y $s_{_t}$ se relacionan con los efectos de tendencia y estacionales, respectivamente. Para los tiempos $t= m+1,\ldots, n$, las predicciones de un paso adelante, $\hat{x}_{_t}$, para la media en el tiempo $t$, se expresan como:
+Donde $0 \le \alpha, \beta, \gamma \le 1$, y $m$ es la longitud del período (por ejemplo, la frecuencia en un archivo de series temporales). Para datos mensuales, $m = 12$, y para datos trimestrales, $m = 4$. Los valores $u_{_t}$ están relacionados con el suavizado exponencial simple y proporcionan una línea base. Los valores $v_{_t}$ y $s_{_t}$ se relacionan con los efectos de tendencia y estacionales, respectivamente. Para los tiempos $t= m+1,\ldots, n$, las predicciones de un paso adelante, $\hat{x}_{_t}$, para la media en el tiempo $t$, se expresan como:
 
-$$ \hat{x}_{_t}= u_{_{t-1}}+v_{_{t-1}}+s_{_{t-m}} $$
+$$ \hat{x}_{_t}= u_{_{t-1}}+v_{_{t-1}}+s_{_{t-m}}.$$
 
 Las predicciones para $x_{_{n+l}}, l=1,\ldots,K$ (es decir, hasta $K$ pasos más allá del final de los datos observados), se proporcionan de manera recursiva mediante:
 
 $$
-\hat{x}_{_{n+l|n}}=u_{_n}+mv_{_n}+s_{_{n+l-ml'.}}
+\hat{x}_{_{n+l|n}}=u_{_n}+mv_{_n}+s_{_{n+l-ml'}}.
 $$
 
 Donde $l' =\left[ \frac{l-1}{m} \right] + 1$, con $\left[ \frac{l-1}{m} \right]$ denotando el entero mayor o igual a $\frac{l-1}{m}$. Aquí, $\alpha, \beta$ y $\gamma$ son parámetros de suavizado, y se pueden obtener utilizando la función **HoltWinters** la cual parte de las funciones base que conforman al software *R*.
@@ -1032,7 +1030,7 @@ Donde $l' =\left[ \frac{l-1}{m} \right] + 1$, con $\left[ \frac{l-1}{m} \right]$
 #### Ecuaciones multiplicativas de Holt-Winters
 
 ::: {style="text-align: justify"}
-Como sugiere el término, las ecuaciones multiplicativas de Holt-Winters son aplicables a datos para los cuales el modelo multiplicativo la @eq-mulseas es apropiado. En este caso, las ecuaciones de Holt-Winters son:
+Como sugiere el término, las ecuaciones multiplicativas de Holt-Winters son aplicables a datos para los cuales el modelo multiplicativo (ecuación ([-@eq-mulseas])) es apropiado. En este caso, las ecuaciones de Holt-Winters son:
 
 $$
 \begin{split}
@@ -1063,7 +1061,7 @@ Reconsidere los datos de AirPassengers. Dado que los puntos temporales posterior
 
 ```{r}
 #| label: fig-HWAP  
-#| fig-cap: "Predicción mediante Holt-Winters de los datos de AirPassengers"  
+#| fig-cap: "Predicción mediante Holt-Winters de los datos de AirPassengers."  
 #| fig-subcap:    
 #|   - "Predicción de AirPassengers un paso adelante" 
 #|   - "Predicción por Holt-Winters de AirPassengers" 
@@ -1084,44 +1082,44 @@ plot(ap.hw,ap.pred,lty=1:2)
 Se afirma que el proceso $X_{_t}$ satisface un modelo $\mathrm{AR}(p)$ (Autoregresivo de orden $p$) si
 
 $$
-X_{_t}=a_{_t}+\beta+\sum_{k=1}^p \phi_{_k}X_{_{t-k}}
+X_{_t}=a_{_t}+\beta+\sum_{k=1}^p \phi_{_k}X_{_{t-k}},
 $$ {#eq-ARp}
 
 donde $\phi_{_k}, k=1,\ldots,p$ son constantes reales, $\beta = \left(1-\phi_{_1}-\phi_{_2}-\cdots-\phi_{_p}\right)\mu$, $\phi_{_p}\neq 0$, y $a_{_t}$ es un proceso de ruido blanco con media cero y varianza finita $\sigma_{_a}^2$.
 :::
 
 ::: {style="text-align: justify"}
-La fórmula en la @eq-ARp indica que el valor del proceso en el tiempo $t$ es una combinación lineal de los $p$ valores anteriores más un componente de ruido aleatorio en $a_{_t}$. Iniciamos nuestra discusión sobre los modelos $\mathrm{AR}$ al abordar sus propiedades, incluidas las condiciones de estacionariedad y el comportamiento de las autocorrelaciones y densidades espectrales para modelos específicos.
+La fórmula en la ecuación ([-@eq-ARp]) indica que, el valor del proceso en el tiempo $t$, es una combinación lineal de los $p$ valores anteriores más un componente de ruido aleatorio en $a_{_t}$. Iniciamos nuestra discusión sobre los modelos $\mathrm{AR}$ al abordar sus propiedades, incluidas las condiciones de estacionariedad y el comportamiento de las autocorrelaciones y densidades espectrales para modelos específicos.
 
-El modelo $\mathrm{AR}(p)$ general definido en la @def-mARp, se asemeja a una ecuación de regresión múltiple, donde, en este caso, las "variables independientes" son los $p$ valores previos de la "variable dependiente" $X_{_t}$. Otra forma de escribir la @eq-ARp, después de reorganizar los términos, es:
+El modelo $\mathrm{AR}(p)$ general definido en la @def-mARp, se asemeja a una ecuación de regresión múltiple, donde, en este caso, las "variables independientes" son los $p$ valores previos de la "variable dependiente" $X_{_t}$. Otra forma de escribir la ecuación ([-@eq-ARp]), después de reorganizar los términos, es:
 
 $$
-X_{_t}-\mu-\phi_{_1}(X_{_{t-1}}-\mu)-\phi_{_2}(X_{_{t-2}}-\mu)-\cdots-\phi_{_p}(X_{_{t-p}}-\mu)=a_{_t}
+X_{_t}-\mu-\phi_{_1}(X_{_{t-1}}-\mu)-\phi_{_2}(X_{_{t-2}}-\mu)-\cdots-\phi_{_p}(X_{_{t-p}}-\mu)=a_{_t}.
 $$ {#eq-oarp}
 
 Al igual que en el caso de los modelos $\mathrm{AR}(1)$ y $\mathrm{AR}(2)$, se expresará con frecuencia el $\mathrm{AR}(p)$ en la forma de media cero:
 
 $$
-X_{_t} -\phi_{_1}X_{_{t-1}}-\phi_{_2}X_{_{t-2}}-\cdots-\phi_{_p}X_{_{t-p}}=a_{_t}
+X_{_t} -\phi_{_1}X_{_{t-1}}-\phi_{_2}X_{_{t-2}}-\cdots-\phi_{_p}X_{_{t-p}}=a_{_t}.
 $$ {#eq-m0arp}
 
-Las ecuaciones @eq-ARp a @eq-m0arp dan la impresión de que un modelo $\mathrm{AR}(p)$ será mucho más complicado de manejar que un modelo $\mathrm{AR}(1)$ o $\mathrm{AR}(2)$. La comprensión de las características de los modelos $\mathrm{AR}(1)$ y $\mathrm{AR}(2)$ conduce directamente a comprender el comportamiento de un modelo $\mathrm{AR}(p)$.
+Las ecuaciones ([-@eq-ARp]) a ([-@eq-m0arp]) dan la impresión de que un modelo $\mathrm{AR}(p)$ será mucho más complicado de manejar que un modelo $\mathrm{AR}(1)$ o $\mathrm{AR}(2)$. La comprensión de las características de los modelos $\mathrm{AR}(1)$ y $\mathrm{AR}(2)$ conduce directamente a comprender el comportamiento de un modelo $\mathrm{AR}(p)$.
 :::
 
 ##### Hechos sobre el modelo $\mathrm{AR}(p)$
 
 ::: {style="text-align: justify"}
-i.  $\mathrm{E}[X_{_t}]=\mu$, para la forma "no nula de la media" del modelo $\mathrm{AR}(p)$ en la @eq-oarp y @eq-m0arp.
+i.  $\mathrm{E}[X_{_t}]=\mu$, para la forma "no nula de la media" del modelo $\mathrm{AR}(p)$ en la ([-@eq-oarp]) y ([-@eq-m0arp]).
 
-ii. El proceso de varianza es $$\sigma_{_X}^2=\gamma_{_0}=\frac{\sigma_{_a}^2}{1-\phi_{_1}\rho_{_1}-\phi_{_2}\rho_{_2}-\cdots-\phi_{_p}\rho_{_p}}$$
+ii. El proceso de varianza es $$\sigma_{_X}^2=\gamma_{_0}=\frac{\sigma_{_a}^2}{1-\phi_{_1}\rho_{_1}-\phi_{_2}\rho_{_2}-\cdots-\phi_{_p}\rho_{_p}},$$
 
     la cuál es contante y finita cuando $X_{_t}$ es estacionaria.
 
 iii. La autocorrelación de un proceso $\mathrm{AR}(p)$ satisface $$
-     \rho_{_k}=\phi_{_p}+\sum_{n=1}^{p-1}\phi_{_n}\rho_{_{k-n}}
-     $$
+     \rho_{_k}=\phi_{_p}+\sum_{n=1}^{p-1}\phi_{_n}\rho_{_{k-n}}.
+     $$ {#eq-autoarp}
 
-     La ecuación (5.28) es una generalización de (5.17) para el caso AR(2), y conduce a las ecuaciones de Yule-Walker de orden p p: $$
+     La ecuación ([-@eq-autoarp]) conduce a las ecuaciones de Yule-Walker de orden $p\times p$: $$
          \begin{split}
      \rho_{_{1}} &= \phi_{_1}+\phi_{_{2}} \rho_{_1} +\ldots + \phi_{_p} \rho_{_{p-1}} \\
      \rho_{_{2}} &= \phi_{_1}\rho_{_1}+\phi_{_{2}}  +\ldots + \phi_{_p} \rho_{_{p-2}}\\
@@ -1130,7 +1128,7 @@ iii. La autocorrelación de un proceso $\mathrm{AR}(p)$ satisface $$
      \end{split}
        $$
 
-     Análogo al caso $\mathrm{AR}(2)$, conocer los valores de $\phi_{_1}, \phi_{_2}, \ldots, \phi_{_p}$ nos permite resolver este sistema de ecuaciones de dimensión $p\times p$ para $\rho_{_k}$, donde $k = 1, 2, \ldots, p$. Las autocorrelaciones basadas en el modelo, $\rho_{_k}$, para $k > p$, se pueden calcular utilizando la recursión $\phi_{_1} \rho_{_{k-1}} - \phi_{_2} \rho_{_{k-2}} + \ldots + \phi_{_p} \rho_{_{k-p}}$. No sorprendentemente, se utilizan funciones computacionales para realizar estos cálculos.
+     Conocer los valores de $\phi_{_1}, \phi_{_2}, \ldots, \phi_{_p}$ nos permite resolver este sistema de ecuaciones de dimensión $p\times p$ para $\rho_{_k}$, donde $k = 1, 2, \ldots, p$. Las autocorrelaciones basadas en el modelo, $\rho_{_k}$, para $k > p$, se pueden calcular utilizando la recursión $\phi_{_1} \rho_{_{k-1}} - \phi_{_2} \rho_{_{k-2}} + \ldots + \phi_{_p} \rho_{_{k-p}}$. No sorprendentemente, se utilizan funciones computacionales para realizar estos cálculos.
 
 iv. La densidad espectral de un modelo $\mathrm{AR}(p)$ es dada por
 
@@ -1160,27 +1158,27 @@ b.  Considere las siguientes ecuaciones de Yule-Walker donde $\phi_{_{kj}}$ deno
 ##### Notación de operador y ecuación característica para un $\mathrm{AR}(p)$
 
 ::: {style="text-align: justify"}
-El modelo $\mathrm{AR}(p)$ en la @eq-oarp puede ser escrito en notación de operador como
+El modelo $\mathrm{AR}(p)$ en la ecuación ([-@eq-oarp]) puede ser escrito en notación de operador como
 
 $$
-(1-\phi_{_1}B-\phi_{_2}B^2-\cdots-\phi_{_p}B^p)(X_{_t}-\mu)=a_{_t}
+(1-\phi_{_1}B-\phi_{_2}B^2-\cdots-\phi_{_p}B^p)(X_{_t}-\mu)=a_{_t}.
 $$
 
-O utilizando una notación abreviada, $\phi(B)(X_{t}-\mu)=a_{_t}$ , donde $\phi(B)$ es el operador de orden $p$
+También puede ser escrito utilizando la notación, $\phi(B)(X_{t}-\mu)=a_{_t}$ , donde $\phi(B)$ es el operador de orden $p$
 
 $$
 \phi(B)=1-\phi_{_1}B-\phi_{_2}B^2-\cdots-\phi_{_p}B^p.
 $$
 
-Convirtiendo el operador $\phi(B)$ en la cantidad algebraica $\phi(z)$ resulta en el polinomio característico general $\mathrm{AR}(p)$
+Convirtiendo el operador $\phi(B)$ en la expresión algebraica $\phi(z)$ resulta en el polinomio característico general $\mathrm{AR}(p)$
 
 $$
-\phi(z)=1-\phi_{_1}z-\phi_{_2}z^2-\cdots-\phi_{_p}z^p
+\phi(z)=1-\phi_{_1}z-\phi_{_2}z^2-\cdots-\phi_{_p}z^p.
 $$
 
 La correspondiente ecuación característica $\mathrm{AR}(p)$ es
 
-$$\phi(z) = 1 -\phi_{_1}z -\phi_{_2}z^2 - \cdots - -\phi_{_p}z^p = 0$$
+$$\phi(z) = 1 -\phi_{_1}z -\phi_{_2}z^2 - \cdots - -\phi_{_p}z^p = 0.$$
 
 La ecuación característica tiene $p$ raíces $r_{_1}, r_{_2} ,\ldots, r_{_p}$ que son reales y/o complejas, donde las raíces complejas aparecen como pares conjugados y algunas raíces pueden ser repetidas.
 :::
@@ -1203,19 +1201,19 @@ $$
 X_{_t}-0.13X_{_{t-1}}-1.4414X_{_{t-2}}+.0326X_{_{t-3}}+.8865X_{_{t-4}}=a_{_{t}}
 $$ {#eq-ejar4}
 
-donde $\sigma_{_a}^2 = 1$. La notación del operador para este modelo es
+en el que $\sigma_{_a}^2 = 1$. La notación del operador para este modelo es
 
 $$ (1 - 0.13B + 1.4414B^2 - .0326B^3 + 0.8865 B^4)X_{_t}= a_{_t},$$
 
-y la correspondiente ecuación característica es
+donde la correspondiente ecuación característica es
 
 $$1 - 0.13z + 1.4414z^2 - .0326z^3 + 0.8865 z^4 = 0.$$
 
-La @fig-ejar4 representa una realización de longitud $n = 200$ del proceso descrito en la @eq-ejar4, junto con las autocorrelaciones muestrales asociadas y la estimación de la densidad espectral Parzen, respectivamente.
+La @fig-ejar4 representa una realización de longitud $n = 200$ del proceso descrito en la ecuación ([-@eq-ejar4]), junto con las autocorrelaciones muestrales asociadas y la estimación de la densidad espectral Parzen, respectivamente.
 
 ```{r, results='hide'}
 #| label: fig-ejar4  
-#| fig-cap: "Realización del modelo AR(4)"
+#| fig-cap: "Realización del modelo AR(4)."
 library(tswge)
 x=gen.arma.wge(n=200,phi=c(0.1300,1.4414,-.0326,-.8865),sn=9310,plot=FALSE)
 plotts.sample.wge(x)
@@ -1228,15 +1226,15 @@ plotts.sample.wge(x)
 ::: {style="text-align: justify"}
 Este test ha estado en uso durante muchos años para probar las hipótesis:
 
--   $H_{_0}:$ el modelo contiene una raíz unitaria
+-   $H_{_0}:$ el modelo contiene una raíz unitaria.
 
--   $H_{_a}$: el modelo no contiene una raíz unitaria (y por lo tanto es estacionario)
+-   $H_{_a}$: el modelo no contiene una raíz unitaria (y por lo tanto es estacionario).
 
 Estadístico de prueba: $\uptau$
 
-Región de rechazo: Rechazar $H_{_0}$ si $\uptau < d_{_\alpha}$ donde $d_{_\alpha}$ es el valor crítico de nivel $\alpha$.
+Región de rechazo: Rechazar $H_{_0}$ si $\uptau < d_{_\alpha}$, donde $d_{_\alpha}$ es el valor crítico de nivel $\alpha$.
 
-@dickey1976estimation obtiene la distribución límite (complicada) del estadístico de prueba. Si $\uptau \geq d_{_{.05}}$, entonces no se rechaza $H_{_0}$ y la prueba de Dickey-Fuller detecta una raíz unitaria. Nótese que el rechazo de la hipótesis nula lleva a la conclusión de que el proceso es estacionario. Por lo tanto, la conclusión de una raíz unitaria se basa en no rechazar la hipótesis nula. Es importante recalcar que no rechazar la hipótesis nula no implica creer que la hipótesis nula sea verdadera, sino simplemente que no hubo suficiente evidencia para rechazarla.
+@dickey1976estimation obtiene la distribución límite (complicada) del estadístico de prueba. Si $\uptau \geq d_{_{.05}}$, entonces no se rechaza $H_{_0}$ y la prueba de Dickey-Fuller detecta una raíz unitaria. Nótese que, el rechazo de la hipótesis nula, lleva a la conclusión de que el proceso es estacionario. Por lo tanto, la conclusión de una raíz unitaria se basa en no rechazar la hipótesis nula. Es importante recalcar que no rechazar la hipótesis nula no implica creer que la hipótesis nula sea verdadera, sino simplemente que no hubo suficiente evidencia para rechazarla.
 
 Para llevar a cabo pruebas de raíz unitaria, se empleará una implementación del test del software estadístico R. Existen diversas opciones, y se utilizará el siguiente comando que incorpora una constante pero no una tendencia en el modelo, y utiliza el criterio de información de Akaike (AIC) para seleccionar el número de rezagos. Se recomienda consultar las obras de @dickey1979distribution o @fuller1995introduction para obtener más detalles al respecto.
 :::
@@ -1256,29 +1254,29 @@ puede factorizarse en la forma $(1-.5z)(1-1.6z+.8z^2)$. Basándose en esta facto
 ::: {#thm-poli style="text-align: justify"}
 El polinomio de orden $p$, $1-\phi_{_1}z-\phi_{_2}z^2-\cdots-\phi_{_p}z^p$, siempre puede descomponerse como un producto de
 
-i.  factores de primer orden (lineales) asociados con raíces reales
+i.  Factores de primer orden (lineales) asociados con raíces reales.
 
-ii. factores de segundo orden (cuadráticos) cuyas raíces son pares conjugados complejos.
+ii. Factores de segundo orden (cuadráticos) cuyas raíces son pares conjugados complejos.
 :::
 
 ##### Tablas de factores para modelos $\mathrm{AR}(p)$
 
 ::: {style="text-align: justify"}
-El @thm-poli establece que cualquier polinomio de orden $p$ puede expresarse como un producto de factores de primer orden y/o factores irreducibles de segundo orden. Comprender los factores de primer y segundo orden es la clave para comprender el modelo $\mathrm{AR}(p)$.
+El @thm-poli establece que, cualquier polinomio de orden $p$ puede expresarse como un producto de factores de primer orden y/o factores irreducibles de segundo orden. Comprender los factores de primer y segundo orden es la clave para comprender el modelo $\mathrm{AR}(p)$.
 
 ::: {.callout-caution collapse="true" icon="false"}
 ###### @exm-ar4 (Continuación...)
 
-Se considera de nuevo el modelo $\mathrm{AR}(4)$ en @eq-ejar4. La ecuación característica asociada es
+Se considera de nuevo el modelo $\mathrm{AR}(4)$ descrito en la ecuación ([-@eq-ejar4]). La ecuación característica asociada es
 
 $$
-1-.13z-1.4414z^2+.0326z^3+.8865z^4=0
+1-.13z-1.4414z^2+.0326z^3+.8865z^4=0.
 $$
 
 La forma factorizada (obtenida numéricamente) es
 
 $$
-(1-1.89B+.985B^2)(1+1.76B+.9B^2)=0
+(1-1.89B+.985B^2)(1+1.76B+.9B^2)=0.
 $$
 
 La tabla de factores es una herramienta muy útil para resumir rápidamente la escencia de un modelo $\mathrm{AR}(p)$ con respecto a los factores de primer y segundo orden.
@@ -1301,7 +1299,7 @@ Para obtener una cuantificación "general" de la calidad de las predicciones, se
 ::: {style="text-align: justify"}
 ### MAE
 
-El error absoluto medio (MAE) se calcula tomando el residuo para cada punto de datos, considerando únicamente el valor absoluto para minimizar el impacto de los valores atípicos en comparación con @eq-RMSE. Luego, se obtiene el promedio de todos estos residuos. La ecuación formal se presenta a continuación: $$MAE= \frac{1}{n}\sum_{t=1}^n |y_{_t}-f_{_t}|$$ {#eq-MAE} Dado que se emplea el valor absoluto del residuo, no se indica el rendimiento inferior o superior del modelo. Cada residuo contribuye de manera equitativa al error total, y los errores más grandes tienen una mayor contribución al error general. Un MAE pequeño indica un buen rendimiento de predicción, mientras que un MAE grande sugiere que el modelo puede tener dificultades en ciertas áreas. Obtener MAE perfecta de 0 es rara, indica que el modelo es un predictor impecable.
+El error absoluto medio (MAE) se calcula tomando el residuo para cada punto de datos, considerando únicamente el valor absoluto para minimizar el impacto de los valores atípicos en comparación con la ecuación ([-@eq-RMSE]). Luego, se obtiene el promedio de todos estos residuos. La ecuación formal se presenta a continuación: $$MAE= \frac{1}{n}\sum_{t=1}^n |y_{_t}-f_{_t}|.$$ {#eq-MAE} Dado que se emplea el valor absoluto del residuo, no se indica el rendimiento inferior o superior del modelo. Cada residuo contribuye de manera equitativa al error total, y los errores más grandes tienen una mayor contribución al error general. Un MAE pequeño indica un buen rendimiento de predicción, mientras que un MAE grande sugiere que el modelo puede tener dificultades en ciertas áreas. Obtener MAE perfecta de 0 es rara, indica que el modelo es un predictor impecable.
 
 Sin embargo, el uso del valor absoluto del residuo puede no ser el mejor enfoque para interpretar los datos, ya que los *valores atípicos* (es decir, los puntos de datos que se alejan significativamente de la tendencia general de los datos) pueden afectar significativamente el rendimiento del modelo. Dependiendo del tratamiento de los valores atípicos y extremos en los datos, es posible que se desee resaltar o minimizar su impacto. Como resultado, la elección de la métrica de error adecuada puede verse influida por el problema de los valores atípicos.
 :::
@@ -1309,7 +1307,7 @@ Sin embargo, el uso del valor absoluto del residuo puede no ser el mejor enfoque
 ::: {style="text-align: justify"}
 ### MSE
 
-El error cuadrático medio (MSE) es similar al MAE, pero eleva al cuadrado la diferencia antes de sumarlos todos en lugar de utilizar el valor absoluto. Esta diferencia se puede observar en la siguiente ecuación: $$MSE=\frac{1}{n} \sum_{t=1}^n (y_{_t}-f_{_t})^2$$ {#eq-MSE} El error medio absoluto (MAE) y el error cuadrático medio (MSE) son métricas de error comúnmente utilizadas en la evaluación de modelos. Sin embargo, el MSE suele ser mayor que el MAE debido al cuadrado de la diferencia. Comparar los dos directamente no siempre es posible, y en su lugar, debemos comparar las métricas de error de nuestro modelo con las de un modelo ya conocido o que se ajuste a la serie de datos. El efecto de los valores atípicos en nuestros datos es más evidente con la presencia del término cuadrado en la ecuación MSE. Mientras que cada residuo en MAE contribuye proporcionalmente al error total, el error crece cuadráticamente en MSE. En última instancia, esto significa que los valores atípicos en nuestros datos contribuirán a un error total mucho mayor en el MSE que en el MAE. Del mismo modo, nuestro modelo se verá más penalizado por hacer predicciones que difieran mucho del valor real correspondiente.
+El error cuadrático medio (MSE) es similar al MAE, pero eleva al cuadrado la diferencia antes de sumarlos todos en lugar de utilizar el valor absoluto. Esta diferencia se puede observar en la siguiente ecuación: $$MSE=\frac{1}{n} \sum_{t=1}^n (y_{_t}-f_{_t})^2.$$ {#eq-MSE} El error medio absoluto (MAE) y el error cuadrático medio (MSE) son métricas de error comúnmente utilizadas en la evaluación de modelos. Sin embargo, el MSE suele ser mayor que el MAE debido al cuadrado de la diferencia. Comparar los dos directamente no siempre es posible, y en su lugar, debemos comparar las métricas de error de nuestro modelo con las de un modelo ya conocido o que se ajuste a la serie de datos. El efecto de los valores atípicos en nuestros datos es más evidente con la presencia del término cuadrado en la ecuación MSE. Mientras que cada residuo en MAE contribuye proporcionalmente al error total, el error crece cuadráticamente en MSE. En última instancia, esto significa que los valores atípicos en nuestros datos contribuirán a un error total mucho mayor en el MSE que en el MAE. Del mismo modo, nuestro modelo se verá más penalizado por hacer predicciones que difieran mucho del valor real correspondiente.
 :::
 
 ::: {style="text-align: justify"}
@@ -1317,11 +1315,13 @@ El error cuadrático medio (MSE) es similar al MAE, pero eleva al cuadrado la di
 
 RMSE, o error cuadrático medio, es una medida frecuentemente utilizada para evaluar la diferencia entre los valores predichos $f_{_t}$ y los valores observados $y_{_t}$. Su función se expresa a continuación, donde $n$ representa el número de observaciones. En comparación con el error cuadrático medio (MSE), RMSE toma la raíz cuadrada de MSE y restituye la unidad al mismo nivel que la variable dependiente. Por lo tanto, tiene la ventaja de ser interpretado directamente. En general, un valor de RMSE más bajo es preferible, y RMSE$=0$ indica un ajuste perfecto de los datos. La desventaja de RMSE es su sensibilidad a valores atípicos, ya que unos pocos errores grandes en la suma pueden generar un aumento significativo, y la prueba no distingue entre subestimación y sobreestimación. Como se discutió anteriormente en la descripción de los datos, el conjunto de datos que se utiliza tiene varios valores extremos de gastos elevados, por lo que utilizar solo RMSE como medida podría no ser muy adecuado.
 
-La fórmula para el cálculo de RMSE es la siguiente: $$RMSE= \sqrt{\frac{\sum_{t=1}^n (y_t-f_t)^2}{n}}$$ {#eq-RMSE}
+La fórmula para el cálculo de RMSE es la siguiente: $$RMSE= \sqrt{\frac{\sum_{t=1}^n (y_t-f_t)^2}{n}}.$$ {#eq-RMSE}
 :::
 
 ::: {style="text-align: justify"}
 ### MAPE
 
-El error porcentual absoluto medio (MAPE) mide la precisión de la predicción como un porcentaje y se define generalmente de la siguiente manera. La ventaja es que es muy intuitivo interpretar el error relativo, y un MAPE más bajo significa un error menor. MAPE es similar a MAE, pero normaliza MAE mediante observaciones reales, resolviendo así el problema de que MAE proporciona poca información sobre el error al comparar datos de diferentes escalas. Sin embargo, también presenta la desventaja de que puede producir valores infinitos o indefinidos para valores reales cercanos o iguales a cero. Otra limitación de MAPE es que penaliza más los errores negativos que los errores positivos. Por ejemplo, para un valor real de $100$ y un valor estimado de $90$, el MAPE es $0.10$. Para el mismo valor estimado y un valor real de $80$, el MAPE es $0.125$. Como resultado, si se utiliza MAPE como función objetivo, el estimador preferirá valores más pequeños y puede sesgarse hacia errores negativos. $$MAPE=\frac{100}{n}\sum_{t=1}^n \left| \frac{y_t-f_t}{y_t}\right|$$ {#eq-MAPE}
+El error porcentual absoluto medio (MAPE) mide la precisión de la predicción como un porcentaje y se define generalmente de la siguiente manera. $$MAPE=\frac{100}{n}\sum_{t=1}^n \left| \frac{y_t-f_t}{y_t}\right|.$$ {#eq-MAPE}
+
+La ventaja es que es muy intuitivo interpretar el error relativo, y un MAPE más bajo significa un error menor. MAPE es similar a MAE, pero normaliza MAE mediante observaciones reales, resolviendo así el problema de que MAE proporciona poca información sobre el error al comparar datos de diferentes escalas. Sin embargo, también presenta la desventaja de que puede producir valores infinitos o indefinidos para valores reales cercanos o iguales a cero. Otra limitación de MAPE es que penaliza más los errores negativos que los errores positivos. Por ejemplo, para un valor real de $100$ y un valor estimado de $90$, el MAPE es $0.10$. Para el mismo valor estimado y un valor real de $80$, el MAPE es $0.125$. Como resultado, si se utiliza MAPE como función objetivo, el estimador preferirá valores más pequeños y puede sesgarse hacia errores negativos.
 :::

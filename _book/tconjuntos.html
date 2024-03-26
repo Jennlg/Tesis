@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.22">
+<meta name="generator" content="quarto-1.5.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -98,7 +98,7 @@ div.csl-indent {
   });
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -405,13 +405,13 @@ Ejemplo
 <p><span class="theorem-title"><strong>Definición 1.4 (Complemento)</strong></span> El complemento de un conjunto <span class="math inline">\(A\)</span> con respecto al espacio <span class="math inline">\(\Omega\)</span>, denotado por <span class="math inline">\(\overline{A}\)</span>, <span class="math inline">\(A^c\)</span> o <span class="math inline">\(\Omega-A\)</span>, es el conjunto de todos los puntos que están en <span class="math inline">\(\Omega\)</span> pero no en <span class="math inline">\(A\)</span>.</p>
 </div>
 <div id="def-union" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 1.5 (Unión)</strong></span> Sea <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos cualesquiera de <span class="math inline">\(\Omega\)</span>; entonces el conjunto que consiste en todos los puntos que están en <span class="math inline">\(A\)</span>, en <span class="math inline">\(B\)</span> o en ambos se define como la unión de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se escribe <span class="math inline">\(A \cup B\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.5 (Unión)</strong></span> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos cualesquiera de <span class="math inline">\(\Omega\)</span>; entonces el conjunto que consiste en todos los puntos que están en <span class="math inline">\(A\)</span>, en <span class="math inline">\(B\)</span> o en ambos se define como la unión de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se escribe <span class="math inline">\(A \cup B\)</span>.</p>
 </div>
 <div id="def-inter" class="theorem definition" style="text-align: justify">
 <p><span class="theorem-title"><strong>Definición 1.6 (Intersección)</strong></span> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos cualesquiera de <span class="math inline">\(\Omega\)</span>; entonces el conjunto formado por todos los puntos que están tanto en <span class="math inline">\(A\)</span> como en <span class="math inline">\(B\)</span> se define como la intersección de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se escribe <span class="math inline">\(A \cap B\)</span>.</p>
 </div>
 <div id="def-dfc" class="theorem definition" style="text-align: justify">
-<p><span class="theorem-title"><strong>Definición 1.7 (Diferencia de conjuntos)</strong></span> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos cualesquiera de <span class="math inline">\(\Omega\)</span>. El conjunto de todos los puntos en <span class="math inline">\(A\)</span> que no están en <span class="math inline">\(B\)</span> se denotará por <span class="math inline">\(A-B\)</span> y se define como la diferencia de conjuntos.</p>
+<p><span class="theorem-title"><strong>Definición 1.7 (Diferencia de conjuntos)</strong></span> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos cualesquiera de <span class="math inline">\(\Omega\)</span>. Se define la diferencia de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(A-B\)</span>, como el conjunto de todos los puntos en <span class="math inline">\(A\)</span> que no están en <span class="math inline">\(B\)</span>.</p>
 </div>
 <div style="text-align: justify">
 <p>Las operaciones de complemento, unión e intersección de conjuntos se han introducido en las definiciones <a href="#def-comp" class="quarto-xref">Definición&nbsp;<span>1.4</span></a> a <a href="#def-inter" class="quarto-xref">Definición&nbsp;<span>1.6</span></a>, respectivamente. Estas operaciones de conjuntos satisfacen varias leyes, que a continuación se sintetizan. <span class="citation" data-cites="ash2000probability">(<a href="references.html#ref-ash2000probability" role="doc-biblioref">Ash y Doleans-Dade 2000</a>)</span></p>
@@ -439,7 +439,7 @@ Figura&nbsp;1.1: Diagramas de Venn
 </figure>
 </div>
 <div style="text-align: justify">
-<p>Algunas de las leyes mencionadas anteriormente se ilustran en los diagramas de Venn en la <a href="#fig-venn" class="quarto-xref">Figura&nbsp;<span>1.1</span></a>. Aunque se utilizará libremente cualquiera de las leyes mencionadas, podría resultar instructivo proporcionar una prueba de una de ellas para ilustrar la técnica. Se considera el siguiente ejemplo:</p>
+<p>Algunas de las leyes del álgebra de conjuntos se ilustran en los diagramas de Venn en la <a href="#fig-venn" class="quarto-xref">Figura&nbsp;<span>1.1</span></a>. Aunque se utilizará libremente cualquiera de las leyes mencionadas, podría resultar instructivo proporcionar una prueba de una de ellas para ilustrar la técnica. Se considera el siguiente ejemplo:</p>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -468,7 +468,7 @@ Ejemplo
 <p><span class="theorem-title"><strong>Definición 1.8 (Unión e intersección de conjuntos)</strong></span> Sea <span class="math inline">\(\Lambda\)</span> un conjunto de índices y <span class="math inline">\(\{A_\lambda: \lambda \in \Lambda\}= \{A_\lambda\}\)</span>, una colección de subconjuntos de <span class="math inline">\(\Omega\)</span> indexados por <span class="math inline">\(\Lambda\)</span>. El conjunto de puntos que consiste en todos los puntos que pertenecen a <span class="math inline">\(A_\lambda\)</span> para al menos un <span class="math inline">\(\lambda\)</span> se denomina unión de los conjuntos <span class="math inline">\(\{A_\lambda\}\)</span> y se denota como <span class="math inline">\(\bigcup\limits_{\lambda\in \Lambda} A_\lambda\)</span>. El conjunto de puntos que consiste en todos los puntos que pertenecen a <span class="math inline">\(A_\lambda\)</span> para cada <span class="math inline">\(\lambda\)</span> se denomina intersección de los conjuntos <span class="math inline">\(\{A_\lambda\}\)</span> y se denota como <span class="math inline">\(\bigcap\limits_{\lambda\in\Lambda} A_\lambda\)</span>. Si <span class="math inline">\(\Lambda\)</span> está vacío, entonces se define <span class="math inline">\(\bigcup\limits_{\lambda\in \Lambda} A_\lambda = \emptyset\)</span> y <span class="math inline">\(\bigcap\limits_{\lambda\in\Lambda} A_\lambda=\Omega\)</span>.</p>
 </div>
 <div style="text-align: justify">
-<p>Uno de los teoremas más fundamentales que relaciona las uniones, intersecciones y complementos para una colección arbitraria de conjuntos se debe a De Morgan.</p>
+<p>Uno de los teoremas fundamentales que relaciona las uniones, intersecciones y complementos para una colección arbitraria de conjuntos se debe a De Morgan.</p>
 </div>
 <div id="thm-morgan" class="theorem" style="text-align: justify">
 <p><span class="theorem-title"><strong>Teorema 1.2 (Teorema de De Morgan)</strong></span> Sea <span class="math inline">\(\Lambda\)</span> un conjunto de índices y <span class="math inline">\(\{A_\lambda\}\)</span> una colección de subconjuntos de <span class="math inline">\(\Omega\)</span> indexados por <span class="math inline">\(\Lambda\)</span>. Entonces,</p>
@@ -668,18 +668,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -711,7 +700,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -719,7 +730,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

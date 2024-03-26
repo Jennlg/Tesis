@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.22">
+<meta name="generator" content="quarto-1.5.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -129,7 +129,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logounach.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./LOGO50.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis comparativo del desempeño en métodos para el pronóstico de series temporales</a> 
@@ -342,6 +342,10 @@ div.csl-indent {
 Ash, R. B., and C. A. Doleans-Dade. 2000. <em>Probability and Measure
 Theory</em>. Elsevier Science. <a href="https://books.google.com.mx/books?id=GkqQoRpCO2QC">https://books.google.com.mx/books?id=GkqQoRpCO2QC</a>.
 </div>
+<div id="ref-brown1956exponential" class="csl-entry" role="listitem">
+Brown, R. G. 1956. <em>Exponential Smoothing for Predicting Demand</em>.
+Little. <a href="https://books.google.com.mx/books?id=Eo_rMgEACAAJ">https://books.google.com.mx/books?id=Eo_rMgEACAAJ</a>.
+</div>
 <div id="ref-castañeda2014introduction" class="csl-entry" role="listitem">
 Castañeda, L. B., V. Arunachalam, and S. Dharmaraja. 2014.
 <em>Introduction to Probability and Stochastic Processes with
@@ -439,6 +443,11 @@ Aplicaciones</em>. CENGAGE Learning. <a href="https://books.google.com.mx/books?
 <div id="ref-waldmeier1961sunspot" class="csl-entry" role="listitem">
 Waldmeier, Max. 1961. <span>“The Sunspot-Activity in the Years
 1610-1960.”</span> <em>Zurich: Schulthess</em>.
+</div>
+<div id="ref-wiener1949extrapolation" class="csl-entry" role="listitem">
+Wiener, Norbert. 1949. <em>Extrapolation, Interpolation, and Smoothing
+of Stationary Time Series: With Engineering Applications</em>. The MIT
+press.
 </div>
 <div id="ref-winters1960forecasting" class="csl-entry" role="listitem">
 Winters, Peter R. 1960. <span>“Forecasting Sales by Exponentially
@@ -650,18 +659,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -693,7 +691,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -701,7 +721,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -3,9 +3,9 @@
         {
             "file": "tconjuntos.qmd",
             "type": "def",
-            "id": "sub",
+            "id": "comp",
             "suffix": "",
-            "title": "Subconjunto"
+            "title": "Complemento"
         },
         {
             "file": "tconjuntos.qmd",
@@ -13,34 +13,6 @@
             "id": "venn",
             "suffix": "",
             "title": "Diagramas de Venn"
-        },
-        {
-            "file": "tconjuntos.qmd",
-            "type": "def",
-            "id": "comp",
-            "suffix": "",
-            "title": "Complemento"
-        },
-        {
-            "file": "tconjuntos.qmd",
-            "type": "def",
-            "id": "emptyset",
-            "suffix": "",
-            "title": "Conjunto vacío"
-        },
-        {
-            "file": "tconjuntos.qmd",
-            "type": "def",
-            "id": "ce",
-            "suffix": "",
-            "title": "Conjuntos equivalentes"
-        },
-        {
-            "file": "tconjuntos.qmd",
-            "type": "def",
-            "id": "disjunto",
-            "suffix": "",
-            "title": "Disjuntos o mutuamente excluyentes"
         },
         {
             "file": "tconjuntos.qmd",
@@ -52,16 +24,9 @@
         {
             "file": "tconjuntos.qmd",
             "type": "def",
-            "id": "dfc",
+            "id": "emptyset",
             "suffix": "",
-            "title": "Diferencia de conjuntos"
-        },
-        {
-            "file": "tconjuntos.qmd",
-            "type": "def",
-            "id": "UI",
-            "suffix": "",
-            "title": "Unión e intersección de conjuntos"
+            "title": "Conjunto vacío"
         },
         {
             "file": "tconjuntos.qmd",
@@ -73,9 +38,9 @@
         {
             "file": "tconjuntos.qmd",
             "type": "def",
-            "id": "inter",
+            "id": "ce",
             "suffix": "",
-            "title": "Intersección"
+            "title": "Conjuntos equivalentes"
         },
         {
             "file": "tconjuntos.qmd",
@@ -83,6 +48,41 @@
             "id": "lac",
             "suffix": "",
             "title": "Leyes del álgebra de conjuntos"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "disjunto",
+            "suffix": "",
+            "title": "Disjuntos o mutuamente excluyentes"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "UI",
+            "suffix": "",
+            "title": "Unión e intersección de conjuntos"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "sub",
+            "suffix": "",
+            "title": "Subconjunto"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "dfc",
+            "suffix": "",
+            "title": "Diferencia de conjuntos"
+        },
+        {
+            "file": "tconjuntos.qmd",
+            "type": "def",
+            "id": "inter",
+            "suffix": "",
+            "title": "Intersección"
         }
     ]
 }

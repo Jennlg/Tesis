@@ -49,7 +49,7 @@ El complemento de un conjunto $A$ con respecto al espacio $\Omega$, denotado por
 ::: {#def-union style="text-align: justify"}
 ## Unión
 
-Sea $A$ y $B$ dos subconjuntos cualesquiera de $\Omega$; entonces el conjunto que consiste en todos los puntos que están en $A$, en $B$ o en ambos se define como la unión de $A$ y $B$, y se escribe $A \cup B$.
+Sean $A$ y $B$ dos subconjuntos cualesquiera de $\Omega$; entonces el conjunto que consiste en todos los puntos que están en $A$, en $B$ o en ambos se define como la unión de $A$ y $B$, y se escribe $A \cup B$.
 :::
 
 ::: {#def-inter style="text-align: justify"}

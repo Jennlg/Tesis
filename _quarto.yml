@@ -10,7 +10,6 @@ website:
     type: overlay
   comments:
     hypothesis: true
-  google-analytics: "G-D75SV4E4FP"
 
 book:
   title: "Análisis comparativo del desempeño en métodos para el pronóstico de series temporales"

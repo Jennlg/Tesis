@@ -16,7 +16,7 @@ La importancia de las redes neuronales en la predicción de datos radica en su c
 Con el tiempo, las redes neuronales se han vuelto más sofisticadas, dando lugar a arquitecturas como las redes neuronales convolucionales (CNN) para el procesamiento de imágenes y las redes neuronales recurrentes (RNN) para el procesamiento de secuencias. Además, el surgimiento del aprendizaje profundo (deep learning) ha permitido el entrenamiento de redes neuronales con muchas capas, lo que ha mejorado significativamente su capacidad para abordar problemas complejos de predicción.
 :::
 
-![Representación gráfica de una neurona biológica](Imagenes/rna.png){#fig-neubio fig-align="center" width="626"}
+![Representación gráfica de una neurona biológica.](Imagenes/rna.png){#fig-neubio fig-align="center" width="626"}
 
 ## Elementos fundamentales de las Redes Neuronales Artificiales
 
@@ -27,14 +27,14 @@ Para obtener una comprensión clara de los principales elementos utilizados para
 
 La información de entrada, $x_1, ..., x_p$, es recibida por la neurona del sistema sensorial externo u otras neuronas con las que tiene conexión. El vector de pesos sinápticos $\mathbf{w} = (w_1, ..., w_p)$ modifica la información recibida emulando la sinapsis entre las neuronas biológicas. Estos pueden interpretarse como ganancias que pueden atenuar o amplificar los valores que desean propagar hacia la neurona. El parámetro $b_j$ se conoce como el sesgo (intercepto o umbral) de una neurona. En redes neuronales artificiales, el aprendizaje se refiere al método de modificar los pesos de las conexiones entre los nodos (neuronas) de una red especificada.
 
-Los valores recibidos por la neurona son ajustados por los pesos sinápticos y que sumados para generar la entrada neta, expresada matemáticamente como:
+Los valores recibidos por la neurona son ajustados por los pesos sinápticos y sumados para generar la entrada neta, expresada matemáticamente como:
 
-$$v_j=\sum_{j=1}^p \omega_{ij}x_j$$
+$$v_j=\sum_{j=1}^p \omega_{ij}x_j.$$
 
-La entrada neta $(v_j)$ determina si la neurona se activa o no. La activación de la neurona depende de la función de activación, evaluándose la entrada neta en dicha función para obtener la salida de la red, como se ilustra a continuación:
+La entrada neta $(v_j)$ determina si la neurona se activa o no. La activación de la neurona depende de la función de activación, evaluándose la entrada neta en dicha función para obtener la salida de la red;
 
 $$
-y_j=g(v_j)
+y_j=g(v_j),
 $$
 
 donde $g$ representa la función de activación. Por ejemplo, si se define esta función como un escalón unitario (también llamado umbral), la salida será $1$ si la entrada neta es mayor que cero; de lo contrario, la salida será $0$.
@@ -68,7 +68,7 @@ b.  **Capas ocultas:** Consisten en un conjunto de neuronas internas de la red q
 c.  **Capa de salida:** Es un conjunto de neuronas que transfiere la información procesada por la red hacia el exterior. En la @fig-rnp, las neuronas de salida corresponden a las variables de salida $y_1, y_2, y_3$ e $y_4$. Esto implica que la capa de salida proporciona la respuesta o predicción del modelo de red neuronal artificial basada en la entrada proveniente de la capa de entrada. La salida final puede ser continua, binaria, ordinal o de conteo, dependiendo de la configuración de la RNA, la cual está controlada por la función de activación especificada en las neuronas de la capa de salida.
 :::
 
-![Red neuronal artificial profunda feedforward con ocho variables de entrada, cuatro variables de salida y dos capas ocultas con tres neuronas cada una](Imagenes/RNP.png){#fig-rnp fig-align="center"}
+![Red neuronal artificial profunda feedforward con ocho variables de entrada, cuatro variables de salida y dos capas ocultas con tres neuronas cada una.](Imagenes/RNP.png){#fig-rnp fig-align="center"}
 
 ::: {style="text-align: justify"}
 A continuación, se definen los tipos de neuronas:
@@ -113,11 +113,11 @@ $$
 \hat{\mathbf{y}}(\mathbf x)=f(\mathbf w^T\mathbf x+b).
 $$ {#eq-perceptron}
 
-La arquitectura que modela esta ecuación se describe a través de la @fig-arqper.
+La arquitectura que modela esta ecuación se describe a través de la @fig-arqper,
 
 ![Arquitectura de un perceptrón simple](Imagenes/perceptron.png){#fig-arqper fig-align="center"}
 
-donde $\mathbf x$ denota el vector de entradas, $\mathbf w$ denota el vector de pesos asociados a cada nodo, $b$ denota el sesgo o intercepto de la regresión, $\sum$ denota el nodo de procesamiento o combinador lineal, y $f$ denota la función de activación o función limitadora, siendo esta última una transformación no lineal de la regresión obtenida en el nodo de procesamiento.
+donde $\mathbf x$ denota el vector de entradas, $\mathbf w$ denota el vector de pesos asociados a cada nodo, $b$ denota el sesgo o intercepto de la regresión, $\sum$ denota el nodo de procesamiento o combinador lineal y $f$ denota la función de activación o función limitadora, siendo esta última una transformación no lineal de la regresión obtenida en el nodo de procesamiento.
 
 Aunque el perceptrón simple demuestra eficacia en el aprendizaje y la resolución de problemas linealmente separables, como las compuertas lógicas *AND* (@fig-and) y *OR* (@fig-or) , presenta limitaciones en la resolución de problemas que no son de este tipo. Un ejemplo paradigmático de ello es su incapacidad para clasificar las salidas de una compuerta lógica del tipo *XOR* (@fig-xor), ya que el nodo de procesamiento solo permite la separación de la información mediante una única recta de regresión.
 :::
@@ -135,7 +135,7 @@ Aunque el perceptrón simple demuestra eficacia en el aprendizaje y la resoluci�
 ![XOR](Imagenes/XOR.png)
 :::
 
-Compuertas lógicas
+Compuertas lógicas.
 :::
 
 ### Perceptrón Multicapa (MLP) {#sec-arqmlp}
@@ -152,7 +152,7 @@ Es importante destacar que el término $b$, que indica el sesgo en el perceptró
 La ecuación matemática que describe la red de la @fig-mlp es la siguiente:
 
 $$
-\begin{split}\hat{\mathbf{y}} &= f^3(z^3) \\&= f^3(\mathbf{w}^3 a^2 + b^3) \\&= f^3(\mathbf{w}^3 (f^2(z^2)) + b^3) \\&= f^3(\mathbf{w}^3 (f^2(\mathbf{w}^2 a^1 + b^2)) + b^3) \\&= f^3(\mathbf{w}^3 (f^2(\mathbf{w}^2 (f^1(z^1)) + b^2)) + b^3) \\&= f^3(\mathbf{w}^3 (f^2(\mathbf{w}^2 (f^1(\mathbf{w}^1 \mathbf{x} + b^1)) + b^2)) + b^3)\end{split}
+\begin{split}\hat{\mathbf{y}} &= f^3(z^3) \\&= f^3(\mathbf{w}^3 a^2 + b^3) \\&= f^3(\mathbf{w}^3 (f^2(z^2)) + b^3) \\&= f^3(\mathbf{w}^3 (f^2(\mathbf{w}^2 a^1 + b^2)) + b^3) \\&= f^3(\mathbf{w}^3 (f^2(\mathbf{w}^2 (f^1(z^1)) + b^2)) + b^3) \\&= f^3(\mathbf{w}^3 (f^2(\mathbf{w}^2 (f^1(\mathbf{w}^1 \mathbf{x} + b^1)) + b^2)) + b^3).\end{split}
 $$
 
 Se observa que $f^3$ representa la función de activación en la capa de salida, la cual comúnmente se elige como la identidad. Sin embargo, en algunos modelos de clasificación, la predicción puede ser más precisa si esta función es no lineal y limitadora.
@@ -189,8 +189,8 @@ Dados $\mathbf x = (x_1, x_2,..., x_m,1)^T$ y $\mathbf w = (w_1,w_2,...,w_m,b)^T
 
 Sea $\mathscr A$ el conjunto de todas las combinaciones lineales $\mathcal V(\mathbf x, \mathbf w)$. Considerando $t \in \mathscr A$, se define la función limitadora $g$ como sigue: $$
 \begin{split}
-g: \mathscr A&\rightarrow \{1,-1\}\\
-t &\rightarrow g(t)= \left\{\begin{array}{lcc} 1 & si & t> 0\\ \\-1 & si & t\leq 0\end{array}\right.
+g: \mathscr A &\rightarrow \{1,-1\}\\
+t &\rightarrow g(t)= \begin{cases} 1 & \text{si }\quad t> 0,\\ \\-1 & \text{si }\quad t\leq 0.\end{cases}
 \end{split}
 $$
 :::
@@ -259,7 +259,7 @@ Vea @sosaestructura.
 ::: {style="text-align: justify"}
 La asignación entre las entradas y una capa oculta en una Red Neuronal Artificial (RNA) y una Red Neuronal Profunda (RNP) es determinada por funciones de activación. Dichas funciones propagan la información generada mediante la combinación lineal de los pesos y las entradas hacia la siguiente capa, incluyendo la capa de salida. Como se ha mencionado anteriormente, existe una analogía entre las neuronas biológicas y las redes neuronales artificiales; en este contexto, las funciones de activación son análogas a la tasa del potencial de acción disparado en el cerebro.
 
-Las funciones de activación son transformaciones de funciones escalares a escalares que proporcionan una salida específica para cada neurona. Estas funciones introducen no linealidades en las capacidades de modelado de la red. La función de activación de una neurona (nodo) define la forma funcional de su activación. Por ejemplo, si se define una función de activación lineal como $g(z) = z$, en este caso, el valor de la neurona sería la entrada cruda $x$ multiplicada por el peso aprendido, representando así un modelo lineal. A continuación, se describen las funciones de activación más populares.
+Las funciones de activación son transformaciones de funciones escalares a escalares que proporcionan una salida específica para cada neurona. Estas funciones introducen no linealidades en las capacidades de modelado de la red. La función de activación de una neurona (nodo) define la forma funcional de su activación. Por ejemplo, si se define una función de activación lineal como $g(z) = z$, el valor de la neurona sería la entrada cruda $x$ multiplicada por el peso aprendido, representando así un modelo lineal. A continuación, se describen las funciones de activación más populares.
 :::
 
 ### Lineal
@@ -289,10 +289,10 @@ La función de activación $\sigma(x):\mathbb R\to [0,1]$ se caracteriza por ser
 ### Unidad lineal rectificadora (ReLu)
 
 ::: {style="text-align: justify"}
-La función de activación de la unidad lineal rectificadora (ReLU) destaca como una de las más adoptadas. Exhibe una respuesta plana por debajo de un umbral especificado, normalmente establecido en cero, y luego se vuelve lineal. La activación en una ReLU se produce solo cuando la entrada supera un determinado umbral. Cuando la entrada está por debajo de cero, la salida sigue siendo cero, pero al exceder el umbral, como se ilustra en la @fig-fact-3., establece una relación lineal con la variable dependiente, de la siguiente manera
+La función de activación de la unidad lineal rectificadora (ReLU) destaca como una de las más adoptadas. Exhibe una respuesta plana por debajo de un umbral especificado, normalmente establecido en cero, y luego se vuelve lineal. La activación en una ReLU se produce solo cuando la entrada supera un determinado umbral. Cuando la entrada está por debajo de cero, la salida sigue siendo cero, pero al exceder el umbral, como se ilustra en la @fig-fact-3, establece una relación lineal con la variable dependiente, de la siguiente manera
 
 $$
-F(x)=\max(0,x)
+F(x)=\max(0,x).
 $$
 
 A pesar de su aparente simplicidad, la función de activación de ReLU facilita las transformaciones no lineales, lo que permite la aproximación de funciones no lineales arbitrarias mediante el uso de rectificadores lineales suficientes. Esto contrasta con los escenarios en los que se emplean exclusivamente funciones de activación lineal.
@@ -306,7 +306,7 @@ En la actualidad, las ReLU representan el estado de la técnica, demostrando su 
 Las ReLU con fugas sirven como medida correctiva para abordar el fenómeno de la "ReLU moribunda". A diferencia de la ReLU convencional, que asigna un valor cero a la función cuando $x < 0$, la ReLU con fugas introduce una pequeña pendiente negativa, denotada como $\alpha$, donde $\alpha$ es un valor escalar dentro del rango de $0$ a $1$ (consulte la @fig-fact-4). Si bien esta variación de ReLU ha demostrado cierto éxito en aplicaciones prácticas, los resultados no son uniformemente consistentes. La expresión matemática de esta función de activación se proporciona a continuación:
 
 $$
-F(x)=\begin{cases}x & \text{si}\quad x>0\\ \alpha x& \text{otro caso}\end{cases}.
+F(x)=\begin{cases}x & \text{si}\quad x>0,\\ \alpha x& \text{otro caso.}\end{cases}
 $$
 :::
 
@@ -316,7 +316,7 @@ $$
 La función de activación tangente hiperbólica $(\tanh)$ es una modificación de la función sigmoide y se define como
 
 $$
-\tanh(x)=\frac{e^x-e^{-x}}{e^{x}+e^{-x}}
+\tanh(x)=\frac{e^x-e^{-x}}{e^{x}+e^{-x}}.
 $$
 
 Cuyas gráficas se observan en la @fig-fact-5. La función de activación tangete hiperbólica $\tanh(x):\mathbb R\to [-1,1]$ es una función suave y diferenciable en todo punto. Similar a la función de activación sigmoide, produce una salida sigmoidal (en forma de "S"). Sin embargo, la función $\tanh$ tiene la ventaja de ser menos propensa al problema de "atascarse" en comparación con la función de activación sigmoide. Esto se atribuye a que los valores de salida de la función $\tanh$ se encuentran dentro del rango de $-1$ a $1$. En consecuencia, a menudo se prefiere la función de activación $\tanh$ para capas ocultas. Una ventaja adicional de $\tanh$ es su capacidad para manejar los números negativos de manera más efectiva. Sin embargo, el gradiente de la función evaluado en valores muy alejados al origen será un valor muy pequeño, por lo que sigue generando un estancamiento en el proceso de retropropagación.
@@ -336,7 +336,7 @@ donde $a$ es la salida de las capas ocultas y $K$ es el número de clases en el 
 
 ```{r, warning=FALSE, message=FALSE,echo=FALSE,results='hide'}
 #| label: fig-fact
-#| fig-cap: "Funciones de activación"
+#| fig-cap: "Funciones de activación."
 #| fig-subcap:
 #|   - "Lineal"
 #|   - "Sigmoide"
@@ -463,7 +463,7 @@ Como se expuso previamente en la @sec-arqmlp, se pueden representar mediante un 
 ::: {#def-mlp style="text-align: justify"}
 ### Perceptrón Multicapa (MLP)
 
-Una red neuronal artificial MLP se define formalmente como una tripla $<\mathscr D, \{f\}, \mathscr A>$, donde;
+Una red neuronal artificial MLP se define formalmente como una tripla $\langle\mathscr D, \{f\}, \mathscr A\rangle$, donde;
 
 -   $\mathscr D$ es un dígrafo contable, localmente finito, con nodos etiquetados. Sus vértices corresponden a los nodos de procesamiento (neuronas), mientras que las etiquetas de los nodos, denominadas *pesos*, representan las intensidades de las conexiones sinápticas. Dichas intensidades se denotan por $w_{ij}$, indicando el peso de la conexión entre la neurona $j$-ésima y la $i$-ésima.
 
@@ -475,13 +475,13 @@ Una red neuronal artificial MLP se define formalmente como una tripla $<\mathscr
 ::: {style="text-align: justify"}
 En el dígrafo $\mathscr D$, se definen las capas como las columnas de vértices en $\mathscr D$. Cada una de estas columnas puede ser representada matemáticamente a través de un vector, de la siguiente manera:
 
-1.  **Capa de entrada:** corresponde a la primera columna de vértices de $\mathscr D$, cuya representación matemática se expresa como: $$\mathbf x = (x_1, \ldots, x_{d_0})^T \text{ donde } \mathbf x \in \mathbb{R}^{(d_0 \times 1)}$$
+1.  **Capa de entrada:** corresponde a la primera columna de vértices de $\mathscr D$, cuya representación matemática se expresa como: $$\mathbf x = (x_1, \ldots, x_{d_0})^T \text{ donde } \mathbf x \in \mathbb{R}^{(d_0 \times 1)}.$$
 
-2.  **Capa de salida**: corresponde a la última columna de vértices de $\mathscr D$, cuya representación matemática se describe como: $$\hat{\mathbf y} = (\hat{y}_1, \ldots, \hat{y}_{d_L})^T \text{ donde } \hat{y}\in\mathbb{R}^{(d_L\times 1)}$$
+2.  **Capa de salida**: corresponde a la última columna de vértices de $\mathscr D$, cuya representación matemática se describe como: $$\hat{\mathbf y} = (\hat{y}_1, \ldots, \hat{y}_{d_L})^T \text{ donde } \hat{y}\in\mathbb{R}^{(d_L\times 1)}.$$
 
 3.  **Capas ocultas**: corresponden a las columnas intermedias entre la capa de entrada y la de salida. Su representación matemática está dada por: $$\begin{split}
-    \mathbf a^l &= (a_{1}^l, \ldots, a_{d_l}^l)^T \text{ donde } a^l\in\mathbb{R}^{(d_l\times 1)}\\ &= f^l(z^l)\text{ con } l = 1, \ldots, L - 1
-    \end{split}.$$
+    \mathbf a^l &= (a_{1}^l, \ldots, a_{d_l}^l)^T \text{ donde } a^l\in\mathbb{R}^{(d_l\times 1)}\\ &= f^l(z^l)\text{ con } l = 1, \ldots, L - 1.
+    \end{split}$$
 
 Cabe destacar que cada $\mathbf a^l$ corresponde a una columna de vértices en $\mathscr D$, donde $L$ denotará la totalidad de capas en la red. $f^l$ será una función de activación vectorial y $z^l$ será el combinador lineal matricial, ambos en la capa $l$. De esta manera, la capa de salida también puede representarse como el vector $\mathbf a^L$, y la capa de entrada como el vector $\mathbf a^0$.
 :::
@@ -548,7 +548,7 @@ $$ {#eq-clm}
 :::
 
 ::: {style="text-align: justify"}
-Se observa que la ecuación @eq-clm guarda una fuerte relación con la @def-comlin. No obstante, en el caso de $\mathbf{z}^l$, se ha incorporado el vector de parámetros de sesgo $\mathbf{b}^l$.
+Se observa que la ecuación ([-@eq-clm]) guarda una fuerte relación con la @def-comlin. No obstante, en el caso de $\mathbf{z}^l$, se ha incorporado el vector de parámetros de sesgo $\mathbf{b}^l$.
 :::
 
 ::: {#def-fperdida style="text-align: justify"}
@@ -623,13 +623,13 @@ Se inicia calculando la derivada de $\mathcal L$ respecto a uno de los pesos que
 $$\begin{split}\frac{\partial \mathcal L}{\partial w_{ij}^L} &= \frac{1}{2} \sum_{r=1}^{d_L} \frac{\partial}{\partial w_{ij}^L} (y_r - a_{r}^L)^2\\
  &= \sum_{r=1}^{d_L} (a_{r}^L - y_r) \left(\frac{\partial a_r^L}{\delta w_{ij}^L}\right)\\
  &=\sum_{r=1}^{d_L} (a_{r}^L - y_r) \frac{\partial}{\partial w_{ij}^L}f^L(z_{r}^L)\\
-&= \sum_{r=1}^{d_L} (a_{r}^L - y_r) \frac{\partial}{\partial w_{ij}^L}f^L\left(\sum_{t=1}^{d_L}w_{rt}^La_t^{L-1}+b_r^L\right),\end{split}$$ {#eq-18}
+&= \sum_{r=1}^{d_L} (a_{r}^L - y_r) \frac{\partial}{\partial w_{ij}^L}f^L\left(\sum_{t=1}^{d_L}w_{rt}^La_t^{L-1}+b_r^L\right).\end{split}$$ {#eq-18}
 
 Esta expresión se anula en todos los valores en los que $r\neq i$ o $t\neq j$. Si $r = i$ y $t = j$, se tiene:
 
-$$\frac{\partial \mathcal L}{\partial w_{ij}^L} = (a_{i}^L - y_i) f^{(1)L}(z_{i}^L) a_j^{L-1}$$ {#eq-retrop}
+$$\frac{\partial \mathcal L}{\partial w_{ij}^L} = (a_{i}^L - y_i) f^{(1)L}(z_{i}^L) a_j^{L-1}.$$ {#eq-retrop}
 
-Esta ecuación proporciona la derivada particular de la función de pérdida respecto a un único peso. Para generalizar esta situación y calcular $\frac{\partial \mathcal L}{\partial \mathbf w^{L}}$, se deben tener en cuenta las dimensiones y definir una nueva operación matricial.
+La ecuación ([-@eq-retrop]) proporciona la derivada particular de la función de pérdida respecto a un único peso. Para generalizar esta situación y calcular $\frac{\partial \mathcal L}{\partial \mathbf w^{L}}$, se deben tener en cuenta las dimensiones y definir una nueva operación matricial.
 :::
 
 ::: {#def-pHada style="text-align: justify"}
@@ -643,15 +643,15 @@ $$
 :::
 
 ::: {style="text-align: justify"}
-Generalizando la @eq-retrop y haciendo uso de la definición previa, se puede expresar la derivada parcial de la función de pérdida respecto a los pesos en la última capa como:
+Generalizando la ecuación ([-@eq-retrop]) y haciendo uso de la definición previa, se puede expresar la derivada parcial de la función de pérdida respecto a los pesos en la última capa como:
 
 $$\begin{split}\frac{\partial \mathcal L}{\partial \mathbf w^L} &= \frac{\partial \mathcal L}{\partial \mathbf a^L}\frac{\partial \mathbf a^L}{\partial \mathbf z^L}\frac{\partial \mathbf z^L}{\partial \mathbf w^L}\\&= \left[(\mathbf a^L - y)\odot f^{(1)L}(\mathbf z^L)\right] (\mathbf a^{L-1})^T,\end{split}$$ {#eq-20}
 
-Donde el error en la última capa se denota como $(\mathbf a^L - y)$ y se representa como $\mathbf e^L$. También se introduce la notación $\delta^L$ para referirse al producto de Hadamard $[(\mathbf a^L - y)\odot f^{(1)L}(\mathbf z^L)]$. La expresión se simplifica como:
+donde el error en la última capa se denota como $(\mathbf a^L - y)$ y se representa como $\mathbf e^L$. También se introduce la notación $\delta^L$ para referirse al producto de Hadamard $[(\mathbf a^L - y)\odot f^{(1)L}(\mathbf z^L)]$. La expresión se simplifica como:
 
 $$\frac{\partial \mathcal L}{\partial \mathbf w^L} = \delta^L (a^{L-1})^T.$$ {#eq-21}
 
-Al extender este proceso desde la @eq-18 hasta la @eq-21 para calcular $\frac{\partial \mathcal L}{\partial \mathbf b^L}$, se obtiene:
+Al extender este proceso de las ecuaciones ([-@eq-18]) a ([-@eq-21]) para calcular $\frac{\partial \mathcal L}{\partial \mathbf b^L}$, se obtiene:
 
 $$\frac{\partial \mathcal L}{\partial \mathbf b^L} = \delta.$$ {#eq-22}
 
@@ -663,7 +663,7 @@ $$
 &= \delta^{L-1}(\mathbf a^{L-2})^T,\end{split}
 $$ {#eq-23}
 
-Donde $((\mathbf w^L)^T \delta^L) = \mathbf e^{L-1}$ y $[((\mathbf w^L)^T \delta^L)\odot f^{L-1}(\mathbf z^{L-1})] = \delta^{L-1}$.
+donde $((\mathbf w^L)^T \delta^L) = \mathbf e^{L-1}$ y $[((\mathbf w^L)^T \delta^L)\odot f^{L-1}(\mathbf z^{L-1})] = \delta^{L-1}$.
 
 De manera análoga, la derivada parcial de la función de pérdida con respecto al sesgo en la capa $l-1$ se expresa como:
 
@@ -679,7 +679,7 @@ $$\frac{\partial \mathcal L}{\partial \mathbf w^l} = \delta^l (a^{l-1})^T,\quad 
 
 Con estas expresiones, se define el proceso iterativo de retropropagación en los siguientes pasos:
 
-1.  Calcular el error $\mathbf e^L$ y $\delta^L$ en la última capa, como se muestra en la @eq-20 y @eq-21.
+1.  Calcular el error $\mathbf e^L$ y $\delta^L$ en la última capa, como se muestra en las ecuaciones ([-@eq-20]) y ([-@eq-21]).
 
 2.  Calcular $\mathbf e^l$ y $\delta^l$ en cada capa $l$ mediante las relaciones:
 
@@ -690,17 +690,17 @@ Con estas expresiones, se define el proceso iterativo de retropropagación en lo
 3.  Proceder a la actualización de pesos y sesgos. Para ello, se introduce la función de coste $\mathcal C$ aplicada a la pérdida $\mathcal L$ y se calculan las derivadas con respecto a los pesos y sesgos:
 
     $$
-    \mathcal C=\frac{1}{n}\sum_{k=1}^n \mathcal L(\mathbf y, \mathbf{\hat{y}})(k)
+    \mathcal C=\frac{1}{n}\sum_{k=1}^n \mathcal L(\mathbf y, \mathbf{\hat{y}})(k).
     $$
 
-    Estas derivadas son equivalentes a las obtenidas en la @eq-21, @eq-22 y @eq-25. Luego, se aplica el algoritmo de descenso del gradiente para actualizar las matrices de pesos y sesgos:
+    Estas derivadas son equivalentes a las obtenidas en las ecuaciones ([-@eq-21]), ([-@eq-22]) y ([-@eq-25]). Luego, se aplica el algoritmo de descenso del gradiente para actualizar las matrices de pesos y sesgos:
 
     $$
-    \begin{split}\frac{\partial \mathcal C}{\partial \mathbf w^l}&=\frac{1}{n}\sum_{k=1}^n \frac{\partial}{\partial \mathbf w^l}\mathcal L(\mathbf y, \hat{\mathbf y})(k)\\ &=\nabla_{\mathbf w^l}\mathcal C\\ 
-    \frac{\partial\mathcal C}{\partial\mathbf b^l}&= \frac{1}{n}\sum_{k=1}^n \frac{\partial}{\partial \mathbf b^l}\mathcal L(\mathbf y, \hat{\mathbf y})(k)=\nabla_{\mathbf b^l}\mathcal C,\end{split}
+    \begin{split}\frac{\partial \mathcal C}{\partial \mathbf w^l}&=\frac{1}{n}\sum_{k=1}^n \frac{\partial}{\partial \mathbf w^l}\mathcal L(\mathbf y, \hat{\mathbf y})(k)\\ &=\nabla_{\mathbf w^l}\mathcal C.\\ 
+    \frac{\partial\mathcal C}{\partial\mathbf b^l}&= \frac{1}{n}\sum_{k=1}^n \frac{\partial}{\partial \mathbf b^l}\mathcal L(\mathbf y, \hat{\mathbf y})(k)=\nabla_{\mathbf b^l}\mathcal C.\end{split}
     $$ {#eq-26}
 
-    Note que en la @eq-26, las derivadas con respecto a $\mathbf w^L$ y $\mathbf b^L$, son las mismas que se dedujeron en la @eq-25, con estos últimos parámetros obtenidos, se puede aplicar el algoritmo del descenso del gradiente, para actualizar las matrices de pesos y sesgos, así:
+    Note que en la ecuación ([-@eq-26]), las derivadas con respecto a $\mathbf w^L$ y $\mathbf b^L$, son las mismas que se dedujeron en la ecuación ([-@eq-25]), con estos últimos parámetros obtenidos, se puede aplicar el algoritmo del descenso del gradiente, para actualizar las matrices de pesos y sesgos, así:
 
     $$
     \begin{cases}\mathbf w^l(t)&:= \mathbf w^{l-1}(t-1)-\eta\nabla_{\mathbf w^l}\mathcal C,\\ \mathbf b^l(t)&:= \mathbf b^{l-1}(t-1)-\eta\nabla_{\mathbf b^l}\mathcal C,\end{cases}
@@ -730,7 +730,7 @@ Frecuentemente en el ámbito del Machine Learning, la validación cruzada se emp
 ### División de datos en entrenamiento y prueba
 
 ::: {style="text-align: justify"}
-El enfoque denominado división datos en entrenamiento y prueba se basa en la aleatoria división de una serie de datos en dos conjuntos. Uno de estos conjuntos se destina al entrenamiento del modelo de Machine Learning, mientras que el otro se reserva para la validación del mismo.
+El enfoque denominado división de datos en entrenamiento y prueba se basa en la aleatoria división de una serie de datos en dos conjuntos. Uno de estos conjuntos se destina al entrenamiento del modelo de Machine Learning, mientras que el otro se reserva para la validación del mismo.
 
 Generalmente, se asigna entre un $70\%$ y un $80\%$ de los datos totales para el entrenamiento, dejando el $20-30\%$ restante para llevar a cabo la validación cruzada.
 
@@ -744,7 +744,7 @@ No obstante, en escenarios donde la cantidad de datos es suficientemente amplia 
 ::: {style="text-align: justify"}
 La técnica validación cruzada de $K$ pliegues se caracteriza por su accesibilidad y su reconocimiento generalizado en el ámbito de la validación cruzada. En comparación con otros métodos de validación cruzada, tiende a proporcionar modelos con un menor sesgo (@d83becf2-a410-3aa1-b0e0-e01af0f94b99).
 
-Esta técnica asegura que todas las observaciones originales de la serie de datos tengan la oportunidad de formar parte tanto del conjunto de entrenamiento como del conjunto de prueba. Es especialmente valiosa en situaciones donde los datos de entrada son limitados.
+Esta técnica asegura que todas las observaciones originales de la serie de datos tengan la oportunidad de formar parte, tanto del conjunto de entrenamiento, como del conjunto de prueba. Es especialmente valiosa en situaciones donde los datos de entrada son limitados.
 
 El proceso comienza al dividir de manera aleatoria la serie de datos en $K$ pliegues. El parámetro $K$ determina el número de grupos en los que se dividirá la muestra.
 
