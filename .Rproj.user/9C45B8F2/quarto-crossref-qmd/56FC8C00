@@ -2,6 +2,13 @@
     "entries": [
         {
             "file": "muertes.qmd",
+            "type": "tbl",
+            "id": "errd",
+            "suffix": "",
+            "title": "Errores de los modelos para casos confirmados."
+        },
+        {
+            "file": "muertes.qmd",
             "type": "fig",
             "id": "pmlpd",
             "suffix": "",
@@ -9,10 +16,10 @@
         },
         {
             "file": "muertes.qmd",
-            "type": "tbl",
-            "id": "errd",
+            "type": "fig",
+            "id": "phwd",
             "suffix": "",
-            "title": "Errores de los modelos para casos confirmados."
+            "title": "Pronóstico obtenido mediante la técnica de Holt-Winters."
         },
         {
             "file": "muertes.qmd",
@@ -24,9 +31,9 @@
         {
             "file": "muertes.qmd",
             "type": "fig",
-            "id": "phwd",
+            "id": "muertespdf",
             "suffix": "",
-            "title": "Pronóstico obtenido mediante la técnica de Holt-Winters."
+            "title": "Serie de tiempo de los casos de muerte por COVID-19 en Irán del 20-02-2020 al 15-08-2020."
         }
     ]
 }

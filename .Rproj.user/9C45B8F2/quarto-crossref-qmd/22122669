@@ -3,34 +3,6 @@
         {
             "file": "confirmados.qmd",
             "type": "fig",
-            "id": "pmlp",
-            "suffix": "",
-            "title": "Pronóstico obtenido mediante la red neuronal MLP."
-        },
-        {
-            "file": "confirmados.qmd",
-            "type": "fig",
-            "id": "box",
-            "suffix": "",
-            "title": "Boxplot de casos confirmados de COVID-19 en Irán del 20-02-2020 al 15-08-2020"
-        },
-        {
-            "file": "confirmados.qmd",
-            "type": "fig",
-            "id": "red",
-            "suffix": "",
-            "title": "Estructura de la red neuronal resultante"
-        },
-        {
-            "file": "confirmados.qmd",
-            "type": "tbl",
-            "id": "err",
-            "suffix": "",
-            "title": "Errores de los modelos para casos confirmados."
-        },
-        {
-            "file": "confirmados.qmd",
-            "type": "fig",
             "id": "phw",
             "suffix": "",
             "title": "Pronóstico obtenido mediante la técnica de Holt-Winters."
@@ -38,30 +10,30 @@
         {
             "file": "confirmados.qmd",
             "type": "fig",
-            "id": "foremlp",
+            "id": "box",
             "suffix": "",
-            "title": "Predicción futura de la serie tiempo para infectados diariamente mediante el modelo MLP"
-        },
-        {
-            "file": "confirmados.qmd",
-            "type": "sec",
-            "id": "holt-winters",
-            "suffix": "",
-            "title": "Holt-Winters"
+            "title": "Boxplot de casos confirmados de COVID-19 en Irán del 20-02-2020 al 15-08-2020."
         },
         {
             "file": "confirmados.qmd",
             "type": "fig",
             "id": "descomp",
             "suffix": "",
-            "title": "Descomposición multiplicativa de la serie de tiempo"
+            "title": "Descomposición multiplicativa de la serie de tiempo."
         },
         {
             "file": "confirmados.qmd",
-            "type": "eq",
-            "id": "AR4",
+            "type": "fig",
+            "id": "pmlp",
             "suffix": "",
-            "title": ""
+            "title": "Pronóstico obtenido mediante la red neuronal MLP."
+        },
+        {
+            "file": "confirmados.qmd",
+            "type": "fig",
+            "id": "foremlp",
+            "suffix": "",
+            "title": "Predicción futura de la serie tiempo para infectados diariamente mediante el modelo MLP."
         },
         {
             "file": "confirmados.qmd",
@@ -73,16 +45,44 @@
         {
             "file": "confirmados.qmd",
             "type": "fig",
-            "id": "tspdf",
+            "id": "acf",
             "suffix": "",
-            "title": "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020"
+            "title": "Autocorrelograma de los casos confirmados de COVID-19 en Irán"
+        },
+        {
+            "file": "confirmados.qmd",
+            "type": "sec",
+            "id": "holt-winters",
+            "suffix": "",
+            "title": "Holt-Winters"
+        },
+        {
+            "file": "confirmados.qmd",
+            "type": "eq",
+            "id": "AR4",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "confirmados.qmd",
+            "type": "tbl",
+            "id": "err",
+            "suffix": "",
+            "title": "Errores de los modelos para casos confirmados."
         },
         {
             "file": "confirmados.qmd",
             "type": "fig",
-            "id": "acf",
+            "id": "tspdf",
             "suffix": "",
-            "title": "Autocorrelograma de los casos confirmados de COVID-19 en Irán"
+            "title": "Serie de tiempo de los casos de COVID-19 confirmados en Irán del 20-02-2020 al 15-08-2020."
+        },
+        {
+            "file": "confirmados.qmd",
+            "type": "fig",
+            "id": "red",
+            "suffix": "",
+            "title": "Estructura de la red neuronal resultante."
         }
     ]
 }

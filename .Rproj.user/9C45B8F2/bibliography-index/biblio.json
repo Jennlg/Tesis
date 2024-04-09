@@ -854,6 +854,185 @@
             "publisher": "Little",
             "title": "Exponential smoothing for predicting demand",
             "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wieland",
+                    "given": "Volker"
+                },
+                {
+                    "family": "Wolters",
+                    "given": "Maik"
+                }
+            ],
+            "container-title": "Handbook of economic forecasting",
+            "id": "wieland2013forecasting",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "239-325",
+            "publisher": "Elsevier",
+            "title": "Forecasting and policy making",
+            "type": "chapter",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kumar",
+                    "given": "Naresh"
+                },
+                {
+                    "family": "Susan",
+                    "given": "Seba"
+                }
+            ],
+            "container-title": "2020 11th international conference on computing, communication and networking technologies (ICCCNT)",
+            "id": "kumar2020covid",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "1-7",
+            "publisher": "IEEE",
+            "title": "COVID-19 pandemic prediction using time series forecasting models",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Chatfield",
+                    "given": "Chris"
+                }
+            ],
+            "container-title": "Journal of the Royal Statistical Society: Series C (Applied Statistics)",
+            "id": "chatfield1978holt",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1978
+                    ]
+                ]
+            },
+            "page": "264-279",
+            "publisher": "Wiley Online Library",
+            "title": "The holt-winters forecasting procedure",
+            "type": "article-journal",
+            "volume": "27"
+        },
+        {
+            "author": [
+                {
+                    "family": "Popescu",
+                    "given": "Marius-Constantin"
+                },
+                {
+                    "family": "Balas",
+                    "given": "Valentina E"
+                },
+                {
+                    "family": "Perescu-Popescu",
+                    "given": "Liliana"
+                },
+                {
+                    "family": "Mastorakis",
+                    "given": "Nikos"
+                }
+            ],
+            "container-title": "WSEAS Transactions on Circuits and Systems",
+            "id": "popescu2009multilayer",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "579-588",
+            "publisher": "World Scientific; Engineering Academy; Society (WSEAS) Stevens Point …",
+            "title": "Multilayer perceptron and neural networks",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ciotti",
+                    "given": "Marco"
+                },
+                {
+                    "family": "Ciccozzi",
+                    "given": "Massimo"
+                },
+                {
+                    "family": "Terrinoni",
+                    "given": "Alessandro"
+                },
+                {
+                    "family": "Jiang",
+                    "given": "Wen-Can"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Cheng-Bin"
+                },
+                {
+                    "family": "Bernardini",
+                    "given": "Sergio"
+                }
+            ],
+            "container-title": "Critical reviews in clinical laboratory sciences",
+            "id": "ciotti2020covid",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "365-388",
+            "publisher": "Taylor & Francis",
+            "title": "The COVID-19 pandemic",
+            "type": "article-journal",
+            "volume": "57"
+        },
+        {
+            "author": [
+                {
+                    "family": "Adeyinka",
+                    "given": "Daniel Adedayo"
+                },
+                {
+                    "family": "Muhajarine",
+                    "given": "Nazeem"
+                }
+            ],
+            "container-title": "BMC medical research methodology",
+            "id": "adeyinka2020time",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "1-11",
+            "publisher": "Springer",
+            "title": "Time series prediction of under-five mortality rates for nigeria: Comparative analysis of artificial neural networks, holt-winters exponential smoothing and autoregressive integrated moving average models",
+            "title-short": "Time series prediction of under-five mortality rates for nigeria",
+            "type": "article-journal",
+            "volume": "20"
         }
     ],
     "project_biblios": [

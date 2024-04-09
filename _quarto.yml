@@ -52,6 +52,7 @@ book:
         - redes.qmd
     - part: estudio.qmd
       chapters:
+        - metodologia.qmd
         - confirmados.qmd
         - muertes.qmd
     - conclusiones.qmd

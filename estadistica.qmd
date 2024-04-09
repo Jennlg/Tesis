@@ -249,7 +249,7 @@ Cuando dos o más variables aleatorias son observadas en miembros de una muestra
 :::
 
 ::: {.callout-caution collapse="true" style="text-align: justify" icon="false"}
-### Ejemplo (Calificaciones finales)
+### Ejemplo (***Calificaciones finales***)
 
 Considere los datos en la @tbl-cal que representan una muestra de 30 estudiantes en una universidad grande que fueron asignados al azar a un curso de Introducción a la Informática. En la Tabla se muestran las puntuaciones del cuestionario, además de la calificación del examen final de cada estudiante.
 

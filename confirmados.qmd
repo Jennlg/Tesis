@@ -197,10 +197,20 @@ Boxplot de casos confirmados de COVID-19 en Irán del 20-02-2020 al 15-08-2020.
 
 ### Componentes de la serie de tiempo
 
-::: {style="text-align: justify"}
+::: {.content-visible when-format="html" style="text-align: justify"}
 Los componentes identificados en la serie de tiempo de casos confirmados de COVID-19 en Irán, revelan distintos patrones y características.
 
 En primer lugar, se observa una tendencia discernible en el gráfico de la serie temporal (@fig-ts). Por ejemplo, entre el 30 de marzo y el 03 de mayo de 2020, se evidencia una tendencia negativa o decreciente, seguida por una tendencia creciente a partir del 03 de mayo en adelante. Estos cambios en la tendencia podrían indicar fluctuaciones significativas en la evolución de los casos confirmados durante esos periodos específicos.
+
+En cuanto a la estacionalidad, aunque no se identifica claramente a simple vista en el periodo observado, la extensión del análisis a un periodo más amplio podría revelar patrones recurrentes o ciclos temporales característicos. Es posible que ciertos patrones estacionales se manifiesten en intervalos más extensos de la serie temporal, lo que implicaría variaciones sistemáticas y repetitivas en los datos en períodos específicos.
+
+Por último, se destacan pequeñas subidas y bajadas en el gráfico que sugieren la presencia de **ruido** en la serie temporal. Estas fluctuaciones irregulares podrían atribuirse a diversas causas, como posibles errores en la recolección de datos o fluctuaciones aleatorias inherentes al comportamiento de la enfermedad. Es importante considerar estas variaciones no sistemáticas al analizar la serie temporal, ya que podrían influir en la interpretación de los patrones y tendencias observadas.
+:::
+
+::: {.content-visible when-format="pdf" style="text-align: justify"}
+Los componentes identificados en la serie de tiempo de casos confirmados de COVID-19 en Irán, revelan distintos patrones y características.
+
+En primer lugar, se observa una tendencia discernible en el gráfico de la serie temporal (@fig-tspdf). Por ejemplo, entre el 30 de marzo y el 03 de mayo de 2020, se evidencia una tendencia negativa o decreciente, seguida por una tendencia creciente a partir del 03 de mayo en adelante. Estos cambios en la tendencia podrían indicar fluctuaciones significativas en la evolución de los casos confirmados durante esos periodos específicos.
 
 En cuanto a la estacionalidad, aunque no se identifica claramente a simple vista en el periodo observado, la extensión del análisis a un periodo más amplio podría revelar patrones recurrentes o ciclos temporales característicos. Es posible que ciertos patrones estacionales se manifiesten en intervalos más extensos de la serie temporal, lo que implicaría variaciones sistemáticas y repetitivas en los datos en períodos específicos.
 
@@ -223,8 +233,15 @@ La hipótesis nula $(H_0)$ asume la presencia de raíces unitarias, lo que indic
 Además, se complementa la evaluación de la estacionalidad mediante la inspección de los gráficos de la función de autocorrelación (ACF) y la función de autocorrelación parcial (PACF). Estos gráficos se utilizan para identificar patrones de autocorrelación en la serie temporal, lo que permite visualizar la presencia de estacionalidad, tendencias o ciclos.
 :::
 
-::: {style="text-align: justify"}
+::: {.content-visible when-format="html" style="text-align: justify"}
 La serie de tiempo representada en la @fig-ts exhibe un comportamiento característico de deambulación aleatoria. Dado que el valor de la variable $X_{t+1}$ generalmente se encuentra en proximidad al valor $X_t$, se evidencia una autocorrelación positiva notablemente marcada entre las variables $X_t$ y $X_{t+1}$.
+:::
+
+::: {.content-visible when-format="pdf" style="text-align: justify"}
+La serie de tiempo representada en la @fig-tspdf exhibe un comportamiento característico de deambulación aleatoria. Dado que el valor de la variable $X_{t+1}$ generalmente se encuentra en proximidad al valor $X_t$, se evidencia una autocorrelación positiva notablemente marcada entre las variables $X_t$ y $X_{t+1}$.
+:::
+
+::: {style="text-align: justify"}
 
 ::: {#fig-acf}
 ```{r,warning=FALSE, message=FALSE}
@@ -393,8 +410,16 @@ DT::datatable(cfor, style = 'bootstrap4')
 ::: {.content-visible when-format="pdf"}
 ```{r, echo=FALSE}
 #| label: tbl-forecastpdf
-#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión"
-cfor
+#| tbl-cap: "Comparación de Resultados entre las técnicas y los datos reales para evaluar precisión."
+cfor <- data.frame(Date=Confirmed_df$Date[126:178], Real= test_confirmed,
+                   Forecast_HW=HWc_for$mean,Forecast_MLP=frcc$mean)
+head(cfor, 42L)
+```
+
+{{< pagebreak >}}
+
+```{r, echo=FALSE}
+tail(cfor, 11L)
 ```
 :::
 

@@ -2,92 +2,22 @@
     "entries": [
         {
             "file": "series.qmd",
-            "type": "eq",
-            "id": "ergo1",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "extexp",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
             "type": "fig",
-            "id": "HWAP  ",
+            "id": "sm12",
             "suffix": "",
-            "title": "Predicción mediante Holt-Winters de los datos de AirPassengers.\"  "
+            "title": "LogAirPassengers con un suavizador de promedio móvil centrado de orden 12."
         },
         {
             "file": "series.qmd",
-            "type": "fig",
-            "id": "airfrag",
+            "type": "eq",
+            "id": "sampleautocor",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "iconf",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "fig",
-            "id": "descadd",
-            "suffix": "",
-            "title": "'Descomposición aditiva de LogAirPassengers.'"
-        },
-        {
-            "file": "series.qmd",
-            "type": "def",
-            "id": "samplecorr",
-            "suffix": "",
-            "title": "Autocorrelación muestral"
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "ergo2",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "muldecom",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "fig",
-            "id": "descmul",
-            "suffix": "",
-            "title": "'Descomposición multiplicativa de AirPassengers.'"
-        },
-        {
-            "file": "series.qmd",
-            "type": "fig",
-            "id": "sunsfrag",
-            "suffix": "",
-            "title": "Número de Pasajeros Internacionales en Aerolíneas de 1949 a 1960"
-        },
-        {
-            "file": "series.qmd",
-            "type": "def",
-            "id": "estcov",
-            "suffix": "",
-            "title": "Estacionariedad por covarianza"
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "media",
+            "id": "RMSE",
             "suffix": "",
             "title": ""
         },
@@ -100,8 +30,78 @@
         },
         {
             "file": "series.qmd",
+            "type": "fig",
+            "id": "descadd",
+            "suffix": "",
+            "title": "'Descomposición aditiva de LogAirPassengers.'"
+        },
+        {
+            "file": "series.qmd",
             "type": "eq",
-            "id": "mulseas",
+            "id": "MSE",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "thm",
+            "id": "ergo",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "estgamma",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "exm",
+            "id": "air",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "iconf",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "def",
+            "id": "estcov",
+            "suffix": "",
+            "title": "Estacionariedad por covarianza"
+        },
+        {
+            "file": "series.qmd",
+            "type": "exm",
+            "id": "sunspot",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "MAE",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "AEadd",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "varmedia",
             "suffix": "",
             "title": ""
         },
@@ -114,38 +114,45 @@
         },
         {
             "file": "series.qmd",
+            "type": "fig",
+            "id": "sunsfrag",
+            "suffix": "",
+            "title": "Número de Pasajeros Internacionales en Aerolíneas de 1949 a 1960"
+        },
+        {
+            "file": "series.qmd",
             "type": "eq",
-            "id": "RMSE",
+            "id": "AEMul",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
-            "type": "exm",
-            "id": "ppm",
+            "type": "eq",
+            "id": "fexp",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "addseas",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "def",
-            "id": "ruidob",
+            "id": "realizacion",
             "suffix": "",
-            "title": "Proceso de ruido blanco"
+            "title": "Realización"
         },
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "MSE",
+            "id": "ergo",
             "suffix": "",
             "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "fig",
-            "id": "sunspot",
-            "suffix": "",
-            "title": "Número anual de manchas solares desde 1700 hasta 2020."
         },
         {
             "file": "series.qmd",
@@ -156,8 +163,8 @@
         },
         {
             "file": "series.qmd",
-            "type": "exm",
-            "id": "sunspot",
+            "type": "eq",
+            "id": "oarp",
             "suffix": "",
             "title": ""
         },
@@ -170,15 +177,8 @@
         },
         {
             "file": "series.qmd",
-            "type": "eq",
-            "id": "hatgamma0",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "MAE",
+            "type": "def",
+            "id": "mARp",
             "suffix": "",
             "title": ""
         },
@@ -199,21 +199,7 @@
         {
             "file": "series.qmd",
             "type": "fig",
-            "id": "charts",
-            "suffix": "",
-            "title": "Precios de las acciones de Tesla y datos de temperatura anual de DFW antes y después de aplicar suavizadores de promedio móvil de orden 3 y 8"
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "autocorr",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "thm",
-            "id": "arpest",
+            "id": "airfrag",
             "suffix": "",
             "title": ""
         },
@@ -227,51 +213,23 @@
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "oarp",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "def",
-            "id": "mARp",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "fexp",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "ARp",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "thm",
-            "id": "ergo",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "exm",
-            "id": "air",
+            "id": "autoarp",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "fig",
-            "id": "smap",
+            "id": "HWAP  ",
             "suffix": "",
-            "title": "Datos de pasajeros aéreos con suavizado de orden 12."
+            "title": "Predicción mediante Holt-Winters de los datos de AirPassengers.\"  "
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "media",
+            "suffix": "",
+            "title": ""
         },
         {
             "file": "series.qmd",
@@ -282,7 +240,14 @@
         },
         {
             "file": "series.qmd",
-            "type": "eq",
+            "type": "fig",
+            "id": "charts",
+            "suffix": "",
+            "title": "Precios de las acciones de Tesla y datos de temperatura anual de DFW antes y después de aplicar suavizadores de promedio móvil de orden 3 y 8"
+        },
+        {
+            "file": "series.qmd",
+            "type": "thm",
             "id": "varmedia",
             "suffix": "",
             "title": ""
@@ -290,35 +255,70 @@
         {
             "file": "series.qmd",
             "type": "def",
-            "id": "ts",
+            "id": "samplecorr",
             "suffix": "",
-            "title": "Serie de tiempo"
+            "title": "Autocorrelación muestral"
         },
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "sexpo",
+            "id": "ARp",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "autocorr",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "extexp",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "mulseas",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "exm",
+            "id": "ppm",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "exm",
+            "id": "aeair",
+            "suffix": "",
+            "title": ""
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "ergo1",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "fig",
-            "id": "sm12",
+            "id": "AEmul",
             "suffix": "",
-            "title": "LogAirPassengers con un suavizador de promedio móvil centrado de orden 12."
+            "title": "Datos de AirPassengers y ajuste estacional multiplicativo."
         },
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "autocov",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "ergo",
+            "id": "hatgamma0",
             "suffix": "",
             "title": ""
         },
@@ -331,38 +331,52 @@
         },
         {
             "file": "series.qmd",
-            "type": "thm",
-            "id": "varmedia",
+            "type": "fig",
+            "id": "sunspot",
+            "suffix": "",
+            "title": "Número anual de manchas solares desde 1700 hasta 2020."
+        },
+        {
+            "file": "series.qmd",
+            "type": "eq",
+            "id": "ergo2",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "addseas",
+            "id": "sexpo",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "eq",
-            "id": "estgamma",
-            "suffix": "",
-            "title": ""
-        },
-        {
-            "file": "series.qmd",
-            "type": "eq",
-            "id": "sampleautocor",
+            "id": "autocov",
             "suffix": "",
             "title": ""
         },
         {
             "file": "series.qmd",
             "type": "def",
-            "id": "realizacion",
+            "id": "ruidob",
             "suffix": "",
-            "title": "Realización"
+            "title": "Proceso de ruido blanco"
+        },
+        {
+            "file": "series.qmd",
+            "type": "def",
+            "id": "ts",
+            "suffix": "",
+            "title": "Serie de tiempo"
+        },
+        {
+            "file": "series.qmd",
+            "type": "thm",
+            "id": "arpest",
+            "suffix": "",
+            "title": ""
         }
     ]
 }

@@ -153,7 +153,13 @@ dfor <- data.frame(Date=Deaths_df$Date[126:178],
                    Real= test_deaths,                    
                    Forecast_HW=HWd_for$mean,
                    Forecast_MLP=frcd$mean) 
-dfor
+head(dfor, 42L)
+```
+
+{{< pagebreak >}}
+
+```{r, echo=FALSE}
+tail(dfor, 11L)
 ```
 :::
 
@@ -215,7 +221,7 @@ Death_Cases <- data.frame(Trainig = Training_Data, Testing =Testing_Data)
 ```
 
 |                  |           |                |           |           |               |           |
-|-----------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+|------------------|:---------:|:--------------:|:---------:|:---------:|:-------------:|:---------:|
 |                  |           | ***Training*** |           |           | ***Testing*** |           |
 |                  | **RMSE**  |    **MAE**     | **MAPE**  | **RMSE**  |    **MAE**    | **MAPE**  |
 | **Holt-Winters** | *12.6365* |    *9.6103*    | *19.4096* | *34.0665* |   *25.5356*   | *12.9770* |

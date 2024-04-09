@@ -1,0 +1,49 @@
+---
+lang: es
+---
+
+# Metodología
+
+::: {style="text-align: justify"}
+En esta sección se describe el enfoque metodológico utilizado para evaluar la efectividad de diversos métodos de pronóstico, centrándose en modelos estadísticos y computacionales avanzados, como el método de Holt-Winters y las redes neuronales Perceptrón Multicapa (MLP). El proceso metodológico se divide en las siguientes etapas:
+:::
+
+## Recolección de datos
+
+::: {style="text-align: justify"}
+La recopilación de datos se llevó a cabo mediante la selección rigurosa de conjuntos de datos pertinentes para el estudio. Se priorizó la elección de conjuntos de datos que reflejaran adecuadamente el fenómeno estudiado y que proporcionaran una base sólida para la evaluación de los modelos de pronóstico.
+:::
+
+## Limpieza y preprocesamiento de datos
+
+::: {style="text-align: justify"}
+Los datos recopilados fueron sometidos a un proceso exhaustivo de limpieza y preprocesamiento. Este paso incluyó la eliminación de datos inconsistentes o erróneos, así como la estandarización y normalización de variables relevantes. El objetivo fue asegurar la integridad y la calidad de los datos para el análisis subsiguiente.
+:::
+
+## Implementación de modelos
+
+::: {style="text-align: justify"}
+Los modelos seleccionados, incluyendo el método de Holt-Winters y el modelo MLP, fueron implementados utilizando herramientas computacionales sofisticadas. Se configuraron los parámetros correspondientes y se ajustaron los modelos según las características específicas de los conjuntos de datos utilizados en el estudio.
+:::
+
+## Evaluación de modelos
+
+::: {style="text-align: justify"}
+Se llevó a cabo una evaluación exhaustiva del rendimiento de los modelos utilizando métricas de error estándar, como el error cuadrático medio (MSE) y el error absoluto medio (MAE). Esta evaluación permitió una comparación objetiva y cuantificada de la capacidad predictiva de cada modelo en relación con los datos de prueba.
+:::
+
+## Comparación de resultados
+
+::: {style="text-align: justify"}
+Los resultados obtenidos de la evaluación de los modelos fueron comparados entre sí para determinar su eficacia predictiva relativa. Se analizaron las fortalezas y debilidades de cada modelo en función de su desempeño en la predicción de las variables de interés.
+:::
+
+## Análisis y conclusión
+
+::: {style="text-align: justify"}
+Finalmente, se realizó un análisis detallado de los resultados obtenidos para extraer conclusiones significativas. Se proporcionaron recomendaciones basadas en los hallazgos del estudio, lo que permitió establecer un marco para interpretaciones analíticas profundas y recomendaciones bien fundamentadas en la sección de conclusiones del estudio.
+:::
+
+::: {style="text-align: justify"}
+Este enfoque metodológico proporcionó una base sólida para los resultados obtenidos, asegurando la integridad y la calidad del análisis realizado en el estudio.
+:::

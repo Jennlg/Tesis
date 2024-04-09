@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.26">
+<meta name="generator" content="quarto-1.4.552">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales – 5&nbsp; Series de Tiempo</title>
+<title>Análisis comparativo del desempeño en métodos para el pronóstico de series temporales - 5&nbsp; Series de Tiempo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -132,7 +132,7 @@ div.csl-indent {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -348,14 +348,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./metodologia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./confirmados.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pronóstico de infectados diarios</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pronóstico de infectados diarios</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./muertes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pronóstico de decesos diarios</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Pronóstico de decesos diarios</span></span></a>
   </div>
 </li>
       </ul>
@@ -363,7 +369,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusiones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -645,7 +651,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Datos de manchas solares
+<strong><em>Datos de manchas solares</em></strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -711,7 +717,7 @@ Figura&nbsp;5.2: Fragmento de la <a href="#fig-sunspot" class="quarto-xref">Figu
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Datos de pasajeros aéreos
+<strong><em>Datos de pasajeros aéreos</em></strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -943,7 +949,7 @@ s_{_t}=\frac{x_{_{t-2}}}{8}+\frac{x_{_{t-1}}+x_{_t}+x_{_{t+1}}}{4}+\frac{x_{_{t+
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Suavizando los datos de temperatura de Tesla y DFW.
+<strong><em>Suavizando los datos de temperatura de Tesla y DFW.</em></strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1074,7 +1080,7 @@ x_{_t}=s_{_t}\times tr_{_t}\times z_{_t}.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Datos de pasajeros aéreos
+<strong><em>Datos de pasajeros aéreos</em></strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1151,13 +1157,13 @@ x_{_t}=\hat{s_{_t}}+\hat{tr_{_t}}+\hat{z_{_t}}.
 \tag{5.18}\]</span></span></p>
 <div id="exm-logair" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5.5</strong></span> &nbsp;</p>
-<div class="callout callout-style-default callout-caution no-icon callout-titled" style="text-align: justify">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Descomposición aditiva de LogAirPassengers
+<em>Descomposición aditiva de LogAirPassengers</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1337,11 +1343,8 @@ Figura&nbsp;5.10: Descomposición aditiva de LogAirPassengers.
 </section>
 <section id="descomposición-multiplicativa" class="level4" data-number="5.2.1.2">
 <h4 data-number="5.2.1.2" class="anchored" data-anchor-id="descomposición-multiplicativa"><span class="header-section-number">5.2.1.2</span> Descomposición multiplicativa</h4>
-<div style="text-align: justify">
 <p>Se llevará a cabo en el <a href="#exm-mulair" class="quarto-xref">Ejemplo&nbsp;<span>5.6</span></a> una descomposición multiplicativa de los datos de AirPassengers. Se destaca que esta serie temporal exhibe un patrón estacional y una variabilidad intra-anual crecientes con el tiempo. A pesar de la posibilidad de modelar estos datos mediante el uso del logaritmo seguido de un modelo aditivo, en esta sección se opta por un enfoque multiplicativo para analizar los datos originales de AirPassengers. Al emplear la descomposición multiplicativa en el análisis de datos, se hace la suposición de que la serie temporal es el resultado de componentes estacionales, de tendencia y de ruido. El modelo estimado se expresa como;</p>
-<p><span id="eq-muldecom"><span class="math display">\[
-x_{_t}=\hat{s_{_t}}\times \hat{tr_{_t}}\times \hat{z_{_t}}.
-\tag{5.19}\]</span></span></p>
+<p><span id="eq-muldecom"><span class="math display">\[ x_{_t}=\hat{s_{_t}}\times \hat{tr_{_t}}\times \hat{z_{_t}}.  \tag{5.19}\]</span></span></p>
 <div id="exm-mulair" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5.6</strong></span> &nbsp;</p>
 <div>
@@ -1362,9 +1365,9 @@ Descomposición multiplicativa de AirPassengers
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tswge)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(AirPassengers)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>AirPass.sm12<span class="ot">=</span><span class="fu">ma.smooth.wge</span>(AirPassengers,<span class="at">order=</span><span class="dv">12</span>)</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tswge) </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(AirPassengers) </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>AirPass.sm12<span class="ot">=</span><span class="fu">ma.smooth.wge</span>(AirPassengers,<span class="at">order=</span><span class="dv">12</span>) </span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>AirPass.sm12<span class="ot">=</span><span class="fu">ts</span>(AirPass.sm12<span class="sc">$</span>smooth,<span class="at">start=</span><span class="fu">c</span>(<span class="dv">1949</span>,<span class="dv">1</span>),<span class="at">frequency=</span><span class="dv">12</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -1430,11 +1433,11 @@ Figura&nbsp;5.12: Datos de AirPassengers sin el componente de tendencia y compon
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>seas.AirPass.numeric<span class="ot">=</span><span class="fu">as.numeric</span>(seas.AirPass) </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>seas.AirPass.matrix<span class="ot">=</span><span class="fu">matrix</span>(seas.AirPass.numeric,<span class="at">ncol=</span><span class="dv">12</span>) </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>seas.AirPass.matrix.t<span class="ot">=</span><span class="fu">t</span>(seas.AirPass.matrix) </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>months<span class="ot">=</span><span class="fu">colMeans</span>(seas.AirPass.matrix.t,<span class="at">na.rm=</span><span class="cn">TRUE</span>) </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>seas.means<span class="ot">=</span><span class="fu">rep</span>(months,<span class="dv">12</span>) </span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>seas.AirPass.numeric<span class="ot">=</span><span class="fu">as.numeric</span>(seas.AirPass)  </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>seas.AirPass.matrix<span class="ot">=</span><span class="fu">matrix</span>(seas.AirPass.numeric,<span class="at">ncol=</span><span class="dv">12</span>)  </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>seas.AirPass.matrix.t<span class="ot">=</span><span class="fu">t</span>(seas.AirPass.matrix)  </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>months<span class="ot">=</span><span class="fu">colMeans</span>(seas.AirPass.matrix.t,<span class="at">na.rm=</span><span class="cn">TRUE</span>)  </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>seas.means<span class="ot">=</span><span class="fu">rep</span>(months,<span class="dv">12</span>)  </span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>seas.means<span class="ot">=</span><span class="fu">ts</span>(seas.means,<span class="at">start=</span><span class="fu">c</span>(<span class="dv">1949</span>,<span class="dv">1</span>),<span class="at">frequency=</span><span class="dv">12</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></li>
@@ -1442,7 +1445,7 @@ Figura&nbsp;5.12: Datos de AirPassengers sin el componente de tendencia y compon
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Air.Pass.noise <span class="ot">=</span> AirPassengers <span class="sc">/</span> (AirPass.sm12 <span class="sc">*</span> seas.mean)</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Air.Pass.noise <span class="ot">=</span> AirPassengers <span class="sc">/</span> (AirPass.sm12 <span class="sc">*</span> seas.mean) </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">decompose</span>(AirPassengers))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -1465,7 +1468,6 @@ Figura&nbsp;5.13: Descomposición multiplicativa de AirPassengers.
 </div>
 </div>
 </div>
-</div>
 </section>
 </section>
 <section id="ajuste-estacional" class="level3" data-number="5.2.2">
@@ -1477,8 +1479,8 @@ Figura&nbsp;5.13: Descomposición multiplicativa de AirPassengers.
 <p><span id="eq-AEadd"><span class="math display">\[
 \hat{sa_{_t}}=x_{_t}-\hat{s_{_t}},
 \tag{5.20}\]</span></span></p>
-<p>que resta el componente estacional (mostrado en la <a href="#fig-seasair-2" class="quarto-xref">Figura&nbsp;<span>5.9 (b)</span></a>) de los datos.</p>
 </div>
+<p>que resta el componente estacional (mostrado en la <a href="#fig-seasair-2" class="quarto-xref">Figura&nbsp;<span>5.9 (b)</span></a>) de los datos.</p>
 </section>
 <section id="ajuste-estacional-multiplicativo" class="level4" data-number="5.2.2.2">
 <h4 data-number="5.2.2.2" class="anchored" data-anchor-id="ajuste-estacional-multiplicativo"><span class="header-section-number">5.2.2.2</span> Ajuste estacional multiplicativo</h4>
@@ -1487,7 +1489,11 @@ Figura&nbsp;5.13: Descomposición multiplicativa de AirPassengers.
 <p><span id="eq-AEMul"><span class="math display">\[
 \hat{sa_{_t}}=x_{_t}/\hat{s_{_t}},
 \tag{5.21}\]</span></span></p>
+</div>
+<div style="text-align: justify">
 <p>para dividir los datos por el componente estacional (mostrado en la <a href="#fig-seasmul-2" class="quarto-xref">Figura&nbsp;<span>5.12 (b)</span></a>).</p>
+</div>
+<div style="text-align: justify">
 <div id="exm-aeair" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5.7</strong></span> &nbsp;</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -1945,8 +1951,9 @@ X_{_t}-0.13X_{_{t-1}}-1.4414X_{_{t-2}}+.0326X_{_{t-3}}+.8865X_{_{t-4}}=a_{_{t}}
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tswge)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">gen.arma.wge</span>(<span class="at">n=</span><span class="dv">200</span>,<span class="at">phi=</span><span class="fu">c</span>(<span class="fl">0.1300</span>,<span class="fl">1.4414</span>,<span class="sc">-</span>.<span class="dv">0326</span>,<span class="sc">-</span>.<span class="dv">8865</span>),<span class="at">sn=</span><span class="dv">9310</span>,<span class="at">plot=</span><span class="cn">FALSE</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plotts.sample.wge</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">gen.arma.wge</span>(<span class="at">n=</span><span class="dv">200</span>, <span class="at">phi=</span><span class="fu">c</span>(<span class="fl">0.1300</span>,<span class="fl">1.4414</span>,<span class="sc">-</span>.<span class="dv">0326</span>,<span class="sc">-</span>.<span class="dv">8865</span>),</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">sn=</span><span class="dv">9310</span>, <span class="at">plot=</span><span class="cn">FALSE</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotts.sample.wge</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-ejar4" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -2299,7 +2306,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2331,29 +2349,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2361,7 +2357,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
